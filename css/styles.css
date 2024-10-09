@@ -2,4 +2,13 @@
     margin:0;
     padding: 0;
 }
-    
+.navbar-nav{
+    /* Default style for smaller screens */
+    margin-left: 0;
+}
+
+@media (min-width: 992px) { /* Only apply shift on larger screens */
+    .navbar-nav{
+        margin-left: 68em; /* Adjust the value as needed */
+    }
+}
