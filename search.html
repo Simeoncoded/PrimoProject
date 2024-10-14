@@ -13,8 +13,9 @@
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
             <link rel="stylesheet" href="css/styles.css">
+        <script src="scripts/search.js"></script>
     </head>
-<body>
+    <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -65,11 +66,14 @@
             </div>
     
             <div class="search-container">
-                <input type="text" placeholder="Search NCR by number" id="searchInput">
+                <input type="text" placeholder="Search NCR by number" id="searchInputNumber" onchange="updateSearch()">
+            </div>
+            <div class="search-container">
+                <button class="btn btn-primary" onclick="updateSearch()">Search</button>
             </div>
 
         </section>
-        <table class="table">
+        <table class="table" id="searchTable">
             <thead>
               <tr>
                 <th>NCR Number</th>
@@ -82,7 +86,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>2023-NCR-001</td>
+                <td>2023-001</td>
                 <td>2023-10-12</td>
                 <td class="status-filled">Filled by John Doe</td>
                 <td class="status-empty">Not Filled</td>
@@ -90,7 +94,7 @@
                 <td class="status-empty">Not Filled</td>
               </tr>
               <tr>
-                <td>2023-NCR-002</td>
+                <td>2023-002</td>
                 <td>2023-10-10</td>
                 <td class="status-filled">Filled by Alice Brown</td>
                 <td class="status-filled">Filled by Mark Lee</td>
@@ -98,12 +102,12 @@
                 <td class="status-filled">Filled by Chris Taylor</td>
               </tr>
               <tr>
-                <td>2023-NCR-002</td>
+                <td>2023-003</td>
                 <td>2023-10-10</td>
-                <td class="status-filled">Filled by Alice Brown</td>
-                <td class="status-filled">Filled by Mark Lee</td>
+                <td class="status-filled">Filled by Alice Wonder</td>
+                <td class="status-filled">Filled by Bruce Lee</td>
                 <td class="status-empty">Not Filled</td>
-                <td class="status-filled">Filled by Chris Taylor</td>
+                <td class="status-filled">Filled by Chris Pratt</td>
               </tr>
             </tbody>
           </table>
