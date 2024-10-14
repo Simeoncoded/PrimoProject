@@ -3,12 +3,35 @@
     padding: 0;
 }
 .navbar-nav{
-    /* Default style for smaller screens */
     margin-left: 0;
 }
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.search-container input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    font-size: 16px;
+}
+.search-sec h1{
+    text-align: center;
+}
+.ssheading{
+    margin:20px;
+}
+.status-filled {
+    color: green;
+    font-weight: bold;
+}
+.status-empty {
+    color: red;
+    font-weight: bold;
+}
 
-@media (min-width: 992px) { /* Only apply shift on larger screens */
+@media (min-width: 992px) { 
     .navbar-nav{
-        margin-left: 68em; /* Adjust the value as needed */
+        margin-left: 68em; 
     }
 }
