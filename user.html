@@ -13,11 +13,15 @@
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
             <link rel="stylesheet" href="css/styles.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     </head>    
 <body>
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120px"></a>
+            <a class="navbar-brand" href="index.html"><img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,24 +35,13 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="search.html">Search NCR Forms</a></li>
-                            <!--    
-                            Search page for looking over all NCR forms
-                            Shows each section as a table column (Quality, Engineering, Purchasing, Procurement)
-                            And whether each section has been filled and the name of who filled it
-                            -->
+                            
+                           
 
                             <li><a class="dropdown-item" href="create.html">Create NCR Form</a></li>
-                            <!--
-                            A page for creating an NCR form
-                            Should generate an NCR number automatically
-                            First person to create should fill out Quality Section of the form
-                            -->
-
+                         
                             <li><a class="dropdown-item" href="user.html">User Login</a></li>
-                            <!--
-                            Page for logging into a user account
-                            User accounts should have access limitations to editing NCR forms according to their role group
-                            -->
+                           
                             
                         </ul>
                     </li>
@@ -56,9 +49,25 @@
             </div>
         </div>
     </nav>
-    <h1>
-        Page for logging into a user account
-        User accounts should have access limitations to editing NCR forms according to their role group
-        </h1>
+<main>
+    <div class="container mt-5">
+        <h1>User Management (Admin Only)</h1>
+        <p>This section is only accessible by Admins. You can manage users and their roles here.</p>
+        <ul>
+            <li><a href="user.html">View Users</a> - List of users and roles with edit options.</li>
+            <li><a href="users-new.html">Add User</a> - Form to create new users and assign roles.</li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="search.html">Search NCR</a>
+        <a href="create.html">Create NCR</a>
+        <a href="user.html">User</a>
+    </div>
+    <p>&copy; 2024 . All rights reserved.</p>
+</footer>
+<script src="scripts/search.js"></script>
 </body>
 </html>
