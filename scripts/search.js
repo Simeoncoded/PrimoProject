@@ -21,6 +21,7 @@ function updateSearch(){ // Help from https://www.w3schools.com/howto/howto_js_f
     }
 }
 
+<<<<<<< HEAD
 //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
@@ -47,3 +48,5 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 
+=======
+>>>>>>> ef15b9ffa7e4df1ba25f8e84a30c67b5893f396a
