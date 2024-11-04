@@ -22,6 +22,15 @@ main {
     flex: 1;
 }
 
+.navsty{
+    background-color:#fff;
+    box-shadow: 0 4px 8px rgba(55, 7, 107, 0.1);
+
+    
+}
+/* .dropdown-toggle{
+    color: #fff;
+} */
 
 .navbar-nav {
     margin-left: 0;
@@ -77,7 +86,50 @@ footer a {
     bottom: 20px;
     right: 20px;
     display: none;
-  }
+}
+.dash{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.dcont{
+    background-color: #5897c9;
+    height: 140px;
+    border-radius: 10px;
+}
+.dcont p{
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 45px;
+}
+
+a{
+    text-decoration: none;
+}
+.recentdash h2{
+    text-align: center;
+    margin: 30px;
+    margin-top: 50px;
+}
+.rdtable{
+    width: 80%;
+    margin: 0 auto;
+}
+.vbtn{
+    background: transparent;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+
+}
+.vbtn:hover{
+    background: #5897c9;
+    border: none;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
 
 @media (min-width: 992px) { 
     .navbar-nav {
