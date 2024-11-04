@@ -52,9 +52,10 @@
         <h1>Log In</h1>
         <p>Please enter using one of the following roles</p>
         <ul>
-            <li><button>Quality</button></li>
-            <li><button>Engineering</button></li>
-            <li><button>Administration</button></li>
+            <li><input type="radio" id="radUser1" name="radUsers" value="quality">Quality Assurance</input></li>
+            <li><input type="radio" id="radUser2" name="radUsers" value="engineer">Engineering</input></li>
+            <li><input type="radio" id="radUser3" name="radUsers" value="admin">Administrator</input></li>
+            <li><button onclick="selectUser()">Confirm</button></li>
         </ul>
     </div>
 </main>
@@ -67,5 +68,6 @@
     </div>
     <p>&copy; 2024 . All rights reserved.</p>
 </footer>
+    <script src="scripts/login.js"></script>
 </body>
 </html>
