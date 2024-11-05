@@ -55,9 +55,20 @@
                 <h1>SEARCH NCR</h1>
             </div>
 
-            <div class="search-container">
-                <input type="text" placeholder="Search NCR by number" id="searchInputNumber" onchange="updateSearch()">
+            <div class="row">
+                <div class="search-container col-12 col-md-4 mb-3">
+                    <input type="text" placeholder="Search NCR by number" id="searchInputNumber" onchange="updateSearch()">
+                </div>
+                <div class="search-container col-12 col-md-4 mb-3">
+                    <input type="text" placeholder="Search NCR by Date" id="searchInputNumber" onchange="updateSearch()">
+                </div>
+                <div class="search-container col-12 col-md-4 mb-3">
+                    <input type="text" placeholder="Search NCR by Status" id="searchInputNumber" onchange="updateSearch()">
+                </div>
+                
             </div>
+           
+            
             <div class="search-container">
                 <button class="btn btn-primary" onclick="updateSearch()">Search</button>
             </div>

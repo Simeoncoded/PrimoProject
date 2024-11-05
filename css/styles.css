@@ -130,6 +130,10 @@ a{
     transition: 0.3s ease-in-out;
 }
 
+.btnsub{
+    width: 100px;
+}
+
 
 @media (min-width: 992px) { 
     .navbar-nav {
