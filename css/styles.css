@@ -5,18 +5,6 @@
 }
 
 
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
 main {
     flex: 1;
@@ -42,7 +30,7 @@ main {
     margin-bottom: 20px;
 }
 
-.search-container input[type="text"] {
+.search-container input[type="text"], input[type="date"] {
     width: 300px;
     padding: 8px;
     font-size: 16px;
@@ -133,6 +121,7 @@ a{
 .btnsub{
     width: 100px;
 }
+
 
 
 @media (min-width: 992px) { 

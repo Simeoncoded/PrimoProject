@@ -24,60 +24,70 @@
 
     <nav class="navbar navbar-expand-lg navsty">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/crlogo.png" alt="Crossfire Logo"
-                    width="120"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="search.html">NCR LOG</a></li>
-
-
-                            <li><a class="dropdown-item" href="create.html">Create NCR Form</a></li>
-
-
-                           
-
-
-                        </ul>
+                <ul class="navbar-nav ms-auto">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html">Notifications</a>
                     </li>
                 </ul>
             </div>
         </div>
+
     </nav>
 
+    <div class="container-fluid mt-2">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="search.html">NCR LOG</a></li>
+                <li><a class="dropdown-item" href="create.html">Create NCR Form</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
     <main>
-       
+
 
         <section>
             <div class="row dash">
                 <div class="col-12 col-md-4 mb-3">
                     <a href="create.html">
-                    <div class="dcont"> 
-                        <p>CREATE NCR</p>
-                    </div>
+                        <div class="dcont">
+                            <p>CREATE NCR</p>
+                        </div>
                     </a>
                 </div>
                 <div class="col-12 col-md-4 mb-3">
                     <a href="search.html">
-                    <div class="dcont">
-                        <p>VIEW NCR</p>
-                    </div>
+                        <div class="dcont">
+                            <p>VIEW NCR</p>
+                        </div>
                     </a>
                 </div>
                 <div class="col-12 col-md-4 mb-3">
                     <a href="#">
-                    <div class="dcont">
-                        <p>VIEW REPORTS</p>
-                    </div>
+                        <div class="dcont">
+                            <p>VIEW REPORTS</p>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -94,34 +104,30 @@
                             <th>Supplier</th>
                             <th>Status</th>
                             <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>2023-001</td>
-                        <td>2023-10-12</td>
-                        <td>John Doe</td>
-                        <td class="status-empty">Not Filled</td>
-                        <td><button class="vbtn">Edit</button></td>
-                        <td><button class="vbtn">Details</button></td>
-                      </tr>
-                      <tr>
-                        <td>2023-002</td>
-                        <td>2023-10-10</td>
-                        <td> Alice Brown</td>
-                        <td class="status-filled">Filled </td>
-                        <td><button class="vbtn">Edit</button></td>
-                        <td><button class="vbtn">Details</button></td>
-                      </tr>
-                      <tr>
-                        <td>2023-003</td>
-                        <td>2023-10-10</td>
-                        <td>Alice Wonder</td>
-                        <td class="status-filled">Filled</td>
-                        <td><button class="vbtn">Edit</button></td>
-                        <td><button class="vbtn">Details</button></td>
-                      </tr>
+                        <tr>
+                            <td>2023-001</td>
+                            <td>2023-10-12</td>
+                            <td>John Doe</td>
+                            <td class="status-empty">Not Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-002</td>
+                            <td>2023-10-10</td>
+                            <td> Alice Brown</td>
+                            <td class="status-filled">Filled </td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-003</td>
+                            <td>2023-10-10</td>
+                            <td>Alice Wonder</td>
+                            <td class="status-filled">Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

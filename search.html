@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,36 +20,47 @@
 <body>
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
-    </button><nav class="navbar navbar-expand-lg navbar-light bg-light">
+    </button>
+    
+    <nav class="navbar navbar-expand-lg navsty">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="search.html">NCR LOG</a></li>
-                            
-                           
-
-                            <li><a class="dropdown-item" href="create.html">Create NCR Form</a></li>
-                         
-                           
-                           
-                            
-                        </ul>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Adding Help, FAQ, and Notification Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html">Notifications</a>
                     </li>
                 </ul>
             </div>
         </div>
+
     </nav>
+
+    <div class="container-fluid mt-2">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="search.html">NCR LOG</a></li>
+                <li><a class="dropdown-item" href="create.html">Create NCR Form</a></li>
+            </ul>
+        </div>
+    </div>
     <main>
         <section class="search-sec">
             <div class="ssheading">
@@ -56,118 +68,114 @@
             </div>
 
             <div class="row">
-                <div class="search-container col-12 col-md-4 mb-3">
-                    <input type="text" placeholder="Search NCR by number" id="searchInputNumber" onchange="updateSearch()">
+                <!-- NCR Number Search -->
+                <div class="search-container col-12 col-md-3 mb-3">
+                    <input type="text" placeholder="Search NCR by Number" id="searchInputNumber" onchange="updateSearch()">
                 </div>
-                <div class="search-container col-12 col-md-4 mb-3">
-                    <input type="text" placeholder="Search NCR by Date" id="searchInputNumber" onchange="updateSearch()">
-                </div>
-                <div class="search-container col-12 col-md-4 mb-3">
-                    <input type="text" placeholder="Search NCR by Status" id="searchInputNumber" onchange="updateSearch()">
-                </div>
-                
-            </div>
-           
             
+
+                <div class="search-container col-12 col-md-3 mb-3">
+                    <input type="text" placeholder="Search NCR by Status" id="searchInputStatus" onchange="updateSearch()">
+                </div>
+            
+
+                <div class="search-container col-12 col-md-3 mb-3">
+                    <input type="date" placeholder="From Date" id="searchFromDate" onchange="updateSearch()">
+                </div>
+
+                <div class="search-container col-12 col-md-3 mb-3">
+                    <input type="date" placeholder="To Date" id="searchToDate" onchange="updateSearch()">
+                </div>
+            </div>
+            
+
+
             <div class="search-container">
                 <button class="btn btn-primary" onclick="updateSearch()">Search</button>
             </div>
 
         </section>
-        <table class="table" id="searchTable">
-            <thead>
-                <tr>
-                    <th>NCR Number</th>
-                    <th>Date</th>
-                    <th>Quality Section</th>
-                    <th>Engineering Section</th>
-                    <th>Purchasing Section</th>
-                    <th>Procurement Section</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2023-001</td>
-                    <td>2023-10-12</td>
-                    <td class="status-filled">Filled by John Doe</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Jane Smith</td>
-                    <td class="status-empty">Not Filled</td>
-                </tr>
-                <tr>
-                    <td>2023-002</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Brown</td>
-                    <td class="status-filled">Filled by Mark Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Taylor</td>
-                </tr>
-                <tr>
-                    <td>2023-003</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-                <tr>
-                    <td>2023-004</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-                <tr>
-                    <td>2023-005</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-                <tr>
-                    <td>2023-005</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-                <tr>
-                    <td>2023-006</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-                <tr>
-                    <td>2023-007</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-                <tr>
-                    <td>2023-009</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-                <tr>
-                    <td>2023-010</td>
-                    <td>2023-10-10</td>
-                    <td class="status-filled">Filled by Alice Wonder</td>
-                    <td class="status-filled">Filled by Bruce Lee</td>
-                    <td class="status-empty">Not Filled</td>
-                    <td class="status-filled">Filled by Chris Pratt</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="recentdash">
+            <h2>View Recent NCR's</h2>
+            <div class="rdtable">
+                <table class="table" id="searchTable">
+                    <thead>
+                        <tr>
+                            <th>NCR Number</th>
+                            <th>Date</th>
+                            <th>Supplier</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023-001</td>
+                            <td>2023-10-12</td>
+                            <td>John Doe</td>
+                            <td class="status-empty">Not Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-002</td>
+                            <td>2023-10-10</td>
+                            <td> Alice Brown</td>
+                            <td class="status-filled">Filled </td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-003</td>
+                            <td>2023-10-10</td>
+                            <td>Alice Wonder</td>
+                            <td class="status-filled">Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-001</td>
+                            <td>2023-10-12</td>
+                            <td>John Doe</td>
+                            <td class="status-empty">Not Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-002</td>
+                            <td>2023-10-10</td>
+                            <td> Alice Brown</td>
+                            <td class="status-filled">Filled </td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-003</td>
+                            <td>2023-10-10</td>
+                            <td>Alice Wonder</td>
+                            <td class="status-filled">Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-001</td>
+                            <td>2023-10-12</td>
+                            <td>John Doe</td>
+                            <td class="status-empty">Not Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-002</td>
+                            <td>2023-10-10</td>
+                            <td> Alice Brown</td>
+                            <td class="status-filled">Filled </td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>2023-003</td>
+                            <td>2023-10-10</td>
+                            <td>Alice Wonder</td>
+                            <td class="status-filled">Filled</td>
+                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-links">

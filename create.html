@@ -17,35 +17,50 @@
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Main Navigation">
+   
+    <nav class="navbar navbar-expand-lg navsty">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/crlogo.png" alt="Crossfire Logo"
-                    width="120"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="search.html">Search NCR Forms</a></li>
-                            <li><a class="dropdown-item" href="create.html">NCR LOG</a></li>
-
-                        </ul>
+                <ul class="navbar-nav ms-auto">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html">Notifications</a>
                     </li>
                 </ul>
             </div>
         </div>
+
     </nav>
+
+    <div class="container-fluid mt-2">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="search.html">NCR LOG</a></li>
+                <li><a class="dropdown-item" href="create.html">Create NCR Form</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="container my-5" id="main-content" tabindex="-1">
-        <h2 class="mb-4 text-center">NCR (Non-Conformance Report) Form</h2>
+        <h2 class="mb-4 text-center">Non-Conformance Report(NCR)</h2>
         <form>
 
             <div class="row ">
@@ -64,24 +79,27 @@
             </div>
 
 
-            <!-- Identify Process Applicable -->
-            <div class="mb-3">
-                <fieldset>
-                    <legend class="form-label fw-bold">Identify Process Applicable:</legend>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="supplier" name="process"
-                            value="Supplier or Rec-Insp">
-                        <label class="form-check-label" for="supplier">Supplier or Rec-Insp</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="wip" name="process" value="WIP">
-                        <label class="form-check-label" for="wip">WIP (Production Order)</label>
-                    </div>
-                </fieldset>
-            </div>
+
 
             <div class="row">
-                <!-- Supplier Name -->
+                <!-- Identify Process Applicable -->
+                <div class="col-12 col-md-6 mb-3">
+                    <fieldset>
+                        <legend class="form-label fw-bold">Identify Process Applicable:</legend>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="supplier" name="process"
+                                value="Supplier or Rec-Insp">
+                            <label class="form-check-label" for="supplier">Supplier or Rec-Insp</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="wip" name="process" value="WIP">
+                            <label class="form-check-label" for="wip">WIP (Production Order)</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+               <!-- Supplier Name -->
                 <div class="col-12 col-md-6 mb-3">
                     <label for="supplier_name" class="form-label">Supplier Name</label>
                     <select class="form-control" id="supplier_name" name="supplier_name" required aria-required="true">
@@ -92,40 +110,45 @@
 
                     </select>
                 </div>
-
-
-
-
-                <!-- PO or Prod. No. -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="po_prod_no" class="form-label">PO or Prod. No.</label>
-                    <input type="text" class="form-control" id="po_prod_no" name="po_prod_no" required
-                        aria-required="true">
-                </div>
             </div>
 
 
-            <!-- Sales Order No. -->
-            <div class="mb-3">
-                <label for="sales_order_no" class="form-label">Sales Order No.</label>
-                <input type="text" class="form-control" id="sales_order_no" name="sales_order_no" required
-                    aria-required="true">
-            </div>
 
-            <!-- Description of Item -->
-            <div class="mb-3">
-                <label for="item_description" class="form-label">Description of Item (including SAP No.)</label>
-                <textarea class="form-control" id="item_description" name="item_description" rows="3" required
-                    aria-required="true"></textarea>
-            </div>
+<div class="row">
+  <!-- PO or Prod. No. -->
+  <div class="col-12 col-md-6 mb-3">
+    <label for="po_prod_no" class="form-label">PO or Prod. No.</label>
+    <input type="text" class="form-control" id="po_prod_no" name="po_prod_no" required aria-required="true">
+</div>
 
-            <!-- Description of Defect -->
-            <div class="mb-3">
-                <label for="defect_description" class="form-label">Description of Defect (in as much detail as
-                    possible)</label>
-                <textarea class="form-control" id="defect_description" name="defect_description" rows="3" required
-                    aria-required="true"></textarea>
-            </div>
+ <!-- Sales Order No. -->
+ <div class="col-12 col-md-6 mb-3">
+    <label for="sales_order_no" class="form-label">Sales Order No.</label>
+    <input type="text" class="form-control" id="sales_order_no" name="sales_order_no" required
+        aria-required="true">
+</div>
+</div>
+          
+
+<div class="row">
+<!-- Description of Item -->
+<div class="col-12 col-md-6 mb-3">
+    <label for="item_description" class="form-label">Description of Item (including SAP No.)</label>
+    <textarea class="form-control" id="item_description" name="item_description" rows="3" required
+        aria-required="true"></textarea>
+</div>
+
+<!-- Description of Defect -->
+<div class="col-12 col-md-6 mb-3">
+    <label for="defect_description" class="form-label">Description of Defect (in as much detail as
+        possible)</label>
+    <textarea class="form-control" id="defect_description" name="defect_description" rows="3" required
+        aria-required="true"></textarea>
+</div>
+</div>
+           
+
+            
 
             <div class="row">
                 <!-- Quantity Received -->
@@ -194,10 +217,14 @@
 
 
 
-            <!-- Submit Button -->
-            <div class="d-grid">
+            
+            <div >
                 <button type="submit" class="btn btn-primary btnsub">Submit</button>
+                <button type="submit" class="btn btn-primary btnsub">Save</button>
             </div>
+
+              
+
         </form>
     </main>
 
