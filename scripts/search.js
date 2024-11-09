@@ -1,4 +1,13 @@
 
+const statusTypes = {
+    unfilled,
+    engineer,
+    procurement,
+    quality_inspector,
+    filled,
+    archived
+}
+
 function updateSearch(){ // Help from https://www.w3schools.com/howto/howto_js_filter_table.asp
 
     srcTable = document.getElementById("searchTable")
@@ -43,3 +52,4 @@ function updateSearch(){ // Help from https://www.w3schools.com/howto/howto_js_f
         }
     }
 }
+
