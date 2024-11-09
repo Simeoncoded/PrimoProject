@@ -24,3 +24,20 @@ form.addEventListener('submit', (event) => {
     alert("Form submitted successfully!");
     form.reset(); // Clear the form fields if desired
 });
+
+
+function showNcrDetails(ncrNumber, date, supplier, status) {
+    const modalBody = document.getElementById("modalBodyContent");
+
+    // Populate modal content with NCR details
+    modalBody.innerHTML = `
+        <p><strong>NCR Number:</strong> ${ncrNumber}</p>
+        <p><strong>Date:</strong> ${date}</p>
+        <p><strong>Supplier:</strong> ${supplier}</p>
+        <p><strong>Status:</strong> ${status}</p>
+    `;
+
+    // Show the modal
+    const modal = new bootstrap.Modal(document.getElementById('ncrDetailsModal'));
+    modal.show();
+}

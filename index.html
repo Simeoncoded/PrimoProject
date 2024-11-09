@@ -50,7 +50,7 @@
         </div>
 
     </nav>
-    
+
 
     <div class="container-fluid mt-2">
         <div class="dropdown">
@@ -115,26 +115,54 @@
                             <td>2023-10-12</td>
                             <td>John Doe</td>
                             <td class="status-empty">Not Filled</td>
-                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                            <td><button class="vbtn">Edit</button>
+                                <button class="vbtn"
+                                    onclick="showNcrDetails('2023-001', '2023-10-12', 'John Doe', 'Not Filled')">Details</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>2023-002</td>
                             <td>2023-10-10</td>
                             <td> Alice Brown</td>
                             <td class="status-filled">Filled </td>
-                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                            <td><button class="vbtn">Edit</button>
+                                <button class="vbtn"
+                                    onclick="showNcrDetails('2023-002', '2023-10-10', 'Alice', 'Filled')">Details</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>2023-003</td>
                             <td>2023-10-10</td>
                             <td>Alice Wonder</td>
                             <td class="status-filled">Filled</td>
-                            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                            <td><button class="vbtn">Edit</button>
+                                <button class="vbtn"
+                                    onclick="showNcrDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Filled')">Details</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
+
+        <div class="modal fade" id="ncrDetailsModal" tabindex="-1" aria-labelledby="ncrDetailsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ncrDetailsModalLabel">NCR Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modalBodyContent">
+                        <!-- Details will be injected here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer>
