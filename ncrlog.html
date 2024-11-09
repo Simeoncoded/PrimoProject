@@ -21,7 +21,7 @@
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    
+
     <nav class="navbar navbar-expand-lg navsty">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -33,7 +33,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
-                   
+
                     <li class="nav-item">
                         <a class="nav-link" href="help.html">Help</a>
                     </li>
@@ -41,7 +41,9 @@
                         <a class="nav-link" href="faq.html">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="notifications.html">Notifications</a>
+                        <a class="nav-link" href="notifications.html">
+                            Notifications <span id="notification-counter" class="badge bg-danger">0</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -66,35 +68,25 @@
 
     <main>
         <section class="search-sec">
-            <div class="ssheading">
-                <h1>SEARCH NCR</h1>
-            </div>
-
-            <div class="row">
-                <!-- NCR Number Search -->
-                <div class="search-container col-12 col-md-3 mb-3">
-                    <input type="text" placeholder="Search NCR by Number" id="searchInputNumber" onchange="updateSearch()">
-                </div>
-            
-
-                <div class="search-container col-12 col-md-3 mb-3">
-                    <input type="text" placeholder="Search NCR by Status" id="searchInputStatus" onchange="updateSearch()">
-                </div>
-            
-
-                <div class="search-container col-12 col-md-3 mb-3">
-                    <input type="date" placeholder="From Date" id="searchFromDate" onchange="updateSearch()">
-                </div>
-
-                <div class="search-container col-12 col-md-3 mb-3">
-                    <input type="date" placeholder="To Date" id="searchToDate" onchange="updateSearch()">
-                </div>
-            </div>
-            
-
-
-            <div class="search-container">
-                <button class="btn btn-primary" onclick="updateSearch()">Search</button>
+            <div class="searchcon">
+                <h1>Search NCR</h1>
+                <form>
+                    <div>
+                        <label for="ncrnum">NCR Number:</label>
+                        <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber"
+                            onchange="updateSearch()">
+                        <label for="ncrstatus">NCR Status:</label>
+                        <input type="text" name="ncrstatus" placeholder="Search NCR by Status" id="searchInputNumber"
+                            onchange="updateSearch()">
+                    </div>
+                    <div>
+                        <label for="ncrdatefrom">NCR Date(FROM):</label>
+                        <input type="date" name="ncrdatefrom" id="searchInputNumber" onchange="updateSearch()">
+                        <label for="ncrdateto">NCR Date(TO):</label>
+                        <input type="date" name="ncrdateto" id="searchInputNumber" onchange="updateSearch()">
+                    </div>
+                    <input type="button" value="Search" />
+                </form>
             </div>
 
         </section>
@@ -189,6 +181,7 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
     <script src="scripts/search.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>

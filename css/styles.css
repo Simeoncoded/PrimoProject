@@ -24,25 +24,6 @@ main {
     margin-left: 0;
 }
 
-.search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.search-container input[type="text"], input[type="date"] {
-    width: 300px;
-    padding: 8px;
-    font-size: 16px;
-}
-
-.search-sec h1 {
-    text-align: center;
-}
-
-.ssheading {
-    margin: 20px;
-}
 
 .status-filled {
     color: green;
@@ -121,7 +102,13 @@ a{
 .btnsub{
     width: 100px;
 }
-
+.search-sec{
+    margin: 0 auto;
+    width: 70%;
+}
+.searchcon h1{
+    text-align: center;
+}
 
 
 @media (min-width: 992px) { 

@@ -17,7 +17,7 @@
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
-   
+
     <nav class="navbar navbar-expand-lg navsty">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
@@ -29,7 +29,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
-                   
+
                     <li class="nav-item">
                         <a class="nav-link" href="help.html">Help</a>
                     </li>
@@ -37,7 +37,9 @@
                         <a class="nav-link" href="faq.html">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="notifications.html">Notifications</a>
+                        <a class="nav-link" href="notifications.html">
+                            Notifications <span id="notification-counter" class="badge bg-danger">0</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -100,7 +102,7 @@
                 </div>
 
 
-               <!-- Supplier Name -->
+                <!-- Supplier Name -->
                 <div class="col-12 col-md-6 mb-3">
                     <label for="supplier_name" class="form-label">Supplier Name</label>
                     <select class="form-control" id="supplier_name" name="supplier_name" required aria-required="true">
@@ -115,41 +117,42 @@
 
 
 
-<div class="row">
-  <!-- PO or Prod. No. -->
-  <div class="col-12 col-md-6 mb-3">
-    <label for="po_prod_no" class="form-label">PO or Prod. No.</label>
-    <input type="text" class="form-control" id="po_prod_no" name="po_prod_no" required aria-required="true">
-</div>
+            <div class="row">
+                <!-- PO or Prod. No. -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="po_prod_no" class="form-label">PO or Prod. No.</label>
+                    <input type="text" class="form-control" id="po_prod_no" name="po_prod_no" required
+                        aria-required="true">
+                </div>
 
- <!-- Sales Order No. -->
- <div class="col-12 col-md-6 mb-3">
-    <label for="sales_order_no" class="form-label">Sales Order No.</label>
-    <input type="text" class="form-control" id="sales_order_no" name="sales_order_no" required
-        aria-required="true">
-</div>
-</div>
-          
+                <!-- Sales Order No. -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="sales_order_no" class="form-label">Sales Order No.</label>
+                    <input type="text" class="form-control" id="sales_order_no" name="sales_order_no" required
+                        aria-required="true">
+                </div>
+            </div>
 
-<div class="row">
-<!-- Description of Item -->
-<div class="col-12 col-md-6 mb-3">
-    <label for="item_description" class="form-label">Description of Item (including SAP No.)</label>
-    <textarea class="form-control" id="item_description" name="item_description" rows="3" required
-        aria-required="true"></textarea>
-</div>
 
-<!-- Description of Defect -->
-<div class="col-12 col-md-6 mb-3">
-    <label for="defect_description" class="form-label">Description of Defect (in as much detail as
-        possible)</label>
-    <textarea class="form-control" id="defect_description" name="defect_description" rows="3" required
-        aria-required="true"></textarea>
-</div>
-</div>
-           
+            <div class="row">
+                <!-- Description of Item -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="item_description" class="form-label">Description of Item (including SAP No.)</label>
+                    <textarea class="form-control" id="item_description" name="item_description" rows="3" required
+                        aria-required="true"></textarea>
+                </div>
 
-            
+                <!-- Description of Defect -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="defect_description" class="form-label">Description of Defect (in as much detail as
+                        possible)</label>
+                    <textarea class="form-control" id="defect_description" name="defect_description" rows="3" required
+                        aria-required="true"></textarea>
+                </div>
+            </div>
+
+
+
 
             <div class="row">
                 <!-- Quantity Received -->
@@ -218,13 +221,13 @@
 
 
 
-            
-            <div >
+
+            <div>
                 <button type="submit" class="btn btn-primary btnsub">Submit</button>
                 <button type="submit" class="btn btn-primary btnsub">Save</button>
             </div>
 
-              
+
 
         </form>
     </main>
@@ -246,6 +249,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+        <script src="scripts/script.js"></script>
 </body>
 
 </html>
