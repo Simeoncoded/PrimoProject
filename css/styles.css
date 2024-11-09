@@ -16,9 +16,11 @@ main {
 
     
 }
-/* .dropdown-toggle{
+.navbar-toggler-icon{
+    background-color: black;
+    border: none;
     color: #fff;
-} */
+}
 
 .navbar-nav {
     margin-left: 0;
