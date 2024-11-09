@@ -75,15 +75,17 @@
                         <label for="ncrnum">NCR Number:</label>
                         <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber"
                             onchange="updateSearch()">
+
+                        <!-- Should be an enum + dropdown list -->
                         <label for="ncrstatus">NCR Status:</label>
-                        <input type="text" name="ncrstatus" placeholder="Search NCR by Status" id="searchInputNumber"
+                        <input type="text" name="ncrstatus" placeholder="Search NCR by Status" id="ncrstatus"
                             onchange="updateSearch()">
                     </div>
                     <div>
                         <label for="ncrdatefrom">NCR Date(FROM):</label>
-                        <input type="date" name="ncrdatefrom" id="searchInputNumber" onchange="updateSearch()">
+                        <input type="date" name="ncrdatefrom" id="ncrdatefrom" onchange="updateSearch()">
                         <label for="ncrdateto">NCR Date(TO):</label>
-                        <input type="date" name="ncrdateto" id="searchInputNumber" onchange="updateSearch()">
+                        <input type="date" name="ncrdateto" id="ncrdateto" onchange="updateSearch()">
                     </div>
                     <input type="button" value="Search" />
                 </form>
