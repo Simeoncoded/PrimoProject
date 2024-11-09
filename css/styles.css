@@ -106,12 +106,41 @@ a{
 }
 .search-sec{
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
+}
+.searchcon{
+    margin: 0 auto;
+    width: 50%;
+
 }
 .searchcon h1{
     text-align: center;
 }
+.theForm{
+    padding-top:40px ;
+}
+.theFormOne{
+    padding-top: 20px;
+}
+.searchcon input[type="text"],
+.searchcon input[type="date"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+.btnSub{
+    margin-top: 20px;
+    background-color: blue;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
 
+}
 
 @media (min-width: 992px) { 
     .navbar-nav {
