@@ -61,38 +61,87 @@
                         <input type="date" class="form-control" id="date" name="date" required aria-required="true">
                     </div>
 
-                <!-- Engineering -->
-                <h2>Engineering</h2>
+            <!-- Engineering Section -->
+<h2 class="mt-5">Engineering</h2>
 
-                <label>Review by CF Engineering</label>
-                <select>
-                    <option>Use as is</option>
-                    <option>Repair</option>
-                    <option>Rework</option>
-                    <option>Scrap</option>
-                </select>
+<div class="row">
+    <!-- Review by CF Engineering -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="review_engineering" class="form-label">Review by CF Engineering</label>
+        <select id="review_engineering" class="form-select" name="review_engineering" required aria-required="true">
+            <option selected disabled>Select disposition</option>
+            <option>Use as is</option>
+            <option>Repair</option>
+            <option>Rework</option>
+            <option>Scrap</option>
+        </select>
+    </div>
 
-                <label>Does Customer require notification of NCR</label>
-                <input type="checkbox">
+    <!-- Customer Notification -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="customer_notification" class="form-label">Does Customer Require Notification of NCR</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="customer_notification" name="customer_notification">
+            <label class="form-check-label" for="customer_notification">
+                Yes
+            </label>
+        </div>
+    </div>
 
-                <label>Disposition</label>
-                <textarea></textarea>
+    <!-- Disposition -->
+    <div class="col-12 mb-3">
+        <label for="disposition" class="form-label">Disposition</label>
+        <textarea class="form-control" id="disposition" name="disposition" rows="3"></textarea>
+    </div>
 
-                <label>Does the drawing require updating</label>
-                <input type="checkbox">
+    <!-- Drawing Update Requirement -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="drawing_update" class="form-label">Does the Drawing Require Updating</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="drawing_update" name="drawing_update">
+            <label class="form-check-label" for="drawing_update">
+                Yes
+            </label>
+        </div>
+    </div>
 
-                <label>original revision number</label>
-                <input type="text">
-                <label>updated revision number</label>
-                <input type="text">
-                <label>Engineer</label>
-                <input type="text">
-                <label>revision date</label>
-                <input type="date">
-                <label>engineering</label>
-                <input type="text">
-                <label>date</label>
-                <input type="date">
+    <!-- Original Revision Number -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="original_revision" class="form-label">Original Revision Number</label>
+        <input type="text" class="form-control" id="original_revision" name="original_revision">
+    </div>
+
+    <!-- Updated Revision Number -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="updated_revision" class="form-label">Updated Revision Number</label>
+        <input type="text" class="form-control" id="updated_revision" name="updated_revision">
+    </div>
+
+    <!-- Engineer Name -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="engineer_name" class="form-label">Engineer</label>
+        <input type="text" class="form-control" id="engineer_name" name="engineer_name">
+    </div>
+
+    <!-- Revision Date -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="revision_date" class="form-label">Revision Date</label>
+        <input type="date" class="form-control" id="revision_date" name="revision_date">
+    </div>
+
+    <!-- Engineering Name -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="engineering" class="form-label">Engineering</label>
+        <input type="text" class="form-control" id="engineering" name="engineering">
+    </div>
+
+    <!-- Engineering Date -->
+    <div class="col-12 col-md-6 mb-3">
+        <label for="engineering_date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="engineering_date" name="engineering_date">
+    </div>
+</div>
+
 
                 <!--
             Review by CF Engineering*
