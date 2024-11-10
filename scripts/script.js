@@ -2,9 +2,9 @@
 const form = document.querySelector('form');
 const notificationCounter = document.getElementById('notification-counter');
 
-// Reset the counter in localStorage and on the page
-localStorage.setItem('notificationCount', 0);
-notificationCounter.textContent = 0;
+// Initialize the notification counter from local storage or start at 0
+let initialCount = localStorage.getItem('notificationCount') || 0;
+notificationCounter.textContent = initialCount;
 
 // Function to increment the notification count
 function incrementNotificationCount() {
@@ -15,15 +15,20 @@ function incrementNotificationCount() {
 }
 
 // Handle form submission
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    
-    incrementNotificationCount();
-    
-    // Optionally: Display a success message or clear the form
-    alert("Form submitted successfully!");
-    form.reset(); // Clear the form fields if desired
-});
+if (form) {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission
+
+        incrementNotificationCount();
+
+        // Optionally: Display a success message or clear the form
+        alert("Form submitted successfully!");
+        form.reset(); // Clear the form fields if desired
+    });
+} else {
+    console.error("Form element not found");
+}
+
 
 
 function showNcrDetails(ncrNumber, date, supplier, status) {
