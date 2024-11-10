@@ -2,9 +2,9 @@
 loggedUser = {role:"admin"}
 
 const userRoles = {
-    admin:"Admin",
-    quality:"Quality",
-    engineer:"Engineer"
+    admin,
+    quality,
+    engineer
 }
 
 function selectUser(){
