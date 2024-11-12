@@ -58,12 +58,16 @@
                     <div class="col-12 col-md-6 mb-3">
                         <label for="ncr_no" class="form-label">NCR No.</label>
                         <input type="text" class="form-control" id="ncr_no" name="ncr_no" required aria-required="true">
+                        <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is
+                            required</span>
                     </div>
 
                     <!-- Date -->
                     <div class="col-12 col-md-6 mb-3">
                         <label for="date" class="form-label">Date Created</label>
                         <input type="date" class="form-control" id="date" name="date" required aria-required="true">
+                        <span id="dateError" class="text-danger" style="display: none; font-size: 0.9em;">Date is
+                            required</span>
                     </div>
 
                     <!-- Engineering Section -->
@@ -81,6 +85,7 @@
                                 <option>Rework</option>
                                 <option>Scrap</option>
                             </select>
+                            <span id="review_engineeringError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
 
                         <!-- Customer Notification -->
@@ -118,36 +123,44 @@
                         <div class="col-12 col-md-6 mb-3">
                             <label for="original_revision" class="form-label">Original Revision Number</label>
                             <input type="text" class="form-control" id="original_revision" name="original_revision">
+                            <span id="original_revisionError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
 
                         <!-- Updated Revision Number -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="updated_revision" class="form-label">Updated Revision Number</label>
-                            <input type="text" class="form-control" id="updated_revision" name="updated_revision">
+                            <input type="text" class="form-control" id="updated_revision" name="updated_revision"> 
+                            <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
+
                         </div>
 
                         <!-- Engineer Name -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="engineer_name" class="form-label">Engineer</label>
                             <input type="text" class="form-control" id="engineer_name" name="engineer_name">
+                            <span id="engineer_nameError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
 
                         <!-- Revision Date -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="revision_date" class="form-label">Revision Date</label>
                             <input type="date" class="form-control" id="revision_date" name="revision_date">
+                            <span id="revision_dateError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
 
                         <!-- Engineering Name -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="engineering" class="form-label">Engineering</label>
                             <input type="text" class="form-control" id="engineering" name="engineering">
+                            <span id="engineeringError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
+
                         </div>
 
                         <!-- Engineering Date -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="engineering_date" class="form-label">Date</label>
                             <input type="date" class="form-control" id="engineering_date" name="engineering_date">
+                            <span id="engineering_dateError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
                     </div>
 
@@ -175,7 +188,7 @@
             -->
 
                     <div>
-                        <button type="submit" class="btn btn-primary btnsub">Submit</button>
+                        <button type="submit" id="btnSubmit" class="btn btn-primary btnsub">Submit</button>
                         <button type="submit" class="btn btn-primary btnsub">Save</button>
                     </div>
 
@@ -190,12 +203,10 @@
         </div>
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
+    <script src="scripts/engineering.js"></script>
 
 
     <script src="scripts/page.js"></script>
-    <script src="scripts/script.js"></script>
-
-
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
