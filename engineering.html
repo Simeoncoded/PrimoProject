@@ -57,6 +57,10 @@
     <!-- Main Content -->
     <main class="container my-5" id="main-content" tabindex="-1">
         <h1 class="mb-4 text-center">Non-Conformance Report(NCR)</h2>
+            <div id="no-notification-message" style="display: none;">
+                <h3>No NCR form requires engineering process right now.</h3>
+                <p>Please check again later.</p>
+            </div>
             <form>
 
                 <div class="row ">
@@ -219,7 +223,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-
+        <script>
+            // JavaScript to check if notifications are 0
+            window.onload = function() {
+                const notificationCount = parseInt(document.getElementById('notification-counter').textContent);
+                const engineeringContent = document.getElementById('engineering-content');
+                const noNotificationMessage = document.getElementById('no-notification-message');
+    
+                if (notificationCount === 0) {
+                    engineeringContent.style.display = 'none'; // Hide the NCR form
+                    noNotificationMessage.style.display = 'block'; // Show the no notification message
+                } else {
+                    engineeringContent.style.display = 'block'; // Show the NCR form
+                    noNotificationMessage.style.display = 'none'; // Hide the no notification message
+                }
+            }
+        </script>
+    
 </body>
 
 </html>

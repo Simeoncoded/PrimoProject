@@ -1,29 +1,28 @@
-// Select the form and counter elements
 const form = document.querySelector('form');
 const notificationCounter = document.getElementById('notification-counter');
 
-// Initialize the notification counter from local storage or start at 0
+
 let initialCount = localStorage.getItem('notificationCount') || 0;
 notificationCounter.textContent = initialCount;
 
-// Function to increment the notification count
+
 function incrementNotificationCount() {
     let count = parseInt(notificationCounter.textContent);
     count++;
     notificationCounter.textContent = count;
-    localStorage.setItem('notificationCount', count); // Persist in local storage
+    localStorage.setItem('notificationCount', count); 
 }
 
-// Handle form submission
+
 if (form) {
     form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); 
 
         incrementNotificationCount();
 
-        // Optionally: Display a success message or clear the form
+ 
         alert("Form submitted successfully!");
-        form.reset(); // Clear the form fields if desired
+        form.reset(); 
     });
 } else {
     console.error("Form element not found");
@@ -105,7 +104,8 @@ document.querySelector('#btnSaveEngr').addEventListener('click', function(event)
        engineer_name: document.getElementById('engineer_name').value,
        revision_date: document.getElementById('revision_date').value,
        engineering: document.getElementById('engineering').value,
-       engineering_date: document.getElementById('engineering_date').value
+       engineering_date: document.getElementById('engineering_date').value,
+       
     };
 
     // Save to local storage (or proceed with other save actions)
