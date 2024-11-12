@@ -1,55 +1,33 @@
-
 const statusTypes = {
-    unfilled,
-    engineer,
-    procurement,
-    quality_inspector,
-    filled,
-    archived
-}
+    unfilled: "Not Filled",
+    engineer: "Engineer",
+    procurement: "Procurement",
+    quality_inspector: "Quality Inspector",
+    filled: "Filled",
+    archived: "Archived"
+};
 
-function updateSearch(){ // Help from https://www.w3schools.com/howto/howto_js_filter_table.asp
+function updateSearch() { // Help from https://www.w3schools.com/howto/howto_js_filter_table.asp
+    const srcTable = document.getElementById("searchTable");
+    const srcTableRows = srcTable.getElementsByTagName("tr");
 
-    srcTable = document.getElementById("searchTable")
-    srcTableRows = document.getElementsByTagName("tr")
+    const ncrNum = document.getElementById("searchInputNumber").value.toLowerCase();
+    const ncrDateFrom = document.getElementById("ncrdatefrom").value ? new Date(document.getElementById("ncrdatefrom").value) : null;
+    const ncrDateTo = document.getElementById("ncrdateto").value ? new Date(document.getElementById("ncrdateto").value) : null;
+    const ncrStatus = document.getElementById("ncrstatus").value;
 
-    ncrNum = document.getElementById("searchInputNumber")
-    ncrDateFrom = document.getElementById("ncrdatefrom")
-    ncrDateTo = document.getElementById("ncrdateto")
-    ncrStatus = document.getElementById("ncrstatus")
+    for (let x = 1; x < srcTableRows.length; x++) { // Start from 1 to skip header row
+        const row = srcTableRows[x];
+        const tableNum = row.getElementsByTagName("td")[0]?.textContent.toLowerCase();
+        const tableDate = new Date(row.getElementsByTagName("td")[1]?.textContent);
+        const tableStatus = row.getElementsByTagName("td")[3]?.textContent.trim();
 
-    for(x = 0; x < srcTableRows.length; x++){
+        // Apply filters
+        const matchesNumber = !ncrNum || tableNum.includes(ncrNum);
+        const matchesDate = (!ncrDateFrom || tableDate >= ncrDateFrom) && (!ncrDateTo || tableDate <= ncrDateTo);
+        const matchesStatus = !ncrStatus || tableStatus === ncrStatus;
 
-        tableNum = srcTableRows[x].getElementsByTagName("td")[0]; // Gets first td from the row, which is under the NCR Number Column
-        tableDate = srcTableRows[x].getElementsByTagName("td")[1]; // Gets second td from the row, which is under the NCR Date Column
-        tableStatus = srcTableRows[x].getElementsByTagName("td")[3]; // Gets fourth td from the row, which is under the Status Column
-        
-        if(tableNum){
-
-            if (tableNum.textContent.indexOf(ncrNum.value) > -1) { // If search value matches a row value then display the row, otherwise hide the row
-                srcTableRows[x].style.display = ""
-            } else {
-                srcTableRows[x].style.display = "none"
-            }
-        }
-
-        if(tableDate){
-
-            if(tableDate.textContent >= ncrDateFrom && tableDate.textContent <= ncrDateTo){
-                srcTableRows[x].style.display = ""
-            } else {
-                srcTableRows[x].style.display = "none"
-            }
-        }
-
-        if(tableStatus){
-
-            if(tableStatus.textContent.indexOf(ncrStatus.value) > -1) { // Should be an enum + dropdown list
-                srcTableRows[x].style.display = ""
-            } else {
-                srcTableRows[x].style.display = "none"
-            }
-        }
+        // Show row if all filters match
+        row.style.display = matchesNumber && matchesDate && matchesStatus ? "" : "none";
     }
 }
-

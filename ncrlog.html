@@ -58,27 +58,34 @@
             <div class="searchcon">
                 <h1>Search NCR</h1>
                 <form>
-                 
                     <div class="theFormOne">
                         <label for="ncrnum">NCR Number:</label>
-                        <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber"
-                            onchange="updateSearch()">
-
-                        <!-- Should be an enum + dropdown list -->
+                        <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber" onchange="updateSearch()">
+                
+                        <!-- Changed to a dropdown list for NCR Status -->
                         <label for="ncrstatus">NCR Status:</label>
-                        <input type="text" name="ncrstatus" placeholder="Search NCR by Status" id="ncrstatus"
-                            onchange="updateSearch()">
+                        <select name="ncrstatus" id="ncrstatus" onchange="updateSearch()">
+                            <option value="">Select Status</option>
+                            <option value="Not Filled">Not Filled</option>
+                            <option value="Engineer">Engineer</option>
+                            <option value="Procurement">Procurement</option>
+                            <option value="Quality Inspector">Quality Inspector</option>
+                            <option value="Filled">Filled</option>
+                            <option value="Archived">Archived</option>
+                        </select>
                     </div>
+                
                     <div class="theForm">
-                        <label for="ncrdatefrom">NCR Date(FROM):</label>
+                        <label for="ncrdatefrom">NCR Date (FROM):</label>
                         <input type="date" name="ncrdatefrom" id="ncrdatefrom" onchange="updateSearch()">
-                        <label for="ncrdateto">NCR Date(TO):</label>
+                        
+                        <label for="ncrdateto">NCR Date (TO):</label>
                         <input type="date" name="ncrdateto" id="ncrdateto" onchange="updateSearch()">
                     </div>
-                    <input type="button" value="Search" class="btnSub"/>
-                   
-
+                
+                    <input type="button" value="Search" class="btnSub" onclick="updateSearch()" />
                 </form>
+                
             </div>
 
         </section>
