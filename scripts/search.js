@@ -1,9 +1,9 @@
 const statusTypes = {
-    unfilled: "Not Filled",
+    closed: "Closed",
     engineer: "Engineer",
     procurement: "Procurement",
     quality_inspector: "Quality Inspector",
-    filled: "Filled",
+    open: "Open",
     archived: "Archived"
 };
 
@@ -16,7 +16,7 @@ function updateSearch() { // Help from https://www.w3schools.com/howto/howto_js_
     const ncrDateTo = document.getElementById("ncrdateto").value ? new Date(document.getElementById("ncrdateto").value) : null;
     const ncrStatus = document.getElementById("ncrstatus").value;
 
-    for (let x = 1; x < srcTableRows.length; x++) { // Start from 1 to skip header row
+    for (let x = 1; x < srcTableRows.length; x++) { // Start fsrom 1 to skip header row
         const row = srcTableRows[x];
         const tableNum = row.getElementsByTagName("td")[0]?.textContent.toLowerCase();
         const tableDate = new Date(row.getElementsByTagName("td")[1]?.textContent);

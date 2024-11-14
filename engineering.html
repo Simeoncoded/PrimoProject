@@ -57,6 +57,7 @@
     <!-- Main Content -->
     <main class="container my-5" id="main-content" tabindex="-1">
         <h1 class="mb-4 text-center">Non-Conformance Report(NCR)</h2>
+            <p style="text-align: center;font-weight: bold;">All fields with * (astericks) are required </p>
             <div id="no-notification-message" style="display: none;">
                 <h3>No NCR form requires engineering process right now.</h3>
                 <p>Please check again later.</p>
@@ -66,7 +67,7 @@
                 <div class="row ">
                     <!-- NCR No. -->
                     <div class="col-12 col-md-6 mb-3">
-                        <label for="ncr_no" class="form-label">NCR No.</label>
+                        <label for="ncr_no" class="form-label">NCR No.*</label>
                         <input type="text" class="form-control" id="ncr_no" name="ncr_no" required aria-required="true" placeholder="Enter NCR Number">
                         <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is
                             required</span>
@@ -74,7 +75,7 @@
 
                     <!-- Date -->
                     <div class="col-12 col-md-6 mb-3">
-                        <label for="date" class="form-label">Date Created</label>
+                        <label for="date" class="form-label">Date Created*</label>
                         <input type="date" class="form-control" id="date" name="date" required aria-required="true" placeholder="Select Date">
                         <span id="dateError" class="text-danger" style="display: none; font-size: 0.9em;">Date is
                             required</span>
@@ -86,7 +87,7 @@
                     <div class="row">
                         <!-- Review by CF Engineering -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="review_engineering" class="form-label">Review by CF Engineering</label>
+                            <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
                             <select id="review_engineering" class="form-select" name="review_engineering" required
                                 aria-required="true">
                                 <option selected disabled>Select disposition</option>
@@ -101,7 +102,7 @@
     
                         <!-- Customer Notification -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="customer_notification" class="form-label">Does Customer Require Notification of NCR</label>
+                            <label for="customer_notification" class="form-label">Does Customer Require Notification of NCR*</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="customer_notification" name="customer_notification" aria-describedby="customerNotificationDesc">
                                 <label class="form-check-label" for="customer_notification">
@@ -113,7 +114,7 @@
     
                         <!-- Disposition -->
                         <div class="col-12 mb-3">
-                            <label for="disposition" class="form-label">Disposition</label>
+                            <label for="disposition" class="form-label">Disposition*</label>
                             <textarea class="form-control" id="disposition" name="disposition" rows="3" placeholder="Provide disposition details"></textarea>
                         </div>
     
@@ -131,42 +132,42 @@
     
                         <!-- Original Revision Number -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="original_revision" class="form-label">Original Revision Number</label>
+                            <label for="original_revision" class="form-label">Original Revision Number*</label>
                             <input type="text" class="form-control" id="original_revision" name="original_revision" placeholder="Enter original revision number">
                             <span id="original_revisionError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
     
                         <!-- Updated Revision Number -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="updated_revision" class="form-label">Updated Revision Number</label>
+                            <label for="updated_revision" class="form-label">Updated Revision Number*</label>
                             <input type="text" class="form-control" id="updated_revision" name="updated_revision" placeholder="Enter updated revision number">
                             <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
     
                         <!-- Engineer Name -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="engineer_name" class="form-label">Name of Engineer</label>
+                            <label for="engineer_name" class="form-label">Name of Engineer*</label>
                             <input type="text" class="form-control" id="engineer_name" name="engineer_name" required aria-required="true" placeholder="Enter Engineer's Name">
                             <span id="engineer_nameError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
     
                         <!-- Revision Date -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="revision_date" class="form-label">Revision Date</label>
+                            <label for="revision_date" class="form-label">Revision Date*</label>
                             <input type="date" class="form-control" id="revision_date" name="revision_date" placeholder="Select Revision Date">
                             <span id="revision_dateError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
     
                         <!-- Engineering Name -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="engineering" class="form-label">Engineering</label>
+                            <label for="engineering" class="form-label">Engineering*</label>
                             <input type="text" class="form-control" id="engineering" name="engineering" placeholder="Enter engineering details">
                             <span id="engineeringError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
     
                         <!-- Engineering Date -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="engineering_date" class="form-label">Date</label>
+                            <label for="engineering_date" class="form-label">Date*</label>
                             <input type="date" class="form-control" id="engineering_date" name="engineering_date" placeholder="Select Engineering Date">
                             <span id="engineering_dateError" class="text-danger" style="display: none; font-size: 0.9em;"> Field is required</span>
                         </div>
