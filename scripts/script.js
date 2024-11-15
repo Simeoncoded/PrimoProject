@@ -81,35 +81,3 @@ document.querySelector('#btnSave').addEventListener('click', function(event) {
 });
 
 
-document.querySelector('#btnSaveEngr').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    const ncrNumber = document.getElementById('ncr_no').value;
-
-    // Check if NCR number is empty
-    if (!ncrNumber) {
-        alert('Please enter an NCR number before saving.');
-        return; // Stop execution if NCR number is empty
-    }
-
-    // If NCR number is filled, continue to save
-    const formData = {
-        ncr_no: ncrNumber,
-        date: document.getElementById('date').value,
-        process: document.querySelector('input[name="process"]:checked')?.value,
-        customer_notification: document.getElementById('customer_notification').value,
-       disposition: document.getElementById('disposition').value,
-       original_revision: document.getElementById('original_revision').value,
-       updated_revision: document.getElementById('updated_revision').value,
-       engineer_name: document.getElementById('engineer_name').value,
-       revision_date: document.getElementById('revision_date').value,
-       engineering: document.getElementById('engineering').value,
-       engineering_date: document.getElementById('engineering_date').value,
-       
-    };
-
-    // Save to local storage (or proceed with other save actions)
-    localStorage.setItem('ncrFormData', JSON.stringify(formData));
-    alert('Form data saved successfully!');
-});
-
