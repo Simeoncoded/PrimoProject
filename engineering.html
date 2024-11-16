@@ -23,7 +23,15 @@
                 <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
             </a>
 
-
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    More Options
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="help.html">Help</a></li>
+                    <li><a class="dropdown-item" href="report.html">Report</a></li>
+                </ul>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">+</span>
@@ -32,10 +40,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Dashboard</a>
-                    </li>
-                    <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="create.html">Create NCR Form</a>
@@ -45,14 +53,11 @@
                             Notifications <span id="notification-counter" class="badge bg-danger">0</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">Help</a>
-                    </li>
+                   
                 </ul>
             </div>
         </div>
     </nav>
-
 
     <!-- Main Content -->
     <main class="container my-5" id="main-content" tabindex="-1">
