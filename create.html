@@ -242,6 +242,26 @@
 
     <script src="scripts/inspect.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function generateNcrNumber() {
+                const year = new Date().getFullYear();  
+                const randomNum = Math.floor(Math.random() * 1000); 
+                const paddedNumber = randomNum.toString().padStart(3, '0'); 
+                
+                const ncrNumber = `${year}-${paddedNumber}`; 
+                return ncrNumber;
+            }
+    
+            const ncrInput = document.getElementById("ncr_no");
+            if (ncrInput) {
+                ncrInput.value = generateNcrNumber();
+            }
+        });
+    </script>
+    
+    
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
