@@ -113,7 +113,7 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="ncrlog">
                         <tr>
                             <td>2023-001</td>
                             <td>2023-10-12</td>
@@ -121,7 +121,6 @@
                             <td class="status-empty">Closed</td>
                             <td> <button class="vbtn">Edit</button>  <button class="vbtn"
                                 onclick="showNcrDetails('2023-001', '2023-10-12', 'John Doe', 'Closed')">Details</button></td>
-
                         </tr>
                         <tr>
                             <td>2023-002</td>
@@ -210,6 +209,7 @@
         </div>
     </div>
 
+
     </main>
     <footer>
         <div class="footer-links">
@@ -219,8 +219,6 @@
         </div>
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
-    <script src="scripts/search.js"></script>
-    <script src="scripts/page.js"></script>
 
 
     <!-- Bootstrap JS and dependencies -->
@@ -231,10 +229,11 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 
-        <script src="scripts/page.js"></script>
-        <script src="scripts/script.js"></script>
-
-        <script src="scripts/search.js"></script>
+    <script src="data/ncr.json" type="json" id="ncrdata"></script>
+    <script src="scripts/dataload.js"></script>
+    <script src="scripts/search.js"></script>
+    <script src="scripts/page.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
