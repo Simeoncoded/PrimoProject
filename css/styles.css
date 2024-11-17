@@ -27,12 +27,12 @@ main {
 }
 
 
-.status-filled {
+.status-open {
     color: green;
     font-weight: bold;
 }
 
-.status-empty {
+.status-closed {
     color: red;
     font-weight: bold;
 }
