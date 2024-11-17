@@ -111,7 +111,7 @@
                             <td>2023-10-12</td>
                             <td>John Doe</td>
                             <td class="status-empty">Closed</td>
-                            <td><button class="vbtn">Edit</button>
+                            <td><button class="vbtn" onclick="showEditDetails('2023-001', '2023-10-12', 'John Doe', 'Not Filled')">Edit</button>
                                 <button class="vbtn"
                                     onclick="showNcrDetails('2023-001', '2023-10-12', 'John Doe', 'Closed')">Details</button>
                             </td>
@@ -160,7 +160,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBodyContent">
-                        <!-- Details will be injected here -->
+                        <!-- add stuff here for more  -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -168,6 +168,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="editNcrModal" tabindex="-1" aria-labelledby="editNcrModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered wide-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editNcrModalLabel">Edit NCR</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="editModalBodyContent">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
     </main>
 

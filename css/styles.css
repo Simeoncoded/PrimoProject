@@ -147,3 +147,23 @@ a{
         margin-left: 68em;
     }
 }
+
+
+/* modal stuff need to widen it */
+.wide-modal {
+    max-width: 800px; 
+}
+
+/* made it dynamic */
+@media (max-width: 992px) {
+    .wide-modal {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wide-modal {
+        max-width: 90%;
+    }
+}
+
