@@ -1,21 +1,73 @@
-url = document.getElementById("ncrdata").src
+ncr = {
+    "form1":{
+        
+    "ncrNum":"2023-001",
+    "ncrDate":"2023-09-09",
+
+    "identifyProcess":{
+        "recInspect":false,
+        "prodOrder":true
+        },
+    "supplierName":"Johnwick",
+    "prodNum":"1984-A",
+    "saleOrderNum":"21",
+    "itemDescription":"jimminy crickets",
+    "defectDescription":"Somebody's poisoned the waterhole",
+    "quantityRecieved":"200",
+    "quantityDefective":"150",
+
+    "qaName":"Deer Man",
+    "nonConforming":true,
+    "needEngineer":true
+    },
+
+    "form2":{
+        
+    "ncrNum":"2022-001",
+    "ncrDate":"2022-09-09",
+
+    "identifyProcess":{
+        "recInspect":false,
+        "prodOrder":true
+        },
+    "supplierName":"Johnwick",
+    "prodNum":"1984-A",
+    "saleOrderNum":"21",
+    "itemDescription":"jimminy crickets",
+    "defectDescription":"Somebody's poisoned the waterhole",
+    "quantityRecieved":"200",
+    "quantityDefective":"150",
+
+    "qaName":"Deer Man",
+    "nonConforming":true,
+    "needEngineer":true
+    },
+    
+    "form3":{
+        
+    "ncrNum":"2022-001",
+    "ncrDate":"2022-02-03",
+
+    "identifyProcess":{
+        "recInspect":false,
+        "prodOrder":true
+        },
+    "supplierName":"Johnwick",
+    "prodNum":"1984-A",
+    "saleOrderNum":"21",
+    "itemDescription":"jimminy crickets",
+    "defectDescription":"Somebody's poisoned the waterhole",
+    "quantityRecieved":"200",
+    "quantityDefective":"150",
+
+    "qaName":"Deer Man",
+    "nonConforming":true,
+    "needEngineer":true
+    }
+}
 table = document.querySelector("#ncrlog")
 
-//https://www.w3schools.com/xml/xml_http.asp
-
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       console.log("ready")
-       var myvar = JSON.parse(this.responseText)
-       console.log(myvar)
-    }
-};
-
-xhttp.open("GET", "filename", true);
-xhttp.send();
-
+console.log(ncr)
 
 table.insertAdjacentHTML("afterbegin", 
     '<tr>' +
