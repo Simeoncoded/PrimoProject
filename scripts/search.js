@@ -14,9 +14,9 @@ function updateSearch() { // Help from https://www.w3schools.com/howto/howto_js_
     const ncrNum = document.getElementById("searchInputNumber").value.toLowerCase();
     const ncrDateFrom = document.getElementById("ncrdatefrom").value ? new Date(document.getElementById("ncrdatefrom").value) : null;
     const ncrDateTo = document.getElementById("ncrdateto").value ? new Date(document.getElementById("ncrdateto").value) : null;
-    const ncrStatus = document.getElementById("ncrstatus").value;
+    const ncrStatus = document.getElementById("ncrstatus").value.toLowerCase();
 
-    for (let x = 1; x < srcTableRows.length; x++) { // Start fsrom 1 to skip header row
+    for (let x = 1; x < srcTableRows.length; x++) { // Start from 1 to skip header row
         const row = srcTableRows[x];
         const tableNum = row.getElementsByTagName("td")[0]?.textContent.toLowerCase();
         const tableDate = new Date(row.getElementsByTagName("td")[1]?.textContent);

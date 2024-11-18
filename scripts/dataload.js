@@ -1,8 +1,9 @@
-{
-    "form1":{
-        
+ncr = [
+
+    {
     "ncrNum":"2023-001",
     "ncrDate":"2023-09-09",
+    "ncrStatus":"open",
 
     "identifyProcess":{
         "recInspect":false,
@@ -21,10 +22,10 @@
     "needEngineer":true
     },
 
-    "form2":{
-        
-    "ncrNum":"2023-001",
-    "ncrDate":"2023-09-09",
+    {
+    "ncrNum":"2022-001",
+    "ncrDate":"2022-09-09",
+    "ncrStatus":"open",
 
     "identifyProcess":{
         "recInspect":false,
@@ -43,10 +44,10 @@
     "needEngineer":true
     },
     
-    "form3":{
-        
-    "ncrNum":"2023-001",
-    "ncrDate":"2023-09-09",
+    {
+    "ncrNum":"2022-001",
+    "ncrDate":"2022-02-03",
+    "ncrStatus":"open",
 
     "identifyProcess":{
         "recInspect":false,
@@ -64,4 +65,20 @@
     "nonConforming":true,
     "needEngineer":true
     }
-}
+]
+
+table = document.querySelector("#ncrlog")
+
+ncr.forEach(form => {
+        
+    table.insertAdjacentHTML("afterbegin", 
+        '<tr>' +
+            '<td>' + form.ncrNum + '</td>' +
+            '<td>' + form.ncrDate + '</td>' +
+            '<td>' + form.supplierName + '</td>' +
+            '<td class="status-' + form.ncrStatus + '">' + form.ncrStatus + '</td>' +
+            '<td>   <button class="vbtn" onclick="showNcrEdit(' + form + ')">Edit</button>' +               // Add function to accept json object
+            '       <button class="vbtn" onclick="showNcrDetails(' + form + ')">Details</button></td>' +    // change function to accept json object
+        '</tr>')                                                                                            // showNcrEdit and showNcrDetails should link to an edit/details page and filled by json object
+       
+});
