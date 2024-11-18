@@ -29,8 +29,7 @@ if (form) {
 }
 
 
-
-function showNcrDetails(ncrNumber, date, supplier, status) {
+function showNcrDetails(ncrNumber, date, supplier, status, prodNo, salesNo, processDetails, itemDescription, defectDescription, quantityReceived, quantityDefective, qualityRepName, nonConforming, engineeringNotNeeded) {
     const modalBody = document.getElementById("modalBodyContent");
 
     // Populate modal content with NCR details
@@ -39,12 +38,23 @@ function showNcrDetails(ncrNumber, date, supplier, status) {
         <p><strong>Date:</strong> ${date}</p>
         <p><strong>Supplier:</strong> ${supplier}</p>
         <p><strong>Status:</strong> ${status}</p>
+        <p><strong>Prod No:</strong> ${prodNo}</p>
+        <p><strong>Sales No:</strong> ${salesNo}</p>
+        <p><strong>Process Applicable:</strong> ${processDetails}</p>
+        <p><strong>Item Description (including SAP No.):</strong> ${itemDescription}</p>
+        <p><strong>Defect Description:</strong> ${defectDescription}</p>
+        <p><strong>Quantity Received:</strong> ${quantityReceived}</p>
+        <p><strong>Quantity Defective:</strong> ${quantityDefective}</p>
+        <p><strong>Quality Representative's Name:</strong> ${qualityRepName}</p>
+        <p><strong>Nonconforming Item:</strong> ${nonConforming}</p>
+        <p><strong>Engineering Not Needed:</strong> ${engineeringNotNeeded}</p>
     `;
 
     // Show the modal
     const modal = new bootstrap.Modal(document.getElementById('ncrDetailsModal'));
     modal.show();
 }
+
 
 //https://www.w3schools.com/w3css/w3css_modal.asp
 // https://www.w3schools.com/howto/howto_css_modals.asp
