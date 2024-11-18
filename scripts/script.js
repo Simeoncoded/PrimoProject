@@ -199,9 +199,17 @@ function showEditDetails(ncrNumber, date, supplier, status, prodNo, salesNo) {
         </form>
     `;
 
+
+    
+
     // Show the modal
     const editModal = new bootstrap.Modal(document.getElementById('editNcrModal'));
     editModal.show();
+}
+
+function saveNcrEdits() {
+    // Here you could add logic to validate or process the form if needed
+    alert("Form updated successfully");
 }
 
 
