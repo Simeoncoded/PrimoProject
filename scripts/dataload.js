@@ -77,8 +77,8 @@ ncr.forEach(form => {
             '<td>' + form.ncrDate + '</td>' +
             '<td>' + form.supplierName + '</td>' +
             '<td class="status-' + form.ncrStatus + '">' + form.ncrStatus + '</td>' +
-            '<td>   <button class="vbtn" onclick="showNcrEdit(' + form.ncrNum + ')">Edit</button>' +
-            '       <button class="vbtn" onclick="showNcrDetails(' + form.ncrNum + ',' + form.ncrDate + ')">Details</button></td>' + // Currently some weird issue where input data does not match output data on details
-        '</tr>') 
-        // showNcrEdit and showNcrDetails should link to an edit/details page filled with info pushed fromn here
+            '<td>   <button class="vbtn" onclick="showNcrEdit(' + form + ')">Edit</button>' +               // Add function to accept json object
+            '       <button class="vbtn" onclick="showNcrDetails(' + form + ')">Details</button></td>' +    // change function to accept json object
+        '</tr>')                                                                                            // showNcrEdit and showNcrDetails should link to an edit/details page and filled by json object
+       
 });
