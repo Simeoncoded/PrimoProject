@@ -38,9 +38,9 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Dashboard</a>
-                        </li>
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="ncrlog.html">NCR LOG</a>
                     </li>
                     <li class="nav-item">
@@ -51,7 +51,6 @@
                             Notifications <span id="notification-counter" class="badge bg-danger">0</span>
                         </a>
                     </li>
-                   
                 </ul>
             </div>
         </div>
@@ -59,8 +58,6 @@
 
     <main class="container my-5">
         <h2 class="mb-4" style="text-align: center;">Generate NCR Report</h2>
-
-
 
         <!-- Report Table -->
         <table class="table table-striped">
@@ -74,6 +71,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- First row -->
                 <tr>
                     <td>2023-003</td>
                     <td>2023-10-10</td>
@@ -81,230 +79,63 @@
                     <td class="status-filled">Open</td>
                     <td>
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download Report
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown1">
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as PDF</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as Word</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as Excel</a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
+                <!-- Second row -->
                 <tr>
                     <td>2023-003</td>
                     <td>2023-10-10</td>
                     <td>Alice Wonder</td>
                     <td class="status-filled">Open</td>
-
                     <td>
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download Report
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown2">
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as PDF</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as Word</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as Excel</a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
+                <!-- Third row -->
                 <tr>
                     <td>2023-004</td>
                     <td>2023-10-12</td>
                     <td>Catlin Doe</td>
                     <td class="status-empty">Closed</td>
-
                     <td>
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown3" data-bs-toggle="dropdown" aria-expanded="false">
                                 Download Report
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown3">
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as PDF</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as Word</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as Excel</a></li>
                             </ul>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>2023-003</td>
-                    <td>2023-10-10</td>
-                    <td>Alice Wonder</td>
-                    <td class="status-filled">Open</td>
-
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Download Report
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2023-005</td>
-                    <td>2023-10-10</td>
-                    <td> Joe Brown</td>
-                    <td class="status-filled">Open</td>
-
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Download Report
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2023-003</td>
-                    <td>2023-10-10</td>
-                    <td>Alice Wonder</td>
-                    <td class="status-filled">Open</td>
-
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Download Report
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2023-005</td>
-                    <td>2023-10-10</td>
-                    <td> Joe Brown</td>
-                    <td class="status-filled">Open</td>
-
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Download Report
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2023-005</td>
-                    <td>2023-10-10</td>
-                    <td> Joe Brown</td>
-                    <td class="status-filled">Open</td>
-
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Download Report
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2023-005</td>
-                    <td>2023-10-10</td>
-                    <td> Joe Brown</td>
-                    <td class="status-filled">Open</td>
-
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="downloadDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Download Report
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('pdf')">Download as
-                                        PDF</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('word')">Download as
-                                        Word</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="downloadReport('excel')">Download as
-                                        Excel</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
+                <!-- Additional rows would follow the same pattern -->
             </tbody>
         </table>
-        </div>
+
     </main>
 
-    <footer>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="ncrlog.html">NCR LOG</a>
-            <a href="create.html">Create NCR</a>
-        </div>
-        <p>&copy; 2024 . All rights reserved.</p>
-    </footer>
-
+    <!-- Add your scripts here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/page.js"></script>
-    <script>
-
-        function downloadReport(format) {
-            alert('Downloading report in ' + format + ' format.');
-
-        }
-    </script>
 </body>
-
 
 </html>

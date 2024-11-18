@@ -48,6 +48,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Dashboard</a>
                         </li>
+                        <li>
                         <a class="nav-link" href="ncrlog.html">NCR LOG</a>
                     </li>
                     <li class="nav-item">
@@ -66,7 +67,7 @@
 
     <main>
 
-        <section>
+       
             <div class="row dash">
                 <div class="col-12 col-md-4 mb-3">
                     <a href="create.html">
@@ -90,10 +91,10 @@
                     </a>
                 </div>
             </div>
-        </section>
+     
 
         <section class="recentdash">
-            <h2>View Recent NCR's</h2>
+            <h1>View Recent NCR's</h1>
             <div class="rdtable">
                 <table class="table" id="searchTable">
                     <thead>
@@ -121,7 +122,7 @@
                             <td>2023-10-10</td>
                             <td> Alice Brown</td>
                             <td class="status-filled">Open </td>
-                            <td><button class="vbtn">Edit</button>
+                            <td><button class="vbtn" onclick="showEditDetails('2023-002', '2023-10-10', 'Alice Brown', 'Filled')">Edit</button>
                                 <button class="vbtn"
                                     onclick="showNcrDetails('2023-002', '2023-10-10', 'Alice', 'Open')">Details</button>
                             </td>
@@ -131,19 +132,19 @@
                             <td>2023-10-10</td>
                             <td>Alice Wonder</td>
                             <td class="status-filled">Open</td>
-                            <td><button class="vbtn">Edit</button>
+                            <td><button class="vbtn" onclick="showEditDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Filled')">Edit</button>
                                 <button class="vbtn"
                                     onclick="showNcrDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Open')">Details</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>2023-003</td>
+                            <td>2023-004</td>
                             <td>2023-10-10</td>
-                            <td>Alice Wonder</td>
+                            <td>Hult Wonder</td>
                             <td class="status-filled">Open</td>
-                            <td><button class="vbtn">Edit</button>
+                            <td><button class="vbtn" onclick="showEditDetails('2023-004', '2023-10-10', 'Hult Wonder', 'Filled')">Edit</button>
                                 <button class="vbtn"
-                                    onclick="showNcrDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Open')">Details</button>
+                                    onclick="showNcrDetails('2023-004', '2023-10-10', 'Hult Wonder', 'Open')">Details</button>
                             </td>
                         </tr>
                     </tbody>
@@ -160,7 +161,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBodyContent">
-                        <!-- add stuff here for more  -->
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
