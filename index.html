@@ -46,20 +46,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-<<<<<<< HEAD
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="new.html">New</a>
-                        </li>
-                        <li>
-=======
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Dashboard</a>
                     </li>
                     <li>
->>>>>>> ceca133a485827d46a5679b056f69864e0919545
                         <a class="nav-link" href="ncrlog.html">NCR LOG</a>
                     </li>
                     <li class="nav-item">
@@ -105,7 +95,7 @@
         <section class="recentdash">
             <h1>View Recent NCR's</h1>
             <div class="rdtable">
-                <table class="table" id="searchTable">
+                <table class="table" id="ncrTable">
                     <thead>
                         <tr>
                             <th>NCR Number</th>
@@ -116,63 +106,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>2023-001</td>
-                            <td>2023-10-12</td>
-                            <td>John Doe</td>
-                            <td class="status-empty">Closed</td>
-                            <td><button class="vbtn"
-                                    onclick="showEditDetails('2023-001', '2023-10-12', 'John Doe', 'Not Filled')">Edit</button>
-                                <button class="vbtn" onclick="showNcrDetails('2023-001', '2023-10-12', 'John Doe', 'Closed','123414','231313',
-                                    'yes','wood','little termite','20','5','tom links','no','no')">Details</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-002</td>
-                            <td>2023-10-10</td>
-                            <td>Alice Brown</td>
-                            <td class="status-filled">Open</td>
-                            <td><button class="vbtn"
-                                    onclick="showEditDetails('2023-002', '2023-10-10', 'Alice Brown', 'Filled')">Edit</button>
-                                <button class="vbtn" onclick="showNcrDetails('2023-002', '2023-10-10', 'Alice Brown', 'Open','324567','654321',
-                                    'no','metal','large crack','30','3','bradford inc','yes','yes')">Details</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-003</td>
-                            <td>2023-10-10</td>
-                            <td>Alice Wonder</td>
-                            <td class="status-filled">Open</td>
-                            <td><button class="vbtn"
-                                    onclick="showEditDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Filled')">Edit</button>
-                                <button class="vbtn"
-                                    onclick="showNcrDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Open','567890','987654',
-                                    'yes','plastic','cracked corner','15','2','northern ltd','no','yes')">Details</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-004</td>
-                            <td>2023-10-10</td>
-                            <td>Hult Wonder</td>
-                            <td class="status-filled">Open</td>
-                            <td><button class="vbtn"
-                                    onclick="showEditDetails('2023-004', '2023-10-10', 'Hult Wonder', 'Filled')">Edit</button>
-                                <button class="vbtn"
-                                    onclick="showNcrDetails('2023-004', '2023-10-10', 'Hult Wonder', 'Open','678901','543210',
-                                    'no','concrete','small dent','40','4','prime building','yes','no')">Details</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2023-005</td>
-                            <td>2023-10-16</td>
-                            <td>Jay Doe</td>
-                            <td class="status-empty">Closed</td>
-                            <td><button class="vbtn"
-                                    onclick="showEditDetails('2023-005', '2023-10-16', 'Jay Doe', 'Closed')">Edit</button>
-                                <button class="vbtn" onclick="showNcrDetails('2023-005', '2023-10-16', 'Jay Doe', 'Closed','234567','876543',
-                                    'yes','brick','cracked','10','3','city works','no','no')">Details</button>
-                            </td>
-                        </tr>
+                     
+                        
                     </tbody>
                 </table>
             </div>
@@ -222,6 +157,38 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
 
+ 
+    <script>
+        function renderTable() {
+    const ncrTableBody = document.querySelector('#ncrTable tbody');
+    ncrTableBody.innerHTML = ''; // Clear existing rows
+
+    // Retrieve NCR data from localStorage
+    const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+
+    // Populate table rows
+    ncrs.forEach(ncr => {
+        const row = document.createElement('tr');
+
+        // Randomly assign status as "Open" or "Closed"
+        const status = Math.random() > 0.5 ? 'Open' : 'Closed';
+
+        row.innerHTML = `
+            <td>${ncr.ncr_no}</td>
+            <td>${ncr.date}</td>
+            <td>${ncr.supplier_name}</td>
+            <td>${status}</td>
+            <td><button>Edit</button> <button>Details</button></td>
+        `;
+        ncrTableBody.appendChild(row);
+    });
+}
+
+    
+        // Render table on page load
+        document.addEventListener('DOMContentLoaded', renderTable);
+    </script>
+    
     <script src="scripts/page.js"></script>
     <script src="scripts/script.js"></script>
 

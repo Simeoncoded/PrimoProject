@@ -25,7 +25,7 @@
     localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
 
     // Redirect to home page
-    window.location.href = 'new.html';
+    window.location.href = 'index.html';
 });
 
 
