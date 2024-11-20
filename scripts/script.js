@@ -1,3 +1,34 @@
+ // Form submission handler
+ document.getElementById('ncrForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent page refresh
+
+    // Collect form data
+    const ncrData = {
+        ncr_no: document.getElementById('ncr_no').value,
+        date: document.getElementById('date').value,
+        process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
+        supplier_name: document.getElementById('supplier_name').value,
+        po_prod_no: document.getElementById('po_prod_no').value,
+        sales_order_no: document.getElementById('sales_order_no').value,
+        item_description: document.getElementById('item_description').value,
+        defect_description: document.getElementById('defect_description').value,
+        quantity_received: document.getElementById('quantity_received').value,
+        quantity_defective: document.getElementById('quantity_defective').value,
+        quality_rep_name: document.getElementById('quality_rep_name').value,
+        nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
+        ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value
+    };
+
+    // Store data in localStorage
+    const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
+    existingNCRs.push(ncrData);
+    localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
+
+    // Redirect to home page
+    window.location.href = 'new.html';
+});
+
+
 const form = document.querySelector('form');
 const notificationCounter = document.getElementById('notification-counter');
 

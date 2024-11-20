@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-striped" id="ncrTable">
+        <thead>
+            <tr>
+                <th>NCR No.</th>
+                <th>Date</th>
+                <th>Supplier Name</th>
+                <th>PO/Prod. No.</th>
+                <th>Quantity Received</th>
+                <th>Quantity Defective</th>
+                <th>Quality Rep</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- NCR data will be injected here -->
+        </tbody>
+    </table>
+    
+    <script>
+        function renderTable() {
+            const ncrTableBody = document.querySelector('#ncrTable tbody');
+            ncrTableBody.innerHTML = ''; // Clear existing rows
+    
+            // Retrieve NCR data from localStorage
+            const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+    
+            // Populate table rows
+            ncrs.forEach(ncr => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${ncr.ncr_no}</td>
+                    <td>${ncr.date}</td>
+                    <td>${ncr.supplier_name}</td>
+                    <td>${ncr.po_prod_no}</td>
+                    <td>${ncr.quantity_received}</td>
+                    <td>${ncr.quantity_defective}</td>
+                    <td>${ncr.quality_rep_name}</td>
+                `;
+                ncrTableBody.appendChild(row);
+            });
+        }
+    
+        // Render table on page load
+        document.addEventListener('DOMContentLoaded', renderTable);
+    </script>
+    
+</body>
+</html>
