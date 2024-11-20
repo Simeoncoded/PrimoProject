@@ -29,7 +29,8 @@
             </a>
 
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="navbarDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     More Options
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -45,6 +46,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Dashboard</a>
                         </li>
@@ -52,6 +54,12 @@
                             <a class="nav-link" href="new.html">New</a>
                         </li>
                         <li>
+=======
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li>
+>>>>>>> ceca133a485827d46a5679b056f69864e0919545
                         <a class="nav-link" href="ncrlog.html">NCR LOG</a>
                     </li>
                     <li class="nav-item">
@@ -62,39 +70,37 @@
                             Notifications <span id="notification-counter" class="badge bg-danger">0</span>
                         </a>
                     </li>
-                   
+
                 </ul>
             </div>
         </div>
     </nav>
 
     <main>
-
-       
-            <div class="row dash">
-                <div class="col-12 col-md-4 mb-3">
-                    <a href="create.html">
-                        <div class="dcont">
-                            <p>CREATE NCR</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-3">
-                    <a href="ncrlog.html">
-                        <div class="dcont">
-                            <p>NCR LOG</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 mb-3">
-                    <a href="report.html">
-                        <div class="dcont">
-                            <p>REPORTS</p>
-                        </div>
-                    </a>
-                </div>
+        <div class="row dash">
+            <div class="col-12 col-md-4 mb-3">
+                <a href="create.html">
+                    <div class="dcont">
+                        <p>CREATE NCR</p>
+                    </div>
+                </a>
             </div>
-     
+            <div class="col-12 col-md-4 mb-3">
+                <a href="ncrlog.html">
+                    <div class="dcont">
+                        <p>NCR LOG</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <a href="report.html">
+                    <div class="dcont">
+                        <p>REPORTS</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
 
         <section class="recentdash">
             <h1>View Recent NCR's</h1>
@@ -115,9 +121,9 @@
                             <td>2023-10-12</td>
                             <td>John Doe</td>
                             <td class="status-empty">Closed</td>
-                            <td><button class="vbtn" onclick="showEditDetails('2023-001', '2023-10-12', 'John Doe', 'Not Filled')">Edit</button>
-                                <button class="vbtn"
-                                    onclick="showNcrDetails('2023-001', '2023-10-12', 'John Doe', 'Closed','123414','231313',
+                            <td><button class="vbtn"
+                                    onclick="showEditDetails('2023-001', '2023-10-12', 'John Doe', 'Not Filled')">Edit</button>
+                                <button class="vbtn" onclick="showNcrDetails('2023-001', '2023-10-12', 'John Doe', 'Closed','123414','231313',
                                     'yes','wood','little termite','20','5','tom links','no','no')">Details</button>
                             </td>
                         </tr>
@@ -126,9 +132,9 @@
                             <td>2023-10-10</td>
                             <td>Alice Brown</td>
                             <td class="status-filled">Open</td>
-                            <td><button class="vbtn" onclick="showEditDetails('2023-002', '2023-10-10', 'Alice Brown', 'Filled')">Edit</button>
-                                <button class="vbtn"
-                                    onclick="showNcrDetails('2023-002', '2023-10-10', 'Alice Brown', 'Open','324567','654321',
+                            <td><button class="vbtn"
+                                    onclick="showEditDetails('2023-002', '2023-10-10', 'Alice Brown', 'Filled')">Edit</button>
+                                <button class="vbtn" onclick="showNcrDetails('2023-002', '2023-10-10', 'Alice Brown', 'Open','324567','654321',
                                     'no','metal','large crack','30','3','bradford inc','yes','yes')">Details</button>
                             </td>
                         </tr>
@@ -137,7 +143,8 @@
                             <td>2023-10-10</td>
                             <td>Alice Wonder</td>
                             <td class="status-filled">Open</td>
-                            <td><button class="vbtn" onclick="showEditDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Filled')">Edit</button>
+                            <td><button class="vbtn"
+                                    onclick="showEditDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Filled')">Edit</button>
                                 <button class="vbtn"
                                     onclick="showNcrDetails('2023-003', '2023-10-10', 'Alice Wonder', 'Open','567890','987654',
                                     'yes','plastic','cracked corner','15','2','northern ltd','no','yes')">Details</button>
@@ -148,7 +155,8 @@
                             <td>2023-10-10</td>
                             <td>Hult Wonder</td>
                             <td class="status-filled">Open</td>
-                            <td><button class="vbtn" onclick="showEditDetails('2023-004', '2023-10-10', 'Hult Wonder', 'Filled')">Edit</button>
+                            <td><button class="vbtn"
+                                    onclick="showEditDetails('2023-004', '2023-10-10', 'Hult Wonder', 'Filled')">Edit</button>
                                 <button class="vbtn"
                                     onclick="showNcrDetails('2023-004', '2023-10-10', 'Hult Wonder', 'Open','678901','543210',
                                     'no','concrete','small dent','40','4','prime building','yes','no')">Details</button>
@@ -159,9 +167,9 @@
                             <td>2023-10-16</td>
                             <td>Jay Doe</td>
                             <td class="status-empty">Closed</td>
-                            <td><button class="vbtn" onclick="showEditDetails('2023-005', '2023-10-16', 'Jay Doe', 'Closed')">Edit</button>
-                                <button class="vbtn"
-                                    onclick="showNcrDetails('2023-005', '2023-10-16', 'Jay Doe', 'Closed','234567','876543',
+                            <td><button class="vbtn"
+                                    onclick="showEditDetails('2023-005', '2023-10-16', 'Jay Doe', 'Closed')">Edit</button>
+                                <button class="vbtn" onclick="showNcrDetails('2023-005', '2023-10-16', 'Jay Doe', 'Closed','234567','876543',
                                     'yes','brick','cracked','10','3','city works','no','no')">Details</button>
                             </td>
                         </tr>
@@ -179,7 +187,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBodyContent">
-                        
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -196,12 +204,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="editModalBodyContent">
-                        
+
                     </div>
                 </div>
             </div>
         </div>
-        
+
 
     </main>
 
