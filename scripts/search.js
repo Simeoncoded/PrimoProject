@@ -1,14 +1,5 @@
-const statusTypes = {
-    closed: "Closed",
-    engineer: "Engineer",
-    procurement: "Procurement",
-    quality_inspector: "Quality Inspector",
-    open: "Open",
-    archived: "Archived"
-};
-
-function updateSearch() { // Help from https://www.w3schools.com/howto/howto_js_filter_table.asp
-    const srcTable = document.getElementById("searchTable");
+function updateSearch() {
+    const srcTable = document.getElementById("ncrTable"); // Match your table ID
     const srcTableRows = srcTable.getElementsByTagName("tr");
 
     const ncrNum = document.getElementById("searchInputNumber").value.toLowerCase();
@@ -19,13 +10,17 @@ function updateSearch() { // Help from https://www.w3schools.com/howto/howto_js_
     for (let x = 1; x < srcTableRows.length; x++) { // Start from 1 to skip header row
         const row = srcTableRows[x];
         const tableNum = row.getElementsByTagName("td")[0]?.textContent.toLowerCase();
-        const tableDate = new Date(row.getElementsByTagName("td")[1]?.textContent);
-        const tableStatus = row.getElementsByTagName("td")[3]?.textContent.trim().toLowerCase(); // Normalize status text
+        const tableDate = new Date(row.getElementsByTagName("td")[1]?.textContent.trim()); // Trim whitespace
+        const tableStatus = row.getElementsByTagName("td")[3]?.textContent.trim().toLowerCase();
+
+        // Validate date parsing
+        const isValidDate = tableDate instanceof Date && !isNaN(tableDate);
 
         // Apply filters
-        const matchesNumber = !ncrNum || tableNum.includes(ncrNum);
-        const matchesDate = (!ncrDateFrom || tableDate >= ncrDateFrom) && (!ncrDateTo || tableDate <= ncrDateTo);
-        const matchesStatus = !ncrStatus || tableStatus === ncrStatus;
+        const matchesNumber = !ncrNum || (tableNum && tableNum.includes(ncrNum));
+        const matchesDate = (!ncrDateFrom || (isValidDate && tableDate >= ncrDateFrom)) &&
+                            (!ncrDateTo || (isValidDate && tableDate <= ncrDateTo));
+        const matchesStatus = !ncrStatus || (tableStatus && tableStatus === ncrStatus);
 
         // Show row if all filters match
         row.style.display = matchesNumber && matchesDate && matchesStatus ? "" : "none";
