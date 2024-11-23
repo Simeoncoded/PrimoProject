@@ -108,15 +108,18 @@ a{
 }
 .search-sec{
     margin: 0 auto;
-    width: 90%;
+    width: 86%;
 }
 .searchcon{
     margin: 0 auto;
-    width: 50%;
-
+    width: 70%;
 }
 .searchcon h1{
     text-align: center;
+    margin: 20px;
+}
+.srcdiv{
+    padding-top: 10px;
 }
 .theForm{
     padding-top:40px ;

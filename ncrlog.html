@@ -74,15 +74,19 @@
     <main>
         <section class="search-sec">
             <div class="searchcon">
-                <h1>Search NCR</h1>
+                <h1>NCR LOG's</h1>
                 <form>
-                    <div class="theFormOne">
+                    <div class="srcdiv">
                         <label for="searchInputNumber">NCR Number:</label>
                         <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber"
                             onchange="updateSearch()">
 
+                            <label for="searchSupplier">Supplier:</label>
+                            <input type="text" name="ncrsup" placeholder="Search NCR Supplier" id="searchSupplier"
+                                onchange="updateSearch()">
 
-                        <!-- Changed to a dropdown list for NCR Status -->
+
+                       
                         <label for="ncrstatus">NCR Status:</label>
                         <select name="ncrstatus" id="ncrstatus" onchange="updateSearch()">
                             <option value="">Select Status</option>
@@ -93,9 +97,8 @@
                             <option value="Open">Open</option>
                             <option value="Archived">Archived</option>
                         </select>
-                    </div>
-
-                    <div class="theForm">
+                  </div>
+                   <div class="srcdiv">
                         <label for="ncrdatefrom">NCR Date (FROM):</label>
                         <input type="date" name="ncrdatefrom" id="ncrdatefrom" onchange="updateSearch()">
 
