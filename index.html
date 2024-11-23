@@ -158,39 +158,46 @@
     </footer>
 
  
+    
+    <script src="scripts/page.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/dataload.js"></script>
+
     <script>
         function renderTable() {
-    const ncrTableBody = document.querySelector('#ncrTable tbody');
-    ncrTableBody.innerHTML = ''; // Clear existing rows
-
-    // Retrieve NCR data from localStorage
-    const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
-
-    // Populate table rows
-    ncrs.forEach(ncr => {
-        const row = document.createElement('tr');
-
-        // Randomly assign status as "Open" or "Closed"
-        const status = Math.random() > 0.5 ? 'Open' : 'Closed';
-
-        row.innerHTML = `
-            <td>${ncr.ncr_no}</td>
-            <td>${ncr.date}</td>
-            <td>${ncr.supplier_name}</td>
-            <td>${status}</td>
-            <td><button>Edit</button> <button>Details</button></td>
-        `;
-        ncrTableBody.appendChild(row);
-    });
-}
-
+            const ncrTableBody = document.querySelector('#ncrTable tbody');
+            ncrTableBody.innerHTML = ''; // Clear existing rows
+    
+            // Retrieve NCR data from localStorage
+            const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+    
+            // Sort NCRs by date (if applicable) and take the 5 most recent
+            const recentNcrs = ncrs
+                .sort((a, b) => new Date(b.date) - new Date(a.date)) // Sort by date descending
+                .slice(0, 5); // Get the first 5 entries
+    
+            // Populate table rows
+            recentNcrs.forEach(ncr => {
+                const row = document.createElement('tr');
+    
+                // Randomly assign status as "Open" or "Closed"
+                const status = Math.random() > 0.5 ? 'Open' : 'Closed';
+    
+                row.innerHTML = `
+                    <td>${ncr.ncr_no}</td>
+                    <td>${ncr.date}</td>
+                    <td>${ncr.supplier_name}</td>
+                    <td>${status}</td>
+                    <td><button>Edit</button> <button>Details</button></td>
+                `;
+                ncrTableBody.appendChild(row);
+            });
+        }
     
         // Render table on page load
         document.addEventListener('DOMContentLoaded', renderTable);
     </script>
     
-    <script src="scripts/page.js"></script>
-    <script src="scripts/script.js"></script>
 
 </body>
 
