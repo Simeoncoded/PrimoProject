@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -27,22 +27,6 @@
             <a class="navbar-brand" href="index.html">
                 <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
             </a>
-
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="navbarDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    More Options
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="help.html">Help</a></li>
-                    <li><a class="dropdown-item" href="report.html">Report</a></li>
-                </ul>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">+</span>
-            </button>
-
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -55,12 +39,39 @@
                     <li class="nav-item">
                         <a class="nav-link" href="create.html">Create NCR Form</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="engineering.html">
-                            Notifications <span id="notification-counter" class="badge bg-danger">0</span>
-                        </a>
-                    </li>
 
+
+                </ul>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">+</span>
+            </button>
+            <ul class="navbar-nav ms-auto">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="engineering.html">
+                        <i class="fa fa-bell" aria-hidden="true"></i> <span id="notification-counter"
+                            class="badge bg-danger">0</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">
+                        Login</a>
+                </li>
+
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="navbarDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    More Options
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="help.html">Help</a></li>
+                    <li><a class="dropdown-item" href="report.html">Report</a></li>
                 </ul>
             </div>
         </div>
@@ -106,8 +117,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                     
-                        
+
+
                     </tbody>
                 </table>
             </div>
@@ -157,8 +168,8 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
 
- 
-    
+
+
     <script src="scripts/page.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/dataload.js"></script>
@@ -167,22 +178,22 @@
         function renderTable() {
             const ncrTableBody = document.querySelector('#ncrTable tbody');
             ncrTableBody.innerHTML = ''; // Clear existing rows
-    
+
             // Retrieve NCR data from localStorage
             const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
-    
+
             // Sort NCRs by date (if applicable) and take the 5 most recent
             const recentNcrs = ncrs
                 .sort((a, b) => new Date(b.date) - new Date(a.date)) // Sort by date descending
                 .slice(0, 5); // Get the first 5 entries
-    
+
             // Populate table rows
             recentNcrs.forEach(ncr => {
                 const row = document.createElement('tr');
-    
+
                 // Randomly assign status as "Open" or "Closed"
                 const status = Math.random() > 0.5 ? 'Open' : 'Closed';
-    
+
                 row.innerHTML = `
                     <td>${ncr.ncr_no}</td>
                     <td>${ncr.date}</td>
@@ -193,11 +204,11 @@
                 ncrTableBody.appendChild(row);
             });
         }
-    
+
         // Render table on page load
         document.addEventListener('DOMContentLoaded', renderTable);
     </script>
-    
+
 
 </body>
 
