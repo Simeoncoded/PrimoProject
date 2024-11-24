@@ -108,14 +108,14 @@
                     <fieldset>
                         <legend class="form-label fw-bold">Identify Process Applicable:*</legend>
                         <span id="identifyError" class="text-danger" style="display: none; font-size: 0.9em;">Please
-                            select one of the checkboxes</span>
+                            select one of the radio buttons</span>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="supplier" name="process"
+                            <input class="form-check-input" type="radio" id="supplier" name="process"
                                 value="Supplier or Rec-Insp">
                             <label class="form-check-label" for="supplier">Supplier or Rec-Insp</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="wip" name="process" value="WIP">
+                            <input class="form-check-input" type="radio" id="wip" name="process" value="WIP">
                             <label class="form-check-label" for="wip">WIP (Production Order)</label>
                         </div>
                     </fieldset>
@@ -125,6 +125,19 @@
                 <!-- Supplier Name -->
                 <div class="col-12 col-md-6 mb-3">
                     <label for="supplier_name" class="form-label">Supplier Name*</label>
+                    <button id="openModalBtn">Add Supplier</button>
+                    <div id="supplierModal" class="modal">
+                        <div class="modal-content">
+                          <span class="close">&times;</span>
+                          <h2>Add Supplier</h2>
+                          <form id="supplierForm">
+                            <label for="supplierName">Supplier Name:</label>
+                            <input type="text" id="supplierName" name="supplierName" required>
+                            <button type="submit">Add</button>
+                          </form>
+                        </div>
+                      </div>
+                      
                     <span id="supplierError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a Supplier</span>
                     <select class="form-control" id="supplier_name" name="supplier_name" required aria-required="true">
                         <option value="">Select a supplier</option>
@@ -302,7 +315,43 @@
         });
     </script>
 
-
+<script>
+    // Get modal and button elements
+    var modal = document.getElementById("supplierModal");
+    var openModalBtn = document.getElementById("openModalBtn");
+    var closeModalBtn = document.getElementsByClassName("close")[0];
+  
+    // Open modal when button is clicked
+    openModalBtn.onclick = function() {
+      modal.style.display = "block";
+    }
+  
+    // Close modal when 'x' is clicked
+    closeModalBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+  
+    // Close modal if user clicks outside of the modal content
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  
+    // Handle supplier form submission
+    document.getElementById("supplierForm").onsubmit = function(event) {
+      event.preventDefault();  // Prevent form submission
+      
+      var supplierName = document.getElementById("supplierName").value;
+      
+      if (supplierName) {
+        alert("Supplier " + supplierName + " added!"); // You can replace this with actual logic to display the supplier name on the page
+        document.getElementById("supplierName").value = "";  // Clear input field
+        modal.style.display = "none";  // Close modal
+      }
+    }
+  </script>
+  
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
