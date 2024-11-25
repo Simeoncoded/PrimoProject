@@ -183,19 +183,17 @@
 
             // Retrieve NCR data from localStorage
             const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+            console.log(ncrs)
 
             // Populate table rows
             ncrs.forEach(ncr => {
                 const row = document.createElement('tr');
 
-                // Randomly assign status as "Open" or "Closed"
-                const status = Math.random() > 0.5 ? 'Open' : 'Closed';
-
                 row.innerHTML = `
             <td>${ncr.ncr_no}</td>
             <td>${ncr.date}</td>
             <td>${ncr.supplier_name}</td>
-            <td>${status}</td>
+            <td>${ncr.status}</td>
             <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}">Edit</button> <button class="vbtn" name="btnDetails">Details</button></td>
         `; // onclick="location.href='edit.html'"
                 ncrTableBody.appendChild(row);

@@ -90,12 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 quality_rep_name: document.getElementById('quality_rep_name').value,
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
+                status: "open"
             };
 
             // Store data in localStorage
             const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
+            console.log(ncrData.ncr_no)
 
             // Increment notification counter
             incrementNotificationCount();

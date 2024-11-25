@@ -311,22 +311,23 @@
 
 
 
-    <script>
+<!--<script>
         var tooltipTriggerList = Array.from(document.querySelectorAll('.tooltip-icon'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl, {
                 trigger: 'click'  // Set the trigger to 'click' instead of hover
             });
         });
-    </script>
+    </script> -->
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             function generateNcrNumber() {
                 const year = new Date().getFullYear();
-                const randomNum = Math.floor(Math.random() * 1000);
-                const paddedNumber = randomNum.toString().padStart(3, '0');
+                const currentNumber = Number(localStorage.getItem('ncrLastNum')) + 1 || 1;
+                const paddedNumber = currentNumber.toString().padStart(3, '0');
 
+                localStorage.setItem('ncrLastNum', currentNumber) // Do this after submission or saving of form
                 const ncrNumber = `${year}-${paddedNumber}`;
                 return ncrNumber;
             }
@@ -336,6 +337,13 @@
                 ncrInput.value = generateNcrNumber();
                 //changes the ncr no textbox to read able only
                 ncrInput.setAttribute("disabled", true);
+            }
+
+            const dateInput = document.getElementById("date")
+            if (dateInput) {
+                dateInput.value = new Date().toISOString().substring(0,10);
+                //changes the ncr no textbox to read able only
+                dateInput.setAttribute("disabled", true);
             }
         });
     </script>
