@@ -324,6 +324,7 @@ window.addEventListener("load", function () {
         return;
     }
 
+<<<<<<< HEAD
     // Populate NCR number and date fields
     const ncrInput = document.getElementById("ncr_no");
     const dateInput = document.getElementById("date");
@@ -410,8 +411,31 @@ window.addEventListener("load", function () {
                 alert("Please enter a supplier name.");
             }
         });
-    </script>
+=======
+            ncrInput = document.getElementById("ncr_no")
+            ncrInput.setAttribute("disabled", true);
+            dateInput = document.getElementById("date")
+            dateInput.setAttribute("disabled", true);
+            
+            //document.querySelectorAll('input[name="process"]:checked') Change to Radio First
+            supplierInput = document.getElementById('supplier_name')
+            prodInput = document.getElementById('po_prod_no')
+            salesInput = document.getElementById('sales_order_no')
+            itemInput = document.getElementById('item_description')
+            defectInput = document.getElementById('defect_description')
+            recievedInput = document.getElementById('quantity_received')
+            defectiveInput = document.getElementById('quantity_defective')
+            repInput = document.getElementById('quality_rep_name')
+            conformInput = document.querySelectorAll('input[name="nonconforming"]')
+            engInput = document.querySelectorAll('input[name="ennotneeded"]')
 
+            ncrInput.value = thisNcr.ncr_no
+            dateInput.value = new Date().toISOString().substring(0,10);
+            supplierInput.value = thisNcr.supplier_name
+            });
+
+>>>>>>> c3bfe74fe19d7ee450bf464e55ae9ddee86660a1
+    </script>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
