@@ -80,14 +80,13 @@
         <form id="ncrForm">
 
             <div class="row ">
-                <!-- NCR No. -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="ncr_no" class="form-label">NCR No.*</label>
-                    <input type="number" class="form-control" id="ncr_no" name="ncr_no" aria-required="true"
-                        placeholder="Enter NCR Number">
-                    <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is
-                        required</span>
-                </div>
+               <!-- NCR No. -->
+               <div class="col-12 col-md-6 mb-3">
+                <label for="ncr_no" class="form-label">NCR No.*</label>
+                <input type="text" class="form-control" id="ncr_no" name="ncr_no"  aria-required="true"
+                    placeholder="Enter NCR Number">
+                <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is required.</span>
+            </div>
 
                 <!-- Date -->
                 <div class="col-12 col-md-6 mb-3">
@@ -282,7 +281,7 @@
                 </form>
             </div>
         </div>
-       
+
         <div id="supplierModal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -328,6 +327,7 @@
             const ncrInput = document.getElementById("ncr_no");
             if (ncrInput) {
                 ncrInput.value = generateNcrNumber();
+                //changes the ncr no textbox to read able only
                 ncrInput.setAttribute("disabled", true);
             }
         });
@@ -385,6 +385,7 @@
         });
     </script>
 
+  
 
 
 
