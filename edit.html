@@ -268,6 +268,20 @@
     <script src="scripts/inspect.js"></script>
     <script src="scripts/dataload.js"></script>
 
+    <script>
+
+    window.addEventListener("load", function (){
+
+            ncrnum = localStorage.getItem('selectedNcr')
+            ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+
+            txtnum = document.getElementById("ncr_no")
+            txtnum.value = ncrnum 
+            });
+
+
+    </script>
+
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

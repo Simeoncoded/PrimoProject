@@ -81,12 +81,12 @@
                         <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber"
                             onchange="updateSearch()">
 
-                            <label for="searchSupplier">Supplier:</label>
-                            <input type="text" name="ncrsup" placeholder="Search NCR Supplier" id="searchSupplier"
-                                onchange="updateSearch()">
+                        <label for="searchSupplier">Supplier:</label>
+                        <input type="text" name="ncrsup" placeholder="Search NCR Supplier" id="searchSupplier"
+                            onchange="updateSearch()">
 
 
-                       
+
                         <label for="ncrstatus">NCR Status:</label>
                         <select name="ncrstatus" id="ncrstatus" onchange="updateSearch()">
                             <option value="">Select Status</option>
@@ -97,8 +97,8 @@
                             <option value="Open">Open</option>
                             <option value="Archived">Archived</option>
                         </select>
-                  </div>
-                   <div class="srcdiv">
+                    </div>
+                    <div class="srcdiv">
                         <label for="ncrdatefrom">NCR Date (FROM):</label>
                         <input type="date" name="ncrdatefrom" id="ncrdatefrom" onchange="updateSearch()">
 
@@ -126,7 +126,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                       
+
                     </tbody>
                 </table>
             </div>
@@ -141,7 +141,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalBodyContent">
-                        
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -158,13 +158,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="editModalBodyContent">
-                        
+
                     </div>
                 </div>
             </div>
         </div>
-        
-        
+
+
 
 
     </main>
@@ -178,33 +178,43 @@
     </footer>
     <script>
         function renderTable() {
-    const ncrTableBody = document.querySelector('#ncrTable tbody');
-    ncrTableBody.innerHTML = ''; // Clear existing rows
+            const ncrTableBody = document.querySelector('#ncrTable tbody');
+            ncrTableBody.innerHTML = ''; // Clear existing rows
 
-    // Retrieve NCR data from localStorage
-    const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+            // Retrieve NCR data from localStorage
+            const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
 
-    // Populate table rows
-    ncrs.forEach(ncr => {
-        const row = document.createElement('tr');
+            // Populate table rows
+            ncrs.forEach(ncr => {
+                const row = document.createElement('tr');
 
-        // Randomly assign status as "Open" or "Closed"
-        const status = Math.random() > 0.5 ? 'Open' : 'Closed';
+                // Randomly assign status as "Open" or "Closed"
+                const status = Math.random() > 0.5 ? 'Open' : 'Closed';
 
-        row.innerHTML = `
+                row.innerHTML = `
             <td>${ncr.ncr_no}</td>
             <td>${ncr.date}</td>
             <td>${ncr.supplier_name}</td>
             <td>${status}</td>
-            <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
-        `;
-        ncrTableBody.appendChild(row);
-    });
-}
+            <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}">Edit</button> <button class="vbtn" name="btnDetails">Details</button></td>
+        `; // onclick="location.href='edit.html'"
+                ncrTableBody.appendChild(row);
+            });
+        }
 
-    
         // Render table on page load
         document.addEventListener('DOMContentLoaded', renderTable);
+
+        window.addEventListener("load", function () {
+            document.querySelector('#ncrTable tbody').addEventListener("click", function (ev) {
+                const target = ev.target
+                if (target.classList.contains("vbtn")) {
+                    ev.preventDefault()
+                    localStorage.setItem('selectedNcr', target.id)
+                    window.location.href = "edit.html"
+                }
+            });
+        });
     </script>
 
     <!-- Bootstrap JS and dependencies -->
