@@ -272,10 +272,22 @@
     window.addEventListener("load", function (){
 
             ncrnum = localStorage.getItem('selectedNcr')
-            ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+            ncrs = JSON.parse(localStorage.getItem('ncrs'));
+            ncrHere = {}
 
-            txtnum = document.getElementById("ncr_no")
-            txtnum.value = ncrnum 
+            ncrs.forEach(ncr => {
+                if (ncr.ncr_no == ncrnum){
+                    thisNcr = ncr
+                }
+            });
+
+            ncrInput = document.getElementById("ncr_no")
+            ncrInput.setAttribute("disabled", true);
+            dateInput = document.getElementById("date")
+            dateInput.setAttribute("disabled", true);
+
+            ncrInput.value = thisNcr.ncr_no
+            dateInput.value = new Date().toISOString().substring(0,10);
             });
 
 
