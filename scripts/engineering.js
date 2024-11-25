@@ -4,7 +4,7 @@ function validateForm() {
     const fields = [
         { id: "ncr_no", errorId: "ncrNoError" },
         { id: "review_engineering", errorId: "review_engineeringError" },
-        { id: "disposition", errorId: null }, // No error ID provided for disposition in your code
+        { id: "disposition", errorId: "dispositionError" },
         { id: "original_revision", errorId: "original_revisionError" },
         { id: "updated_revision", errorId: "updated_revisionError" },
         { id: "engineer_name", errorId: "engineer_nameError" },
