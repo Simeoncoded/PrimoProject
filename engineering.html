@@ -87,7 +87,7 @@
                     <label for="ncr_no" class="form-label">NCR No.*</label>
                     <input type="text" class="form-control" id="ncr_no" name="ncr_no" required aria-required="true"
                         placeholder="Enter NCR Number">
-                    <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is required</span>
+                    <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is required.</span>
                 </div>
         
                 <!-- Date -->
@@ -113,7 +113,7 @@
                         <option value="scrap">Scrap</option>
                     </select>
                     <span id="review_engineeringError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Field is required</span>
+                        Engineering review is required.</span>
                 </div>
         
                 <!-- Customer Notification -->
@@ -152,8 +152,8 @@
         
                 <!-- Original Revision Number -->
                 <div class="col-12 col-md-6 mb-3">
-                    <label for="original_revision" class="form-label">Original Revision Number*</label>
-                    <input type="text" class="form-control" id="original_revision" name="original_revision"
+                    <label for="original_revision" class="form-label">Version Number*</label>
+                    <input type="number" class="form-control" id="original_revision" name="original_revision"
                         placeholder="Enter original revision number">
                     <span id="original_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
                         Field is required</span>
@@ -162,7 +162,7 @@
                 <!-- Updated Revision Number -->
                 <div class="col-12 col-md-6 mb-3">
                     <label for="updated_revision" class="form-label">Updated Revision Number*</label>
-                    <input type="text" class="form-control" id="updated_revision" name="updated_revision"
+                    <input type="number" class="form-control" id="updated_revision" name="updated_revision"
                         placeholder="Enter updated revision number">
                     <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
                         Field is required</span>
@@ -239,6 +239,8 @@
             const ncrInput = document.getElementById("ncr_no");
             if (ncrInput) {
                 ncrInput.value = generateNcrNumber();
+                //changes the ncr no textbox to read able only
+                ncrInput.setAttribute("disabled", true);
             }
         });
     </script>

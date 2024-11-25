@@ -106,9 +106,7 @@
                 <!-- Identify Process Applicable -->
                 <div class="col-12 col-md-6 mb-3">
                     <fieldset>
-                        <legend class="form-label fw-bold">Identify Process Applicable:*</legend>
-                        <span id="identifyError" class="text-danger" style="display: none; font-size: 0.9em;">Please
-                            select one of the radio buttons</span>
+                        <legend class="form-label fw-bold">Identify Process Applicable:*</legend>                        
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="supplier" name="process"
                                 value="Supplier or Rec-Insp">
@@ -117,8 +115,10 @@
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="wip" name="process" value="WIP">
                             <label class="form-check-label" for="wip">WIP (Production Order)</label>
-                        </div>
+                        </div>                        
                     </fieldset>
+                    <span id="identifyError" class="text-danger" style="display: none; font-size: 0.9em;">Please
+                        select one of the radio buttons</span>
                 </div>
 
 
@@ -137,8 +137,7 @@
                           </form>
                         </div>
                       </div>
-                      
-                    <span id="supplierError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a Supplier</span>
+                                          
                     <select class="form-control" id="supplier_name" name="supplier_name" required aria-required="true">
                         <option value="">Select a supplier</option>
                         <option value="acme_supplies">Acme Supplies</option>
@@ -152,6 +151,7 @@
                         <option value="mega_supplies">Mega Supplies Co.</option>
                         <option value="top_choice">Top Choice Suppliers</option>
                     </select>
+                    <span id="supplierError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a Supplier</span>
                 </div>
                 
             </div>
@@ -162,7 +162,7 @@
                 <!-- PO or Prod. No. -->
                 <div class="col-12 col-md-6 mb-3">
                     <label for="po_prod_no" class="form-label">PO or Prod. No.*</label>
-                    <input type="text" class="form-control" id="po_prod_no" name="po_prod_no" required
+                    <input type="number" class="form-control" id="po_prod_no" name="po_prod_no" required
                         aria-required="true" placeholder="Enter product Number">
                     <span id="prodError" class="text-danger" style="display: none; font-size: 0.9em;">Prod. No is
                         required</span>
@@ -171,7 +171,7 @@
                 <!-- Sales Order No. -->
                 <div class="col-12 col-md-6 mb-3">
                     <label for="sales_order_no" class="form-label">Sales Order No.*</label>
-                    <input type="text" class="form-control" id="sales_order_no" name="sales_order_no" required
+                    <input type="number" class="form-control" id="sales_order_no" name="sales_order_no" required
                         aria-required="true" placeholder="Enter sales order number">
                     <span id="salesError" class="text-danger" style="display: none; font-size: 0.9em;">Sales Order No.
                         is required</span>
@@ -311,6 +311,7 @@
             const ncrInput = document.getElementById("ncr_no");
             if (ncrInput) {
                 ncrInput.value = generateNcrNumber();
+                ncrInput.setAttribute("disabled", true);
             }
         });
     </script>

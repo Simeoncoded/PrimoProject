@@ -1,6 +1,15 @@
 let btnSub = document.getElementById("btnSubmit");
 
-function validateForm() { 
+document.getElementById("ncr_no").addEventListener("input", function () {
+    const ncrNumberInput = document.getElementById("ncr_no");
+
+    if (ncrNumberInput.value.trim()) {
+        ncrNumberInput.setAttribute("readonly", true);
+    }
+});
+
+
+function validateForm() {
     // variabels for required fields
     const ncrNum = document.getElementById("ncr_no");
     const date = document.getElementById("date");
@@ -38,7 +47,7 @@ function validateForm() {
 
     const desItemError = document.getElementById("desItemError");
     desItemError.style.display = "none";
-    
+
     const desDefectError = document.getElementById("desDefectError");
     desDefectError.style.display = "none";
 
@@ -50,7 +59,7 @@ function validateForm() {
 
     const qualityError = document.getElementById("qualityError");
     qualityError.style.display = "none";
-    
+
     const itemMarkError = document.getElementById("itemMarkError");
     itemMarkError.style.display = "none";
 
@@ -58,17 +67,17 @@ function validateForm() {
     enginNotMarkedError.style.display = "none";
 
     // resets all field border
-    const fields = [ncrNum, date, supplierName, poProdNo, salesOrderNo, itemDescription, 
-                    defectDescription, quantityReceived, quantityDefective, qualityRepName];
-    fields.forEach(field => field.style.border = "1px solid #ced4da"); 
+    const fields = [ncrNum, date, supplierName, poProdNo, salesOrderNo, itemDescription,
+        defectDescription, quantityReceived, quantityDefective, qualityRepName];
+    fields.forEach(field => field.style.border = "1px solid #ced4da");
 
     // validation for all fields
-    if (!ncrNum.value.trim()) {
-        ncrNum.style.border = "2px solid red";
-        //displays the error message in red below the field of input
-        ncrNumError.style.display = "inline"; 
-        isValid = false;
-    }
+    // if (!ncrNum.value.trim()) {
+    //     ncrNum.style.border = "2px solid red";
+    //     //displays the error message in red below the field of input
+    //     ncrNumError.style.display = "inline"; 
+    //     isValid = false;
+    // }    
 
     if (!date.value) {
         date.style.border = "2px solid red";
@@ -77,26 +86,26 @@ function validateForm() {
     }
 
     if (idCheckBox.length === 0) {
-        document.querySelector('input[name="process"]').parentNode.style.border = "2px solid red";
-        identifyError.style.display ="inline";
+        //document.querySelector('input[name="process"]').parentNode.style.border = "2px solid red";
+        identifyError.style.display = "inline";
         isValid = false;
     }
 
     if (!supplierName.value.trim()) {
         supplierName.style.border = "2px solid red";
-        supplierError.style.display ="inline";
+        supplierError.style.display = "inline";
         isValid = false;
     }
 
     if (!poProdNo.value.trim()) {
         poProdNo.style.border = "2px solid red";
-        prodError.style.display ="inline";
+        prodError.style.display = "inline";
         isValid = false;
     }
 
     if (!salesOrderNo.value.trim()) {
         salesOrderNo.style.border = "2px solid red";
-        salesError.style.display ="inline";
+        salesError.style.display = "inline";
         isValid = false;
     }
 
@@ -155,7 +164,7 @@ function clearError(inputId, errorId) {
 
     inputField.addEventListener("input", function () {
         if (inputField.value.trim()) {
-            inputField.style.border = "1px solid #ced4da"; 
+            inputField.style.border = "1px solid #ced4da";
             errorMessage.style.display = "none";
         }
     });
@@ -166,8 +175,8 @@ clearError("supplier_name", "supplierError");
 clearError("po_prod_no", "prodError");
 clearError("sales_order_no", "salesError");
 clearError("item_description", "desItemError");
-clearError("defect_description","desDefectError");
-clearError("quantity_received","quanRecievedError");
+clearError("defect_description", "desDefectError");
+clearError("quantity_received", "quanRecievedError");
 clearError("quantity_defective", "quanDefectiveError");
 clearError("quality_rep_name", "qualityError");
 
@@ -181,13 +190,13 @@ function clearChkBxError(inputName, errorId) {
         radio.addEventListener("change", function () {
             // If the radio is selected, clear the error
             if (document.querySelector(`input[name="${inputName}"]:checked`)) {
-                errorMessage.style.display = "none"; 
-                radioGroup.forEach((r) => (r.parentNode.style.border = "none")); 
+                errorMessage.style.display = "none";
+                radioGroup.forEach((r) => (r.parentNode.style.border = "none"));
             }
         });
     });
 }
-clearChkBxError("nonconforming","itemMarkError");
-clearChkBxError("ennotneeded","enginNotMarkedError");
+clearChkBxError("nonconforming", "itemMarkError");
+clearChkBxError("ennotneeded", "enginNotMarkedError");
 
 btnSub.addEventListener("click", validateForm);
