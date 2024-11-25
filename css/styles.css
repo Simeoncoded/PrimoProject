@@ -10,18 +10,20 @@ main {
     flex: 1;
 }
 
-.navsty{
-    background-color:#fff;
+.navsty {
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(55, 7, 107, 0.1);
 
-    
+
 }
-.navbar-toggler-icon{
+
+.navbar-toggler-icon {
     background-color: black;
     border: none;
     color: #fff;
 }
-.navbar-collapse{
+
+.navbar-collapse {
     margin-right: 45em;
 }
 
@@ -56,37 +58,42 @@ footer a {
     right: 20px;
     display: none;
 }
-.dash{
+
+.dash {
     width: 70%;
     margin: 0 auto;
     margin-top: 40px;
 }
-.dcont{
+
+.dcont {
     background-color: #5897c9;
     height: 140px;
     border-radius: 10px;
 }
-.dcont p{
+
+.dcont p {
     text-align: center;
     color: #fff;
     font-size: 1.5em;
     padding: 45px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.recentdash h1{
+.recentdash h1 {
     text-align: center;
     margin: 30px;
     margin-top: 50px;
 }
-.rdtable{
+
+.rdtable {
     width: 75%;
     margin: 0 auto;
 }
-.vbtn{
+
+.vbtn {
     background: transparent;
     padding: 10px;
     width: 100px;
@@ -94,42 +101,51 @@ a{
 
 }
 
-.fa-bell{
+.fa-bell {
     font-size: 25px;
 }
-.vbtn:hover{
+
+.vbtn:hover {
     background: #5897c9;
     border: none;
     color: #fff;
     transition: 0.3s ease-in-out;
 }
 
-.btnsub{
+.btnsub {
     width: 100px;
 }
-.search-sec{
+
+.search-sec {
     margin: 0 auto;
     width: 86%;
 }
-.searchcon{
+
+.searchcon {
     margin: 0 auto;
     width: 70%;
 }
-.searchcon h1{
+
+.searchcon h1 {
     text-align: center;
     margin: 20px;
 }
-.srcdiv{
+
+.srcdiv {
     padding-top: 10px;
 }
-.theForm{
-    padding-top:40px ;
+
+.theForm {
+    padding-top: 40px;
 }
-.theFormOne{
+
+.theFormOne {
     padding-top: 20px;
 }
+
 .searchcon input[type="text"],
-.searchcon input[type="date"],select {
+.searchcon input[type="date"],
+select {
     width: 200px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -137,7 +153,8 @@ a{
     font-size: 14px;
     color: #333;
 }
-.btnSub{
+
+.btnSub {
     margin-top: 20px;
     background-color: blue;
     color: #fff;
@@ -148,7 +165,7 @@ a{
 
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
     .navbar-nav {
         margin-left: 68em;
     }
@@ -157,7 +174,7 @@ a{
 
 /* modal stuff need to widen it */
 .wide-modal {
-    max-width: 800px; 
+    max-width: 800px;
 }
 
 /* made it dynamic */
@@ -175,38 +192,50 @@ a{
 
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-  }
-  
-  .modal-content {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 400px;
-  }
-  
-  .close {
+}
+
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-  
+}
+
+.tooltip-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}

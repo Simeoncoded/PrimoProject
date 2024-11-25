@@ -8,30 +8,48 @@ function validateForm() {
         { id: "original_revision", errorId: "original_revisionError" },
         { id: "updated_revision", errorId: "updated_revisionError" },
         { id: "engineer_name", errorId: "engineer_nameError" },
-        { id: "revision_date", errorId: "revision_dateError" },
+        { id: "revision_date", errorId: "revision_dateError", dateErrorId: "revision_dateYearError" },
         { id: "engineering", errorId: "engineeringError" },
-        { id: "engineering_date", errorId: "engineering_dateError" },
+        { id: "engineering_date", errorId: "engineering_dateError", dateErrorId: "engineering_dateYearError" },
     ];
 
     let isValid = true;
 
-    fields.forEach(({ id, errorId }) => {
+    fields.forEach(({ id, errorId, dateErrorId }) => {
         const field = document.getElementById(id);
         const errorElement = errorId ? document.getElementById(errorId) : null;
+        const dateErrorElement = dateErrorId ? document.getElementById(dateErrorId) : null;
 
         // Reset error states
         field.style.border = "";
         if (errorElement) {
             errorElement.style.display = "none";
         }
+        if (dateErrorElement) {
+            dateErrorElement.style.display = "none";
+        }
 
-        // Validate field
+        // Validate required fields and dropdowns
         if (!field.value.trim() || (field.id === "review_engineering" && field.value === "Select disposition")) {
             field.style.border = "2px solid red";
             if (errorElement) {
                 errorElement.style.display = "inline";
             }
             isValid = false;
+        }
+
+        // Date validation: Check if the selected date is within the current year
+        if ((field.id === "revision_date" || field.id === "engineering_date") && field.value) {
+            const selectedDate = new Date(field.value);
+            const currentYear = new Date().getFullYear();
+
+            if (selectedDate.getFullYear() !== currentYear) {
+                field.style.border = "2px solid red";
+                if (dateErrorElement) {
+                    dateErrorElement.style.display = "inline";
+                }
+                isValid = false;
+            }
         }
     });
 
@@ -47,6 +65,10 @@ function clearValidation(event) {
     const errorElement = document.getElementById(`${field.id}Error`);
     if (errorElement) {
         errorElement.style.display = "none";
+    }
+    const dateErrorElement = document.getElementById(`${field.id}YearError`);
+    if (dateErrorElement) {
+        dateErrorElement.style.display = "none";
     }
 }
 

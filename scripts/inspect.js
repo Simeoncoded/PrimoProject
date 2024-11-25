@@ -1,5 +1,6 @@
 let btnSub = document.getElementById("btnSubmit");
 
+// Disable the NCR number field after input (readonly)
 document.getElementById("ncr_no").addEventListener("input", function () {
     const ncrNumberInput = document.getElementById("ncr_no");
 
@@ -8,9 +9,8 @@ document.getElementById("ncr_no").addEventListener("input", function () {
     }
 });
 
-
 function validateForm() {
-    // variabels for required fields
+    // Variables for required fields
     const ncrNum = document.getElementById("ncr_no");
     const date = document.getElementById("date");
     const idCheckBox = document.querySelectorAll('input[name="process"]:checked');
@@ -26,138 +26,126 @@ function validateForm() {
     const enginNotNeeded = document.querySelector('input[name="ennotneeded"]:checked');
 
     let isValid = true;
-    //Error messages 
-    const ncrNumError = document.getElementById("ncrNoError");
-    ncrNumError.style.display = "none";
 
-    const dateError = document.getElementById("dateError");
-    dateError.style.display = "none";
+    // Get current year
+    const currentYear = new Date().getFullYear();
 
-    const identifyError = document.getElementById("identifyError");
-    identifyError.style.display = "none";
+    // Reset error messages
+    const errorFields = [
+        "ncrNoError",
+        "dateError",
+        "identifyError",
+        "supplierError",
+        "prodError",
+        "salesError",
+        "desItemError",
+        "desDefectError",
+        "quanRecievedError",
+        "quanDefectiveError",
+        "qualityError",
+        "itemMarkError",
+        "enginNotMarkedError"
+    ];
+    errorFields.forEach(errorId => (document.getElementById(errorId).style.display = "none"));
 
-    const supplierError = document.getElementById("supplierError");
-    supplierError.style.display = "none";
-
-    const prodError = document.getElementById("prodError");
-    prodError.style.display = "none";
-
-    const salesError = document.getElementById("salesError");
-    salesError.style.display = "none";
-
-    const desItemError = document.getElementById("desItemError");
-    desItemError.style.display = "none";
-
-    const desDefectError = document.getElementById("desDefectError");
-    desDefectError.style.display = "none";
-
-    const quanRecievedError = document.getElementById("quanRecievedError");
-    quanRecievedError.style.display = "none";
-
-    const quanDefectiveError = document.getElementById("quanDefectiveError");
-    quanDefectiveError.style.display = "none";
-
-    const qualityError = document.getElementById("qualityError");
-    qualityError.style.display = "none";
-
-    const itemMarkError = document.getElementById("itemMarkError");
-    itemMarkError.style.display = "none";
-
-    const enginNotMarkedError = document.getElementById("enginNotMarkedError");
-    enginNotMarkedError.style.display = "none";
-
-    // resets all field border
+    // Reset field borders
     const fields = [ncrNum, date, supplierName, poProdNo, salesOrderNo, itemDescription,
         defectDescription, quantityReceived, quantityDefective, qualityRepName];
     fields.forEach(field => field.style.border = "1px solid #ced4da");
 
-    // validation for all fields
-    // if (!ncrNum.value.trim()) {
-    //     ncrNum.style.border = "2px solid red";
-    //     //displays the error message in red below the field of input
-    //     ncrNumError.style.display = "inline"; 
-    //     isValid = false;
-    // }    
-
+    // Validation for each field
     if (!date.value) {
         date.style.border = "2px solid red";
-        dateError.style.display = "inline";
+        document.getElementById("dateError").style.display = "inline"; // Date is required message
+        isValid = false;
+    } else if (new Date(date.value).getFullYear() !== currentYear) {
+        date.style.border = "2px solid red";
+        document.getElementById("dateYearError").style.display = "inline"; // Valid year message
         isValid = false;
     }
 
     if (idCheckBox.length === 0) {
-        //document.querySelector('input[name="process"]').parentNode.style.border = "2px solid red";
-        identifyError.style.display = "inline";
+        document.getElementById("identifyError").style.display = "inline";
         isValid = false;
     }
 
     if (!supplierName.value.trim()) {
         supplierName.style.border = "2px solid red";
-        supplierError.style.display = "inline";
+        document.getElementById("supplierError").style.display = "inline";
         isValid = false;
     }
 
     if (!poProdNo.value.trim()) {
         poProdNo.style.border = "2px solid red";
-        prodError.style.display = "inline";
+        document.getElementById("prodError").style.display = "inline";
         isValid = false;
     }
 
     if (!salesOrderNo.value.trim()) {
         salesOrderNo.style.border = "2px solid red";
-        salesError.style.display = "inline";
+        document.getElementById("salesError").style.display = "inline";
         isValid = false;
     }
 
     if (!itemDescription.value.trim()) {
         itemDescription.style.border = "2px solid red";
-        desItemError.style.display = "inline";
+        document.getElementById("desItemError").style.display = "inline";
         isValid = false;
     }
 
     if (!defectDescription.value.trim()) {
         defectDescription.style.border = "2px solid red";
-        desDefectError.style.display = "inline";
+        document.getElementById("desDefectError").style.display = "inline";
         isValid = false;
     }
 
     if (!quantityReceived.value || quantityReceived.value <= 0) {
         quantityReceived.style.border = "2px solid red";
-        quanRecievedError.style.display = "inline";
+        document.getElementById("quanRecievedError").style.display = "inline";
         isValid = false;
     }
 
     if (!quantityDefective.value || quantityDefective.value < 0) {
         quantityDefective.style.border = "2px solid red";
-        quanDefectiveError.style.display = "inline";
+        document.getElementById("quanDefectiveError").style.display = "inline";
+        isValid = false;
+    }
+
+    // Additional validation: Quantity Defective <= Quantity Received
+    if (parseInt(quantityDefective.value) > parseInt(quantityReceived.value)) {
+        quantityDefective.style.border = "2px solid red";
+        document.getElementById("quanDefectiveError").style.display = "inline";
+        document.getElementById("quanDefectiveError").textContent =
+            "Quantity Defective cannot be greater than Quantity Received.";
         isValid = false;
     }
 
     if (!qualityRepName.value.trim()) {
         qualityRepName.style.border = "2px solid red";
-        qualityError.style.display = "inline";
-
+        document.getElementById("qualityError").style.display = "inline";
         isValid = false;
     }
 
     if (!nonconforming) {
         document.querySelector('input[name="nonconforming"]').parentNode.style.border = "2px solid red";
-        itemMarkError.style.display = "inline";
+        document.getElementById("itemMarkError").style.display = "inline";
         isValid = false;
     }
 
     if (!enginNotNeeded) {
         document.querySelector('input[name="ennotneeded"]').parentNode.style.border = "2px solid red";
-        enginNotMarkedError.style.display = "inline";
+        document.getElementById("enginNotMarkedError").style.display = "inline";
         isValid = false;
     }
 
-    // Submit if all fields are valid
+    // Submit the form if all validations pass
     if (isValid) {
         document.getElementById("ncrForm").submit();
     }
 }
-//made it dynamic so it works with most of the text box stuff
+
+
+// Clear error on input
 function clearError(inputId, errorId) {
     const inputField = document.getElementById(inputId);
     const errorMessage = document.getElementById(errorId);
@@ -171,6 +159,7 @@ function clearError(inputId, errorId) {
 }
 
 clearError("date", "dateError");
+clearError("date","dateYearError");
 clearError("supplier_name", "supplierError");
 clearError("po_prod_no", "prodError");
 clearError("sales_order_no", "salesError");
@@ -180,15 +169,12 @@ clearError("quantity_received", "quanRecievedError");
 clearError("quantity_defective", "quanDefectiveError");
 clearError("quality_rep_name", "qualityError");
 
-
-//https://stackoverflow.com/questions/10339073/how-to-validate-radio-button-using-javascript
 function clearChkBxError(inputName, errorId) {
     const radioGroup = document.getElementsByName(inputName);
     const errorMessage = document.getElementById(errorId);
 
     radioGroup.forEach((radio) => {
         radio.addEventListener("change", function () {
-            // If the radio is selected, clear the error
             if (document.querySelector(`input[name="${inputName}"]:checked`)) {
                 errorMessage.style.display = "none";
                 radioGroup.forEach((r) => (r.parentNode.style.border = "none"));
@@ -196,7 +182,9 @@ function clearChkBxError(inputName, errorId) {
         });
     });
 }
+
 clearChkBxError("nonconforming", "itemMarkError");
 clearChkBxError("ennotneeded", "enginNotMarkedError");
 
+// Add event listener to validate form
 btnSub.addEventListener("click", validateForm);
