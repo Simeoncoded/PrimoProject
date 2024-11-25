@@ -1,12 +1,12 @@
 Create Validation
     Require Identify Process
-    Quantity Recieved must be less than Quantity Defective
+    Quantity Recieved must be less than Quantity Defective -- DONE(SIMEON)
 
 Index / Dashboard
     Link Edit and Detail buttons the same as in NCR Log
 
 Edit Page
-    Change Identify Process to Radio Button
+    Change Identify Process to Radio Button -- DONE (SIMEON)
     Fill in rest of information from data
     Read Supplier Names from Supplier JSON
 
