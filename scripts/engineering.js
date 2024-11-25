@@ -2,7 +2,7 @@ let btnSub = document.getElementById("btnSubmit");
 
 function validateForm() {
     const ncrNum = document.getElementById("ncr_no");
-    const date = document.getElementById("date");
+    //const date = document.getElementById("date");
     const review_engineering = document.getElementById("review_engineering");
     const disposition = document.getElementById("disposition");
     const original_revision = document.getElementById("original_revision");
@@ -16,8 +16,8 @@ function validateForm() {
     const ncrNumError = document.getElementById("ncrNoError");
     ncrNumError.style.display = "none";
 
-    const dateError = document.getElementById("dateError");
-    dateError.style.display = "none";
+    // const dateError = document.getElementById("dateError");
+    // dateError.style.display = "none";
 
     const review_engineeringError = document.getElementById("review_engineeringError");
     review_engineeringError.style.display = "none";
@@ -48,11 +48,11 @@ function validateForm() {
         isValid = false;
     }
 
-    if (!date.value) {
-        date.style.border = "2px solid red";
-        dateError.style.display = "inline";
-        isValid = false;
-    }
+    // if (!date.value) {
+    //     date.style.border = "2px solid red";
+    //     dateError.style.display = "inline";
+    //     isValid = false;
+    // }
 
     if (!review_engineering.value || review_engineering.value === "Select disposition") {
         review_engineering.style.border = "2px solid red";
