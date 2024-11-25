@@ -60,7 +60,7 @@ function validateForm() {
     // resets all field border
     const fields = [ncrNum, date, supplierName, poProdNo, salesOrderNo, itemDescription, 
                     defectDescription, quantityReceived, quantityDefective, qualityRepName];
-    fields.forEach(field => field.style.border = "1px solid #ced4da"); // defalut Bootstrap border
+    fields.forEach(field => field.style.border = "1px solid #ced4da"); 
 
     // validation for all fields
     if (!ncrNum.value.trim()) {
@@ -148,5 +148,46 @@ function validateForm() {
         document.getElementById("ncrForm").submit();
     }
 }
+//made it dynamic so it works with most of the text box stuff
+function clearError(inputId, errorId) {
+    const inputField = document.getElementById(inputId);
+    const errorMessage = document.getElementById(errorId);
+
+    inputField.addEventListener("input", function () {
+        if (inputField.value.trim()) {
+            inputField.style.border = "1px solid #ced4da"; 
+            errorMessage.style.display = "none";
+        }
+    });
+}
+
+clearError("date", "dateError");
+clearError("supplier_name", "supplierError");
+clearError("po_prod_no", "prodError");
+clearError("sales_order_no", "salesError");
+clearError("item_description", "desItemError");
+clearError("defect_description","desDefectError");
+clearError("quantity_received","quanRecievedError");
+clearError("quantity_defective", "quanDefectiveError");
+clearError("quality_rep_name", "qualityError");
+
+
+//https://stackoverflow.com/questions/10339073/how-to-validate-radio-button-using-javascript
+function clearChkBxError(inputName, errorId) {
+    const radioGroup = document.getElementsByName(inputName);
+    const errorMessage = document.getElementById(errorId);
+
+    radioGroup.forEach((radio) => {
+        radio.addEventListener("change", function () {
+            // If the radio is selected, clear the error
+            if (document.querySelector(`input[name="${inputName}"]:checked`)) {
+                errorMessage.style.display = "none"; 
+                radioGroup.forEach((r) => (r.parentNode.style.border = "none")); 
+            }
+        });
+    });
+}
+clearChkBxError("nonconforming","itemMarkError");
+clearChkBxError("ennotneeded","enginNotMarkedError");
 
 btnSub.addEventListener("click", validateForm);
