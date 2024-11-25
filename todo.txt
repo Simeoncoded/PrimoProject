@@ -8,7 +8,12 @@ Index / Dashboard
 Edit Page
     Change Identify Process to Radio Button
     Fill in rest of information from data
+    Read Supplier Names from Supplier JSON
 
 Details Page
     Copy/Paste Edit Page to here
     Change Date to show NCR date instead of edit date
+
+Necessary JSON
+    Supplier Names
+    
