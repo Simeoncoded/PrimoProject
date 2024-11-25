@@ -99,7 +99,10 @@
             <div class="row">
                 <!-- Review by CF Engineering -->
                 <div class="col-12 col-md-6 mb-3">
-                    <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
+                    <label for="review_engineering" class="form-label">Review by CF Engineering*
+                        <span class="tooltip-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="This is where you select the engineering review disposition, such as 'Use as is', 'Repair', 'Rework', or 'Scrap'.">?</span>
+                    </label>
                     <select id="review_engineering" class="form-select" name="review_engineering" aria-required="true">
                         <option value="" disabled selected>Select disposition</option>
                         <option value="use_as_is">Use as is</option>
@@ -241,6 +244,15 @@
 
 
     <script src="scripts/page.js"></script>
+
+    <script>
+        var tooltipTriggerList = Array.from(document.querySelectorAll('.tooltip-icon'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, {
+                trigger: 'click'  // Tooltip trigger set to 'click'
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
