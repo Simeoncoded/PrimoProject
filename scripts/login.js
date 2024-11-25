@@ -1,4 +1,3 @@
-
 loggedUser = {role:"admin"}
 
 const userRoles = {
