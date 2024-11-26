@@ -9,57 +9,8 @@ document.getElementById("ncr_no").addEventListener("input", function () {
     }
 });
 
-// Function to clear error messages and reset borders
-function clearError(field, errorId) {
-    if (field) field.style.border = "1px solid #ced4da";
-    const errorField = document.getElementById(errorId);
-    if (errorField) errorField.style.display = "none";
-}
+function validateForm() {
 
-// Add event listeners to clear errors when input changes
-function attachClearErrorListeners() {
-    const errorMappings = [
-        { field: "date", error: "dateError" },
-        { field: "date", error: "dateYearError" },
-        { field: "supplier_name", error: "supplierError" },
-        { field: "po_prod_no", error: "prodError" },
-        { field: "sales_order_no", error: "salesError" },
-        { field: "item_description", error: "desItemError" },
-        { field: "defect_description", error: "desDefectError" },
-        { field: "quantity_received", error: "quanRecievedError" },
-        { field: "quantity_defective", error: "quanDefectiveError" },
-        { field: "quality_rep_name", error: "qualityError" },
-    ];
-
-    errorMappings.forEach(({ field, error }) => {
-        const inputField = document.getElementById(field);
-        if (inputField) {
-            inputField.addEventListener("input", () => clearError(inputField, error));
-        }
-    });
-
-    // For checkboxes and radio buttons
-    const processCheckboxes = document.querySelectorAll('input[name="process"]');
-    processCheckboxes.forEach(checkbox =>
-        checkbox.addEventListener("change", () => clearError(null, "identifyError"))
-    );
-
-    const nonconformingRadios = document.querySelectorAll('input[name="nonconforming"]');
-    nonconformingRadios.forEach(radio =>
-        radio.addEventListener("change", () => clearError(null, "itemMarkError"))
-    );
-
-    const enginNotNeededRadios = document.querySelectorAll('input[name="ennotneeded"]');
-    enginNotNeededRadios.forEach(radio =>
-        radio.addEventListener("change", () => clearError(null, "enginNotMarkedError"))
-    );
-}
-
-attachClearErrorListeners();
-
-function validateForm(event) {
-    // Prevent default form submission
-    event.preventDefault();
 
     // Variables for required fields
     const ncrNum = document.getElementById("ncr_no");
@@ -81,14 +32,37 @@ function validateForm(event) {
     // Get current year
     const currentYear = new Date().getFullYear();
 
+    // Reset error messages
+    const errorFields = [
+        "ncrNoError",
+        "dateError",
+        "identifyError",
+        "supplierError",
+        "prodError",
+        "salesError",
+        "desItemError",
+        "desDefectError",
+        "quanRecievedError",
+        "quanDefectiveError",
+        "qualityError",
+        "itemMarkError",
+        "enginNotMarkedError"
+    ];
+    errorFields.forEach(errorId => (document.getElementById(errorId).style.display = "none"));
+
+    // Reset field borders
+    const fields = [ncrNum, date, supplierName, poProdNo, salesOrderNo, itemDescription,
+        defectDescription, quantityReceived, quantityDefective, qualityRepName];
+    fields.forEach(field => field.style.border = "1px solid #ced4da");
+
     // Validation for each field
     if (!date.value) {
         date.style.border = "2px solid red";
-        document.getElementById("dateError").style.display = "inline";
+        document.getElementById("dateError").style.display = "inline"; // Date is required message
         isValid = false;
     } else if (new Date(date.value).getFullYear() !== currentYear) {
         date.style.border = "2px solid red";
-        document.getElementById("dateYearError").style.display = "inline";
+        document.getElementById("dateYearError").style.display = "inline"; // Valid year message
         isValid = false;
     }
 
@@ -139,6 +113,7 @@ function validateForm(event) {
         isValid = false;
     }
 
+    // Additional validation: Quantity Defective <= Quantity Received
     if (parseInt(quantityDefective.value) > parseInt(quantityReceived.value)) {
         quantityDefective.style.border = "2px solid red";
         document.getElementById("quanDefectiveError").style.display = "inline";
@@ -167,8 +142,50 @@ function validateForm(event) {
 
     // Submit the form if all validations pass
     if (isValid) {
-        document.getElementById("ncrForm").submit();
+        document.getElementById("ncrForm").submit();  // Manually submit the form after validation
     }
 }
 
+// Clear error on input
+function clearError(inputId, errorId) {
+    const inputField = document.getElementById(inputId);
+    const errorMessage = document.getElementById(errorId);
+
+    inputField.addEventListener("input", function () {
+        if (inputField.value.trim()) {
+            inputField.style.border = "1px solid #ced4da";
+            errorMessage.style.display = "none";
+        }
+    });
+}
+
+clearError("date", "dateError");
+clearError("date","dateYearError");
+clearError("supplier_name", "supplierError");
+clearError("po_prod_no", "prodError");
+clearError("sales_order_no", "salesError");
+clearError("item_description", "desItemError");
+clearError("defect_description", "desDefectError");
+clearError("quantity_received", "quanRecievedError");
+clearError("quantity_defective", "quanDefectiveError");
+clearError("quality_rep_name", "qualityError");
+
+function clearChkBxError(inputName, errorId) {
+    const radioGroup = document.getElementsByName(inputName);
+    const errorMessage = document.getElementById(errorId);
+
+    radioGroup.forEach((radio) => {
+        radio.addEventListener("change", function () {
+            if (document.querySelector(`input[name="${inputName}"]:checked`)) {
+                errorMessage.style.display = "none";
+                radioGroup.forEach((r) => (r.parentNode.style.border = "none"));
+            }
+        });
+    });
+}
+
+clearChkBxError("nonconforming", "itemMarkError");
+clearChkBxError("ennotneeded", "enginNotMarkedError");
+
+// Add event listener to validate form
 btnSub.addEventListener("click", validateForm);
