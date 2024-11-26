@@ -201,7 +201,7 @@
                     <td>${ncr.date}</td>
                     <td>${ncr.supplier_name}</td>
                     <td>${status}</td>
-                    <td><button class="vbtn">Edit</button> <button class="vbtn">Details</button></td>
+                    <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}">Edit</button> <button class="vbtn">Details</button></td>
                 `;
                 ncrTableBody.appendChild(row);
             });
@@ -209,6 +209,17 @@
 
         // Render table on page load
         document.addEventListener('DOMContentLoaded', renderTable);
+
+        window.addEventListener("load", function () {
+            document.querySelector('#ncrTable tbody').addEventListener("click", function (ev) {
+                const target = ev.target
+                if (target.classList.contains("vbtn")) {
+                    ev.preventDefault()
+                    localStorage.setItem('selectedNcr', target.id)
+                    window.location.href = "edit.html"
+                }
+            });
+        });
     </script>
 
 

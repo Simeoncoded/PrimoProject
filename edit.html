@@ -270,8 +270,7 @@
                             </div>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-primary btnsub" id="btnSubmit">Submit</button>
-                            <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
+                            <button type="submit" class="btn btn-primary btnsub" id="btnSubmit">Save</button>
                         </div>
                     </form>
                 </div>
@@ -289,6 +288,129 @@
                 </form>
             </div>
         </div>
+        <!-- engineering section -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    ENGINEERING SECTION EDIT
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <form id="engineeringForm">
+        
+                        <div class="row">
+                            <!-- Review by CF Engineering -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
+                                <select id="review_engineering" class="form-select" name="review_engineering" aria-required="true">
+                                    <option value="" disabled selected>Select disposition</option>
+                                    <option value="use_as_is">Use as is</option>
+                                    <option value="repair">Repair</option>
+                                    <option value="rework">Rework</option>
+                                    <option value="scrap">Scrap</option>
+                                </select>
+                                <span id="review_engineeringError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Review by CF Engineering is required.
+                                </span>
+                            </div>
+        
+                            <!-- Customer Notification -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="customer_notification" class="form-label">Does Customer Require Notification of NCR?</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="customer_notification_yes" name="customer_notification" value="yes">
+                                    <label class="form-check-label" for="customer_notification_yes">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="customer_notification_no" name="customer_notification" value="no">
+                                    <label class="form-check-label" for="customer_notification_no">No</label>
+                                </div>
+                                <span id="customer_notificationError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Please select whether customer notification is required.
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <!-- Disposition -->
+                            <div class="col-12 mb-3">
+                                <label for="disposition" class="form-label">Disposition*</label>
+                                <textarea class="form-control" id="disposition" name="disposition" rows="3" required placeholder="Provide disposition details"></textarea>
+                                <span id="dispositionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Disposition details are required.
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <!-- Original Revision Number -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="original_revision" class="form-label">Version Number*</label>
+                                <input type="number" class="form-control" id="original_revision" name="original_revision" placeholder="Enter original revision number">
+                                <span id="original_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Version Number is required.
+                                </span>
+                            </div>
+        
+                            <!-- Updated Revision Number -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="updated_revision" class="form-label">Updated Revision Number*</label>
+                                <input type="number" class="form-control" id="updated_revision" name="updated_revision" placeholder="Enter updated revision number">
+                                <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Updated Revision Number is required.
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <!-- Engineer Name -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="engineer_name" class="form-label">Name of Engineer*</label>
+                                <input type="text" class="form-control" id="engineer_name" name="engineer_name" placeholder="Enter Engineer's Name">
+                                <span id="engineer_nameError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Engineer Name is required.
+                                </span>
+                            </div>
+        
+                            <!-- Revision Date -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="revision_date" class="form-label">Revision Date*</label>
+                                <input type="date" class="form-control" id="revision_date" name="revision_date">
+                                <span id="revision_dateError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Revision Date is required.
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <!-- Engineering Details -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="engineering" class="form-label">Engineering Details*</label>
+                                <input type="text" class="form-control" id="engineering" name="engineering" placeholder="Enter engineering details">
+                                <span id="engineeringError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Engineering details are required.
+                                </span>
+                            </div>
+        
+                            <!-- Engineering Date -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="engineering_date" class="form-label">Engineering Date*</label>
+                                <input type="date" class="form-control" id="engineering_date" name="engineering_date">
+                                <span id="engineering_dateError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                    Engineering Date is required.
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div>
+                            <button type="submit" id="btnEngineeringSave" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
     </main>
 
     <footer>
@@ -310,7 +432,7 @@ window.addEventListener("load", function () {
     // Get the selected NCR number from localStorage
     const ncrnum = localStorage.getItem('selectedNcr');
     const ncrs = JSON.parse(localStorage.getItem('ncrs')); // Parse stored NCRs
-    let thisNcr = {};
+    let thisNcr = null;
 
     // Find the selected NCR object
     ncrs.forEach((ncr) => {
@@ -319,124 +441,104 @@ window.addEventListener("load", function () {
         }
     });
 
+    // If the NCR isn't found, log an error and stop execution
     if (!thisNcr) {
         console.error("NCR not found");
         return;
     }
 
-<<<<<<< HEAD
-    // Populate NCR number and date fields
+    // Form field elements
     const ncrInput = document.getElementById("ncr_no");
     const dateInput = document.getElementById("date");
-    ncrInput.setAttribute("disabled", true);
-    dateInput.setAttribute("disabled", true);
-    ncrInput.value = thisNcr.ncr_no || "";
-    dateInput.value = thisNcr.date || new Date().toISOString().substring(0, 10);
+    const supplierInput = document.getElementById("supplier_name");
+    const prodInput = document.getElementById("po_prod_no");
+    const salesInput = document.getElementById("sales_order_no");
+    const itemInput = document.getElementById("item_description");
+    const defectInput = document.getElementById("defect_description");
+    const receivedInput = document.getElementById("quantity_received");
+    const defectiveInput = document.getElementById("quantity_defective");
+    const repInput = document.getElementById("quality_rep_name");
+    const conformInputs = document.querySelectorAll('input[name="nonconforming"]'); // Radio buttons
+    const engInputs = document.querySelectorAll('input[name="ennotneeded"]'); // Radio buttons
 
-    // Populate other fields
-    document.getElementById("supplier_name").value = thisNcr.supplier_name || "";
-    document.getElementById("po_prod_no").value = thisNcr.po_prod_no || "";
-    document.getElementById("sales_order_no").value = thisNcr.sales_order_no || "";
-    document.getElementById("item_description").value = thisNcr.item_description || "";
-    document.getElementById("defect_description").value = thisNcr.defect_description || "";
-    document.getElementById("quantity_received").value = thisNcr.quantity_received || "";
-    document.getElementById("quantity_defective").value = thisNcr.quantity_defective || "";
-    document.getElementById("quality_rep_name").value = thisNcr.quality_rep_name || "";
+    // Prefill form fields with data from thisNcr
+    ncrInput.value = thisNcr.ncr_no || ""; // Default to empty if not present
+    ncrInput.setAttribute("disabled", true); // Disable editing
 
-    // Set checkbox or radio button selections
-    if (thisNcr.process) {
-        document.querySelectorAll('[name="process"]').forEach((checkbox) => {
-            checkbox.checked = thisNcr.process.includes(checkbox.value);
+    dateInput.value = thisNcr.date || new Date().toISOString().substring(0, 10); // Default to current date
+    dateInput.setAttribute("disabled", true); // Disable editing
+
+    supplierInput.value = thisNcr.supplier_name || "";
+    prodInput.value = thisNcr.po_prod_no || "";
+    salesInput.value = thisNcr.sales_order_no || "";
+    itemInput.value = thisNcr.item_description || "";
+    defectInput.value = thisNcr.defect_description || "";
+    receivedInput.value = thisNcr.quantity_received || "";
+    defectiveInput.value = thisNcr.quantity_defective || "";
+    repInput.value = thisNcr.quality_rep_name || "";
+
+    // Handle radio button inputs (e.g., conformInputs and engInputs)
+    if (thisNcr.nonconforming) {
+        conformInputs.forEach((radio) => {
+            if (radio.value === thisNcr.nonconforming) {
+                radio.checked = true;
+            }
         });
     }
-    if (thisNcr.nonconforming) {
-        document.querySelector(`[name="nonconforming"][value="${thisNcr.nonconforming}"]`).checked = true;
-    }
+
     if (thisNcr.ennotneeded) {
-        document.querySelector(`[name="ennotneeded"][value="${thisNcr.ennotneeded}"]`).checked = true;
+        engInputs.forEach((radio) => {
+            if (radio.value === thisNcr.ennotneeded) {
+                radio.checked = true;
+            }
+        });
     }
+
+    // Save button logic
+    const saveButton = document.getElementById("btnSubmit");
+    saveButton.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Update the current NCR object with the new values
+        thisNcr.supplier_name = supplierInput.value;
+        thisNcr.po_prod_no = prodInput.value;
+        thisNcr.sales_order_no = salesInput.value;
+        thisNcr.item_description = itemInput.value;
+        thisNcr.defect_description = defectInput.value;
+        thisNcr.quantity_received = receivedInput.value;
+        thisNcr.quantity_defective = defectiveInput.value;
+        thisNcr.quality_rep_name = repInput.value;
+
+        // Get the selected value from the nonconforming radio buttons
+        conformInputs.forEach((radio) => {
+            if (radio.checked) {
+                thisNcr.nonconforming = radio.value;
+            }
+        });
+
+        // Get the selected value from the ennotneeded radio buttons
+        engInputs.forEach((radio) => {
+            if (radio.checked) {
+                thisNcr.ennotneeded = radio.value;
+            }
+        });
+
+        // Save the updated ncrs array back to localStorage
+        localStorage.setItem('ncrs', JSON.stringify(ncrs));
+
+        // Show a success message or redirect the user
+        alert("NCR updated successfully!");
+
+    
+        window.location.href = "ncrlog.html";
+    });
 });
 
 
 
     </script>
 
-    <script>
-        // Get modal elements
-        const openModalBtn = document.getElementById("openModalBtn");
-        const supplierModal = document.getElementById("supplierModal");
-        const closeModalBtn = supplierModal.querySelector(".close");
-        const supplierForm = document.getElementById("supplierForm");
-        const supplierNameInput = document.getElementById("supplierName");
-        const supplierDropdown = document.getElementById("supplier_name");
-
-        // Open the modal
-        openModalBtn.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent default button action
-            supplierModal.style.display = "block";
-        });
-
-        // Close the modal
-        closeModalBtn.addEventListener("click", () => {
-            supplierModal.style.display = "none";
-        });
-
-        // Close the modal when clicking outside it
-        window.addEventListener("click", (event) => {
-            if (event.target === supplierModal) {
-                supplierModal.style.display = "none";
-            }
-        });
-
-        // Handle the supplier form submission
-        supplierForm.addEventListener("submit", (event) => {
-            event.preventDefault(); // Prevent form from submitting and refreshing the page
-
-            const newSupplierName = supplierNameInput.value.trim();
-            if (newSupplierName) {
-                // Add the new supplier to the dropdown
-                const newOption = document.createElement("option");
-                newOption.value = newSupplierName.toLowerCase().replace(/ /g, "_"); // Generate a unique value
-                newOption.textContent = newSupplierName;
-
-                supplierDropdown.appendChild(newOption);
-
-                // Reset the input field and close the modal
-                supplierNameInput.value = "";
-                supplierModal.style.display = "none";
-
-                // Optional: Alert to confirm the supplier was added
-                alert("New supplier added successfully!");
-            } else {
-                alert("Please enter a supplier name.");
-            }
-        });
-=======
-            ncrInput = document.getElementById("ncr_no")
-            ncrInput.setAttribute("disabled", true);
-            dateInput = document.getElementById("date")
-            dateInput.setAttribute("disabled", true);
-            
-            //document.querySelectorAll('input[name="process"]:checked') Change to Radio First
-            supplierInput = document.getElementById('supplier_name')
-            prodInput = document.getElementById('po_prod_no')
-            salesInput = document.getElementById('sales_order_no')
-            itemInput = document.getElementById('item_description')
-            defectInput = document.getElementById('defect_description')
-            recievedInput = document.getElementById('quantity_received')
-            defectiveInput = document.getElementById('quantity_defective')
-            repInput = document.getElementById('quality_rep_name')
-            conformInput = document.querySelectorAll('input[name="nonconforming"]')
-            engInput = document.querySelectorAll('input[name="ennotneeded"]')
-
-            ncrInput.value = thisNcr.ncr_no
-            dateInput.value = new Date().toISOString().substring(0,10);
-            supplierInput.value = thisNcr.supplier_name
-            });
-
->>>>>>> c3bfe74fe19d7ee450bf464e55ae9ddee86660a1
-    </script>
-
+   
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

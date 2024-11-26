@@ -230,3 +230,417 @@
 // } else {
 //     console.error("Form element not found");
 // }
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create NCR Form - CrossFire</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <nav class="navbar navbar-expand-lg navsty">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create.html">Create NCR Form</a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">+</span>
+            </button>
+            <ul class="navbar-nav ms-auto">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="engineering.html">
+                        <i class="fa fa-bell" aria-hidden="true"></i> <span id="notification-counter"
+                            class="badge bg-danger">0</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">
+                        Login</a>
+                </li>
+
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="navbarDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    More Options
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="help.html">Help</a></li>
+                    <li><a class="dropdown-item" href="report.html">Report</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5" id="main-content" tabindex="-1">
+        <h2 class="mb-4 text-center">Edit Non-Conformance Report(NCR)</h2>
+        <p style="text-align: center;font-weight: bold;">All fields with * (astericks) are required </p>
+        <form id="ncrForm">
+
+            <div class="row ">
+                <!-- NCR No. -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="ncr_no" class="form-label">NCR No.</label>
+                    <input type="text" class="form-control" id="ncr_no" name="ncr_no" required aria-required="true"
+                        placeholder="Enter NCR Number">
+                    <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is
+                        required</span>
+                </div>
+
+                <!-- Date -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="date" class="form-label">Date*</label>
+                    <input type="date" class="form-control" id="date" name="date" required aria-required="true">
+                    <span id="dateError" class="text-danger" style="display: none; font-size: 0.9em;">Date is
+                        required</span>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+                <!-- Identify Process Applicable -->
+                <div class="col-12 col-md-6 mb-3">
+                    <fieldset>
+                        <legend class="form-label fw-bold">Identify Process Applicable:*</legend>
+                        <span id="identifyError" class="text-danger" style="display: none; font-size: 0.9em;">Please
+                            select one of the checkboxes</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="supplier" name="process"
+                                value="Supplier or Rec-Insp">
+                            <label class="form-check-label" for="supplier">Supplier or Rec-Insp</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="wip" name="process" value="WIP">
+                            <label class="form-check-label" for="wip">WIP (Production Order)</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <!-- Supplier Name -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="supplier_name" class="form-label">Supplier Name*</label>
+
+                    <button id="openModalBtn" class="btn btn-primary">Add Supplier</button>
+                    <span id="supplierError" class="text-danger" style="display: none; font-size: 0.9em;">Please Pick a
+                        Supplier</span>
+                    <select class="form-control" id="supplier_name" name="supplier_name" aria-required="true">
+                        <option value="">Select a supplier</option>
+                        <option value="acme_supplies">Acme Supplies</option>
+                        <option value="green_goods">Green Goods Ltd.</option>
+                        <option value="fast_track">Fast Track Supplies</option>
+                        <option value="prime_sources">Prime Sources Inc.</option>
+                        <option value="blue_ocean">Blue Ocean Trading</option>
+                        <option value="world_wide">World Wide Distributors</option>
+                        <option value="eco_trade">Eco Trade Partners</option>
+                        <option value="luxury_goods">Luxury Goods International</option>
+                        <option value="mega_supplies">Mega Supplies Co.</option>
+                        <option value="top_choice">Top Choice Suppliers</option>
+                    </select>
+                    <span id="supplierError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a
+                        Supplier</span>
+                </div>
+
+            </div>
+
+
+
+            <div class="row">
+                <!-- PO or Prod. No. -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="po_prod_no" class="form-label">PO or Prod. No.*</label>
+                    <input type="text" class="form-control" id="po_prod_no" name="po_prod_no" required
+                        aria-required="true" placeholder="Enter product Number">
+                    <span id="prodError" class="text-danger" style="display: none; font-size: 0.9em;">Prod. No is
+                        required</span>
+                </div>
+
+                <!-- Sales Order No. -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="sales_order_no" class="form-label">Sales Order No.*</label>
+                    <input type="text" class="form-control" id="sales_order_no" name="sales_order_no" required
+                        aria-required="true" placeholder="Enter sales order number">
+                    <span id="salesError" class="text-danger" style="display: none; font-size: 0.9em;">Sales Order No.
+                        is required</span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <!-- Description of Item -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="item_description" class="form-label">Description of Item (including SAP No.)*</label>
+                    <textarea class="form-control" id="item_description" name="item_description" rows="3" required
+                        aria-required="true" placeholder="Enter the description of the item"></textarea>
+                    <span id="desItemError" class="text-danger" style="display: none; font-size: 0.9em;">Please fill out
+                        Description of Item</span>
+                </div>
+
+                <!-- Description of Defect -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="defect_description" class="form-label">Description of Defect (in as much detail as
+                        possible)</label>
+                    <textarea class="form-control" id="defect_description" name="defect_description" rows="3" required
+                        aria-required="true" placeholder="Enter the description of all defects"></textarea>
+                    <span id="desDefectError" class="text-danger" style="display: none; font-size: 0.9em;">Please fill
+                        out Description of Defect</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Quantity Received -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="quantity_received" class="form-label">Quantity Received*</label>
+                    <input type="number" class="form-control" id="quantity_received" name="quantity_received" min="0"
+                        required aria-required="true" placeholder="Enter the quantity of product received">
+                    <span id="quanRecievedError" class="text-danger" style="display: none; font-size: 0.9em;">Quantity
+                        Received is required</span>
+                </div>
+
+                <!-- Quantity Defective -->
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="quantity_defective" class="form-label">Quantity Defective*</label>
+                    <input type="number" class="form-control" id="quantity_defective" name="quantity_defective" min="0"
+                        required aria-required="true" placeholder="Enter the amount of defects ">
+                    <span id="quanDefectiveError" class="text-danger" style="display: none; font-size: 0.9em;">Quantity
+                        Defective is required</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Quality Representative's Name -->
+                <div class="col-12 col-md-4 mb-5">
+                    <label for="quality_rep_name" class="form-label">Quality Representative's Name*</label>
+                    <input type="text" class="form-control" id="quality_rep_name" name="quality_rep_name" required
+                        aria-required="true" placeholder="Enter quality representative's name">
+                    <span id="qualityError" class="text-danger" style="display: none; font-size: 0.9em;">Quality Rep's
+                        name is required</span>
+                </div>
+
+                <!-- Item marked Nonconforming -->
+                <div class="col-12 col-md-4 mb-3 hh">
+                    <fieldset>
+                        <legend class="form-label fw-bold">Item marked Nonconforming:*</legend>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="nonconforming_yes" name="nonconforming"
+                                value="Yes" required aria-required="true">
+                            <label class="form-check-label" for="nonconforming_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="nonconforming_no" name="nonconforming"
+                                value="No" required aria-required="true">
+                            <label class="form-check-label" for="nonconforming_no">No</label>
+                        </div>
+                        <span id="itemMarkError" class="text-danger"
+                            style="display: none; font-size: 0.9em;">Required</span>
+
+                    </fieldset>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <fieldset>
+                        <legend class="form-label fw-bold">Engineering Not Needed:*</legend>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="enginnotneeded_yes" name="ennotneeded"
+                                value="Yes" required aria-required="true">
+                            <label class="form-check-label" for="enginnotneeded_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="enginnotneeded_no" name="ennotneeded"
+                                value="No" required aria-required="true">
+                            <label class="form-check-label" for="enginnotneeded_no">No</label>
+                        </div>
+                        <span id="enginNotMarkedError" class="text-danger"
+                            style="display: none; font-size: 0.9em;">Required</span>
+                    </fieldset>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btnsub" id="btnSubmit">Submit</button>
+                <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
+            </div>
+        </form>
+
+        <div id="supplierModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Supplier</h2>
+                <form id="supplierForm">
+                    <label for="supplierName">Supplier Name:</label>
+                    <input type="text" id="supplierName" name="supplierName" class="form-control">
+                    <button type="submit" class="btn btn-success mt-2">Add</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="ncrlog.html">NCR LOG</a>
+            <a href="create.html">Create NCR</a>
+        </div>
+        <p>&copy; 2024 . All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/page.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/inspect.js"></script>
+
+    <script>
+
+window.addEventListener("load", function () {
+    // Get the selected NCR number from localStorage
+    const ncrnum = localStorage.getItem('selectedNcr');
+    const ncrs = JSON.parse(localStorage.getItem('ncrs')); // Parse stored NCRs
+    let thisNcr = {};
+
+    // Find the selected NCR object
+    ncrs.forEach((ncr) => {
+        if (ncr.ncr_no === ncrnum) {
+            thisNcr = ncr;
+        }
+    });
+
+    if (!thisNcr) {
+        console.error("NCR not found");
+        return;
+    }
+
+    // Populate NCR number and date fields
+    const ncrInput = document.getElementById("ncr_no");
+    const dateInput = document.getElementById("date");
+    ncrInput.setAttribute("disabled", true);
+    dateInput.setAttribute("disabled", true);
+    ncrInput.value = thisNcr.ncr_no || "";
+    dateInput.value = thisNcr.date || new Date().toISOString().substring(0, 10);
+
+    // Populate other fields
+    document.getElementById("supplier_name").value = thisNcr.supplier_name || "";
+    document.getElementById("po_prod_no").value = thisNcr.po_prod_no || "";
+    document.getElementById("sales_order_no").value = thisNcr.sales_order_no || "";
+    document.getElementById("item_description").value = thisNcr.item_description || "";
+    document.getElementById("defect_description").value = thisNcr.defect_description || "";
+    document.getElementById("quantity_received").value = thisNcr.quantity_received || "";
+    document.getElementById("quantity_defective").value = thisNcr.quantity_defective || "";
+    document.getElementById("quality_rep_name").value = thisNcr.quality_rep_name || "";
+
+    // Set checkbox or radio button selections
+    if (thisNcr.process) {
+        document.querySelectorAll('[name="process"]').forEach((checkbox) => {
+            checkbox.checked = thisNcr.process.includes(checkbox.value);
+        });
+    }
+    if (thisNcr.nonconforming) {
+        document.querySelector(`[name="nonconforming"][value="${thisNcr.nonconforming}"]`).checked = true;
+    }
+    if (thisNcr.ennotneeded) {
+        document.querySelector(`[name="ennotneeded"][value="${thisNcr.ennotneeded}"]`).checked = true;
+    }
+});
+
+
+
+    </script>
+
+    <script>
+        // Get modal elements
+        const openModalBtn = document.getElementById("openModalBtn");
+        const supplierModal = document.getElementById("supplierModal");
+        const closeModalBtn = supplierModal.querySelector(".close");
+        const supplierForm = document.getElementById("supplierForm");
+        const supplierNameInput = document.getElementById("supplierName");
+        const supplierDropdown = document.getElementById("supplier_name");
+
+        // Open the modal
+        openModalBtn.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default button action
+            supplierModal.style.display = "block";
+        });
+
+        // Close the modal
+        closeModalBtn.addEventListener("click", () => {
+            supplierModal.style.display = "none";
+        });
+
+        // Close the modal when clicking outside it
+        window.addEventListener("click", (event) => {
+            if (event.target === supplierModal) {
+                supplierModal.style.display = "none";
+            }
+        });
+
+        // Handle the supplier form submission
+        supplierForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form from submitting and refreshing the page
+
+            const newSupplierName = supplierNameInput.value.trim();
+            if (newSupplierName) {
+                // Add the new supplier to the dropdown
+                const newOption = document.createElement("option");
+                newOption.value = newSupplierName.toLowerCase().replace(/ /g, "_"); // Generate a unique value
+                newOption.textContent = newSupplierName;
+
+                supplierDropdown.appendChild(newOption);
+
+                // Reset the input field and close the modal
+                supplierNameInput.value = "";
+                supplierModal.style.display = "none";
+
+                // Optional: Alert to confirm the supplier was added
+                alert("New supplier added successfully!");
+            } else {
+                alert("Please enter a supplier name.");
+            }
+        });
+    </script>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
