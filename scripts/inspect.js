@@ -203,5 +203,8 @@ document.getElementById("quantity_defective").addEventListener("input", function
     }
 });
 
+
+
+
 // Add event listener to validate form
 btnSub.addEventListener("click", validateForm);

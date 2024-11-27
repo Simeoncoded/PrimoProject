@@ -10,6 +10,10 @@ main {
     flex: 1;
 }
 
+.navbar a{
+    color: #0000FF;
+}
+
 .navsty {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(55, 7, 107, 0.1);
@@ -23,9 +27,7 @@ main {
     color: #fff;
 }
 
-.navbar-collapse {
-    margin-right: 45em;
-}
+
 
 .status-open {
     color: green;
@@ -66,7 +68,7 @@ footer a {
 }
 
 .dcont {
-    background-color: #5897c9;
+    background-color: #1A3851;
     height: 140px;
     border-radius: 10px;
 }
@@ -104,9 +106,12 @@ a {
 .fa-bell {
     font-size: 25px;
 }
+.fa-user{
+    font-size: 25px;
+}
 
 .vbtn:hover {
-    background: #5897c9;
+    background: #1A3851;
     border: none;
     color: #fff;
     transition: 0.3s ease-in-out;
@@ -156,7 +161,7 @@ select {
 
 .btnSub {
     margin-top: 20px;
-    background-color: blue;
+    background-color: #1A3851;
     color: #fff;
     width: 120px;
     height: 40px;
@@ -232,10 +237,13 @@ select {
     width: 25px;
     height: 25px;
     text-align: center;
-    line-height: 25px;
+    line-height: 25px;  
     border-radius: 50%;
-    background-color: #007bff;
+    background-color: #1A3851;
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+.sl{
+    margin-right: 700px;
 }
