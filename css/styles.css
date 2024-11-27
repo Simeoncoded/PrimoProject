@@ -11,7 +11,7 @@ main {
 }
 
 .navbar a{
-    color: #0000FF;
+    color: #1A3851;
 }
 
 .navsty {
@@ -41,7 +41,7 @@ main {
 
 /* Footer styles */
 footer {
-    background: #333;
+    background: #1A3851;
     color: #fff;
     text-align: center;
     padding: 10px 0;
