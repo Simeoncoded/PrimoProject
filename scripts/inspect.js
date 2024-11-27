@@ -187,5 +187,21 @@ function clearChkBxError(inputName, errorId) {
 clearChkBxError("nonconforming", "itemMarkError");
 clearChkBxError("ennotneeded", "enginNotMarkedError");
 
+// Real-time validation for Quantity Defective
+document.getElementById("quantity_defective").addEventListener("input", function () {
+    const received = parseInt(document.getElementById("quantity_received").value);
+    const defective = parseInt(this.value);
+
+    if (defective > received) {
+        this.style.border = "2px solid red";
+        document.getElementById("quanDefectiveError").textContent =
+            "Quantity Defective cannot be greater than Quantity Received.";
+        document.getElementById("quanDefectiveError").style.display = "inline";
+    } else {
+        this.style.border = "1px solid #ced4da";
+        document.getElementById("quanDefectiveError").style.display = "none";
+    }
+});
+
 // Add event listener to validate form
 btnSub.addEventListener("click", validateForm);
