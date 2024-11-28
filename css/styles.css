@@ -103,10 +103,7 @@ a {
 
 }
 
-.fa-bell {
-    font-size: 25px;
-}
-.fa-user{
+.fa-bell,.fa-envelope,.fa-user {
     font-size: 25px;
 }
 
