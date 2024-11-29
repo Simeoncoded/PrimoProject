@@ -10,7 +10,7 @@ document.getElementById("ncr_no").addEventListener("input", function () {
 });
 
 function validateForm() {
-
+    
 
     // Variables for required fields
     const ncrNum = document.getElementById("ncr_no");

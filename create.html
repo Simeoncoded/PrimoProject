@@ -177,7 +177,7 @@
                     <textarea class="form-control" id="item_description" name="item_description" rows="3"
                         aria-required="true" placeholder="Enter the description of the item"></textarea>
                     <span id="desItemError" class="text-danger" style="display: none; font-size: 0.9em;">Please fill out
-                        Description of Item</span>
+                        Description of Item</span>n
                 </div>
 
                 <!-- Description of Defect -->
@@ -190,6 +190,7 @@
                         out Description of Defect</span>
                 </div>
             </div>
+
 
 
 
@@ -303,7 +304,12 @@
 
 
 
-
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+</script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             function generateNcrNumber() {
