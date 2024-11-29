@@ -245,4 +245,41 @@ select {
     margin-right: 700px;
 }
 
+.email-list {
+    margin-top: 20px;
+}
+.email-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+.email-item:hover {
+    background-color: #f1f1f1;
+}
+.email-item .email-subject {
+    font-weight: bold;
+}
+.email-item .email-preview {
+    color: #666;
+}
+.email-item .email-time {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+.email-header {
+    background-color: #1A3851;
+    color: white;
+    padding: 15px;
+}
+.email-header i {
+    margin-right: 10px;
+}
+.email-body {
+    padding: 20px;
+}
 
+.expanded-email {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid #007bff;
+    margin-top: 10px;
+}
