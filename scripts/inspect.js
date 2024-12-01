@@ -187,7 +187,7 @@ function clearChkBxError(inputName, errorId) {
 clearChkBxError("nonconforming", "itemMarkError");
 clearChkBxError("ennotneeded", "enginNotMarkedError");
 
-// Real-time validation for Quantity Defective
+// real-time validation for Quantity Defective
 document.getElementById("quantity_defective").addEventListener("input", function () {
     const received = parseInt(document.getElementById("quantity_received").value);
     const defective = parseInt(this.value);
