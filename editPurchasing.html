@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,14 +33,8 @@
                         <a class="nav-link" href="create.html">Create NCR Form</a>
                     </li>
                     <li class="nav-item dropdown sr">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="notificationDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
+                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-bell" aria-hidden="true"></i>
                             <span id="notification-counter" class="badge bg-danger">3</span>
                         </a>
@@ -55,29 +49,29 @@
                                     <i class="fa-solid fa-arrow-right"></i> Purchasing Section
                                 </a>
                             </li>
-                          
+
                         </ul>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">
                             <i class="fa-solid fa-user"></i>
                         </a>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link" href="email.html">
                             <i class="fa-solid fa-envelope"></i>
                             <span id="email-counter" class="badge bg-danger">0</span>
                         </a>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link" href="report.html">Report</a>
                     </li>
                 </ul>
             </div>
-    
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">+</span>
@@ -89,124 +83,148 @@
     <main class="container my-5" id="main-content" tabindex="-1">
         <h2 class="mb-4 text-center">Create Purchasing</h2>
         <p style="text-align: center;font-weight: bold;">All fields with * (astericks) are required </p>
-        <form id="ncrForm">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    PURCHASE SECTION EDIT
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <form id="ncrForm">
 
-            <div class="row ">
-                <!-- NCR No. -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="ncr_no" class="form-label">NCR No.*</label>
-                    <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true"
-                        placeholder="Enter NCR Number">
-                    <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is
-                        required.</span>
-                </div>
+                        <div class="row ">
+                            <!-- NCR No. -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="ncr_no" class="form-label">NCR No.*</label>
+                                <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true"
+                                    placeholder="Enter NCR Number">
+                                <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR
+                                    No. is
+                                    required.</span>
+                            </div>
 
-                <!-- OP Date -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="date" class="form-label">OP Date*</label>
-                    <input type="date" class="form-control" id="date" name="date" aria-required="true">
-                    <span id="dateError" class="text-danger" style="display: none; font-size: 0.9em;">Date is
-                        required</span>
-                    <span id="dateYearError" style="display: none; color: red; font-size: 0.9em;">Please select a valid
-                        date in the current year.</span>
-                </div>
+                            <!-- OP Date -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="date" class="form-label">OP Date*</label>
+                                <input type="date" class="form-control" id="date" name="date" aria-required="true">
+                                <span id="dateError" class="text-danger" style="display: none; font-size: 0.9em;">Date
+                                    is
+                                    required</span>
+                                <span id="dateYearError" style="display: none; color: red; font-size: 0.9em;">Please
+                                    select a valid
+                                    date in the current year.</span>
+                            </div>
 
 
-            </div>
-
-            <div class="row">
-                <!-- Was the Car Raised? -->
-                <div class="col-12 col-md-6 mb-3">
-                    <fieldset>
-                        <legend class="form-label fw-bold">Was the Car Raised?*</legend>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="carraised_yes" name="carraised"
-                                value="Yes" aria-required="true">
-                            <label class="form-check-label" for="carraised_yes">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="fcarraised_no" name="carraised"
-                                value="No" aria-required="true">
-                            <label class="form-check-label" for="carraised_no">No</label>
+
+                        <div class="row">
+                            <!-- Was the Car Raised? -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <fieldset>
+                                    <legend class="form-label fw-bold">Was the Car Raised?*</legend>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="carraised_yes" name="carraised"
+                                            value="Yes" aria-required="true">
+                                        <label class="form-check-label" for="carraised_yes">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="fcarraised_no" name="carraised"
+                                            value="No" aria-required="true">
+                                        <label class="form-check-label" for="carraised_no">No</label>
+                                    </div>
+                                    <span id="carraisedError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">Please
+                                        select wether or not Follow up is required.</span>
+                                </fieldset>
+                            </div>
+
+
+                            <!-- Supplier Name -->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="carnumber" class="form-label">Car Number:*</label>
+                                <input type="number" class="form-control" id="carnumber" name="carnumber"
+                                    aria-required="true" placeholder="Enter Car Number">
+                                <span id="carNoError" class="text-danger" style="display: none; font-size: 0.9em;">Car
+                                    No. is
+                                    required.</span>
+                            </div>
+
                         </div>
-                        <span id="carraisedError" class="text-danger" style="display: none; font-size: 0.9em;">Please
-                            select wether or not Follow up is required.</span>                        
-                    </fieldset>
-                </div>
-
-
-                <!-- Supplier Name -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="carnumber" class="form-label">Car Number:*</label>
-                    <input type="number" class="form-control" id="carnumber" name="carnumber" aria-required="true"
-                        placeholder="Enter Car Number">
-                        <span id="carNoError" class="text-danger" style="display: none; font-size: 0.9em;">Car No. is
-                            required.</span>                    
-                </div>
-
-            </div>
 
 
 
-            <div class="row">
-                <div class="col-12 col-md-6 mb-3">
-                    <fieldset>
-                        <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="followrequired_yes" name="followrequired"
-                                value="Yes" aria-required="true">
-                            <label class="form-check-label" for="followrequired_yes">Yes</label>
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-3">
+                                <fieldset>
+                                    <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="followrequired_yes"
+                                            name="followrequired" value="Yes" aria-required="true">
+                                        <label class="form-check-label" for="followrequired_yes">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="followrequired_no"
+                                            name="followrequired" value="No" aria-required="true">
+                                        <label class="form-check-label" for="followrequired_no">No</label>
+                                    </div>
+                                    <span id="followrequiredError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">Please
+                                        select wether or not Follow up is required.</span>
+                                </fieldset>
+                            </div>
+
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="followtype" class="form-label">Follow Up Type?*</label>
+
+                                <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
+                                <span id="followupError" class="text-danger"
+                                    style="display: none; font-size: 0.9em;">Please Pick a
+                                    Supplier</span>
+                                <select class="form-control" id="followtype" name="followtype" aria-required="true">
+                                    <option value="">Select a type</option>
+                                    <option value="acme_supplies">Acme Supplies</option>
+                                    <option value="green_goods">Green Goods Ltd.</option>
+                                    <option value="fast_track">Fast Track Supplies</option>
+                                    <option value="prime_sources">Prime Sources Inc.</option>
+                                    <option value="blue_ocean">Blue Ocean Trading</option>
+                                    <option value="world_wide">World Wide Distributors</option>
+                                    <option value="eco_trade">Eco Trade Partners</option>
+                                    <option value="luxury_goods">Luxury Goods International</option>
+                                    <option value="mega_supplies">Mega Supplies Co.</option>
+                                    <option value="top_choice">Top Choice Suppliers</option>
+                                </select>
+                                <span id="followupError" class="text-danger"
+                                    style="display: none; font-size: 0.9em;">Pick a
+                                    Supplier</span>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="followrequired_no" name="followrequired"
-                                value="No" aria-required="true">
-                            <label class="form-check-label" for="followrequired_no">No</label>
+
+
+                        <div class="row">
+                            <!-- Follow up Expected Date-->
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="followdate" class="form-label">Follow Up Expected Date*</label>
+                                <input type="date" class="form-control" id="followdate" name="followdate"
+                                    aria-required="true">
+                                <span id="followdateError" class="text-danger"
+                                    style="display: none; font-size: 0.9em;">Date is
+                                    required</span>
+                                <span id="followUpdateError" style="display: none; color: red; font-size: 0.9em;">Please
+                                    select a valid
+                                    date in the current year.</span>
+                            </div>
                         </div>
-                        <span id="followrequiredError" class="text-danger" style="display: none; font-size: 0.9em;">Please
-                            select wether or not Follow up is required.</span>                     
-                    </fieldset>
-                </div>
-
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="followtype" class="form-label">Follow Up Type?*</label>
-
-                    <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
-                    <span id="followupError" class="text-danger" style="display: none; font-size: 0.9em;">Please Pick a
-                        Supplier</span>
-                    <select class="form-control" id="followtype" name="followtype" aria-required="true">
-                        <option value="">Select a type</option>
-                        <option value="acme_supplies">Acme Supplies</option>
-                        <option value="green_goods">Green Goods Ltd.</option>
-                        <option value="fast_track">Fast Track Supplies</option>
-                        <option value="prime_sources">Prime Sources Inc.</option>
-                        <option value="blue_ocean">Blue Ocean Trading</option>
-                        <option value="world_wide">World Wide Distributors</option>
-                        <option value="eco_trade">Eco Trade Partners</option>
-                        <option value="luxury_goods">Luxury Goods International</option>
-                        <option value="mega_supplies">Mega Supplies Co.</option>
-                        <option value="top_choice">Top Choice Suppliers</option>
-                    </select>
-                    <span id="followupError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a
-                        Supplier</span>
+                        <div>
+                            <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-
-            <div class="row">
-                <!-- Follow up Expected Date-->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="followdate" class="form-label">Follow Up Expected Date*</label>
-                    <input type="date" class="form-control" id="followdate" name="followdate" aria-required="true">
-                    <span id="followdateError" class="text-danger" style="display: none; font-size: 0.9em;">Date is
-                        required</span>
-                    <span id="followUpdateError" style="display: none; color: red; font-size: 0.9em;">Please select a valid
-                        date in the current year.</span>
-                </div>                
-            </div>          
-            <div>
-                <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
-            </div>
-        </form>
+        </div>
 
 
 
