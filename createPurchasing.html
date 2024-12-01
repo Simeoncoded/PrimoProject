@@ -92,32 +92,29 @@
 
             </div>
 
-
-
-
             <div class="row">
                 <!-- Identify Process Applicable -->
                 <div class="col-12 col-md-6 mb-3">
                     <fieldset>
-                        <legend class="form-label fw-bold">Identify Process Applicable:*</legend>
+                        <legend class="form-label fw-bold">Was the Car Raised?:*</legend>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="supplier" name="process"
-                                value="Supplier or Rec-Insp">
-                            <label class="form-check-label" for="supplier">Supplier or Rec-Insp</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="wip" name="process" value="WIP">
-                            <label class="form-check-label" for="wip">WIP (Production Order)</label>
-                        </div>
+                            <input class="form-check-input" type="checkbox" id="raised" name="raised"
+                                value="WasCarRaised?">
+                            <label class="form-check-label" for="raised">Yes</label>
+                        </div>                        
                     </fieldset>
-                    <span id="identifyError" class="text-danger" style="display: none; font-size: 0.9em;">Please
-                        select one of the radio buttons</span>
                 </div>
 
 
                 <!-- Supplier Name -->
                 <div class="col-12 col-md-6 mb-3">
-                    <label for="supplier_name" class="form-label">Supplier Name*</label>
+                    <label for="carnumber" class="form-label">Car Number:*</label>
+                    <input type="number" class="form-control" id="carnumber" name="carnumber" aria-required="true"
+                        placeholder="Enter Car Number">
+                        <span id="carNoError" class="text-danger" style="display: none; font-size: 0.9em;">Car No. is
+                            required.</span>
+
+                    <!-- <label for="supplier_name" class="form-label">Supplier Name*</label>
 
                     <button id="openModalBtn" class="btn btn-primary">Add Supplier</button>
                     <span id="supplierError" class="text-danger" style="display: none; font-size: 0.9em;">Please Pick a
@@ -136,7 +133,7 @@
                         <option value="top_choice">Top Choice Suppliers</option>
                     </select>
                     <span id="supplierError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a
-                        Supplier</span>
+                        Supplier</span> -->
                 </div>
 
             </div>
@@ -144,22 +141,38 @@
 
 
             <div class="row">
-                <!-- PO or Prod. No. -->
                 <div class="col-12 col-md-6 mb-3">
-                    <label for="po_prod_no" class="form-label">PO or Prod. No.*</label>
-                    <input type="number" class="form-control" id="po_prod_no" name="po_prod_no" aria-required="true"
-                        placeholder="Enter product Number">
-                    <span id="prodError" class="text-danger" style="display: none; font-size: 0.9em;">Prod. No is
-                        required</span>
+                    <fieldset>
+                        <legend class="form-label fw-bold">Follow Up Required?:*</legend>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="followrequired" name="followrequired"
+                                value="WasFollowUpRequired?">
+                            <label class="form-check-label" for="followrequired">Yes</label>
+                        </div>                        
+                    </fieldset>
                 </div>
 
-                <!-- Sales Order No. -->
                 <div class="col-12 col-md-6 mb-3">
-                    <label for="sales_order_no" class="form-label">Sales Order No.*</label>
-                    <input type="number" class="form-control" id="sales_order_no" name="sales_order_no"
-                        aria-required="true" placeholder="Enter sales order number">
-                    <span id="salesError" class="text-danger" style="display: none; font-size: 0.9em;">Sales Order No.
-                        is required</span>
+                    <label for="followtype" class="form-label">Follow Up Type?*</label>
+
+                    <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
+                    <span id="followupError" class="text-danger" style="display: none; font-size: 0.9em;">Please Pick a
+                        Supplier</span>
+                    <select class="form-control" id="followtype" name="followtype" aria-required="true">
+                        <option value="">Select a type</option>
+                        <option value="acme_supplies">Acme Supplies</option>
+                        <option value="green_goods">Green Goods Ltd.</option>
+                        <option value="fast_track">Fast Track Supplies</option>
+                        <option value="prime_sources">Prime Sources Inc.</option>
+                        <option value="blue_ocean">Blue Ocean Trading</option>
+                        <option value="world_wide">World Wide Distributors</option>
+                        <option value="eco_trade">Eco Trade Partners</option>
+                        <option value="luxury_goods">Luxury Goods International</option>
+                        <option value="mega_supplies">Mega Supplies Co.</option>
+                        <option value="top_choice">Top Choice Suppliers</option>
+                    </select>
+                    <span id="followupError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a
+                        Supplier</span>
                 </div>
             </div>
 
