@@ -125,13 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 engineering_date: document.getElementById('engineering_date').value,
             };
 
-            // Validate required fields
-            const validationErrors = validateEngineeringForm(engineeringData);
-            if (validationErrors.length > 0) {
-                alert(validationErrors.join('\n')); // Display errors
-                return;
-            }
-
+          
             // Save form data to localStorage
             const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
             existingForms.push(engineeringData);

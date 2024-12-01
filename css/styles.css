@@ -286,3 +286,14 @@ select {
 .fa-plus,.fa-history,.fa-file{
     font-size: 30px;
 }
+/* Default styling for larger screens */
+.dropdown-menu {
+    width: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        width: 200px; /* Adjust this width as per your design preference */
+    }
+}
