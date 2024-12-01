@@ -39,15 +39,16 @@ function callCurrentUser() {
 function codeAddress() {
     const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || -1;
     if (existingNCRs == -1) {
-        localStorage.setItem('ncrs', JSON.stringify(ncrs))
-        localStorage.setItem('ncrLastNum', ncrs.length)
+        localStorage.setItem('ncrs', JSON.stringify(ncrs));
+        localStorage.setItem('ncrLastNum', ncrs.length);
     }
+    
     const existingSuppliers = JSON.parse(localStorage.getItem('suppliers')) || -1;
-    if (existingNCRs == -1) {
-        localStorage.setItem('suppliers', JSON.stringify(suppliers))
+    if (existingSuppliers == -1) { 
+        localStorage.setItem('suppliers', JSON.stringify(suppliers));
     }
-    location.reload()
 }
+
 
 window.onload = codeAddress;
 
