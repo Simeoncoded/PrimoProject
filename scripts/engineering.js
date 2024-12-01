@@ -94,3 +94,71 @@ inputFields.forEach((fieldId) => {
 
 // Add click event listener for validation
 btnSub.addEventListener("click", validateForm);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize notification counter
+    const notificationCounter = document.getElementById('notification-counter');
+    if (notificationCounter) {
+        const count = localStorage.getItem('notificationCount') || 0;
+        notificationCounter.textContent = count;
+    }
+
+    // Engineering form submission handling
+    const engineeringForm = document.getElementById('engineeringForm');
+    if (engineeringForm) {
+        engineeringForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent page refresh
+            
+            // Collect form data
+            const engineeringData = {
+                ncr_no: document.getElementById('ncr_no').value,
+                review_engineering: document.getElementById('review_engineering').value,
+                customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
+                disposition: document.getElementById('disposition').value,
+                drawing_update: document.getElementById('drawing_update').checked,
+                original_revision: document.getElementById('original_revision').value,
+                updated_revision: document.getElementById('updated_revision').value,
+                engineer_name: document.getElementById('engineer_name').value,
+                revision_date: document.getElementById('revision_date').value,
+                engineering: document.getElementById('engineering').value,
+                engineering_date: document.getElementById('engineering_date').value,
+            };
+
+            // Validate required fields
+            const validationErrors = validateEngineeringForm(engineeringData);
+            if (validationErrors.length > 0) {
+                alert(validationErrors.join('\n')); // Display errors
+                return;
+            }
+
+            // Save form data to localStorage
+            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
+            existingForms.push(engineeringData);
+            localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
+
+            // Increment notification count
+            incrementNotificationCount();
+
+            // Alert user and reset form
+            alert("Engineering form submitted successfully!");
+            engineeringForm.reset();
+            window.location.href = 'ncrlog.html';
+        });
+    }
+});
+
+// Function to increment notification count
+function incrementNotificationCount() {
+    const notificationCounter = document.getElementById('notification-counter');
+    if (notificationCounter) {
+        let count = parseInt(notificationCounter.textContent) || 0;
+        count++;
+        notificationCounter.textContent = count;
+        localStorage.setItem('notificationCount', count);
+    }
+}
+
+
+
+

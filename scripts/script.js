@@ -7,13 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         notificationCounter.textContent = count;
     }
 
-    // Initialize email counter
-    const emailCounter = document.getElementById('email-counter');
-    if (emailCounter) {
-        // Get the current count from localStorage and display it
-        const ecount = localStorage.getItem('emailCount') || 0;
-        emailCounter.textContent = ecount;
-    }
+   
 
     // Form submission handling
     const form = document.getElementById('ncrForm');
@@ -44,9 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
 
-            // Increment notification and email counts
+            // Increment notification 
             incrementNotificationCount();
-            incrementEmailCount();
 
             // Alert user and redirect
             alert("Form submitted successfully!");
@@ -80,16 +73,7 @@ function incrementNotificationCount() {
     }
 }
 
-// Function to increment email count
-function incrementEmailCount() {
-    const emailCounter = document.getElementById('email-counter');
-    if (emailCounter) {
-        let count = parseInt(emailCounter.textContent) || 0;
-        count++;
-        emailCounter.textContent = count;
-        localStorage.setItem('emailCount', count);
-    }
-}
+
 
 
 
