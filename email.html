@@ -40,33 +40,52 @@
                     <li class="nav-item sl">
                         <a class="nav-link" href="create.html">Create NCR Form</a>
                     </li>
-                    <li class="nav-item sr">
-                        <a class="nav-link" href="engineering.html">
-                            <i class="fa fa-bell" aria-hidden="true"></i> <span id="notification-counter"
-                                class="badge bg-danger">0</span>
+                    <li class="nav-item dropdown sr">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="notificationDropdown"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <i class="fa fa-bell" aria-hidden="true"></i>
+                            <span id="notification-counter" class="badge bg-danger">3</span>
                         </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                            <li>
+                                <a class="dropdown-item" href="engineering.html">
+                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="createPurchasing.html">
+                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                </a>
+                            </li>
+                          
+                        </ul>
                     </li>
-
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i></a>
+                            <i class="fa-solid fa-user"></i>
+                        </a>
                     </li>
-
+    
                     <li class="nav-item">
                         <a class="nav-link" href="email.html">
                             <i class="fa-solid fa-envelope"></i>
-                            <span id="notification-counter"
-                            class="badge bg-danger">0</span>
+                            <span id="email-counter" class="badge bg-danger">0</span>
                         </a>
                     </li>
-
+    
                     <li class="nav-item">
-                        <a class="nav-link" href="report.html">
-                            Report</i></a>
+                        <a class="nav-link" href="report.html">Report</a>
                     </li>
                 </ul>
             </div>
-
+    
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">+</span>
