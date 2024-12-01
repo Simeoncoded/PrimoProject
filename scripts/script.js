@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
         notificationCounter.textContent = count;
     }
 
+    // Initialize email counter
+    const emailCounter = document.getElementById('email-counter');
+    if (emailCounter) {
+        // Get the current count from localStorage and display it
+        const ecount = localStorage.getItem('emailCount') || 0;
+        emailCounter.textContent = ecount;
+    }
+
     // Form submission handling
     const form = document.getElementById('ncrForm');
     if (form) {
@@ -36,8 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
 
-            // Increment notification counter
+            // Increment notification and email counts
             incrementNotificationCount();
+            incrementEmailCount();
 
             // Alert user and redirect
             alert("Form submitted successfully!");
@@ -53,8 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Clear all items from localStorage
             localStorage.clear();
             alert('Local Storage cleared!');
-            // Reset the notification counter on the page
+            // Reset the notification and email counters on the page
             notificationCounter.textContent = 0;
+            emailCounter.textContent = 0;
         });
     }
 });
@@ -70,21 +80,16 @@ function incrementNotificationCount() {
     }
 }
 
-
-// Initialize notification counter on page load
-document.addEventListener('DOMContentLoaded', function () {
-    const notificationCounter = document.getElementById('notification-counter');
-    
-    if (notificationCounter) {
-        // Get the current count from localStorage
-        const count = localStorage.getItem('notificationCount') || 0;
-        notificationCounter.textContent = count; // Display the count
-    } else {
-        console.error("Notification counter element not found");
+// Function to increment email count
+function incrementEmailCount() {
+    const emailCounter = document.getElementById('email-counter');
+    if (emailCounter) {
+        let count = parseInt(emailCounter.textContent) || 0;
+        count++;
+        emailCounter.textContent = count;
+        localStorage.setItem('emailCount', count);
     }
-});
-
-
+}
 
 
 

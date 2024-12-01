@@ -283,3 +283,6 @@ select {
     border-left: 5px solid #007bff;
     margin-top: 10px;
 }
+.fa-plus,.fa-history,.fa-file{
+    font-size: 30px;
+}

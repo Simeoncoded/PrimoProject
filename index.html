@@ -38,31 +38,42 @@
                     <li class="nav-item sl">
                         <a class="nav-link" href="create.html">Create NCR Form</a>
                     </li>
-                    <li class="nav-item sr">
-                        <a class="nav-link" href="engineering.html">
-                            <i class="fa fa-bell" aria-hidden="true"></i> <span id="notification-counter"
-                                class="badge bg-danger">0</span>
+                    <li class="nav-item dropdown sr">
+                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-bell" aria-hidden="true"></i>
+                            <span id="notification-counter" class="badge bg-danger">3</span>
                         </a>
-                    </li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                            <li>
+                                <a class="dropdown-item" href="engineering.html">
+                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="createPurchasing.html">
+                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                </a>
+                            </li>
 
+                        </ul>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i></a>
+                            <i class="fa-solid fa-user"></i>
+                        </a>
                     </li>
-
-
 
                     <li class="nav-item">
                         <a class="nav-link" href="email.html">
                             <i class="fa-solid fa-envelope"></i>
-                            <span id="notification-counter"
-                            class="badge bg-danger">0</span></a>
+                            <span id="email-counter" class="badge bg-danger">0</span>
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="report.html">
-                            Report</i></a>
+                        <a class="nav-link" href="report.html">Report</a>
                     </li>
                 </ul>
             </div>
@@ -74,26 +85,27 @@
         </div>
     </nav>
 
+
     <main>
         <div class="row dash">
             <div class="col-12 col-md-4 mb-3">
                 <a href="create.html">
                     <div class="dcont">
-                        <p>CREATE NCR</p>
+                        <p><i class="fa fa-plus" aria-hidden="true"></i> CREATE NCR</p>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-md-4 mb-3">
                 <a href="ncrlog.html">
                     <div class="dcont">
-                        <p>NCR LOG</p>
+                        <p><i class="fa fa-history" aria-hidden="true"></i> NCR LOG</p>
                     </div>
                 </a>
             </div>
             <div class="col-12 col-md-4 mb-3">
                 <a href="report.html">
                     <div class="dcont">
-                        <p>REPORTS</p>
+                        <p><i class="fa fa-file" aria-hidden="true"></i> REPORTS</p>
                     </div>
                 </a>
             </div>
@@ -196,7 +208,7 @@
                     <td>${ncr.date}</td>
                     <td>${ncr.supplier_name}</td>
                     <td>${status}</td>
-                    <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}">Edit</button> <button class="vbtn">Details</button></td>
+                    <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}"><i class="fas fa-edit"></i> Edit</button> <button class="vbtn"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button></td>
                 `;
                 ncrTableBody.appendChild(row);
             });
