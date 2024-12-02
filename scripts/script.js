@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Collect form data
             const ncrData = {
+                quality:{
                 ncr_no: document.getElementById('ncr_no').value,
                 date: document.getElementById('date').value,
                 process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
@@ -29,12 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
                 status: "open"
+                },
             };
 
             // Store data in localStorage
             const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
+            localStorage.setItem('ncrLastNum', ncrData.ncr_no)
 
             // Increment notification 
             incrementNotificationCount();
@@ -70,10 +73,6 @@ function incrementNotificationCount() {
         localStorage.setItem('notificationCount', count);
     }
 }
-
-
-
-
 
 document.querySelector('#btnSave').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent form submission
