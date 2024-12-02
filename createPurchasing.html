@@ -201,7 +201,15 @@
                         required</span>
                     <span id="followUpdateError" style="display: none; color: red; font-size: 0.9em;">Please select a valid
                         date in the current year.</span>
-                </div>                
+                </div>    
+
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="operationsmanager" class="form-label">Operations Manager Name*</label>
+                    <input type="text" class="form-control" id="operationsmanagername" name="operationsmanagername"
+                        aria-required="true" placeholder="Enter Operations Manager's Name">
+                    <span id="operationsmanagerError" class="text-danger"
+                        style="display: none; font-size: 0.9em;">Operations manager name is required</span>
+                </div>            
             </div>          
             <div>
                 <button type="submit" class="btn btn-primary btnsub" id="btnSubmit">Submit</button>

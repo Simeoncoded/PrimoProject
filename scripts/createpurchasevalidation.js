@@ -16,6 +16,7 @@ function validateForm() {
     const followRequiredNo = document.getElementById("followrequired_no");
     const followType = document.getElementById("followtype");
     const followDate = document.getElementById("followdate");
+    const operationsmanager = document.getElementById("operationsmanagername");
 
     // error Messages
     const ncrNoError = document.getElementById("ncrNoError");
@@ -25,27 +26,13 @@ function validateForm() {
     const followRequiredError = document.getElementById("followrequiredError");
     const followupError = document.getElementById("followupError");
     const followdateError = document.getElementById("followdateError");
+    const operationsmanagerError = document.getElementById("operationsmanagerError");
 
-    const errorFields = [
-        ncrNoError,
-        dateError,
-        carRaisedError,
-        carNoError,
-        followRequiredError,
-        followupError,
-        followdateError
-    ];
+    const errorFields = [ncrNoError, dateError, carRaisedError, carNoError,
+        followRequiredError, followupError, followdateError];
 
-    const fields = [
-        ncrNumber,
-        opDate,
-        carRaisedYes,
-        carRaisedNo,
-        carNumber,
-        followRequiredYes,
-        followRequiredNo,
-        followType,
-        followDate
+    const fields = [ncrNumber, opDate, carRaisedYes, carRaisedNo, carNumber,
+        followRequiredYes, followRequiredNo, followType, followDate
     ];
 
     errorFields.forEach(errorField => (errorField.style.display = "none"));
@@ -103,6 +90,12 @@ function validateForm() {
     if (!followDate.value) {
         followDate.style.border = "2px solid red";
         followdateError.style.display = "inline";
+        isValid = false;
+    }
+
+    if (!operationsmanager.value.trim()) {
+        operationsmanager.style.border = "2px solid red";
+        operationsmanagerError.style.display = "inline";
         isValid = false;
     }
 
