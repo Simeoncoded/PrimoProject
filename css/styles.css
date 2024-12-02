@@ -3,12 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}  
 
 
-
-main {
+body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* The main content takes up remaining space */
+  .content {
     flex: 1;
-}
+  }
 
 .navbar a{
     color: #1A3851;
@@ -291,9 +300,17 @@ select {
     width: auto;
 }
 
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .dropdown-menu {
         width: 200px; /* Adjust this width as per your design preference */
     }
 }
+#logoutButton{
+    background-color:#1A3851;
+    color: #fff;
+    width: 80px;
+    border: none;
+}
+  
