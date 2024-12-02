@@ -172,8 +172,8 @@
 
                 row.innerHTML = `
             <td>${ncr.ncr_no}</td>
-            <td>${ncr.date}</td>
-            <td>${ncr.supplier_name}</td>
+            <td>${ncr.quality.date}</td>
+            <td>${ncr.quality.supplier_name}</td>
             <td>${ncr.status}</td>
             <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}"><i class="fas fa-edit"></i> Edit</button> <button class="vbtn" name="btnDetails" id="${ncr.ncr_no}"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button></td>
         `; // onclick="location.href='edit.html'"
@@ -187,13 +187,14 @@
         window.addEventListener("load", function () {
             document.querySelector('#ncrTable tbody').addEventListener("click", function (ev) {
                 const target = ev.target.getAttribute('name')
+                const id = ev.target.getAttribute("id")
                 if (target == "btnEdit") {
                     ev.preventDefault()
-                    localStorage.setItem('selectedNcr', target.id)
+                    localStorage.setItem('selectedNcr', id)
                     window.location.href = "edit.html"
                 } else if (target == "btnDetails"){
                     ev.preventDefault()
-                    localStorage.setItem('selectedNcr', target.id)
+                    localStorage.setItem('selectedNcr', id) 
                     window.location.href = "details.html"
                 }
             });
