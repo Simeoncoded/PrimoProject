@@ -6,7 +6,8 @@ window.addEventListener("load", function () {
 
     // Find the selected NCR object
     ncrs.forEach((ncr) => {
-        if (ncr.ncr_no === ncrnum) {
+        console.log(ncr.ncr_no + " " + ncrnum)
+        if (ncr.ncr_no == ncrnum) {
             thisNcr = ncr;
         }
     });
@@ -32,13 +33,13 @@ window.addEventListener("load", function () {
     const engInputs = document.querySelectorAll('input[name="ennotneeded"]'); // Radio buttons
 
     // Prefill form fields with data from thisNcr
-    ncrInput.value = thisNcr.ncr_no || ""; // Default to empty if not present
+    ncrInput.value = thisNcr.ncr_no; // Default to empty if not present
     ncrInput.setAttribute("disabled", true); // Disable editing
 
-    dateInput.value = thisNcr.date || new Date().toISOString().substring(0, 10); // Default to current date
+    dateInput.value = thisNcr.quality.date; // Default to current date
     dateInput.setAttribute("disabled", true); // Disable editing
 
-    supplierInput.value = thisNcr.supplier_name || "";
+    supplierInput.value = thisNcr.quality.supplier_name || "";
     prodInput.value = thisNcr.po_prod_no || "";
     salesInput.value = thisNcr.sales_order_no || "";
     itemInput.value = thisNcr.item_description || "";

@@ -222,9 +222,11 @@
         window.addEventListener("load", function () {
             document.querySelector('#ncrTable tbody').addEventListener("click", function (ev) {
                 const target = ev.target.getAttribute('name')
+                const id = ev.target.getAttribute('name')
+                console.log(target)
                 if (target == "btnEdit") {
                     ev.preventDefault()
-                    localStorage.setItem('selectedNcr', target.id)
+                    localStorage.setItem('selectedNcr', ev.target.id)
                     window.location.href = "edit.html"
                 } else if (target == "btnDetails"){
                     ev.preventDefault()

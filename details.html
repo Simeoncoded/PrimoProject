@@ -15,171 +15,146 @@
 
 <body>
     <div class="content">
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
-    <nav class="navbar navbar-expand-lg navsty">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
-                    </li>
-                    <li class="nav-item sl">
-                        <a class="nav-link" href="create.html">Create NCR Form</a>
-                    </li>
-                    <li class="nav-item dropdown sr">
-                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-bell" aria-hidden="true"></i>
-                            <span id="notification-counter" class="badge bg-danger">3</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                            <li>
-                                <a class="dropdown-item" href="engineering.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="createPurchasing.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section
-                                </a>
-                            </li>
+        <nav class="navbar navbar-expand-lg navsty">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                        </li>
+                        <li class="nav-item sl">
+                            <a class="nav-link" href="create.html">Create NCR Form</a>
+                        </li>
+                        <li class="nav-item dropdown sr">
+                            <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                <span id="notification-counter" class="badge bg-danger">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="engineering.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="createPurchasing.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                    </a>
+                                </li>
 
-                        </ul>
-                    </li>
+                            </ul>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="email.html">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span id="email-counter" class="badge bg-danger">0</span>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="email.html">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span id="email-counter" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html">Report</a>
-                    </li>
-                </ul>
-            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="report.html">Report</a>
+                        </li>
+                    </ul>
+                </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">+</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container my-5" id="main-content" tabindex="-1">
-        <h1 class="mb-4 text-center">View NCR Details</h1>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    INSPECTOR SECTION EDIT
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">+</span>
                 </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="container my-5" id="main-content" tabindex="-1">
+            <h1 class="mb-4 text-center">View NCR Details</h1>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        INSPECTOR SECTION EDIT
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
 
                         <div class="row ">
                             <!-- NCR No. -->
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="ncr_no" class="form-label">NCR No.</label>
                                 <input type="text" class="form-control" id="ncr_no" name="ncr_no" required
-                                    aria-required="true">
+                                    aria-required="true" readonly>
                             </div>
 
                             <!-- Date -->
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="date" class="form-label">Date</label>
                                 <input type="date" class="form-control" id="date" name="date" required
-                                    aria-required="true">
-                                <span id="dateError" class="text-danger" style="display: none; font-size: 0.9em;">Date
-                                    is
-                                    required</span>
+                                    aria-required="true" readonly>
                             </div>
-
                         </div>
-
-
-
 
                         <div class="row">
                             <!-- Identify Process Applicable -->
                             <div class="col-12 col-md-6 mb-3">
                                 <fieldset>
-                                    <legend class="form-label fw-bold">Identify Process Applicable:*</legend>
-                                    <span id="identifyError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">Please
-                                        select one of the checkboxes</span>
+                                    <legend class="form-label fw-bold">Identify Process Applicable:</legend>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="supplier" name="process"
-                                            value="Supplier or Rec-Insp">
+                                        <input class="form-check-input" type="radio" id="supplier" name="radprocess"
+                                            value="Supplier or Rec-Insp" readonly>
                                         <label class="form-check-label" for="supplier">Supplier or Rec-Insp</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="wip" name="process"
-                                            value="WIP">
+                                        <input class="form-check-input" type="radio" id="wip" name="radprocess"
+                                            value="WIP" readonly>
                                         <label class="form-check-label" for="wip">WIP (Production Order)</label>
                                     </div>
                                 </fieldset>
                             </div>
 
-
                             <!-- Supplier Name -->
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="supplier_name" class="form-label">Supplier Name*</label>
+                                <label for="supplier_name" class="form-label">Supplier Name</label>
 
-                                <button id="openModalBtn" class="btn btn-primary">Add Supplier</button>
-                                <span id="supplierError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">Please Pick a
-                                    Supplier</span>
-                                <input  type="text" class="form-control" id="supplier_name" name="supplier_name"
-                                    aria-required="true">
-                            </input>>
-                                <span id="supplierError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">Pick a
-                                    Supplier</span>
+                                <input type="text" class="form-control" id="supplier_name" name="supplier_name"
+                                    aria-required="true" readonly>
+                                </input>
                             </div>
 
                         </div>
 
-
-
                         <div class="row">
                             <!-- PO or Prod. No. -->
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="po_prod_no" class="form-label">PO or Prod. No.*</label>
+                                <label for="po_prod_no" class="form-label">PO or Prod. No.</label>
                                 <input type="text" class="form-control" id="po_prod_no" name="po_prod_no" required
-                                    aria-required="true" placeholder="Enter product Number">
-                                <span id="prodError" class="text-danger" style="display: none; font-size: 0.9em;">Prod.
-                                    No is
-                                    required</span>
+                                    aria-required="true" placeholder="Enter product Number" readonly>
                             </div>
 
                             <!-- Sales Order No. -->
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="sales_order_no" class="form-label">Sales Order No.*</label>
+                                <label for="sales_order_no" class="form-label">Sales Order No.</label>
                                 <input type="text" class="form-control" id="sales_order_no" name="sales_order_no"
-                                    required aria-required="true" placeholder="Enter sales order number">
-                                <span id="salesError" class="text-danger" style="display: none; font-size: 0.9em;">Sales
-                                    Order No.
-                                    is required</span>
+                                    required aria-required="true" placeholder="Enter sales order number" readonly>
                             </div>
                         </div>
 
@@ -187,396 +162,364 @@
                         <div class="row">
                             <!-- Description of Item -->
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="item_description" class="form-label">Description of Item (including SAP
-                                    No.)*</label>
+                                <label for="item_description" class="form-label">Description of Item</label>
                                 <textarea class="form-control" id="item_description" name="item_description" rows="3"
-                                    required aria-required="true"
-                                    placeholder="Enter the description of the item"></textarea>
-                                <span id="desItemError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">Please fill out
-                                    Description of Item</span>
+                                    required aria-required="true" readonly></textarea>
                             </div>
 
                             <!-- Description of Defect -->
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="defect_description" class="form-label">Description of Defect (in as much
-                                    detail as
-                                    possible)</label>
+                                <label for="defect_description" class="form-label">Description of Defect</label>
                                 <textarea class="form-control" id="defect_description" name="defect_description"
-                                    rows="3" required aria-required="true"
-                                    placeholder="Enter the description of all defects"></textarea>
-                                <span id="desDefectError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">Please fill
-                                    out Description of Defect</span>
+                                    rows="3" required aria-required="true" readonly></textarea>
                             </div>
                         </div>
 
                         <div class="row">
                             <!-- Quantity Received -->
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="quantity_received" class="form-label">Quantity Received*</label>
+                                <label for="quantity_received" class="form-label">Quantity Received</label>
                                 <input type="number" class="form-control" id="quantity_received"
-                                    name="quantity_received" min="0" required aria-required="true"
-                                    placeholder="Enter the quantity of product received">
-                                <span id="quanRecievedError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">Quantity
-                                    Received is required</span>
+                                    name="quantity_received" min="0" required aria-required="true" readonly>
                             </div>
 
                             <!-- Quantity Defective -->
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="quantity_defective" class="form-label">Quantity Defective*</label>
+                                <label for="quantity_defective" class="form-label">Quantity Defective</label>
                                 <input type="number" class="form-control" id="quantity_defective"
-                                    name="quantity_defective" min="0" required aria-required="true"
-                                    placeholder="Enter the amount of defects ">
-                                <span id="quanDefectiveError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">Quantity
-                                    Defective is required</span>
+                                    name="quantity_defective" min="0" required aria-required="true" readonly>
                             </div>
                         </div>
 
                         <div class="row">
                             <!-- Quality Representative's Name -->
                             <div class="col-12 col-md-4 mb-5">
-                                <label for="quality_rep_name" class="form-label">Quality Representative's Name*</label>
+                                <label for="quality_rep_name" class="form-label">Quality Representative's Name</label>
                                 <input type="text" class="form-control" id="quality_rep_name" name="quality_rep_name"
-                                    required aria-required="true" placeholder="Enter quality representative's name">
-                                <span id="qualityError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">Quality Rep's
-                                    name is required</span>
+                                    required aria-required="true" readonly>
                             </div>
 
                             <!-- Item marked Nonconforming -->
                             <div class="col-12 col-md-4 mb-3 hh">
                                 <fieldset>
-                                    <legend class="form-label fw-bold">Item marked Nonconforming:*</legend>
+                                    <legend class="form-label fw-bold">Item marked Nonconforming:</legend>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="nonconforming_yes"
-                                            name="nonconforming" value="Yes" required aria-required="true">
+                                            name="radnonconforming" value="Yes" required aria-required="true">
                                         <label class="form-check-label" for="nonconforming_yes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="nonconforming_no"
-                                            name="nonconforming" value="No" required aria-required="true">
+                                            name="radnonconforming" value="No" required aria-required="true">
                                         <label class="form-check-label" for="nonconforming_no">No</label>
                                     </div>
-                                    <span id="itemMarkError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">Required</span>
 
                                 </fieldset>
                             </div>
                             <div class="col-12 col-md-4 mb-3">
                                 <fieldset>
-                                    <legend class="form-label fw-bold">Engineering Not Needed:*</legend>
+                                    <legend class="form-label fw-bold">Engineering Not Needed:</legend>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="enginnotneeded_yes"
-                                            name="ennotneeded" value="Yes" required aria-required="true">
+                                            name="radennotneeded" value="Yes" required aria-required="true">
                                         <label class="form-check-label" for="enginnotneeded_yes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="enginnotneeded_no"
-                                            name="ennotneeded" value="No" required aria-required="true">
+                                            name="radennotneeded" value="No" required aria-required="true">
                                         <label class="form-check-label" for="enginnotneeded_no">No</label>
                                     </div>
-                                    <span id="enginNotMarkedError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">Required</span>
                                 </fieldset>
                             </div>
                         </div>
-                        <div>
-                            <button type="submit" class="btn btn-primary btnsub" id="btnSubmit">Save</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="supplierModal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Add Supplier</h2>
-                <form id="supplierForm">
-                    <label for="supplierName">Supplier Name:</label>
-                    <input type="text" id="supplierName" name="supplierName" class="form-control">
-                    <button type="submit" class="btn btn-success mt-2">Add</button>
-                </form>
-            </div>
-        </div>
-        <!-- engineering section -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    ENGINEERING SECTION EDIT
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                    <form id="engineeringForm">
-
-                        <div class="row">
-                            <!-- Review by CF Engineering -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
-                                <select id="review_engineering" class="form-select" name="review_engineering"
-                                    aria-required="true">
-                                    <option value="" disabled selected>Select disposition</option>
-                                    <option value="use_as_is">Use as is</option>
-                                    <option value="repair">Repair</option>
-                                    <option value="rework">Rework</option>
-                                    <option value="scrap">Scrap</option>
-                                </select>
-                                <span id="review_engineeringError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Review by CF Engineering is required.
-                                </span>
-                            </div>
-
-                            <!-- Customer Notification -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="customer_notification" class="form-label">Does Customer Require Notification
-                                    of NCR?</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" id="customer_notification_yes"
-                                        name="customer_notification" value="yes">
-                                    <label class="form-check-label" for="customer_notification_yes">Yes</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" id="customer_notification_no"
-                                        name="customer_notification" value="no">
-                                    <label class="form-check-label" for="customer_notification_no">No</label>
-                                </div>
-                                <span id="customer_notificationError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Please select whether customer notification is required.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Disposition -->
-                            <div class="col-12 mb-3">
-                                <label for="disposition" class="form-label">Disposition*</label>
-                                <textarea class="form-control" id="disposition" name="disposition" rows="3" required
-                                    placeholder="Provide disposition details"></textarea>
-                                <span id="dispositionError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Disposition details are required.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Original Revision Number -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="original_revision" class="form-label">Version Number*</label>
-                                <input type="number" class="form-control" id="original_revision"
-                                    name="original_revision" placeholder="Enter original revision number">
-                                <span id="original_revisionError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Version Number is required.
-                                </span>
-                            </div>
-
-                            <!-- Updated Revision Number -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="updated_revision" class="form-label">Updated Revision Number*</label>
-                                <input type="number" class="form-control" id="updated_revision" name="updated_revision"
-                                    placeholder="Enter updated revision number">
-                                <span id="updated_revisionError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Updated Revision Number is required.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Engineer Name -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="engineer_name" class="form-label">Name of Engineer*</label>
-                                <input type="text" class="form-control" id="engineer_name" name="engineer_name"
-                                    placeholder="Enter Engineer's Name">
-                                <span id="engineer_nameError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Engineer Name is required.
-                                </span>
-                            </div>
-
-                            <!-- Revision Date -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="revision_date" class="form-label">Revision Date*</label>
-                                <input type="date" class="form-control" id="revision_date" name="revision_date">
-                                <span id="revision_dateError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Revision Date is required.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Engineering Details -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="engineering" class="form-label">Engineering Details*</label>
-                                <input type="text" class="form-control" id="engineering" name="engineering"
-                                    placeholder="Enter engineering details">
-                                <span id="engineeringError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Engineering details are required.
-                                </span>
-                            </div>
-
-                            <!-- Engineering Date -->
-                            <div class="col-12 col-md-6 mb-3">
-                                <label for="engineering_date" class="form-label">Engineering Date*</label>
-                                <input type="date" class="form-control" id="engineering_date" name="engineering_date">
-                                <span id="engineering_dateError" class="text-danger"
-                                    style="display: none; font-size: 0.9em;">
-                                    Engineering Date is required.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <button type="submit" id="btnEngineeringSave" class="btn btn-primary">Save Changes</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <!-- engineering section -->
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                        PURCHASE SECTION EDIT
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        ENGINEERING SECTION EDIT
                     </button>
                 </h2>
-                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        <form id="ncrForm">
-
-                            <div class="row ">
-                                <!-- NCR No. -->
-                                <div class="col-12 col-md-6 mb-3">
-                                    <input for="ncr_no" class="form-label">NCR No.</label>
-                                    <input type="text" class="form-control" id="ncr_no" name="ncr_no"
-                                        aria-required="true" placeholder="Enter NCR Number">
-                                </div>
-
-                                <!-- OP Date -->
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="date" class="form-label">OP Date</label>
-                                    <input type="date" class="form-control" id="date" name="date" aria-required="true">
-                                    <span id="dateOPError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">OP Date is required</span>                                    
-                                </div>
-
-
-                            </div>
+                        <form id="engineeringForm">
 
                             <div class="row">
-                                <!-- Was the Car Raised? -->
+                                <!-- Review by CF Engineering -->
                                 <div class="col-12 col-md-6 mb-3">
-                                    <fieldset>
-                                        <legend class="form-label fw-bold">Was the Car Raised?*</legend>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="carraised_yes"
-                                                name="carraised" value="Yes" aria-required="true">
-                                            <label class="form-check-label" for="carraised_yes">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="fcarraised_no"
-                                                name="carraised" value="No" aria-required="true">
-                                            <label class="form-check-label" for="carraised_no">No</label>
-                                        </div>
-                                        <span id="carraisedError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">Please
-                                            select wether or not Follow up is required.</span>
-                                    </fieldset>
-                                </div>
-
-
-                                <!-- Supplier Name -->
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="carnumber" class="form-label">Car Number:*</label>
-                                    <input type="number" class="form-control" id="carnumber" name="carnumber"
-                                        aria-required="true" placeholder="Enter Car Number">
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="col-12 col-md-6 mb-3">
-                                    <fieldset>
-                                        <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="followrequired_yes"
-                                                name="followrequired" value="Yes" aria-required="true">
-                                            <label class="form-check-label" for="followrequired_yes">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="followrequired_no"
-                                                name="followrequired" value="No" aria-required="true">
-                                            <label class="form-check-label" for="followrequired_no">No</label>
-                                        </div>
-                                        <span id="followrequiredError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">Please
-                                            select wether or not Follow up is required.</span>
-                                    </fieldset>
-                                </div>
-
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="followtype" class="form-label">Follow Up Type?*</label>
-
-                                    <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
-                                    <span id="followupError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">Please Pick a
-                                        Supplier</span>
-                                    <select class="form-control" id="followtype" name="followtype" aria-required="true">
-                                        <option value="">Select a type</option>
-                                    </select>
-                                    <span id="followupError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">Pick a
-                                        Supplier</span>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <!-- Follow up Expected Date-->
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="followdate" class="form-label">Follow Up Expected Date*</label>
-                                    <input type="date" class="form-control" id="followdate" name="followdate"
+                                    <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
+                                    <select id="review_engineering" class="form-select" name="review_engineering"
                                         aria-required="true">
-                                    <span id="followdateError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">Date is
-                                        required</span>
-                                    <span id="followUpdateError"
-                                        style="display: none; color: red; font-size: 0.9em;">Please select a valid date in the current year.</span>
+                                        <option value="" disabled selected>Select disposition</option>
+                                        <option value="use_as_is">Use as is</option>
+                                        <option value="repair">Repair</option>
+                                        <option value="rework">Rework</option>
+                                        <option value="scrap">Scrap</option>
+                                    </select>
+                                    <span id="review_engineeringError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Review by CF Engineering is required.
+                                    </span>
                                 </div>
+
+                                <!-- Customer Notification -->
                                 <div class="col-12 col-md-6 mb-3">
-                                    <label for="operationsmanager" class="form-label">Operations Manager Name*</label>
-                                    <input type="text" class="form-control" id="operationsmanagername" name="operationsmanagername"
-                                        aria-required="true" placeholder="Enter Operations Manager's Name">
-                                    <span id="operationsmanagerError" class="text-danger"
-                                        style="display: none; font-size: 0.9em;">Operations manager name is required</span>
+                                    <label for="customer_notification" class="form-label">Does Customer Require
+                                        Notification
+                                        of NCR?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="customer_notification_yes"
+                                            name="customer_notification" value="yes">
+                                        <label class="form-check-label" for="customer_notification_yes">Yes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="customer_notification_no"
+                                            name="customer_notification" value="no">
+                                        <label class="form-check-label" for="customer_notification_no">No</label>
+                                    </div>
+                                    <span id="customer_notificationError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Please select whether customer notification is required.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Disposition -->
+                                <div class="col-12 mb-3">
+                                    <label for="disposition" class="form-label">Disposition*</label>
+                                    <textarea class="form-control" id="disposition" name="disposition" rows="3" required
+                                        placeholder="Provide disposition details"></textarea>
+                                    <span id="dispositionError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Disposition details are required.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Original Revision Number -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="original_revision" class="form-label">Version Number*</label>
+                                    <input type="number" class="form-control" id="original_revision"
+                                        name="original_revision" placeholder="Enter original revision number">
+                                    <span id="original_revisionError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Version Number is required.
+                                    </span>
                                 </div>
 
-
+                                <!-- Updated Revision Number -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="updated_revision" class="form-label">Updated Revision Number*</label>
+                                    <input type="number" class="form-control" id="updated_revision"
+                                        name="updated_revision" placeholder="Enter updated revision number">
+                                    <span id="updated_revisionError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Updated Revision Number is required.
+                                    </span>
+                                </div>
                             </div>
+
+                            <div class="row">
+                                <!-- Engineer Name -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="engineer_name" class="form-label">Name of Engineer*</label>
+                                    <input type="text" class="form-control" id="engineer_name" name="engineer_name"
+                                        placeholder="Enter Engineer's Name">
+                                    <span id="engineer_nameError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Engineer Name is required.
+                                    </span>
+                                </div>
+
+                                <!-- Revision Date -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="revision_date" class="form-label">Revision Date*</label>
+                                    <input type="date" class="form-control" id="revision_date" name="revision_date">
+                                    <span id="revision_dateError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Revision Date is required.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Engineering Details -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="engineering" class="form-label">Engineering Details*</label>
+                                    <input type="text" class="form-control" id="engineering" name="engineering"
+                                        placeholder="Enter engineering details">
+                                    <span id="engineeringError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Engineering details are required.
+                                    </span>
+                                </div>
+
+                                <!-- Engineering Date -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="engineering_date" class="form-label">Engineering Date*</label>
+                                    <input type="date" class="form-control" id="engineering_date"
+                                        name="engineering_date">
+                                    <span id="engineering_dateError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">
+                                        Engineering Date is required.
+                                    </span>
+                                </div>
+                            </div>
+
                             <div>
-                                <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
+                                <button type="submit" id="btnEngineeringSave" class="btn btn-primary">Save
+                                    Changes</button>
                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            PURCHASE SECTION EDIT
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <form id="ncrForm">
 
-    </main>
-</div>
+                                <div class="row ">
+                                    <!-- NCR No. -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <input for="ncr_no" class="form-label">NCR No.</label>
+                                        <input type="text" class="form-control" id="ncr_no" name="ncr_no"
+                                            aria-required="true" placeholder="Enter NCR Number">
+                                    </div>
+
+                                    <!-- OP Date -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="date" class="form-label">OP Date</label>
+                                        <input type="date" class="form-control" id="date" name="date"
+                                            aria-required="true">
+                                        <span id="dateOPError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">OP Date is required</span>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <!-- Was the Car Raised? -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <fieldset>
+                                            <legend class="form-label fw-bold">Was the Car Raised?*</legend>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="carraised_yes"
+                                                    name="carraised" value="Yes" aria-required="true">
+                                                <label class="form-check-label" for="carraised_yes">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="fcarraised_no"
+                                                    name="carraised" value="No" aria-required="true">
+                                                <label class="form-check-label" for="carraised_no">No</label>
+                                            </div>
+                                            <span id="carraisedError" class="text-danger"
+                                                style="display: none; font-size: 0.9em;">Please
+                                                select wether or not Follow up is required.</span>
+                                        </fieldset>
+                                    </div>
+
+
+                                    <!-- Supplier Name -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="carnumber" class="form-label">Car Number:*</label>
+                                        <input type="number" class="form-control" id="carnumber" name="carnumber"
+                                            aria-required="true" placeholder="Enter Car Number">
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <fieldset>
+                                            <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="followrequired_yes"
+                                                    name="followrequired" value="Yes" aria-required="true">
+                                                <label class="form-check-label" for="followrequired_yes">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="followrequired_no"
+                                                    name="followrequired" value="No" aria-required="true">
+                                                <label class="form-check-label" for="followrequired_no">No</label>
+                                            </div>
+                                            <span id="followrequiredError" class="text-danger"
+                                                style="display: none; font-size: 0.9em;">Please
+                                                select wether or not Follow up is required.</span>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="followtype" class="form-label">Follow Up Type?*</label>
+
+                                        <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
+                                        <span id="followupError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">Please Pick a
+                                            Supplier</span>
+                                        <select class="form-control" id="followtype" name="followtype"
+                                            aria-required="true">
+                                            <option value="">Select a type</option>
+                                        </select>
+                                        <span id="followupError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">Pick a
+                                            Supplier</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <!-- Follow up Expected Date-->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="followdate" class="form-label">Follow Up Expected Date*</label>
+                                        <input type="date" class="form-control" id="followdate" name="followdate"
+                                            aria-required="true">
+                                        <span id="followdateError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">Date is
+                                            required</span>
+                                        <span id="followUpdateError"
+                                            style="display: none; color: red; font-size: 0.9em;">Please select a valid
+                                            date in the current year.</span>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="operationsmanager" class="form-label">Operations Manager
+                                            Name*</label>
+                                        <input type="text" class="form-control" id="operationsmanagername"
+                                            name="operationsmanagername" aria-required="true"
+                                            placeholder="Enter Operations Manager's Name">
+                                        <span id="operationsmanagerError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">Operations manager name is
+                                            required</span>
+                                    </div>
+
+
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
     <footer>
         <div class="footer-links">
             <a href="index.html">Dashboard</a>
@@ -590,6 +533,10 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/inspect.js"></script>
     <script src="scripts/edit.js"></script>
+
+    <script>
+        
+    </script>
 
     <!-- <script>
 
