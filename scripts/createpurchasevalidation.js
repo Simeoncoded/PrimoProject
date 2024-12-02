@@ -1,9 +1,12 @@
 const btnSubmit = document.getElementById("btnSubmit");
 const btnSave = document.getElementById("btnSave");
 
-function validateForm() {
 
+//same logic as other validation files just copy pasted in the variables and rewrote some of the logic
+function validateForm() {
     let isValid = true;
+
+    // input Fields
     const ncrNumber = document.getElementById("ncr_no");
     const opDate = document.getElementById("date");
     const carRaisedYes = document.getElementById("carraised_yes");
@@ -14,7 +17,7 @@ function validateForm() {
     const followType = document.getElementById("followtype");
     const followDate = document.getElementById("followdate");
 
-    // Error Messages
+    // error Messages
     const ncrNoError = document.getElementById("ncrNoError");
     const dateError = document.getElementById("dateError");
     const carRaisedError = document.getElementById("carraisedError");
@@ -22,7 +25,6 @@ function validateForm() {
     const followRequiredError = document.getElementById("followrequiredError");
     const followupError = document.getElementById("followupError");
     const followdateError = document.getElementById("followdateError");
-    const followUpdateError = document.getElementById("followUpdateError");
 
     const errorFields = [
         ncrNoError,
@@ -31,41 +33,47 @@ function validateForm() {
         carNoError,
         followRequiredError,
         followupError,
-        followdateError,
-        followUpdateError
+        followdateError
     ];
-    errorFields.forEach(errorId => (document.getElementById(errorId).style.display = "none"));
 
+    const fields = [
+        ncrNumber,
+        opDate,
+        carRaisedYes,
+        carRaisedNo,
+        carNumber,
+        followRequiredYes,
+        followRequiredNo,
+        followType,
+        followDate
+    ];
 
-    const fields = [ncrNumber, opDate, carRaisedYes, carRaisedNo, carNumber, followRequiredYes, followRequiredNo, followType, followDate];
+    errorFields.forEach(errorField => (errorField.style.display = "none"));
+    fields.forEach(field => {
+        if (field) {
+            field.style.border = "1px solid #ced4da";
+        }
+    });
 
-    fields.forEach(field => field.style.border = "1px solid #ced4da");
-    if (!opDate.value) {
-        opDate.style.border = "2px solid red";
-        document.getElementById("dateError").style.display = "inline"; // Date is required message
-        isValid = false;
-    } else if (new Date(opDate.value).getFullYear() !== currentYear) {
-        opDate.style.border = "2px solid red";
-        document.getElementById("dateYearError").style.display = "inline"; // Valid year message
-        isValid = false;
-    }
+    const currentYear = new Date().getFullYear();
 
-
-    // Validate NCR Number
     if (!ncrNumber.value.trim()) {
         ncrNumber.style.border = "2px solid red";
         ncrNoError.style.display = "inline";
         isValid = false;
     }
 
-    // Validate Date
     if (!opDate.value) {
         opDate.style.border = "2px solid red";
         dateError.style.display = "inline";
         isValid = false;
+    } else if (new Date(opDate.value).getFullYear() !== currentYear) {
+        opDate.style.border = "2px solid red";
+        dateError.style.display = "inline";
+        dateError.textContent = "Please select a valid date in the current year.";
+        isValid = false;
     }
 
-    // Validate if Car Raised
     if (!carRaisedYes.checked && !carRaisedNo.checked) {
         carRaisedYes.parentNode.style.border = "2px solid red";
         carRaisedNo.parentNode.style.border = "2px solid red";
@@ -73,14 +81,12 @@ function validateForm() {
         isValid = false;
     }
 
-    // Validate Car Number
     if (!carNumber.value.trim() || carNumber.value <= 0) {
         carNumber.style.border = "2px solid red";
         carNoError.style.display = "inline";
         isValid = false;
     }
 
-    // Validate Follow-Up Required
     if (!followRequiredYes.checked && !followRequiredNo.checked) {
         followRequiredYes.parentNode.style.border = "2px solid red";
         followRequiredNo.parentNode.style.border = "2px solid red";
@@ -88,27 +94,22 @@ function validateForm() {
         isValid = false;
     }
 
-    // Validate Follow-Up Type
     if (!followType.value.trim()) {
         followType.style.border = "2px solid red";
         followupError.style.display = "inline";
         isValid = false;
     }
 
-    // Validate Follow-Up Date
     if (!followDate.value) {
         followDate.style.border = "2px solid red";
         followdateError.style.display = "inline";
         isValid = false;
     }
 
-    // Submit the form if all validations pass
     if (isValid) {
-        document.getElementById("ncrForm").submit(); // Manually submit the form after validation
+        document.getElementById("ncrForm").submit();
     }
-
-
 }
 
-
-btnSub.addEventListener("click", validateForm);
+btnSubmit.addEventListener("click", validateForm);
+btnSave.addEventListener("click", validateForm);
