@@ -23,10 +23,14 @@
 </head>
 <style>
     .lForm {
+    
     background-color: #1A3851;
     width: 40%;
-    margin: 50px auto;
-    padding: 20px;
+    height: 25em;
+    top: 50%;
+    margin: 0 auto;
+    margin-top: 6em;
+    padding: 60px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #fff;
@@ -162,25 +166,25 @@
     </nav>
 
     <main>
-        <h1>Login</h1>
+        <!-- <h1>Login</h1>
         <div>
             <li><input type="radio" name="radLog" value="Quality Inspector">Quality Inspector</li>
             <li><input type="radio" name="radLog" value="Engineering">Engineering</li>
             <li><input type="radio" name="radLog" value="Procurement">Procurement</li>
             <li><input type="radio" name="radLog" value="Administration">Administration</li>
             <button id="btnLogin">Confirm</button>
-        </div>
+        </div> -->
 
 
         <div class="lForm">
             <form id="loginForm">
               <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" class="input-field" required>
+                <input type="text" id="username" class="input-field" >
               </div>
               <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" class="input-field" required>
+                <input type="password" id="password" class="input-field" >
               </div>
               <button type="submit" class="submit-btn">Login</button>
             </form>
@@ -202,7 +206,7 @@
 <script src="scripts/page.js"></script>
 <script src="scripts/script.js"></script>
 <script src="scripts/dataload.js"></script>
-    <script>
+    <!-- <script>
         document.getElementById("btnLogin")
             .addEventListener("click", function () {
 
@@ -210,7 +214,7 @@
                 location.href = "index.html"
 
             });
-    </script>
+    </script> -->
 
 </body>
 </html>

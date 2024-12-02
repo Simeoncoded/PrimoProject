@@ -58,7 +58,6 @@ const users = [
     }
   }
   
-  // Call checkAccess with the current page's filename
   const currentPage = window.location.pathname.split("/").pop();
   checkAccess(currentPage);
   
