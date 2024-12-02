@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Collect form data
             const ncrData = {
-                quality:{
                 ncr_no: document.getElementById('ncr_no').value,
+                quality:{
                 date: document.getElementById('date').value,
                 process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
                 supplier_name: document.getElementById('supplier_name').value,
