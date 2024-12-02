@@ -125,9 +125,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 engineering_date: document.getElementById('engineering_date').value,
             };
 
-          
             // Save form data to localStorage
-            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
+            const existingForms = JSON.parse(localStorage.getItem('ncrs'));
+            existingForms.forEach()
             existingForms.push(engineeringData);
             localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
 

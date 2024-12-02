@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
         notificationCounter.textContent = count;
     }
 
-   
-
     // Form submission handling
     const form = document.getElementById('ncrForm');
     if (form) {

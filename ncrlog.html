@@ -172,7 +172,7 @@
             <td>${ncr.date}</td>
             <td>${ncr.supplier_name}</td>
             <td>${ncr.status}</td>
-            <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}"><i class="fas fa-edit"></i> Edit</button> <button class="vbtn" name="btnDetails"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button></td>
+            <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}"><i class="fas fa-edit"></i> Edit</button> <button class="vbtn" name="btnDetails" id="${ncr.ncr_no}"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button></td>
         `; // onclick="location.href='edit.html'"
                 ncrTableBody.appendChild(row);
             });
@@ -183,11 +183,15 @@
 
         window.addEventListener("load", function () {
             document.querySelector('#ncrTable tbody').addEventListener("click", function (ev) {
-                const target = ev.target
-                if (target.classList.contains("vbtn")) {
+                const target = ev.target.getAttribute('name')
+                if (target == "btnEdit") {
                     ev.preventDefault()
                     localStorage.setItem('selectedNcr', target.id)
                     window.location.href = "edit.html"
+                } else if (target == "btnDetails"){
+                    ev.preventDefault()
+                    localStorage.setItem('selectedNcr', target.id)
+                    window.location.href = "details.html"
                 }
             });
         });

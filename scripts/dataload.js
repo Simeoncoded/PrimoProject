@@ -1,19 +1,27 @@
 ncrs = [
     {
-        date: "2024-11-25",
-        defect_description: "The eggs are white and yellow",
-        ennotneeded: "Yes",
-        item_description: "Green eggs and Ham",
         ncr_no: "2024-001",
-        nonconforming: "Yes",
-        po_prod_no: "1278",
-        process: "Supplier or Rec-Insp",
-        quality_rep_name: "Doctor Seuss",
-        quantity_defective: "200",
-        quantity_received: "2000",
-        sales_order_no: "433",
-        status: "open",
-        supplier_name: "Green Goods Ltd.",
+        quality:{
+            date: "2024-11-25",
+            defect_description: "The eggs are white and yellow",
+            ennotneeded: "Yes",
+            item_description: "Green eggs and Ham",
+            nonconforming: "Yes",
+            po_prod_no: "1278",
+            process: "Supplier or Rec-Insp",
+            quality_rep_name: "Doctor Seuss",
+            quantity_defective: "200",
+            quantity_received: "2000",
+            sales_order_no: "433",
+            status: "open",
+            supplier_name: "Green Goods Ltd.",
+        },
+        engineer:{
+
+        },
+        purchasing:{
+
+        }
     }
 ]
 
@@ -27,7 +35,7 @@ suppliers = [
     "Eco Trade Partners",
     "Luxury Goods International",
     "Mega Supplies Co.",
-    "Top Choice Suppliers"
+    "Top Choice Suppliers",
 ]
 
 function callCurrentUser() {
@@ -47,6 +55,8 @@ function codeAddress() {
     if (existingSuppliers == -1) { 
         localStorage.setItem('suppliers', JSON.stringify(suppliers));
     }
+
+    location.reload
 }
 
 
