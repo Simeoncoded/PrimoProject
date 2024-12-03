@@ -72,6 +72,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="report.html">Report</a>
                     </li>
+                    <button id="logoutButton">Logout</button>
                 </ul>
             </div>
 
@@ -86,7 +87,7 @@
     <main class="container my-5" id="main-content" tabindex="-1">
         <h2 class="mb-4 text-center">Edit Non-Conformance Report(NCR)</h2>
         <p style="text-align: center;font-weight: bold;">All fields with * (astericks) are required </p>
-        <div class="accordion-item">
+        <div class="accordion-item" id="inspectorAccordion">
             <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
@@ -319,7 +320,7 @@
             </div>
         </div>
         <!-- engineering section -->
-        <div class="accordion-item">
+        <div class="accordion-item" id="engineeringAccordion">
             <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -459,7 +460,7 @@
                     </form>
                 </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item" id="purchasingAccordion">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
@@ -474,7 +475,7 @@
 
                             <div class="row ">
                                 <!-- NRC number thinking about making it unique But might be 
-                                 better to name it the same so that it lines up with the others -->>
+                                 better to name it the same so that it lines up with the others -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="ncr_no" class="form-label">NCR No.*</label>
                                     <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true" placeholder="Enter NCR Number">
@@ -625,7 +626,7 @@
 
     </script>
 
-    <!-- <script>
+    <script>
 
 window.addEventListener("load", function () {
     // Get the selected NCR number from localStorage
@@ -734,10 +735,9 @@ window.addEventListener("load", function () {
 });
 
 
-
-    </script> -->
-
-
+    
+    </script>
+    <script src="scripts/users.js"></script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
