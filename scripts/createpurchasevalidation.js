@@ -17,6 +17,7 @@ function validateForm() {
     const followType = document.getElementById("followtype");
     const followDate = document.getElementById("followdate");
     const operationsmanager = document.getElementById("operationsmanagername");
+    const preliminaryDecision = document.getElementById("preliminaryDecision");
 
     // error Messages
     const ncrNoError = document.getElementById("ncrNoError");
@@ -27,6 +28,8 @@ function validateForm() {
     const followupError = document.getElementById("followupError");
     const followdateError = document.getElementById("followdateError");
     const operationsmanagerError = document.getElementById("operationsmanagerError");
+    const preliminaryDecisionError = document.getElementById("preliminaryDecisionError");
+
 
     const errorFields = [ncrNoError, dateError, carRaisedError, carNoError,
         followRequiredError, followupError, followdateError];
@@ -96,6 +99,11 @@ function validateForm() {
     if (!operationsmanager.value.trim()) {
         operationsmanager.style.border = "2px solid red";
         operationsmanagerError.style.display = "inline";
+        isValid = false;
+    }
+    if (!preliminaryDecision.value.trim()) {
+        preliminaryDecision.style.border = "2px solid red";
+        preliminaryDecisionError.style.display = "inline";
         isValid = false;
     }
 

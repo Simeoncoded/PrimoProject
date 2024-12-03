@@ -213,11 +213,27 @@
                     <span id="operationsmanagerError" class="text-danger"
                         style="display: none; font-size: 0.9em;">Operations manager name is required</span>
                 </div>            
-            </div>          
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="preliminaryDecision" class="form-label">Preliminary Decision*</label>
+                    <select id="preliminaryDecision" name="preliminaryDecision" class="form-select" aria-required="true">
+                        <option value="" disabled selected>Select a decision</option>
+                        <option value="approve">Approve</option>
+                        <option value="reject">Reject</option>
+                        <option value="hold">Hold</option>
+                        <option value="escalate">Escalate</option>
+                    </select>
+                    <span id="preliminaryDecisionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                        Preliminary decision is required.
+                    </span>
+                </div>                
+            </div>   
             <div>
                 <button type="submit" class="btn btn-primary btnsub" id="btnSubmit">Submit</button>
                 <button type="submit" class="btn btn-primary btnsub" id="btncreateSave">Save</button>
             </div>
+            
         </form>
 
 
