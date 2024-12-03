@@ -261,6 +261,33 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function generateNcrNumber() {
+                const year = new Date().getFullYear();
+                const currentNumber = Number(localStorage.getItem('ncrLastNum')) + 1 || 1;
+                const paddedNumber = currentNumber.toString().padStart(3, '0');
+
+                const ncrNumber = `${year}-${paddedNumber}`;
+                return ncrNumber;
+            }
+
+            const ncrInput = document.getElementById("ncr_no");
+            if (ncrInput) {
+                ncrInput.value = generateNcrNumber();
+                //changes the ncr no textbox to read able only
+                ncrInput.setAttribute("disabled", true);
+            }
+
+            const dateInput = document.getElementById("date")
+            if (dateInput) {
+                dateInput.value = new Date().toISOString().substring(0,10);
+                //changes the ncr no textbox to read able only
+                dateInput.setAttribute("disabled", true);
+            }
+        });
+    </script>
+
     <!-- <script src="scripts/page.js"></script> -->
     <script src="scripts/inspect.js"></script>
     <script src="scripts/script.js"></script>

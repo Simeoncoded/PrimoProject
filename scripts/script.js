@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize notification counter
+    // Initialize notification and email counters
     const notificationCounter = document.getElementById('notification-counter');
+    const emailCounter = document.getElementById('email-counter');
+
     if (notificationCounter) {
-        // Get the current count from localStorage and display it
-        const count = localStorage.getItem('notificationCount') || 0;
-        notificationCounter.textContent = count;
+        const notificationCount = localStorage.getItem('notificationCount') || 0;
+        notificationCounter.textContent = notificationCount;
+    }
+
+    if (emailCounter) {
+        const emailCount = localStorage.getItem('emailCount') || 0;
+        emailCounter.textContent = emailCount;
     }
 
     // Form submission handling
@@ -16,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Collect form data
             const ncrData = {
                 ncr_no: document.getElementById('ncr_no').value,
-                // quality:{
+                //quality{
                 date: document.getElementById('date').value,
                 process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
                 supplier_name: document.getElementById('supplier_name').value,
@@ -29,18 +35,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 quality_rep_name: document.getElementById('quality_rep_name').value,
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
+            //}
                 status: "open"
-                // },
             };
 
             // Store data in localStorage
             const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
-            localStorage.setItem('ncrLastNum', ncrData.ncr_no)
+            localStorage.setItem('ncrLastNum', ncrData.ncr_no);
 
-            // Increment notification 
+            // Increment notification and email counters
             incrementNotificationCount();
+            incrementEmailCount();
 
             // Alert user and redirect
             alert("Form submitted successfully!");
@@ -56,9 +63,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Clear all items from localStorage
             localStorage.clear();
             alert('Local Storage cleared!');
+
             // Reset the notification and email counters on the page
-            notificationCounter.textContent = 0;
-            emailCounter.textContent = 0;
+            if (notificationCounter) notificationCounter.textContent = 0;
+            if (emailCounter) emailCounter.textContent = 0;
         });
     }
 });
@@ -71,6 +79,17 @@ function incrementNotificationCount() {
         count++;
         notificationCounter.textContent = count;
         localStorage.setItem('notificationCount', count);
+    }
+}
+
+// Function to increment email count
+function incrementEmailCount() {
+    const emailCounter = document.getElementById('email-counter');
+    if (emailCounter) {
+        let count = parseInt(emailCounter.textContent) || 0;
+        count++;
+        emailCounter.textContent = count;
+        localStorage.setItem('emailCount', count);
     }
 }
 

@@ -97,11 +97,18 @@ btnSub.addEventListener("click", validateForm);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize notification counter
+    // Initialize notification and email counters
     const notificationCounter = document.getElementById('notification-counter');
+    const emailCounter = document.getElementById('email-counter');
+
     if (notificationCounter) {
         const count = localStorage.getItem('notificationCount') || 0;
         notificationCounter.textContent = count;
+    }
+
+    if (emailCounter) {
+        const emailCount = localStorage.getItem('emailCount') || 0;
+        emailCounter.textContent = emailCount;
     }
 
     // Engineering form submission handling
@@ -126,13 +133,13 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Save form data to localStorage
-            const existingForms = JSON.parse(localStorage.getItem('ncrs'));
-            existingForms.forEach()
+            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
             existingForms.push(engineeringData);
             localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
 
-            // Increment notification count
+            // Increment notification and email counters
             incrementNotificationCount();
+            incrementEmailCount();
 
             // Alert user and reset form
             alert("Engineering form submitted successfully!");
@@ -153,6 +160,13 @@ function incrementNotificationCount() {
     }
 }
 
-
-
-
+// Function to increment email count
+function incrementEmailCount() {
+    const emailCounter = document.getElementById('email-counter');
+    if (emailCounter) {
+        let count = parseInt(emailCounter.textContent) || 0;
+        count++;
+        emailCounter.textContent = count;
+        localStorage.setItem('emailCount', count);
+    }
+}
