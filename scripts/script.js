@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Collect form data
             const ncrData = {
                 ncr_no: document.getElementById('ncr_no').value,
-                quality:{
+                // quality:{
                 date: document.getElementById('date').value,
                 process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
                 supplier_name: document.getElementById('supplier_name').value,
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
                 status: "open"
-                },
+                // },
             };
 
             // Store data in localStorage

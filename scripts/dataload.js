@@ -2,7 +2,7 @@ ncrs = [
     {
         ncr_no: "2024-001",
         status: "open",
-        quality:{
+        // quality:{
             date: "2024-11-25",
             defect_description: "The eggs are white and yellow",
             ennotneeded: "Yes",
@@ -15,13 +15,13 @@ ncrs = [
             quantity_received: "2000",
             sales_order_no: "433",
             supplier_name: "Green Goods Ltd.",
-        },
-        engineer:{
+        // },
+        // engineer:{
 
-        },
-        purchasing:{
+        // },
+        // purchasing:{
 
-        }
+        // }
     }
 ]
 

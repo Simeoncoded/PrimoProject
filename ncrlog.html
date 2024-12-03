@@ -13,141 +13,136 @@
 
 <body>
     <div class="content">
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
-    <nav class="navbar navbar-expand-lg navsty">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
-                    </li>
-                    <li class="nav-item sl">
-                        <a class="nav-link" href="create.html">Create NCR Form</a>
-                    </li>
-                    <li class="nav-item dropdown sr">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="notificationDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            <i class="fa fa-bell" aria-hidden="true"></i>
-                            <span id="notification-counter" class="badge bg-danger">3</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                            <li>
-                                <a class="dropdown-item" href="engineering.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="createPurchasing.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section
-                                </a>
-                            </li>
-                          
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="email.html">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span id="email-counter" class="badge bg-danger">0</span>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html">Report</a>
-                    </li>
-                    <button id="logoutButton">Logout</button>
-                </ul>
+        <nav class="navbar navbar-expand-lg navsty">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                        </li>
+                        <li class="nav-item sl">
+                            <a class="nav-link" href="create.html">Create NCR Form</a>
+                        </li>
+                        <li class="nav-item dropdown sr">
+                            <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                <span id="notification-counter" class="badge bg-danger">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="engineering.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="createPurchasing.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="email.html">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span id="email-counter" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="report.html">Report</a>
+                        </li>
+                        <button id="logoutButton">Logout</button>
+                    </ul>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">+</span>
+                </button>
             </div>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">+</span>
-            </button>
-        </div>
-    </nav>
+        </nav>
 
-    <main>
-        <section class="search-sec">
-            <div class="searchcon">
-                <h1>NCR LOG's</h1>
-                <form>
-                    <div class="srcdiv">
-                        <label for="searchInputNumber">NCR Number:</label>
-                        <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber"
-                            onchange="updateSearch()">
+        <main>
+            <section class="search-sec">
+                <div class="searchcon">
+                    <h1>NCR LOG's</h1>
+                    <form>
+                        <div class="srcdiv">
+                            <label for="searchInputNumber">NCR Number:</label>
+                            <input type="text" name="ncrnum" placeholder="Search NCR by Number" id="searchInputNumber"
+                                onchange="updateSearch()">
 
-                        <label for="searchSupplier">Supplier:</label>
-                        <input type="text" name="ncrsup" placeholder="Search NCR Supplier" id="searchSupplier"
-                            onchange="updateSearch()">
+                            <label for="searchSupplier">Supplier:</label>
+                            <input type="text" name="ncrsup" placeholder="Search NCR Supplier" id="searchSupplier"
+                                onchange="updateSearch()">
 
 
 
-                        <label for="ncrstatus">NCR Status:</label>
-                        <select name="ncrstatus" id="ncrstatus" onchange="updateSearch()">
-                            <option value="">Select Status</option>
-                            <option value="Closed">Closed</option>
-                            <option value="Engineer">Engineer</option>
-                            <option value="Procurement">Procurement</option>
-                            <option value="Quality Inspector">Quality Inspector</option>
-                            <option value="Open">Open</option>
-                            <option value="Archived">Archived</option>
-                        </select>
-                    </div>
-                    <div class="srcdiv">
-                        <label for="ncrdatefrom">NCR Date (FROM):</label>
-                        <input type="date" name="ncrdatefrom" id="ncrdatefrom" onchange="updateSearch()">
+                            <label for="ncrstatus">NCR Status:</label>
+                            <select name="ncrstatus" id="ncrstatus" onchange="updateSearch()">
+                                <option value="">Select Status</option>
+                                <option value="Closed">Closed</option>
+                                <option value="Engineer">Engineer</option>
+                                <option value="Procurement">Procurement</option>
+                                <option value="Quality Inspector">Quality Inspector</option>
+                                <option value="Open">Open</option>
+                                <option value="Archived">Archived</option>
+                            </select>
+                        </div>
+                        <div class="srcdiv">
+                            <label for="ncrdatefrom">NCR Date (FROM):</label>
+                            <input type="date" name="ncrdatefrom" id="ncrdatefrom" onchange="updateSearch()">
 
-                        <label for="ncrdateto">NCR Date (TO):</label>
-                        <input type="date" name="ncrdateto" id="ncrdateto" onchange="updateSearch()">
-                    </div>
+                            <label for="ncrdateto">NCR Date (TO):</label>
+                            <input type="date" name="ncrdateto" id="ncrdateto" onchange="updateSearch()">
+                        </div>
 
-                    <input type="button" value="Search" class="btnSub" onclick="updateSearch()">
-                </form>
+                        <input type="button" value="Search" class="btnSub" onclick="updateSearch()">
+                    </form>
 
-            </div>
+                </div>
 
-        </section>
-        <section class="recentdash">
-            <h1></h1>
-            <div class="rdtable">
-                <table class="table" id="ncrTable">
-                    <thead>
-                        <tr>
-                            <th>NCR Number</th>
-                            <th>Date</th>
-                            <th>Supplier</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            </section>
+            <section class="recentdash">
+                <h1></h1>
+                <div class="rdtable">
+                    <table class="table" id="ncrTable">
+                        <thead>
+                            <tr>
+                                <th>NCR Number</th>
+                                <th>Date</th>
+                                <th>Supplier Name</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
     </div>
     <footer>
         <div class="footer-links">
@@ -172,8 +167,8 @@
 
                 row.innerHTML = `
             <td>${ncr.ncr_no}</td>
-            <td>${ncr.quality.date}</td>
-            <td>${ncr.quality.supplier_name}</td>
+            <td>${ncr.date}</td>
+            <td>${ncr.supplier_name}</td>
             <td>${ncr.status}</td>
             <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}"><i class="fas fa-edit"></i> Edit</button> <button class="vbtn" name="btnDetails" id="${ncr.ncr_no}"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button></td>
         `; // onclick="location.href='edit.html'"
@@ -181,24 +176,23 @@
             });
         }
 
-        // Render table on page load
-        document.addEventListener('DOMContentLoaded', renderTable);
-
-        window.addEventListener("load", function () {
-            document.querySelector('#ncrTable tbody').addEventListener("click", function (ev) {
-                const target = ev.target.getAttribute('name')
-                const id = ev.target.getAttribute("id")
-                if (target == "btnEdit") {
-                    ev.preventDefault()
-                    localStorage.setItem('selectedNcr', id)
-                    window.location.href = "edit.html"
-                } else if (target == "btnDetails"){
-                    ev.preventDefault()
-                    localStorage.setItem('selectedNcr', id) 
-                    window.location.href = "details.html"
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            renderTable();
+            document.querySelector('#ncrTable tbody').addEventListener('click', function (ev) {
+                const target = ev.target.getAttribute('name');
+                const id = ev.target.getAttribute('id');
+                if (target === 'btnEdit') {
+                    ev.preventDefault();
+                    localStorage.setItem('selectedNcr', id);
+                    window.location.href = 'edit.html';
+                } else if (target === 'btnDetails') {
+                    ev.preventDefault();
+                    localStorage.setItem('selectedNcr', id);
+                    window.location.href = 'details.html';
+                }
             });
         });
+
     </script>
 
     <!-- Bootstrap JS and dependencies -->
