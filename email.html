@@ -14,200 +14,195 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        
-    </style>
 </head>
 <body>
     <div class="content">
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <nav class="navbar navbar-expand-lg navsty">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
-                    </li>
-                    <li class="nav-item sl">
-                        <a class="nav-link" href="create.html">Create NCR Form</a>
-                    </li>
-                    <li class="nav-item dropdown sr">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="notificationDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            <i class="fa fa-bell" aria-hidden="true"></i>
-                            <span id="notification-counter" class="badge bg-danger">3</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                            <li>
-                                <a class="dropdown-item" href="engineering.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="createPurchasing.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section
-                                </a>
-                            </li>
-                          
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     
-                    <li class="nav-item">
-                        <a class="nav-link" href="email.html">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span id="email-counter" class="badge bg-danger">0</span>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html">Report</a>
-                    </li>
-                    <button id="logoutButton">Logout</button>
-                </ul>
+        <nav class="navbar navbar-expand-lg navsty">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                        </li>
+                        <li class="nav-item sl">
+                            <a class="nav-link" href="create.html">Create NCR Form</a>
+                        </li>
+                        <li class="nav-item dropdown sr">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="notificationDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                <span id="notification-counter" class="badge bg-danger">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="engineering.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="createPurchasing.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                    </a>
+                                </li>
+                              
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="email.html">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span id="email-counter" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a class="nav-link" href="report.html">Report</a>
+                        </li>
+                        <button id="logoutButton">Logout</button>
+                    </ul>
+                </div>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">+</span>
+                </button>
             </div>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">+</span>
-            </button>
-        </div>
-    </nav>
-
+        </nav>
     <div class="container email-body">
         <div class="email-header">
-            <i class="fa-solid fa-envelope"></i><span>Email Inbox</span>
+            <i class="fa-solid fa-envelope"></i> Email Inbox
         </div>
 
         <div class="email-list">
+          
             <div class="email-item" data-bs-toggle="collapse" href="#email1" role="button" aria-expanded="false" aria-controls="email1">
-                <div class="d-flex justify-content-between">
-                    <span class="email-subject">Action Required : Engineering Section</span>
-                    <span class="email-time">10:30 AM</span>
-                </div>
-                <div class="email-preview">Don't forget to fill Engineering section on time.</div>
+                <span class="email-subject">Action Required: Engineering Section</span>
+                <span class="email-time">10:30 AM</span>
             </div>
             <div class="collapse" id="email1">
                 <div class="expanded-email">
-                    <strong>From:</strong> Tom Clanks<br>
-                    <strong>Subject:</strong>Fill Engineering Section<br>
-                    <strong>Message:</strong> Please don't forget to fill engineering section
+                    <strong>From:</strong> <span>Tom Clanks</span>
+                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
                 </div>
             </div>
-            
-            <div class="email-item" data-bs-toggle="collapse" href="#email2" role="button" aria-expanded="false" aria-controls="email1">
-                <div class="d-flex justify-content-between">
-                    <span class="email-subject">Action Required : Purchasing Section</span>
-                    <span class="email-time">12:30 PM</span>
-                </div>
-                <div class="email-preview">Don't forget to fill Purchasing section on time.</div>
+
+          
+            <div class="email-item" data-bs-toggle="collapse" href="#email2" role="button" aria-expanded="false" aria-controls="email2">
+                <span class="email-subject">Action Required: Purchasing Section</span>
+                <span class="email-time">12:30 PM</span>
             </div>
             <div class="collapse" id="email2">
                 <div class="expanded-email">
-                    <strong>From:</strong> John Brinks<br>
-                    <strong>Subject:</strong> Fill Purchasing Section<br>
-                    <strong>Message:</strong> Please dont forget to fill Purchasing section
+                    <strong>From:</strong> <span>John Brinks</span>
+                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
                 </div>
             </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email3" role="button" aria-expanded="false" aria-controls="email2">
-                <div class="d-flex justify-content-between">
-                    <span class="email-subject">Action Required : Engineering Section</span>
-                    <span class="email-time">3:00 PM</span>
-                </div>
-                <div class="email-preview">Don't forget to fill Engineering section on time.</div>
+            <div class="email-item" data-bs-toggle="collapse" href="#email3" role="button" aria-expanded="false" aria-controls="email1">
+                <span class="email-subject">Action Required: Engineering Section</span>
+                <span class="email-time">10:30 AM</span>
             </div>
             <div class="collapse" id="email3">
                 <div class="expanded-email">
-                    <strong>From:</strong> Joe Rogan <br>
-                    <strong>Subject:</strong> Fill Engineering Section<br>
-                    <strong>Message:</strong> Dont forget to fill Engineering Section
+                    <strong>From:</strong> <span>Tom Clanks</span>
+                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
                 </div>
             </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email4" role="button" aria-expanded="false" aria-controls="email1">
-                <div class="d-flex justify-content-between">
-                    <span class="email-subject">Action Required : Engineering Section</span>
-                    <span class="email-time">9:30 AM</span>
-                </div>
-                <div class="email-preview">Don't forget to fill Engineering section on time.</div>
+          
+            <div class="email-item" data-bs-toggle="collapse" href="#email4" role="button" aria-expanded="false" aria-controls="email2">
+                <span class="email-subject">Action Required: Purchasing Section</span>
+                <span class="email-time">12:30 PM</span>
             </div>
             <div class="collapse" id="email4">
                 <div class="expanded-email">
-                    <strong>From:</strong> Klay Curt<br>
-                    <strong>Subject:</strong> Fill Engineering Section <br>
-                    <strong>Message:</strong> Please dont forget to fill Engineering section
+                    <strong>From:</strong> <span>John Brinks</span>
+                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
                 </div>
             </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email5" role="button" aria-expanded="false" aria-controls="email3">
-                <div class="d-flex justify-content-between">
-                    <span class="email-subject">Action Required : Purchasing Section</span>
-                    <span class="email-time">2 days ago</span>
-                </div>
-                <div class="email-preview">Don't forget to fill Purchasing section on time.</div>
+            <div class="email-item" data-bs-toggle="collapse" href="#email5" role="button" aria-expanded="false" aria-controls="email1">
+                <span class="email-subject">Action Required: Engineering Section</span>
+                <span class="email-time">10:30 AM</span>
             </div>
             <div class="collapse" id="email5">
                 <div class="expanded-email">
-                    <strong>From:</strong> Alice Gurt<br>
-                    <strong>Subject:</strong> Fill Purchasing Section<br>
-                    <strong>Message:</strong> Please dont forget to fill Purchasing section
+                    <strong>From:</strong> <span>Tom Clanks</span>
+                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
                 </div>
             </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email6" role="button" aria-expanded="false" aria-controls="email1">
-                <div class="d-flex justify-content-between">
-                    <span class="email-subject">Action Required : Engineering Section</span>
-                    <span class="email-time">10:30 AM</span>
-                </div>
-                <div class="email-preview">Don't forget to fill Engineering section on time.</div>
+          
+            <div class="email-item" data-bs-toggle="collapse" href="#email6" role="button" aria-expanded="false" aria-controls="email2">
+                <span class="email-subject">Action Required: Purchasing Section</span>
+                <span class="email-time">12:30 PM</span>
             </div>
             <div class="collapse" id="email6">
                 <div class="expanded-email">
-                    <strong>From:</strong> Jay Wood<br>
-                    <strong>Subject:</strong> Fill Engineering Section<br>
-                    <strong>Message:</strong> Please dont forget to fill Engineering section
+                    <strong>From:</strong> <span>John Brinks</span>
+                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
                 </div>
             </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email7" role="button" aria-expanded="false" aria-controls="email4">
-                <div class="d-flex justify-content-between">
-                    <span class="email-subject">Action Required : Purchasing Section</span>
-                    <span class="email-time">1 week ago</span>
-                </div>
-                <div class="email-preview">Don't forget to fill Purchasing section on time.</div>
+            <div class="email-item" data-bs-toggle="collapse" href="#email7" role="button" aria-expanded="false" aria-controls="email1">
+                <span class="email-subject">Action Required: Engineering Section</span>
+                <span class="email-time">10:30 AM</span>
             </div>
             <div class="collapse" id="email7">
                 <div class="expanded-email">
-                    <strong>From:</strong> Calendar tort<br>
-                    <strong>Subject:</strong> Fill your section<br>
-                    <strong>Message:</strong>Please dont forget to fill Purchasing Section
+                    <strong>From:</strong> <span>Tom Clanks</span>
+                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+                </div>
             </div>
+
+          
+            <div class="email-item" data-bs-toggle="collapse" href="#email8" role="button" aria-expanded="false" aria-controls="email2">
+                <span class="email-subject">Action Required: Purchasing Section</span>
+                <span class="email-time">12:30 PM</span>
+            </div>
+            <div class="collapse" id="email8">
+                <div class="expanded-email">
+                    <strong>From:</strong> <span>John Brinks</span>
+                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                </div>
+            </div>
+
+           
         </div>
     </div>
+    </div>  
+    <br>
 
-    </div>
-    </div>
     <footer>
         <div class="footer-links">
             <a href="index.html">Dashboard</a>
