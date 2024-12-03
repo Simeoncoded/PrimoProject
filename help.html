@@ -12,282 +12,284 @@
 
 <body>
     <div class="content">
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
-    <nav class="navbar navbar-expand-lg navsty">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
-                    </li>
-                    <li class="nav-item sl">
-                        <a class="nav-link" href="create.html">Create NCR Form</a>
-                    </li>
-                    <li class="nav-item dropdown sr">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="notificationDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            <i class="fa fa-bell" aria-hidden="true"></i>
-                            <span id="notification-counter" class="badge bg-danger">3</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                            <li>
-                                <a class="dropdown-item" href="engineering.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="createPurchasing.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section
-                                </a>
-                            </li>
-                          
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="email.html">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span id="email-counter" class="badge bg-danger">0</span>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html">Report</a>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg navsty">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                        </li>
+                        <li class="nav-item sl">
+                            <a class="nav-link" href="create.html">Create NCR Form</a>
+                        </li>
+                        <li class="nav-item dropdown sr">
+                            <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                <span id="notification-counter" class="badge bg-danger">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="engineering.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="createPurchasing.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="email.html">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span id="email-counter" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="report.html">Report</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">+</span>
+                </button>
             </div>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">+</span>
-            </button>
-        </div>
-    </nav>
+        </nav>
 
-    <main>
-        <section class="container my-5">
-            <h2 class="text-center mb-4">Help & FAQ</h2>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        What is an NCR?
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        An NCR (Non-Conformance Report) documents deviations from standard procedures and
-                        specifications, detailing the issue to support corrective action.
+        <main>
+            <section class="container my-5">
+                <h2 class="text-center mb-4">Help & FAQ</h2>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What is an NCR?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            An NCR (Non-Conformance Report) documents deviations from standard procedures and
+                            specifications, detailing the issue to support corrective action.
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        How do I create an NCR?
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Navigate to the "Create NCR Form" page, fill out the required fields, attach any supporting
-                        files, and submit the form to log a new NCR.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How do I create an NCR?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Navigate to the "Create NCR Form" page, fill out the required fields, attach any supporting
+                            files, and submit the form to log a new NCR.
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        What does cf mean engineering?
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        “CF” stands for “continuous feature.” This requirement is indicated when features need to be
-                        geometrically treated as a single feature.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            What does cf mean engineering?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            “CF” stands for “continuous feature.” This requirement is indicated when features need to be
+                            geometrically treated as a single feature.
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Where can I find submitted NCRs?
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        All submitted NCRs can be found in the "NCR Log" section, where you can view and edit each NCR.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Where can I find submitted NCRs?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            All submitted NCRs can be found in the "NCR Log" section, where you can view and edit each
+                            NCR.
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        How do I receive notifications?
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Notifications are shown in the "Notifications" section of the navigation bar. A badge
-                        displays the number of new updates.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How do I receive notifications?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Notifications are shown in the "Notifications" section of the navigation bar. A badge
+                            displays the number of new updates.
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        How can I navigate through the form using the keyboard?
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        To navigate the form using the keyboard, you can use the Tab key to move through the form
-                        fields. To go backward, press Shift + Tab. Use the Enter key to select dropdown options and
-                        submit buttons.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How can I navigate through the form using the keyboard?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            To navigate the form using the keyboard, you can use the Tab key to move through the form
+                            fields. To go backward, press Shift + Tab. Use the Enter key to select dropdown options and
+                            submit buttons.
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        How do I know which fields are required?
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Fields marked with an asterisk (*) are required. You can also use screen reader software to
-                        announce these required fields, or check for any red error messages after attempting to submit
-                        the form without completing them.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How do I know which fields are required?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Fields marked with an asterisk (*) are required. You can also use screen reader software to
+                            announce these required fields, or check for any red error messages after attempting to
+                            submit
+                            the form without completing them.
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        How can I enter a date using the Date field?
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        On the Date field, you can manually type the date in the format MM/DD/YYYY or use a date picker
-                        to select the date. If you are using a screen reader, the date picker should be announced,
-                        allowing you to choose the date by navigating through calendar options.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How can I enter a date using the Date field?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            On the Date field, you can manually type the date in the format MM/DD/YYYY or use a date
+                            picker
+                            to select the date. If you are using a screen reader, the date picker should be announced,
+                            allowing you to choose the date by navigating through calendar options.
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        Can I submit the form with missing or incorrect information?
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        No, the form will not submit if required fields are missing or if invalid information is
-                        entered. Error messages will appear next to the fields that need to be corrected. If you're
-                        using a screen reader, these messages should be read out to guide you in correcting the form.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Can I submit the form with missing or incorrect information?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, the form will not submit if required fields are missing or if invalid information is
+                            entered. Error messages will appear next to the fields that need to be corrected. If you're
+                            using a screen reader, these messages should be read out to guide you in correcting the
+                            form.
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        How can I get help with the form if I am not sure about a field?
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        You can access the help section by clicking the "Help" button or using the accordion feature to
-                        view additional information. Each question and answer provides detailed instructions on how to
-                        fill out the form correctly. If you still need assistance, contact support for further guidance.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How can I get help with the form if I am not sure about a field?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can access the help section by clicking the "Help" button or using the accordion feature
+                            to
+                            view additional information. Each question and answer provides detailed instructions on how
+                            to
+                            fill out the form correctly. If you still need assistance, contact support for further
+                            guidance.
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        How can I add new suppliers on the create form?
-                    </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        You can add new suppliers on the create form by simply clicking the "Add Supplier" button
-                        located
-                        next to the supplier dropdown. This will allow you to input details for the new supplier and
-                        include
-                        them in your form submission.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            How can I add new suppliers on the create form?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can add new suppliers on the create form by simply clicking the "Add Supplier" button
+                            located
+                            next to the supplier dropdown. This will allow you to input details for the new supplier and
+                            include
+                            them in your form submission.
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-</div>
+            </section>
+        </main>
+    </div>
     <footer>
         <div class="footer-links">
             <a href="index.html">Dashboard</a>
@@ -299,7 +301,6 @@
 
 
     <script src="scripts/script.js"></script>
-    <script src="scripts/page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

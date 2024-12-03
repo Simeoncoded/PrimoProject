@@ -634,7 +634,6 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
 
-    <script src="scripts/page.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/inspect.js"></script>
     <script src="scripts/edit.js"></script>
@@ -643,57 +642,57 @@
         // Readonly any forms current role does not have access to #TODO
 
     </script>
-<script>
-    // Get modal elements
-    const openModalBtn = document.getElementById("openModalBtn");
-    const supplierModal = document.getElementById("supplierModal");
-    const closeModalBtn = supplierModal.querySelector(".close");
-    const supplierForm = document.getElementById("supplierForm");
-    const supplierNameInput = document.getElementById("supplierName");
-    const supplierDropdown = document.getElementById("supplier_name");
+    <script>
+        // Get modal elements
+        const openModalBtn = document.getElementById("openModalBtn");
+        const supplierModal = document.getElementById("supplierModal");
+        const closeModalBtn = supplierModal.querySelector(".close");
+        const supplierForm = document.getElementById("supplierForm");
+        const supplierNameInput = document.getElementById("supplierName");
+        const supplierDropdown = document.getElementById("supplier_name");
 
-    // Open the modal
-    openModalBtn.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent default button action
-        supplierModal.style.display = "block";
-    });
+        // Open the modal
+        openModalBtn.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default button action
+            supplierModal.style.display = "block";
+        });
 
-    // Close the modal
-    closeModalBtn.addEventListener("click", () => {
-        supplierModal.style.display = "none";
-    });
-
-    // Close the modal when clicking outside it
-    window.addEventListener("click", (event) => {
-        if (event.target === supplierModal) {
+        // Close the modal
+        closeModalBtn.addEventListener("click", () => {
             supplierModal.style.display = "none";
-        }
-    });
+        });
 
-    // Handle the supplier form submission
-    supplierForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Prevent form from submitting and refreshing the page
+        // Close the modal when clicking outside it
+        window.addEventListener("click", (event) => {
+            if (event.target === supplierModal) {
+                supplierModal.style.display = "none";
+            }
+        });
 
-        const newSupplierName = supplierNameInput.value.trim();
-        if (newSupplierName) {
-            // Add the new supplier to the dropdown
-            const newOption = document.createElement("option");
-            newOption.value = newSupplierName.toLowerCase().replace(/ /g, "_"); // Generate a unique value
-            newOption.textContent = newSupplierName;
+        // Handle the supplier form submission
+        supplierForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form from submitting and refreshing the page
 
-            supplierDropdown.appendChild(newOption);
+            const newSupplierName = supplierNameInput.value.trim();
+            if (newSupplierName) {
+                // Add the new supplier to the dropdown
+                const newOption = document.createElement("option");
+                newOption.value = newSupplierName.toLowerCase().replace(/ /g, "_"); // Generate a unique value
+                newOption.textContent = newSupplierName;
 
-            // Reset the input field and close the modal
-            supplierNameInput.value = "";
-            supplierModal.style.display = "none";
+                supplierDropdown.appendChild(newOption);
 
-            // Optional: Alert to confirm the supplier was added
-            alert("New supplier added successfully!");
-        } else {
-            alert("Please enter a supplier name.");
-        }
-    });
-</script>
+                // Reset the input field and close the modal
+                supplierNameInput.value = "";
+                supplierModal.style.display = "none";
+
+                // Optional: Alert to confirm the supplier was added
+                alert("New supplier added successfully!");
+            } else {
+                alert("Please enter a supplier name.");
+            }
+        });
+    </script>
     <script>
 
         window.addEventListener("load", function () {

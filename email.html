@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +16,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <div class="content">
         <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
             <i class="fas fa-arrow-up"></i>
         </button>
-    
+
         <nav class="navbar navbar-expand-lg navsty">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
@@ -38,14 +40,8 @@
                             <a class="nav-link" href="create.html">Create NCR Form</a>
                         </li>
                         <li class="nav-item dropdown sr">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                id="notificationDropdown"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
+                            <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-bell" aria-hidden="true"></i>
                                 <span id="notification-counter" class="badge bg-danger">3</span>
                             </a>
@@ -60,147 +56,156 @@
                                         <i class="fa-solid fa-arrow-right"></i> Purchasing Section
                                     </a>
                                 </li>
-                              
+
                             </ul>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="login.html">
                                 <i class="fa-solid fa-user"></i>
                             </a>
                         </li>
-        
+
                         <li class="nav-item">
                             <a class="nav-link" href="email.html">
                                 <i class="fa-solid fa-envelope"></i>
                                 <span id="email-counter" class="badge bg-danger">0</span>
                             </a>
                         </li>
-        
+
                         <li class="nav-item">
                             <a class="nav-link" href="report.html">Report</a>
                         </li>
                         <button id="logoutButton">Logout</button>
                     </ul>
                 </div>
-        
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">+</span>
                 </button>
             </div>
         </nav>
-    <div class="container email-body">
-        <div class="email-header">
-            <i class="fa-solid fa-envelope"></i> Email Inbox
-        </div>
-
-        <div class="email-list">
-          
-            <div class="email-item" data-bs-toggle="collapse" href="#email1" role="button" aria-expanded="false" aria-controls="email1">
-                <span class="email-subject">Action Required: Engineering Section</span>
-                <span class="email-time">10:30 AM</span>
+        <div class="container email-body">
+            <div class="email-header">
+                <i class="fa-solid fa-envelope"></i> Email Inbox
             </div>
-            <div class="collapse" id="email1">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>Tom Clanks</span>
-                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+
+            <div class="email-list">
+
+                <div class="email-item" data-bs-toggle="collapse" href="#email1" role="button" aria-expanded="false"
+                    aria-controls="email1">
+                    <span class="email-subject">Action Required: Engineering Section</span>
+                    <span class="email-time">10:30 AM</span>
                 </div>
-            </div>
-
-          
-            <div class="email-item" data-bs-toggle="collapse" href="#email2" role="button" aria-expanded="false" aria-controls="email2">
-                <span class="email-subject">Action Required: Purchasing Section</span>
-                <span class="email-time">12:30 PM</span>
-            </div>
-            <div class="collapse" id="email2">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>John Brinks</span>
-                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                <div class="collapse" id="email1">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>Tom Clanks</span>
+                        <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email3" role="button" aria-expanded="false" aria-controls="email1">
-                <span class="email-subject">Action Required: Engineering Section</span>
-                <span class="email-time">10:30 AM</span>
-            </div>
-            <div class="collapse" id="email3">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>Tom Clanks</span>
-                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+
+                <div class="email-item" data-bs-toggle="collapse" href="#email2" role="button" aria-expanded="false"
+                    aria-controls="email2">
+                    <span class="email-subject">Action Required: Purchasing Section</span>
+                    <span class="email-time">12:30 PM</span>
                 </div>
-            </div>
-
-          
-            <div class="email-item" data-bs-toggle="collapse" href="#email4" role="button" aria-expanded="false" aria-controls="email2">
-                <span class="email-subject">Action Required: Purchasing Section</span>
-                <span class="email-time">12:30 PM</span>
-            </div>
-            <div class="collapse" id="email4">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>John Brinks</span>
-                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                <div class="collapse" id="email2">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>John Brinks</span>
+                        <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email5" role="button" aria-expanded="false" aria-controls="email1">
-                <span class="email-subject">Action Required: Engineering Section</span>
-                <span class="email-time">10:30 AM</span>
-            </div>
-            <div class="collapse" id="email5">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>Tom Clanks</span>
-                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+                <div class="email-item" data-bs-toggle="collapse" href="#email3" role="button" aria-expanded="false"
+                    aria-controls="email1">
+                    <span class="email-subject">Action Required: Engineering Section</span>
+                    <span class="email-time">10:30 AM</span>
                 </div>
-            </div>
-
-          
-            <div class="email-item" data-bs-toggle="collapse" href="#email6" role="button" aria-expanded="false" aria-controls="email2">
-                <span class="email-subject">Action Required: Purchasing Section</span>
-                <span class="email-time">12:30 PM</span>
-            </div>
-            <div class="collapse" id="email6">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>John Brinks</span>
-                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                <div class="collapse" id="email3">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>Tom Clanks</span>
+                        <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="email-item" data-bs-toggle="collapse" href="#email7" role="button" aria-expanded="false" aria-controls="email1">
-                <span class="email-subject">Action Required: Engineering Section</span>
-                <span class="email-time">10:30 AM</span>
-            </div>
-            <div class="collapse" id="email7">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>Tom Clanks</span>
-                    <strong>Subject:</strong> <span>Fill Engineering Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+
+                <div class="email-item" data-bs-toggle="collapse" href="#email4" role="button" aria-expanded="false"
+                    aria-controls="email2">
+                    <span class="email-subject">Action Required: Purchasing Section</span>
+                    <span class="email-time">12:30 PM</span>
                 </div>
-            </div>
-
-          
-            <div class="email-item" data-bs-toggle="collapse" href="#email8" role="button" aria-expanded="false" aria-controls="email2">
-                <span class="email-subject">Action Required: Purchasing Section</span>
-                <span class="email-time">12:30 PM</span>
-            </div>
-            <div class="collapse" id="email8">
-                <div class="expanded-email">
-                    <strong>From:</strong> <span>John Brinks</span>
-                    <strong>Subject:</strong> <span>Fill Purchasing Section</span>
-                    <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                <div class="collapse" id="email4">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>John Brinks</span>
+                        <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                    </div>
                 </div>
-            </div>
 
-           
+                <div class="email-item" data-bs-toggle="collapse" href="#email5" role="button" aria-expanded="false"
+                    aria-controls="email1">
+                    <span class="email-subject">Action Required: Engineering Section</span>
+                    <span class="email-time">10:30 AM</span>
+                </div>
+                <div class="collapse" id="email5">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>Tom Clanks</span>
+                        <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+                    </div>
+                </div>
+
+
+                <div class="email-item" data-bs-toggle="collapse" href="#email6" role="button" aria-expanded="false"
+                    aria-controls="email2">
+                    <span class="email-subject">Action Required: Purchasing Section</span>
+                    <span class="email-time">12:30 PM</span>
+                </div>
+                <div class="collapse" id="email6">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>John Brinks</span>
+                        <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                    </div>
+                </div>
+
+                <div class="email-item" data-bs-toggle="collapse" href="#email7" role="button" aria-expanded="false"
+                    aria-controls="email1">
+                    <span class="email-subject">Action Required: Engineering Section</span>
+                    <span class="email-time">10:30 AM</span>
+                </div>
+                <div class="collapse" id="email7">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>Tom Clanks</span>
+                        <strong>Subject:</strong> <span>Fill Engineering Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the engineering section.</span>
+                    </div>
+                </div>
+
+
+                <div class="email-item" data-bs-toggle="collapse" href="#email8" role="button" aria-expanded="false"
+                    aria-controls="email2">
+                    <span class="email-subject">Action Required: Purchasing Section</span>
+                    <span class="email-time">12:30 PM</span>
+                </div>
+                <div class="collapse" id="email8">
+                    <div class="expanded-email">
+                        <strong>From:</strong> <span>John Brinks</span>
+                        <strong>Subject:</strong> <span>Fill Purchasing Section</span>
+                        <strong>Message:</strong> <span>Please don't forget to fill the purchasing section.</span>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     </div>
-    </div>  
     <br>
 
     <footer>
@@ -213,7 +218,7 @@
     </footer>
 
     <script src="scripts/script.js"></script>
-    <script src="scripts/page.js"></script>
     <script src="scripts/users.js"></script>
 </body>
+
 </html>

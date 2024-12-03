@@ -255,7 +255,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
                                     <input type="number" class="form-control" id="review_engineering"
-                                    name="review_engineering" placeholder="Engineering Review" readonly>
+                                        name="review_engineering" placeholder="Engineering Review" readonly>
                                     <span id="review_engineeringError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Review by CF Engineering is required.
@@ -268,7 +268,7 @@
                                         Notification
                                         of NCR?</label>
                                     <input type="number" class="form-control" id="customer_notification"
-                                    name="customer_notification" placeholder="Customer Notification" readonly>
+                                        name="customer_notification" placeholder="Customer Notification" readonly>
                                     <span id="customer_notificationError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Please select whether customer notification is required.
@@ -368,124 +368,125 @@
                         </form>
                     </div>
                 </div>
-                </div>
-                <div class="accordion-item" id="purchasingAccordion">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                            PURCHASING SECTION DETAILS
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            <form id="ncrForm">
+            </div>
+            <div class="accordion-item" id="purchasingAccordion">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        PURCHASING SECTION DETAILS
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <form id="ncrForm">
 
-                                <div class="row ">
-                                    <!-- NCR No. -->
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="ncr_no" class="form-label">NCR No.*</label>
-                                        <input type="text" class="form-control" id="ncr_no" name="ncr_no"
-                                            aria-required="true" placeholder="NCR Number" readonly>
-                                        <span id="ncrNoError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">NCR No. is required.</span>
-                                    </div>
-
-
-                                    <!-- OP Date -->
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="date" class="form-label">OP Date</label>
-                                        <input type="date" class="form-control" id="date" name="date"
-                                            aria-required="true" readonly>
-                                        <span id="dateOPError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">OP Date is required</span>
-                                    </div>
-
-
+                            <div class="row ">
+                                <!-- NCR No. -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="ncr_no" class="form-label">NCR No.*</label>
+                                    <input type="text" class="form-control" id="ncr_no" name="ncr_no"
+                                        aria-required="true" placeholder="NCR Number" readonly>
+                                    <span id="ncrNoError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">NCR No. is required.</span>
                                 </div>
 
-                                <div class="row">
-                                    <!-- Was the Car Raised? -->
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <fieldset>
-                                            <legend class="form-label fw-bold">Was the Car Raised?*</legend>
-                                            <input type="number" class="form-control" id="carraised" name="carraised"
+
+                                <!-- OP Date -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="date" class="form-label">OP Date</label>
+                                    <input type="date" class="form-control" id="date" name="date" aria-required="true"
+                                        readonly>
+                                    <span id="dateOPError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">OP Date is required</span>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+                                <!-- Was the Car Raised? -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <fieldset>
+                                        <legend class="form-label fw-bold">Was the Car Raised?*</legend>
+                                        <input type="number" class="form-control" id="carraised" name="carraised"
                                             aria-required="true" placeholder="Was the Car Raised?" readonly>
-                                            <span id="carraisedError" class="text-danger"
-                                                style="display: none; font-size: 0.9em;">Please
-                                                select wether or not Follow up is required.</span>
-                                        </fieldset>
-                                    </div>
-
-
-                                    <!-- Supplier Name -->
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="carnumber" class="form-label">Car Number:*</label>
-                                        <input type="number" class="form-control" id="carnumber" name="carnumber"
-                                            aria-required="true" placeholder="Car Number" readonly>
-                                    </div>
-
+                                        <span id="carraisedError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">Please
+                                            select wether or not Follow up is required.</span>
+                                    </fieldset>
                                 </div>
 
 
+                                <!-- Supplier Name -->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="carnumber" class="form-label">Car Number:*</label>
+                                    <input type="number" class="form-control" id="carnumber" name="carnumber"
+                                        aria-required="true" placeholder="Car Number" readonly>
+                                </div>
 
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <fieldset>
-                                            <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
-                                            <input type="number" class="form-control" id="followrequired" name="followrequired"
-                                            aria-required="true" placeholder="Is a Follow Up Required?" readonly>
-                                            <span id="followrequiredError" class="text-danger"
-                                                style="display: none; font-size: 0.9em;">Please
-                                                select wether or not Follow up is required.</span>
-                                        </fieldset>
-                                    </div>
+                            </div>
 
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="followtype" class="form-label">Follow Up Type?*</label>
 
-                                        <input type="text" class="form-control" id="followtype" name="followtype"
-                                            aria-required="true" placeholder="Follow Type" readonly>
-                                    </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <fieldset>
+                                        <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
+                                        <input type="number" class="form-control" id="followrequired"
+                                            name="followrequired" aria-required="true"
+                                            placeholder="Is a Follow Up Required?" readonly>
+                                        <span id="followrequiredError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">Please
+                                            select wether or not Follow up is required.</span>
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="followtype" class="form-label">Follow Up Type?*</label>
+
+                                    <input type="text" class="form-control" id="followtype" name="followtype"
+                                        aria-required="true" placeholder="Follow Type" readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <!-- Follow up Expected Date-->
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="followdate" class="form-label">Follow Up Expected Date*</label>
+                                    <input type="date" class="form-control" id="followdate" name="followdate"
+                                        aria-required="true" readonly>
+                                    <span id="followdateError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">Date is
+                                        required</span>
+                                    <span id="followUpdateError"
+                                        style="display: none; color: red; font-size: 0.9em;">Please select a valid
+                                        date in the current year.</span>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="operationsmanager" class="form-label">Operations Manager
+                                        Name*</label>
+                                    <input type="text" class="form-control" id="operationsmanagername"
+                                        name="operationsmanagername" aria-required="true"
+                                        placeholder="Operations Manager's Name" readonly>
+                                    <span id="operationsmanagerError" class="text-danger"
+                                        style="display: none; font-size: 0.9em;">Operations manager name is
+                                        required</span>
                                 </div>
 
 
-                                <div class="row">
-                                    <!-- Follow up Expected Date-->
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="followdate" class="form-label">Follow Up Expected Date*</label>
-                                        <input type="date" class="form-control" id="followdate" name="followdate"
-                                            aria-required="true" readonly>
-                                        <span id="followdateError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">Date is
-                                            required</span>
-                                        <span id="followUpdateError"
-                                            style="display: none; color: red; font-size: 0.9em;">Please select a valid
-                                            date in the current year.</span>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-3">
-                                        <label for="operationsmanager" class="form-label">Operations Manager
-                                            Name*</label>
-                                        <input type="text" class="form-control" id="operationsmanagername"
-                                            name="operationsmanagername" aria-required="true"
-                                            placeholder="Operations Manager's Name" readonly>
-                                        <span id="operationsmanagerError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">Operations manager name is
-                                            required</span>
-                                    </div>
-
-
-                                </div>
-                                <!-- <div>
+                            </div>
+                            <!-- <div>
                                     <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
                                 </div> -->
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
+    </div>
 
-        </main>
+    </main>
     </div>
     <footer>
         <div class="footer-links">
@@ -496,7 +497,6 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
 
-    <script src="scripts/page.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/inspect.js"></script>
     <script src="scripts/edit.js"></script>

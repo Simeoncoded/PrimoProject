@@ -15,238 +15,236 @@
 
 <body>
     <div class="content">
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <nav class="navbar navbar-expand-lg navsty">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
-                    </li>
-                    <li class="nav-item sl">
-                        <a class="nav-link" href="create.html">Create NCR Form</a>
-                    </li>
-                    <li class="nav-item dropdown sr">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="notificationDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            <i class="fa fa-bell" aria-hidden="true"></i>
-                            <span id="notification-counter" class="badge bg-danger">0</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                            <li>
-                                <a class="dropdown-item" href="engineering.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="createPurchasing.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section 
-                                </a>
-                            </li>
-                          
-                        </ul>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="email.html">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span id="email-counter" class="badge bg-danger">0</span>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html">Report</a>
-                    </li>
-                    <button id="logoutButton">Logout</button>
-                </ul>
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <nav class="navbar navbar-expand-lg navsty">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                        </li>
+                        <li class="nav-item sl">
+                            <a class="nav-link" href="create.html">Create NCR Form</a>
+                        </li>
+                        <li class="nav-item dropdown sr">
+                            <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                <span id="notification-counter" class="badge bg-danger">0</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="engineering.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="createPurchasing.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="email.html">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span id="email-counter" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="report.html">Report</a>
+                        </li>
+                        <button id="logoutButton">Logout</button>
+                    </ul>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">+</span>
+                </button>
             </div>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">+</span>
-            </button>
-        </div>
-    </nav>
-    <!-- Main Content -->
-    <main class="container my-5" id="main-content" tabindex="-1">
-        <h1 class="mb-4 text-center">Non-Conformance Report(NCR)</h1>
-        <p style="text-align: center;font-weight: bold;">All fields with * (astericks) are required </p>
-        <div id="no-notification-message" style="display: none;">
-            <h2>No NCR form requires engineering process right now.</h2>
-            <p>Please check again later.</p>
-        </div>
-        <form id="engineeringForm">
-            <div class="row">
-                <!-- NCR No. -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="ncr_no" class="form-label">NCR No.*</label>
-                    <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true"
-                        placeholder="Enter NCR Number">
-                    <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is
-                        required.</span>
-                </div>
-
+        </nav>
+        <!-- Main Content -->
+        <main class="container my-5" id="main-content" tabindex="-1">
+            <h1 class="mb-4 text-center">Non-Conformance Report(NCR)</h1>
+            <p style="text-align: center;font-weight: bold;">All fields with * (astericks) are required </p>
+            <div id="no-notification-message" style="display: none;">
+                <h2>No NCR form requires engineering process right now.</h2>
+                <p>Please check again later.</p>
             </div>
-
-            <!-- Engineering Section -->
-            <h2 class="mt-5">Engineering</h2>
-
-            <div class="row">
-                <!-- Review by CF Engineering -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="review_engineering" class="form-label">Review by CF Engineering*
-                        <span class="tooltip-icon" data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="This is where you select the engineering review disposition, such as 'Use as is', 'Repair', 'Rework', or 'Scrap'."><i
-                                class="fa-solid fa-eye"></i></span>
-                    </label>
-                    <select id="review_engineering" class="form-select" name="review_engineering" aria-required="true">
-                        <option value="" disabled selected>Select disposition</option>
-                        <option value="use_as_is">Use as is</option>
-                        <option value="repair">Repair</option>
-                        <option value="rework">Rework</option>
-                        <option value="scrap">Scrap</option>
-                    </select>
-                    <span id="review_engineeringError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Engineering review is required.</span>
-                </div>
-
-                <!-- Customer Notification -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="customer_notification" class="form-label">Does Customer Require Notification of
-                        NCR</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="customer_notification_yes"
-                            name="customer_notification" value="yes" aria-describedby="customerNotificationDesc">
-                        <label class="form-check-label" for="customer_notification_yes">
-                            Yes
-                        </label>
-                        <small id="customerNotificationDesc" class="form-text text-muted">Check if the customer should
-                            be notified about this NCR.</small>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="customer_notification_no"
-                            name="customer_notification" value="no" aria-describedby="customerNotificationDesc">
-                        <label class="form-check-label" for="customer_notification_no">
-                            No
-                        </label>
-                        <small id="customerNotificationDesc" class="form-text text-muted">Check if the customer should
-                            not be notified about this NCR.</small>
+            <form id="engineeringForm">
+                <div class="row">
+                    <!-- NCR No. -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="ncr_no" class="form-label">NCR No.*</label>
+                        <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true"
+                            placeholder="Enter NCR Number">
+                        <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is
+                            required.</span>
                     </div>
 
                 </div>
 
+                <!-- Engineering Section -->
+                <h2 class="mt-5">Engineering</h2>
 
-                <!-- Disposition -->
-                <div class="col-12 mb-3">
-                    <label for="disposition" class="form-label">Disposition*</label>
-                    <textarea class="form-control" id="disposition" name="disposition" rows="3"
-                        placeholder="Provide disposition details"></textarea>
-                    <span id="dispositionError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Disposition details is required</span>
-                </div>
-
-                <!-- Drawing Update Requirement -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="drawing_update" class="form-label">Does the Drawing Require Updating</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="drawing_update" name="drawing_update"
-                            aria-describedby="drawingUpdateDesc">
-                        <label class="form-check-label" for="drawing_update">
-                            Yes
+                <div class="row">
+                    <!-- Review by CF Engineering -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="review_engineering" class="form-label">Review by CF Engineering*
+                            <span class="tooltip-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="This is where you select the engineering review disposition, such as 'Use as is', 'Repair', 'Rework', or 'Scrap'."><i
+                                    class="fa-solid fa-eye"></i></span>
                         </label>
-                        <small id="drawingUpdateDesc" class="form-text text-muted">Check if the drawing needs to be
-                            updated.</small>
+                        <select id="review_engineering" class="form-select" name="review_engineering"
+                            aria-required="true">
+                            <option value="" disabled selected>Select disposition</option>
+                            <option value="use_as_is">Use as is</option>
+                            <option value="repair">Repair</option>
+                            <option value="rework">Rework</option>
+                            <option value="scrap">Scrap</option>
+                        </select>
+                        <span id="review_engineeringError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Engineering review is required.</span>
                     </div>
-                </div>
 
-                <!-- Original Revision Number -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="original_revision" class="form-label">Version Number*</label>
-                    <input type="number" class="form-control" id="original_revision" name="original_revision"
-                        placeholder="Enter original revision number">
-                    <span id="original_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Version Number is required</span>
-                </div>
+                    <!-- Customer Notification -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="customer_notification" class="form-label">Does Customer Require Notification of
+                            NCR</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="customer_notification_yes"
+                                name="customer_notification" value="yes" aria-describedby="customerNotificationDesc">
+                            <label class="form-check-label" for="customer_notification_yes">
+                                Yes
+                            </label>
+                            <small id="customerNotificationDesc" class="form-text text-muted">Check if the customer
+                                should
+                                be notified about this NCR.</small>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="customer_notification_no"
+                                name="customer_notification" value="no" aria-describedby="customerNotificationDesc">
+                            <label class="form-check-label" for="customer_notification_no">
+                                No
+                            </label>
+                            <small id="customerNotificationDesc" class="form-text text-muted">Check if the customer
+                                should
+                                not be notified about this NCR.</small>
+                        </div>
 
-                <!-- Updated Revision Number -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="updated_revision" class="form-label">Updated Revision Number*</label>
-                    <input type="number" class="form-control" id="updated_revision" name="updated_revision"
-                        placeholder="Enter updated revision number">
-                    <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Updated Revision Number is required</span>
-                </div>
+                    </div>
 
-                <!-- Engineer Name -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="engineer_name" class="form-label">Name of Engineer*</label>
-                    <input type="text" class="form-control" id="engineer_name" name="engineer_name" required
-                        aria-required="true" placeholder="Enter Engineer's Name">
-                    <span id="engineer_nameError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Engineer Name is required</span>
-                </div>
 
-                <!-- Revision Date -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="revision_date" class="form-label">Revision Date*</label>
-                    <input type="date" class="form-control" id="revision_date" name="revision_date">
-                    <span id="revision_dateError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Revision Date is required
-                    </span>
-                    <span id="revision_dateYearError" style="display: none; color: red; font-size: 0.9em;">
-                        Please select a valid date in the current year.
-                    </span>
-                </div>
+                    <!-- Disposition -->
+                    <div class="col-12 mb-3">
+                        <label for="disposition" class="form-label">Disposition*</label>
+                        <textarea class="form-control" id="disposition" name="disposition" rows="3"
+                            placeholder="Provide disposition details"></textarea>
+                        <span id="dispositionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Disposition details is required</span>
+                    </div>
 
-                <!-- Engineering Name -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="engineering" class="form-label">Engineering Details*</label>
-                    <input type="text" class="form-control" id="engineering" name="engineering"
-                        placeholder="Enter engineering details">
-                    <span id="engineeringError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Engineering details is required</span>
-                </div>
+                    <!-- Drawing Update Requirement -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="drawing_update" class="form-label">Does the Drawing Require Updating</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="drawing_update" name="drawing_update"
+                                aria-describedby="drawingUpdateDesc">
+                            <label class="form-check-label" for="drawing_update">
+                                Yes
+                            </label>
+                            <small id="drawingUpdateDesc" class="form-text text-muted">Check if the drawing needs to be
+                                updated.</small>
+                        </div>
+                    </div>
 
-                <!-- Engineering Date -->
-                <div class="col-12 col-md-6 mb-3">
-                    <label for="engineering_date" class="form-label">Engineering Date*</label>
-                    <input type="date" class="form-control" id="engineering_date" name="engineering_date">
-                    <span id="engineering_dateError" class="text-danger" style="display: none; font-size: 0.9em;">
-                        Engineering Date is required
-                    </span>
-                    <span id="engineering_dateYearError" style="display: none; color: red; font-size: 0.9em;">
-                        Please select a valid date in the current year.
-                    </span>
-                </div>
+                    <!-- Original Revision Number -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="original_revision" class="form-label">Version Number*</label>
+                        <input type="number" class="form-control" id="original_revision" name="original_revision"
+                            placeholder="Enter original revision number">
+                        <span id="original_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Version Number is required</span>
+                    </div>
 
-                <div>
-                    <button type="submit" id="btnSubmit" class="btn btn-primary btnsub">Submit</button>
-                    <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
-                </div>
-        </form>
+                    <!-- Updated Revision Number -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="updated_revision" class="form-label">Updated Revision Number*</label>
+                        <input type="number" class="form-control" id="updated_revision" name="updated_revision"
+                            placeholder="Enter updated revision number">
+                        <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Updated Revision Number is required</span>
+                    </div>
 
-    </main>
-</div>
+                    <!-- Engineer Name -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="engineer_name" class="form-label">Name of Engineer*</label>
+                        <input type="text" class="form-control" id="engineer_name" name="engineer_name" required
+                            aria-required="true" placeholder="Enter Engineer's Name">
+                        <span id="engineer_nameError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Engineer Name is required</span>
+                    </div>
+
+                    <!-- Revision Date -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="revision_date" class="form-label">Revision Date*</label>
+                        <input type="date" class="form-control" id="revision_date" name="revision_date">
+                        <span id="revision_dateError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Revision Date is required
+                        </span>
+                        <span id="revision_dateYearError" style="display: none; color: red; font-size: 0.9em;">
+                            Please select a valid date in the current year.
+                        </span>
+                    </div>
+
+                    <!-- Engineering Name -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="engineering" class="form-label">Engineering Details*</label>
+                        <input type="text" class="form-control" id="engineering" name="engineering"
+                            placeholder="Enter engineering details">
+                        <span id="engineeringError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Engineering details is required</span>
+                    </div>
+
+                    <!-- Engineering Date -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="engineering_date" class="form-label">Engineering Date*</label>
+                        <input type="date" class="form-control" id="engineering_date" name="engineering_date">
+                        <span id="engineering_dateError" class="text-danger" style="display: none; font-size: 0.9em;">
+                            Engineering Date is required
+                        </span>
+                        <span id="engineering_dateYearError" style="display: none; color: red; font-size: 0.9em;">
+                            Please select a valid date in the current year.
+                        </span>
+                    </div>
+
+                    <div>
+                        <button type="submit" id="btnSubmit" class="btn btn-primary btnsub">Submit</button>
+                        <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
+                    </div>
+            </form>
+
+        </main>
+    </div>
     <footer>
         <div class="footer-links">
             <a href="index.html">Dashboard</a>
@@ -259,8 +257,6 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/users.js"></script>
 
-
-    <script src="scripts/page.js"></script>
 
     <script>
         var tooltipTriggerList = Array.from(document.querySelectorAll('.tooltip-icon'))

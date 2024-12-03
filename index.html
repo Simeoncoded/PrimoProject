@@ -19,160 +19,162 @@
 
 <body>
     <div class="content">
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
-    <nav class="navbar navbar-expand-lg navsty">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="ncrlog.html">NCR LOG</a>
-                    </li>
-                    <li class="nav-item sl">
-                        <a class="nav-link" href="create.html">Create NCR Form</a>
-                    </li>
-                    <li class="nav-item dropdown sr">
-                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-bell" aria-hidden="true"></i>
-                            <span id="notification-counter" class="badge bg-danger">3</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
-                            <li>
-                                <a class="dropdown-item" href="engineering.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Engineering Section
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="createPurchasing.html">
-                                    <i class="fa-solid fa-arrow-right"></i> Purchasing Section
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="email.html">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span id="email-counter" class="badge bg-danger">0</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html">Report</a>
-                    </li>
-                    <button id="logoutButton">Logout</button>
-
-                    <!-- <button id="clearStorageBtn">Clear storage</button> -->
-                    
-
-                </ul>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">+</span>
-            </button>
-        </div>
-    </nav>
-
-
-    <main>
-        <div class="row dash">
-            <div class="col-12 col-md-4 mb-3">
-                <a href="create.html">
-                    <div class="dcont">
-                        <p><i class="fa fa-plus" aria-hidden="true"></i> CREATE NCR</p>
-                    </div>
+        <nav class="navbar navbar-expand-lg navsty">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/crlogo.png" alt="Crossfire Logo" width="120">
                 </a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="ncrlog.html">NCR LOG</a>
+                        </li>
+                        <li class="nav-item sl">
+                            <a class="nav-link" href="create.html">Create NCR Form</a>
+                        </li>
+                        <li class="nav-item dropdown sr">
+                            <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell" aria-hidden="true"></i>
+                                <span id="notification-counter" class="badge bg-danger">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="engineering.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Engineering Section
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="createPurchasing.html">
+                                        <i class="fa-solid fa-arrow-right"></i> Purchasing Section
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="email.html">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span id="email-counter" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="report.html">Report</a>
+                        </li>
+                        <button id="logoutButton">Logout</button>
+
+                        <!-- <button id="clearStorageBtn">Clear storage</button> -->
+
+
+                    </ul>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">+</span>
+                </button>
             </div>
-            <div class="col-12 col-md-4 mb-3">
-                <a href="ncrlog.html">
-                    <div class="dcont">
-                        <p><i class="fa fa-history" aria-hidden="true"></i> NCR LOG</p>
-                    </div>
-                </a>
+        </nav>
+
+
+        <main>
+            <div class="row dash">
+                <div class="col-12 col-md-4 mb-3">
+                    <a href="create.html">
+                        <div class="dcont">
+                            <p><i class="fa fa-plus" aria-hidden="true"></i> CREATE NCR</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <a href="ncrlog.html">
+                        <div class="dcont">
+                            <p><i class="fa fa-history" aria-hidden="true"></i> NCR LOG</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <a href="report.html">
+                        <div class="dcont">
+                            <p><i class="fa fa-file" aria-hidden="true"></i> REPORTS</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="col-12 col-md-4 mb-3">
-                <a href="report.html">
-                    <div class="dcont">
-                        <p><i class="fa fa-file" aria-hidden="true"></i> REPORTS</p>
-                    </div>
-                </a>
-            </div>
-        </div>
 
 
-        <section class="recentdash">
-            <h1>View Recent NCR's</h1>
-            <div class="rdtable">
-                <table class="table" id="ncrTable">
-                    <thead>
-                        <tr>
-                            <th>NCR Number</th>
-                            <th>Date</th>
-                            <th>Supplier</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <section class="recentdash">
+                <h1>View Recent NCR's</h1>
+                <div class="rdtable">
+                    <table class="table" id="ncrTable">
+                        <thead>
+                            <tr>
+                                <th>NCR Number</th>
+                                <th>Date</th>
+                                <th>Supplier</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
 
-                    </tbody>
-                </table>
-            </div>
-        </section>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-        <div class="modal fade" id="ncrDetailsModal" tabindex="-1" aria-labelledby="ncrDetailsModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ncrDetailsModalLabel">NCR Details</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="modalBodyContent">
+            <div class="modal fade" id="ncrDetailsModal" tabindex="-1" aria-labelledby="ncrDetailsModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ncrDetailsModalLabel">NCR Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modalBodyContent">
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="modal fade" id="editNcrModal" tabindex="-1" aria-labelledby="editNcrModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered wide-modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editNcrModalLabel">Edit NCR</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="editModalBodyContent">
+            <div class="modal fade" id="editNcrModal" tabindex="-1" aria-labelledby="editNcrModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered wide-modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editNcrModalLabel">Edit NCR</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="editModalBodyContent">
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-    </main>
+        </main>
     </div>
 
     <footer>
@@ -184,9 +186,6 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
 
-
-
-    <script src="scripts/page.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/dataload.js"></script>
     <script src="scripts/users.js"></script>
@@ -231,7 +230,7 @@
                     ev.preventDefault()
                     localStorage.setItem('selectedNcr', ev.target.id)
                     window.location.href = "edit.html"
-                } else if (target == "btnDetails"){
+                } else if (target == "btnDetails") {
                     ev.preventDefault()
                     localStorage.setItem('selectedNcr', target.id)
                     window.location.href = "details.html"
