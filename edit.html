@@ -468,11 +468,19 @@
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
                     data-bs-parent="#faqAccordion">
+                    <!-- purchas section edit -->
                     <div class="accordion-body">
-                        <form id="ncrForm">
+                        <form id="purchasesectionform">
 
                             <div class="row ">
-
+                                <!-- NRC number thinking about making it unique But might be 
+                                 better to name it the same so that it lines up with the others -->>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="ncr_no" class="form-label">NCR No.*</label>
+                                    <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true" placeholder="Enter NCR Number">
+                                    <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is required.</span>
+                                </div>
+                                
                                 <!-- OP Date -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="date" class="form-label">OP Date*</label>
@@ -518,9 +526,6 @@
                                 </div>
 
                             </div>
-
-
-
                             <div class="row">
                                 <div class="col-12 col-md-6 mb-3">
                                     <fieldset>
@@ -591,7 +596,7 @@
 
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
+                                <button type="submit" class="btn btn-primary btnsub" id="btnPurchaseSave">Save</button>
                             </div>
                         </form>
                     </div>
