@@ -206,12 +206,12 @@
                                     <legend class="form-label fw-bold">Item marked Nonconforming:</legend>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="nonconforming_yes"
-                                            name="radnonconforming" value="Yes" required aria-required="true">
+                                            name="radnonconforming" value="Yes" required aria-required="true" readonly>
                                         <label class="form-check-label" for="nonconforming_yes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="nonconforming_no"
-                                            name="radnonconforming" value="No" required aria-required="true">
+                                            name="radnonconforming" value="No" required aria-required="true" readonly>
                                         <label class="form-check-label" for="nonconforming_no">No</label>
                                     </div>
 
@@ -222,12 +222,12 @@
                                     <legend class="form-label fw-bold">Engineering Not Needed:</legend>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="enginnotneeded_yes"
-                                            name="radennotneeded" value="Yes" required aria-required="true">
+                                            name="radennotneeded" value="Yes" required aria-required="true" readonly>
                                         <label class="form-check-label" for="enginnotneeded_yes">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" id="enginnotneeded_no"
-                                            name="radennotneeded" value="No" required aria-required="true">
+                                            name="radennotneeded" value="No" required aria-required="true" readonly>
                                         <label class="form-check-label" for="enginnotneeded_no">No</label>
                                     </div>
                                 </fieldset>
@@ -254,14 +254,8 @@
                                 <!-- Review by CF Engineering -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
-                                    <select id="review_engineering" class="form-select" name="review_engineering"
-                                        aria-required="true">
-                                        <option value="" disabled selected>Select disposition</option>
-                                        <option value="use_as_is">Use as is</option>
-                                        <option value="repair">Repair</option>
-                                        <option value="rework">Rework</option>
-                                        <option value="scrap">Scrap</option>
-                                    </select>
+                                    <input type="number" class="form-control" id="review_engineering"
+                                    name="review_engineering" placeholder="Engineering Review" readonly>
                                     <span id="review_engineeringError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Review by CF Engineering is required.
@@ -273,16 +267,8 @@
                                     <label for="customer_notification" class="form-label">Does Customer Require
                                         Notification
                                         of NCR?</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="customer_notification_yes"
-                                            name="customer_notification" value="yes">
-                                        <label class="form-check-label" for="customer_notification_yes">Yes</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="customer_notification_no"
-                                            name="customer_notification" value="no">
-                                        <label class="form-check-label" for="customer_notification_no">No</label>
-                                    </div>
+                                    <input type="number" class="form-control" id="customer_notification"
+                                    name="customer_notification" placeholder="Customer Notification" readonly>
                                     <span id="customer_notificationError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Please select whether customer notification is required.
@@ -295,7 +281,7 @@
                                 <div class="col-12 mb-3">
                                     <label for="disposition" class="form-label">Disposition*</label>
                                     <textarea class="form-control" id="disposition" name="disposition" rows="3" required
-                                        placeholder="Provide disposition details"></textarea>
+                                        placeholder="Disposition details" readonly></textarea>
                                     <span id="dispositionError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Disposition details are required.
@@ -308,7 +294,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="original_revision" class="form-label">Version Number*</label>
                                     <input type="number" class="form-control" id="original_revision"
-                                        name="original_revision" placeholder="Enter original revision number">
+                                        name="original_revision" placeholder="Original revision number" readonly>
                                     <span id="original_revisionError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Version Number is required.
@@ -319,7 +305,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="updated_revision" class="form-label">Updated Revision Number*</label>
                                     <input type="number" class="form-control" id="updated_revision"
-                                        name="updated_revision" placeholder="Enter updated revision number">
+                                        name="updated_revision" placeholder="Updated revision number" readonly>
                                     <span id="updated_revisionError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Updated Revision Number is required.
@@ -332,7 +318,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="engineer_name" class="form-label">Name of Engineer*</label>
                                     <input type="text" class="form-control" id="engineer_name" name="engineer_name"
-                                        placeholder="Enter Engineer's Name">
+                                        placeholder="Engineer's Name" readonly>
                                     <span id="engineer_nameError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Engineer Name is required.
@@ -342,7 +328,8 @@
                                 <!-- Revision Date -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="revision_date" class="form-label">Revision Date*</label>
-                                    <input type="date" class="form-control" id="revision_date" name="revision_date">
+                                    <input type="date" class="form-control" id="revision_date" name="revision_date"
+                                        readonly>
                                     <span id="revision_dateError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Revision Date is required.
@@ -355,7 +342,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="engineering" class="form-label">Engineering Details*</label>
                                     <input type="text" class="form-control" id="engineering" name="engineering"
-                                        placeholder="Enter engineering details">
+                                        placeholder="Engineering details" readonly>
                                     <span id="engineeringError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Engineering details are required.
@@ -366,7 +353,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="engineering_date" class="form-label">Engineering Date*</label>
                                     <input type="date" class="form-control" id="engineering_date"
-                                        name="engineering_date">
+                                        name="engineering_date" readonly>
                                     <span id="engineering_dateError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Engineering Date is required.
@@ -374,18 +361,19 @@
                                 </div>
                             </div>
 
-                            <div>
+                            <!-- <div>
                                 <button type="submit" id="btnEngineeringSave" class="btn btn-primary">Save
                                     Changes</button>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
+                </div>
                 </div>
                 <div class="accordion-item" id="purchasingAccordion">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                            PURCHASE SECTION DETAILS
+                            PURCHASING SECTION DETAILS
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
@@ -397,16 +385,18 @@
                                     <!-- NCR No. -->
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="ncr_no" class="form-label">NCR No.*</label>
-                                        <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true" placeholder="Enter NCR Number">
-                                        <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No. is required.</span>
+                                        <input type="text" class="form-control" id="ncr_no" name="ncr_no"
+                                            aria-required="true" placeholder="NCR Number" readonly>
+                                        <span id="ncrNoError" class="text-danger"
+                                            style="display: none; font-size: 0.9em;">NCR No. is required.</span>
                                     </div>
-                                    
+
 
                                     <!-- OP Date -->
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="date" class="form-label">OP Date</label>
                                         <input type="date" class="form-control" id="date" name="date"
-                                            aria-required="true">
+                                            aria-required="true" readonly>
                                         <span id="dateOPError" class="text-danger"
                                             style="display: none; font-size: 0.9em;">OP Date is required</span>
                                     </div>
@@ -419,16 +409,8 @@
                                     <div class="col-12 col-md-6 mb-3">
                                         <fieldset>
                                             <legend class="form-label fw-bold">Was the Car Raised?*</legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" id="carraised_yes"
-                                                    name="carraised" value="Yes" aria-required="true">
-                                                <label class="form-check-label" for="carraised_yes">Yes</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" id="fcarraised_no"
-                                                    name="carraised" value="No" aria-required="true">
-                                                <label class="form-check-label" for="carraised_no">No</label>
-                                            </div>
+                                            <input type="number" class="form-control" id="carraised" name="carraised"
+                                            aria-required="true" placeholder="Was the Car Raised?" readonly>
                                             <span id="carraisedError" class="text-danger"
                                                 style="display: none; font-size: 0.9em;">Please
                                                 select wether or not Follow up is required.</span>
@@ -440,7 +422,7 @@
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="carnumber" class="form-label">Car Number:*</label>
                                         <input type="number" class="form-control" id="carnumber" name="carnumber"
-                                            aria-required="true" placeholder="Enter Car Number">
+                                            aria-required="true" placeholder="Car Number" readonly>
                                     </div>
 
                                 </div>
@@ -451,16 +433,8 @@
                                     <div class="col-12 col-md-6 mb-3">
                                         <fieldset>
                                             <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" id="followrequired_yes"
-                                                    name="followrequired" value="Yes" aria-required="true">
-                                                <label class="form-check-label" for="followrequired_yes">Yes</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" id="followrequired_no"
-                                                    name="followrequired" value="No" aria-required="true">
-                                                <label class="form-check-label" for="followrequired_no">No</label>
-                                            </div>
+                                            <input type="number" class="form-control" id="followrequired" name="followrequired"
+                                            aria-required="true" placeholder="Is a Follow Up Required?" readonly>
                                             <span id="followrequiredError" class="text-danger"
                                                 style="display: none; font-size: 0.9em;">Please
                                                 select wether or not Follow up is required.</span>
@@ -470,17 +444,8 @@
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="followtype" class="form-label">Follow Up Type?*</label>
 
-                                        <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
-                                        <span id="followupError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">Please Pick a
-                                            Supplier</span>
-                                        <select class="form-control" id="followtype" name="followtype"
-                                            aria-required="true">
-                                            <option value="">Select a type</option>
-                                        </select>
-                                        <span id="followupError" class="text-danger"
-                                            style="display: none; font-size: 0.9em;">Pick a
-                                            Supplier</span>
+                                        <input type="text" class="form-control" id="followtype" name="followtype"
+                                            aria-required="true" placeholder="Follow Type" readonly>
                                     </div>
                                 </div>
 
@@ -490,7 +455,7 @@
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="followdate" class="form-label">Follow Up Expected Date*</label>
                                         <input type="date" class="form-control" id="followdate" name="followdate"
-                                            aria-required="true">
+                                            aria-required="true" readonly>
                                         <span id="followdateError" class="text-danger"
                                             style="display: none; font-size: 0.9em;">Date is
                                             required</span>
@@ -503,7 +468,7 @@
                                             Name*</label>
                                         <input type="text" class="form-control" id="operationsmanagername"
                                             name="operationsmanagername" aria-required="true"
-                                            placeholder="Enter Operations Manager's Name">
+                                            placeholder="Operations Manager's Name" readonly>
                                         <span id="operationsmanagerError" class="text-danger"
                                             style="display: none; font-size: 0.9em;">Operations manager name is
                                             required</span>
@@ -511,9 +476,9 @@
 
 
                                 </div>
-                                <div>
+                                <!-- <div>
                                     <button type="submit" class="btn btn-primary btnsub" id="btnSave">Save</button>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
