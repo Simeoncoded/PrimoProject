@@ -353,5 +353,12 @@ select {
     color: #1A3851;
     
 }
-
+.bby{
+    background-color: #1A3851;
+    color: #fff;
+    border-radius: 0;
+}
+.bby:hover{
+    color: #fff;
+}
   

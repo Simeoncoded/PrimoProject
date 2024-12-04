@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
             
             // Collect form data
             const engineeringData = {
-                ncr_no: document.getElementById('ncr_no').value,
                 review_engineering: document.getElementById('review_engineering').value,
                 customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
                 disposition: document.getElementById('disposition').value,
