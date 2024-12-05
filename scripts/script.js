@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Collect form data
             const ncrData = {
                 ncr_no: document.getElementById('ncr_no').value,
-                //quality{
                 date: document.getElementById('date').value,
                 process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
                 supplier_name: document.getElementById('supplier_name').value,
@@ -60,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 quality_rep_name: document.getElementById('quality_rep_name').value,
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
-            //}
                 status: "open"
             };
 
@@ -81,6 +79,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Populate notifications dynamically
+    const notificationList = document.getElementById('notificationList');
+    if (notificationList) {
+        const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+        notificationList.innerHTML = ''; // Clear any existing items
+    
+        if (ncrs.length > 0) {
+            ncrs.forEach(ncr => {
+                // Determine the section (Engineering or Purchasing)
+                const section = ncr.process.includes('engineering') ? 'Engineering' : 'Purchasing';
+                const ncrLogLink = `ncrlog.html?ncr_no=${ncr.ncr_no}`; // Link to NCR log with query param
+    
+                // Create a list item for each NCR
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a class="dropdown-item" href="${ncrLogLink}">
+                        NCR #${ncr.ncr_no} - ${section} Section
+                    </a>
+                `;
+                notificationList.appendChild(listItem);
+            });
+        } else {
+            // Show a message if no NCRs are available
+            const noItems = document.createElement('li');
+            noItems.innerHTML = '<span class="dropdown-item">No notifications available</span>';
+            notificationList.appendChild(noItems);
+        }
+    }
+    
     // Clear LocalStorage button functionality
     const clearStorageBtn = document.getElementById('clearStorageBtn');
     if (clearStorageBtn) {
@@ -117,6 +144,7 @@ function incrementEmailCount() {
         localStorage.setItem('emailCount', count);
     }
 }
+
 
 document.querySelector('#btnSave').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent form submission

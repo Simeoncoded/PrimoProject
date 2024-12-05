@@ -33,18 +33,12 @@
                         <a class="nav-link" href="create.html">Create NCR </a>
                     </li>
                     <li class="nav-item dropdown sr">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="notificationDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
+                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-bell" aria-hidden="true"></i>
                             <span id="notification-counter" class="badge bg-danger">3</span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                        <!-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
                             <li>
                                 <a class="dropdown-item" href="engineering.html">
                                     <i class="fa-solid fa-arrow-right"></i> Engineering Section
@@ -55,36 +49,46 @@
                                     <i class="fa-solid fa-arrow-right"></i> Purchasing Section
                                 </a>
                             </li>
-                          
+
+                        </ul> -->
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" id="notificationList">
+                            <!-- Dynamically generated content will go here -->
                         </ul>
+                        
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">
                             <i class="fa-solid fa-user"></i>
                         </a>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link" href="email.html">
                             <i class="fa-solid fa-envelope"></i>
                             <span id="email-counter" class="badge bg-danger">0</span>
                         </a>
                     </li>
-    
+
                     <li class="nav-item">
                         <a class="nav-link" href="report.html">Report</a>
                     </li>
                     <button id="logoutButton">Logout</button>
+
+                    <!-- <button id="clearStorageBtn">Clear storage</button> -->
+
+
                 </ul>
             </div>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">+</span>
             </button>
         </div>
     </nav>
+    
     <main class="container my-5">
         <h2 class="mb-4" style="text-align: center;">Generate NCR Report</h2>
 
