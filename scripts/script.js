@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <a class="dropdown-item" href="${ncrLogLink}">
-                        NCR #${ncr.ncr_no} - ${section} Section
+                        NCR #${ncr.ncr_no} - Action Engineering Section
                     </a>
                 `;
                 notificationList.appendChild(listItem);
