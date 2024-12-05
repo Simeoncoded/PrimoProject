@@ -34,7 +34,7 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
     }, 1000);
   } else {
     messageDiv.textContent = "Invalid credentials.";
-    messageDiv.style.color = "red";
+    messageDiv.style.color = "white";
   }
 });
 
