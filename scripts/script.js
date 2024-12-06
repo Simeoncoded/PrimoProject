@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize notification and email counters
     const notificationCounter = document.getElementById('notification-counter');
     const emailCounter = document.getElementById('email-counter');
+    const notificationList = document.getElementById('notificationList');
 
+    // Initialize counters
     if (notificationCounter) {
         const notificationCount = localStorage.getItem('notificationCount') || 0;
         notificationCounter.textContent = notificationCount;
@@ -37,6 +39,32 @@ document.addEventListener('DOMContentLoaded', function () {
         const emailCount = localStorage.getItem('emailCount') || 0;
         emailCounter.textContent = emailCount;
     }
+
+    // Update notification list
+    function updateNotificationList() {
+        const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+        notificationList.innerHTML = ''; // Clear existing items
+
+        if (ncrs.length > 0) {
+            ncrs.forEach(ncr => {
+                const ncrLogLink = `ncrlog.html?ncr_no=${ncr.ncr_no}`;
+                const actionLabel = ncr.source === 'engineering' ? 'Action - Engineering' : 'Action - Purchasing';
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a class="dropdown-item" href="${ncrLogLink}">
+                        NCR #${ncr.ncr_no} - ${actionLabel}
+                    </a>
+                `;
+                notificationList.appendChild(listItem);
+            });
+        } else {
+            const noItems = document.createElement('li');
+            noItems.innerHTML = '<span class="dropdown-item">No notifications available</span>';
+            notificationList.appendChild(noItems);
+        }
+    }
+
+    updateNotificationList(); // Populate notifications initially
 
     // Form submission handling
     const form = document.getElementById('ncrForm');
@@ -59,91 +87,97 @@ document.addEventListener('DOMContentLoaded', function () {
                 quality_rep_name: document.getElementById('quality_rep_name').value,
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
-                status: "open"
+                status: "open",
+                source: "engineering" // Set the source to "purchasing"
             };
 
             // Store data in localStorage
             const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
-            localStorage.setItem('ncrLastNum', ncrData.ncr_no);
 
-            // Increment notification and email counters
+            // Increment counters and update notifications
             incrementNotificationCount();
             incrementEmailCount();
+            updateNotificationList();
 
-            // Alert user and redirect
             alert("Form submitted successfully!");
             form.reset();
             window.location.href = 'ncrlog.html';
         });
     }
 
-    // Populate notifications dynamically
-    const notificationList = document.getElementById('notificationList');
-    if (notificationList) {
-        const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
-        notificationList.innerHTML = ''; // Clear any existing items
-    
-        if (ncrs.length > 0) {
-            ncrs.forEach(ncr => {
-                // Determine the section (Engineering or Purchasing)
-                const section = ncr.process.includes('engineering') ? 'Engineering' : 'Purchasing';
-                const ncrLogLink = `ncrlog.html?ncr_no=${ncr.ncr_no}`; // Link to NCR log with query param
-    
-                // Create a list item for each NCR
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <a class="dropdown-item" href="${ncrLogLink}">
-                        NCR #${ncr.ncr_no} - Action Engineering Section
-                    </a>
-                `;
-                notificationList.appendChild(listItem);
-            });
-        } else {
-            // Show a message if no NCRs are available
-            const noItems = document.createElement('li');
-            noItems.innerHTML = '<span class="dropdown-item">No notifications available</span>';
-            notificationList.appendChild(noItems);
-        }
+    const engineeringForm = document.getElementById('engineeringForm');
+    if (engineeringForm) {
+        engineeringForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const engineeringData = {
+                review_engineering: document.getElementById('review_engineering').value,
+                customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
+                disposition: document.getElementById('disposition').value,
+                drawing_update: document.getElementById('drawing_update').checked,
+                original_revision: document.getElementById('original_revision').value,
+                updated_revision: document.getElementById('updated_revision').value,
+                engineer_name: document.getElementById('engineer_name').value,
+                revision_date: document.getElementById('revision_date').value,
+                engineering: document.getElementById('engineering').value,
+                engineering_date: document.getElementById('engineering_date').value,
+                source: "purchasing" // Set the source to "engineering"
+            };
+
+            // Save engineering form data
+            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
+            existingForms.push(engineeringData);
+            localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
+
+            // Add new NCR to the notifications
+            const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+            const ncrNumber = document.getElementById('ncr_number').value;
+            ncrs.push({ ncr_no: ncrNumber, source: "engineering" });
+            localStorage.setItem('ncrs', JSON.stringify(ncrs));
+
+            incrementNotificationCount();
+            incrementEmailCount();
+            updateNotificationList();
+
+            alert("Engineering form submitted successfully!");
+            engineeringForm.reset();
+        });
     }
-    
+
     // Clear LocalStorage button functionality
     const clearStorageBtn = document.getElementById('clearStorageBtn');
     if (clearStorageBtn) {
         clearStorageBtn.addEventListener('click', function () {
-            // Clear all items from localStorage
             localStorage.clear();
             alert('Local Storage cleared!');
-
-            // Reset the notification and email counters on the page
             if (notificationCounter) notificationCounter.textContent = 0;
             if (emailCounter) emailCounter.textContent = 0;
+            updateNotificationList();
         });
     }
+
+    // Increment notification count
+    function incrementNotificationCount() {
+        if (notificationCounter) {
+            let count = parseInt(notificationCounter.textContent) || 0;
+            count++;
+            notificationCounter.textContent = count;
+            localStorage.setItem('notificationCount', count);
+        }
+    }
+
+    // Increment email count
+    function incrementEmailCount() {
+        if (emailCounter) {
+            let count = parseInt(emailCounter.textContent) || 0;
+            count++;
+            emailCounter.textContent = count;
+            localStorage.setItem('emailCount', count);
+        }
+    }
 });
-
-// Function to increment notification count
-function incrementNotificationCount() {
-    const notificationCounter = document.getElementById('notification-counter');
-    if (notificationCounter) {
-        let count = parseInt(notificationCounter.textContent) || 0;
-        count++;
-        notificationCounter.textContent = count;
-        localStorage.setItem('notificationCount', count);
-    }
-}
-
-// Function to increment email count
-function incrementEmailCount() {
-    const emailCounter = document.getElementById('email-counter');
-    if (emailCounter) {
-        let count = parseInt(emailCounter.textContent) || 0;
-        count++;
-        emailCounter.textContent = count;
-        localStorage.setItem('emailCount', count);
-    }
-}
 
 
 document.querySelector('#btnSave').addEventListener('click', function(event) {

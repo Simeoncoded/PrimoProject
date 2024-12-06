@@ -96,76 +96,110 @@ inputFields.forEach((fieldId) => {
 btnSub.addEventListener("click", validateForm);
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Initialize notification and email counters
-    const notificationCounter = document.getElementById('notification-counter');
-    const emailCounter = document.getElementById('email-counter');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const notificationCounter = document.getElementById('notification-counter');
+//     const emailCounter = document.getElementById('email-counter');
+//     const notificationList = document.getElementById('notificationList');
 
-    if (notificationCounter) {
-        const count = localStorage.getItem('notificationCount') || 0;
-        notificationCounter.textContent = count;
-    }
+//     // Initialize counters
+//     if (notificationCounter) {
+//         const count = localStorage.getItem('notificationCount') || 0;
+//         notificationCounter.textContent = count;
+//     }
+//     if (emailCounter) {
+//         const emailCount = localStorage.getItem('emailCount') || 0;
+//         emailCounter.textContent = emailCount;
+//     }
 
-    if (emailCounter) {
-        const emailCount = localStorage.getItem('emailCount') || 0;
-        emailCounter.textContent = emailCount;
-    }
+//     // Update notification list
+//     function updateNotificationList() {
+//         const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+//         notificationList.innerHTML = ''; // Clear existing items
 
-    // Engineering form submission handling
-    const engineeringForm = document.getElementById('engineeringForm');
-    if (engineeringForm) {
-        engineeringForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent page refresh
-            
-            // Collect form data
-            const engineeringData = {
-                review_engineering: document.getElementById('review_engineering').value,
-                customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
-                disposition: document.getElementById('disposition').value,
-                drawing_update: document.getElementById('drawing_update').checked,
-                original_revision: document.getElementById('original_revision').value,
-                updated_revision: document.getElementById('updated_revision').value,
-                engineer_name: document.getElementById('engineer_name').value,
-                revision_date: document.getElementById('revision_date').value,
-                engineering: document.getElementById('engineering').value,
-                engineering_date: document.getElementById('engineering_date').value,
-            };
+//         if (ncrs.length > 0) {
+//             ncrs.forEach(ncr => {
+//                 const ncrLogLink = `ncrlog.html?ncr_no=${ncr.ncr_no}`;
+//                 const listItem = document.createElement('li');
+//                 listItem.innerHTML = `
+//                     <a class="dropdown-item" href="${ncrLogLink}">
+//                         ${ncr.ncr_no} Action Purchasing
+//                     </a>
+//                 `;
+//                 notificationList.appendChild(listItem);
+//             });
+//         } else {
+//             const noItems = document.createElement('li');
+//             noItems.innerHTML = '<span class="dropdown-item">No notifications available</span>';
+//             notificationList.appendChild(noItems);
+//         }
+//     }
 
-            // Save form data to localStorage
-            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
-            existingForms.push(engineeringData);
-            localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
+//     updateNotificationList(); // Populate notifications initially
 
-            // Increment notification and email counters
-            incrementNotificationCount();
-            incrementEmailCount();
+//     // Form submission handling
+//     const engineeringForm = document.getElementById('engineeringForm');
+//     if (engineeringForm) {
+//         engineeringForm.addEventListener('submit', function (e) {
+//             e.preventDefault();
 
-            // Alert user and reset form
-            alert("Engineering form submitted successfully!");
-            engineeringForm.reset();
-            window.location.href = 'ncrlog.html';
-        });
-    }
-});
+//             const engineeringData = {
+//                 review_engineering: document.getElementById('review_engineering').value,
+//                 customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
+//                 disposition: document.getElementById('disposition').value,
+//                 drawing_update: document.getElementById('drawing_update').checked,
+//                 original_revision: document.getElementById('original_revision').value,
+//                 updated_revision: document.getElementById('updated_revision').value,
+//                 engineer_name: document.getElementById('engineer_name').value,
+//                 revision_date: document.getElementById('revision_date').value,
+//                 engineering: document.getElementById('engineering').value,
+//                 engineering_date: document.getElementById('engineering_date').value,
+//             };
 
-// Function to increment notification count
-function incrementNotificationCount() {
-    const notificationCounter = document.getElementById('notification-counter');
-    if (notificationCounter) {
-        let count = parseInt(notificationCounter.textContent) || 0;
-        count++;
-        notificationCounter.textContent = count;
-        localStorage.setItem('notificationCount', count);
-    }
-}
+//             // Get NCR number from the input field
+//             const ncrNumberField = document.getElementById('ncr_number');
+//             const ncrNumber = ncrNumberField.value; // Fetch the real NCR number (e.g., "2024-075")
 
-// Function to increment email count
-function incrementEmailCount() {
-    const emailCounter = document.getElementById('email-counter');
-    if (emailCounter) {
-        let count = parseInt(emailCounter.textContent) || 0;
-        count++;
-        emailCounter.textContent = count;
-        localStorage.setItem('emailCount', count);
-    }
-}
+//             // Save engineering form data
+//             const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
+//             existingForms.push(engineeringData);
+//             localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
+
+//             // Add new NCR with real number
+//             const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+//             const newNcr = {
+//                 ncr_no: ncrNumber, // Use the real NCR number
+//             };
+//             ncrs.push(newNcr);
+//             localStorage.setItem('ncrs', JSON.stringify(ncrs));
+
+//             // Increment counters and update notifications
+//             incrementNotificationCount();
+//             incrementEmailCount();
+//             updateNotificationList();
+
+//             alert("Engineering form submitted successfully!");
+//             engineeringForm.reset();
+//         });
+//     }
+
+//     // Increment notification count
+//     function incrementNotificationCount() {
+//         if (notificationCounter) {
+//             let count = parseInt(notificationCounter.textContent) || 0;
+//             count++;
+//             notificationCounter.textContent = count;
+//             localStorage.setItem('notificationCount', count);
+//         }
+//     }
+
+//     // Increment email count
+//     function incrementEmailCount() {
+//         if (emailCounter) {
+//             let count = parseInt(emailCounter.textContent) || 0;
+//             count++;
+//             emailCounter.textContent = count;
+//             localStorage.setItem('emailCount', count);
+//         }
+//     }
+// });
+
