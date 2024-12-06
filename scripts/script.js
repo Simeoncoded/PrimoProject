@@ -24,23 +24,136 @@ function backToTop() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize notification and email counters
+    // Get references to elements
     const notificationCounter = document.getElementById('notification-counter');
     const emailCounter = document.getElementById('email-counter');
     const notificationList = document.getElementById('notificationList');
+    const form = document.getElementById('ncrForm');
+    const engineeringForm = document.getElementById('engineeringForm');
+    const clearStorageBtn = document.getElementById('clearStorageBtn');
 
-    // Initialize counters
+    // Initialize notification and email counters
     if (notificationCounter) {
         const notificationCount = localStorage.getItem('notificationCount') || 0;
         notificationCounter.textContent = notificationCount;
     }
-
     if (emailCounter) {
         const emailCount = localStorage.getItem('emailCount') || 0;
         emailCounter.textContent = emailCount;
     }
 
-    // Update notification list
+    // Initialize notification list
+    updateNotificationList();
+
+    // Event listener for NCR form submission
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent page refresh
+
+            // Collect form data
+            const ncrData = {
+                ncr_no: document.getElementById('ncr_no').value,
+                date: document.getElementById('date').value,
+                process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
+                supplier_name: document.getElementById('supplier_name').value,
+                po_prod_no: document.getElementById('po_prod_no').value,
+                sales_order_no: document.getElementById('sales_order_no').value,
+                item_description: document.getElementById('item_description').value,
+                defect_description: document.getElementById('defect_description').value,
+                quantity_received: document.getElementById('quantity_received').value,
+                quantity_defective: document.getElementById('quantity_defective').value,
+                quality_rep_name: document.getElementById('quality_rep_name').value,
+                nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
+                ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
+                status: "open",
+                source: "purchasing"
+            };
+
+            // Save NCR data to localStorage
+            const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
+            existingNCRs.push(ncrData);
+            localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
+
+            // Add notification for NCR
+            const notification = {
+                ncr_no: ncrData.ncr_no,
+                source: ncrData.source,
+                action: "Action Required - Engineering "
+            };
+            addNotificationToList(notification);
+
+            incrementNotificationCount();
+            incrementEmailCount();
+
+            alert("NCR form submitted successfully!");
+            form.reset();
+            window.location.href = 'ncrlog.html';
+        });
+    }
+
+    // Event listener for Engineering form submission
+    if (engineeringForm) {
+        engineeringForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent page refresh
+
+            // Collect form data
+            const engineeringData = {
+                review_engineering: document.getElementById('review_engineering').value,
+                customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
+                disposition: document.getElementById('disposition').value,
+                drawing_update: document.getElementById('drawing_update').checked,
+                original_revision: document.getElementById('original_revision').value,
+                updated_revision: document.getElementById('updated_revision').value,
+                engineer_name: document.getElementById('engineer_name').value,
+                revision_date: document.getElementById('revision_date').value,
+                engineering: document.getElementById('engineering').value,
+                engineering_date: document.getElementById('engineering_date').value,
+                source: "engineering"
+            };
+
+            // Save engineering form data
+            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
+            existingForms.push(engineeringData);
+            localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
+
+            // Add notification for engineering action
+            const notification = {
+                ncr_no: document.getElementById('ncr_number').value, // NCR number
+                source: "engineering",
+                action: "Action Required - Purchasing"
+            };
+            addNotificationToList(notification);
+
+            incrementNotificationCount();
+            incrementEmailCount();
+
+            alert("Engineering form submitted successfully!");
+            engineeringForm.reset();
+        });
+    }
+
+    // Event listener for clearing local storage
+    if (clearStorageBtn) {
+        clearStorageBtn.addEventListener('click', function () {
+            localStorage.clear();
+            alert('Local Storage cleared!');
+            if (notificationCounter) notificationCounter.textContent = 0;
+            if (emailCounter) emailCounter.textContent = 0;
+            updateNotificationList();
+        });
+    }
+
+    // Helper functions
+    function addNotificationToList(notification) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <a class="dropdown-item" href="#">
+                NCR #${notification.ncr_no} - ${notification.action}
+            </a>
+        `;
+        notificationList.appendChild(listItem);
+    }
+
     function updateNotificationList() {
         const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
         notificationList.innerHTML = ''; // Clear existing items
@@ -64,101 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    updateNotificationList(); // Populate notifications initially
-
-    // Form submission handling
-    const form = document.getElementById('ncrForm');
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent page refresh
-
-            // Collect form data
-            const ncrData = {
-                ncr_no: document.getElementById('ncr_no').value,
-                date: document.getElementById('date').value,
-                process: Array.from(document.querySelectorAll('input[name="process"]:checked')).map(c => c.value),
-                supplier_name: document.getElementById('supplier_name').value,
-                po_prod_no: document.getElementById('po_prod_no').value,
-                sales_order_no: document.getElementById('sales_order_no').value,
-                item_description: document.getElementById('item_description').value,
-                defect_description: document.getElementById('defect_description').value,
-                quantity_received: document.getElementById('quantity_received').value,
-                quantity_defective: document.getElementById('quantity_defective').value,
-                quality_rep_name: document.getElementById('quality_rep_name').value,
-                nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
-                ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
-                status: "open",
-                source: "purchasing" // Set the source to "purchasing"
-            };
-
-            // Store data in localStorage
-            const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
-            existingNCRs.push(ncrData);
-            localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
-
-            // Increment counters and update notifications
-            incrementNotificationCount();
-            incrementEmailCount();
-            updateNotificationList();
-
-            alert("Form submitted successfully!");
-            form.reset();
-            window.location.href = 'ncrlog.html';
-        });
-    }
-
-    const engineeringForm = document.getElementById('engineeringForm');
-    if (engineeringForm) {
-        engineeringForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const engineeringData = {
-                review_engineering: document.getElementById('review_engineering').value,
-                customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
-                disposition: document.getElementById('disposition').value,
-                drawing_update: document.getElementById('drawing_update').checked,
-                original_revision: document.getElementById('original_revision').value,
-                updated_revision: document.getElementById('updated_revision').value,
-                engineer_name: document.getElementById('engineer_name').value,
-                revision_date: document.getElementById('revision_date').value,
-                engineering: document.getElementById('engineering').value,
-                engineering_date: document.getElementById('engineering_date').value,
-                source: "purchasing" 
-            };
-
-            // Save engineering form data
-            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
-            existingForms.push(engineeringData);
-            localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
-
-            // Add new NCR to the notifications
-            const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
-            const ncrNumber = document.getElementById('ncr_number').value;
-            ncrs.push({ ncr_no: ncrNumber, source: "engineering" });
-            localStorage.setItem('ncrs', JSON.stringify(ncrs));
-
-            incrementNotificationCount();
-            incrementEmailCount();
-            updateNotificationList();
-
-            alert("Engineering form submitted successfully!");
-            engineeringForm.reset();
-        });
-    }
-
-    // Clear LocalStorage button functionality
-    const clearStorageBtn = document.getElementById('clearStorageBtn');
-    if (clearStorageBtn) {
-        clearStorageBtn.addEventListener('click', function () {
-            localStorage.clear();
-            alert('Local Storage cleared!');
-            if (notificationCounter) notificationCounter.textContent = 0;
-            if (emailCounter) emailCounter.textContent = 0;
-            updateNotificationList();
-        });
-    }
-
-    // Increment notification count
     function incrementNotificationCount() {
         if (notificationCounter) {
             let count = parseInt(notificationCounter.textContent) || 0;
@@ -168,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Increment email count
     function incrementEmailCount() {
         if (emailCounter) {
             let count = parseInt(emailCounter.textContent) || 0;
