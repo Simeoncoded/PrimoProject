@@ -127,5 +127,29 @@ function manageAccordions() {
   }
 }
 
+// Function to manage navbar links based on user role
+function manageNavbarLinks() {
+  const user = JSON.parse(localStorage.getItem("user"));
 
-document.addEventListener("DOMContentLoaded", manageAccordions);
+  if (!user) return; // No user logged in, skip
+
+  const notificationLink = document.getElementById("notificationLink");
+  const emailLink = document.getElementById("emailLink");
+
+  // Hide all role-specific navbar links by default
+  if (notificationLink) notificationLink.style.display = "block";
+  if (emailLink) emailLink.style.display = "block";
+
+  // Show links based on role
+  if (user.role === "inspector") {
+    if (notificationLink) notificationLink.style.display = "none";
+    if (emailLink) emailLink.style.display = "none";
+  }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  manageAccordions();
+  manageNavbarLinks();
+});
