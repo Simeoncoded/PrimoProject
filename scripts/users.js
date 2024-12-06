@@ -148,8 +148,58 @@ function manageNavbarLinks() {
 }
 
 
+function manageEditPageSections() {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user) return; // No user logged in, skip
+
+  const inspectorSection = document.getElementById("ncrForm");
+  const engineerSection = document.getElementById("engineeringForm");
+
+  // Check if the sections exist on the page
+  if (!inspectorSection && !engineerSection) return;
+
+  // Engineer role: Make inspector section readonly
+  if (user.role === "engineer") {
+    if (inspectorSection) {
+      const inspectorFields = inspectorSection.querySelectorAll("input, select, textarea");
+      inspectorFields.forEach((field) => {
+        field.setAttribute("readonly", true); 
+        field.style.backgroundColor = "#f5f5f5"; 
+        field.style.pointerEvents = "none"; 
+      });
+      inspectorSection.style.display = "block"; 
+    }
+  }
+
+  // Purchasing role: Make both engineer and inspector sections readonly
+  if (user.role === "purchasing") {
+    if (inspectorSection) {
+      const inspectorFields = inspectorSection.querySelectorAll("input, select, textarea");
+      inspectorFields.forEach((field) => {
+        field.setAttribute("readonly", true);
+        field.style.backgroundColor = "#f5f5f5";
+        field.style.pointerEvents = "none";
+      });
+      inspectorSection.style.display = "block";
+    }
+
+    if (engineerSection) {
+      const engineerFields = engineerSection.querySelectorAll("input, select, textarea");
+      engineerFields.forEach((field) => {
+        field.setAttribute("readonly", true);
+        field.style.backgroundColor = "#f5f5f5";
+        field.style.pointerEvents = "none";
+      });
+      engineerSection.style.display = "block";
+    }
+  }
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
+  manageEditPageSections();
   manageAccordions();
   manageNavbarLinks();
 });
