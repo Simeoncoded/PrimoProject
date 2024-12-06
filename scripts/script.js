@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (ncrs.length > 0) {
             ncrs.forEach(ncr => {
                 const ncrLogLink = `ncrlog.html?ncr_no=${ncr.ncr_no}`;
-                const actionLabel = ncr.source === 'engineering' ? 'Action - Engineering' : 'Action - Purchasing';
+                const actionLabel = ncr.source === 'engineering' ? 'Action - Purchasing' : 'Action - Engineering';
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <a class="dropdown-item" href="${ncrLogLink}">
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
                 status: "open",
-                source: "engineering" // Set the source to "purchasing"
+                source: "purchasing" // Set the source to "purchasing"
             };
 
             // Store data in localStorage
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 revision_date: document.getElementById('revision_date').value,
                 engineering: document.getElementById('engineering').value,
                 engineering_date: document.getElementById('engineering_date').value,
-                source: "purchasing" // Set the source to "engineering"
+                source: "purchasing" 
             };
 
             // Save engineering form data
