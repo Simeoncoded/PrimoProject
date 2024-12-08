@@ -14,7 +14,7 @@ body {
     flex-direction: column;
   }
   
-  /* The main content takes up remaining space */
+
   .content {
     flex: 1;
   }
@@ -337,7 +337,7 @@ select {
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .dropdown-menu {
-        width: 200px; /* Adjust this width as per your design preference */
+        width: 200px; 
     }
 }
 #logoutButton{
