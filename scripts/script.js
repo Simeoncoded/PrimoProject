@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
             incrementNotificationCount();
             incrementEmailCount();
 
-            alert("NCR form submitted successfully!");
+            alert("NCR form submitted successfully! Notifications and email has been sent to the Engineer Section");
             form.reset();
             window.location.href = 'ncrlog.html';
         });
