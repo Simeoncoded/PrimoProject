@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
         }
     });
 
-    // If the NCR isn't found, log an error and stop execution
+    
     if (!thisNcr) {
         console.error("NCR not found");
         return;
@@ -33,11 +33,11 @@ window.addEventListener("load", function () {
     const engInputs = document.querySelectorAll('input[name="ennotneeded"]'); // Radio buttons
 
     // Prefill form fields with data from thisNcr
-    ncrInput.value = thisNcr.ncr_no; // Default to empty if not present
-    ncrInput.setAttribute("disabled", true); // Disable editing
+    ncrInput.value = thisNcr.ncr_no; 
+    ncrInput.setAttribute("disabled", true); 
 
     dateInput.value = thisNcr.quality.date; // Default to current date
-    dateInput.setAttribute("disabled", true); // Disable editing
+    dateInput.setAttribute("disabled", true); 
 
     supplierInput.value = thisNcr.quality.supplier_name || "";
     prodInput.value = thisNcr.po_prod_no || "";
@@ -48,7 +48,7 @@ window.addEventListener("load", function () {
     defectiveInput.value = thisNcr.quantity_defective || "";
     repInput.value = thisNcr.quality_rep_name || "";
 
-    // Handle radio button inputs (e.g., conformInputs and engInputs)
+    
     if (thisNcr.nonconforming) {
         conformInputs.forEach((radio) => {
             if (radio.value === thisNcr.nonconforming) {
@@ -68,7 +68,7 @@ window.addEventListener("load", function () {
     // Save button logic
     const saveButton = document.getElementById("btnSubmit");
     saveButton.addEventListener("click", function (e) {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault(); 
 
         // Update the current NCR object with the new values
         thisNcr.supplier_name = supplierInput.value;
@@ -80,14 +80,14 @@ window.addEventListener("load", function () {
         thisNcr.quantity_defective = defectiveInput.value;
         thisNcr.quality_rep_name = repInput.value;
 
-        // Get the selected value from the nonconforming radio buttons
+       
         conformInputs.forEach((radio) => {
             if (radio.checked) {
                 thisNcr.nonconforming = radio.value;
             }
         });
 
-        // Get the selected value from the ennotneeded radio buttons
+      
         engInputs.forEach((radio) => {
             if (radio.checked) {
                 thisNcr.ennotneeded = radio.value;
@@ -97,7 +97,7 @@ window.addEventListener("load", function () {
         // Save the updated ncrs array back to localStorage
         localStorage.setItem('ncrs', JSON.stringify(ncrs));
 
-        // Show a success message or redirect the user
+       
         alert("NCR updated successfully!");
 
     

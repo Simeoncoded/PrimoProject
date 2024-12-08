@@ -28,7 +28,7 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
     messageDiv.textContent = `Welcome, ${user.role}! Redirecting...`;
     messageDiv.style.color = "green";
 
-    // Redirect to the first allowed page for the role
+
     setTimeout(() => {
       window.location.href = rolePages[user.role][0];
     }, 1000);
@@ -38,11 +38,11 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
   }
 });
 
-// Access validation
+
 function checkAccess(currentPage) {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  // Skip validation on login.html
+
   if (currentPage === "login.html") return;
 
   if (!user) {
@@ -71,10 +71,10 @@ if (logoutButton) {
     logoutButton.style.display = "none";
   } else {
     logoutButton.addEventListener("click", function () {
-      // Clear user data from localStorage
+ 
       localStorage.removeItem("user");
 
-      // Prevent further code execution on the current page
+     
       window.location.href = "login.html";
     });
 
@@ -85,7 +85,7 @@ if (logoutButton) {
 function manageAccordions() {
   const currentPage = window.location.pathname.split("/").pop();
 
-  // If the user is already on the login page, skip accordion management
+
   if (currentPage === "login.html") return;
 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -100,64 +100,64 @@ function manageAccordions() {
   const engineerAccordion = document.getElementById("engineeringAccordion");
   const purchasingAccordion = document.getElementById("purchasingAccordion");
 
-  // Hide all accordions by default
+
   if (inspectorAccordion) inspectorAccordion.style.display = "none";
   if (engineerAccordion) engineerAccordion.style.display = "none";
   if (purchasingAccordion) purchasingAccordion.style.display = "none";
 
-  // Determine which accordions to show based on role
+
   switch (user.role) {
     case "inspector":
-      // Only show and open inspector accordion
+   
       if (inspectorAccordion) {
         inspectorAccordion.style.display = "block";
         const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
         if (inspectorCollapse) {
-          inspectorCollapse.classList.add('show'); // Open inspector accordion by default
+          inspectorCollapse.classList.add('show'); 
         }
       }
       break;
 
     case "engineer":
-      // Show inspector and engineer sections, but close the inspector one
+
       if (inspectorAccordion) {
         inspectorAccordion.style.display = "block";
         const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
         if (inspectorCollapse) {
-          inspectorCollapse.classList.remove('show'); // Ensure inspector accordion is closed
+          inspectorCollapse.classList.remove('show'); 
         }
       }
       if (engineerAccordion) {
         engineerAccordion.style.display = "block";
         const engineerCollapse = engineerAccordion.querySelector('.accordion-collapse');
         if (engineerCollapse) {
-          engineerCollapse.classList.add('show'); // Open engineer accordion by default
+          engineerCollapse.classList.add('show'); 
         }
       }
       break;
 
     case "purchasing":
     case "admin":
-      // Show inspector, engineer, and purchasing sections, but keep inspector and engineer closed
+     
       if (inspectorAccordion) {
         inspectorAccordion.style.display = "block";
         const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
         if (inspectorCollapse) {
-          inspectorCollapse.classList.remove('show'); // Ensure inspector accordion is closed
+          inspectorCollapse.classList.remove('show'); 
         }
       }
       if (engineerAccordion) {
         engineerAccordion.style.display = "block";
         const engineerCollapse = engineerAccordion.querySelector('.accordion-collapse');
         if (engineerCollapse) {
-          engineerCollapse.classList.remove('show'); // Ensure engineer accordion is closed
+          engineerCollapse.classList.remove('show'); 
         }
       }
       if (purchasingAccordion) {
         purchasingAccordion.style.display = "block";
         const purchasingCollapse = purchasingAccordion.querySelector('.accordion-collapse');
         if (purchasingCollapse) {
-          purchasingCollapse.classList.add('show'); // Open purchasing accordion by default
+          purchasingCollapse.classList.add('show'); 
         }
       }
       break;
@@ -170,20 +170,20 @@ function manageAccordions() {
 
 
 
-// Function to manage navbar links based on user role
+
 function manageNavbarLinks() {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  if (!user) return; // No user logged in, skip
+  if (!user) return;
 
   const notificationLink = document.getElementById("notificationLink");
   const emailLink = document.getElementById("emailLink");
 
-  // Hide all role-specific navbar links by default
+
   if (notificationLink) notificationLink.style.display = "block";
   if (emailLink) emailLink.style.display = "block";
 
-  // Show links based on role
+
   if (user.role === "inspector") {
     if (notificationLink) notificationLink.style.display = "none";
     if (emailLink) emailLink.style.display = "none";
@@ -194,15 +194,14 @@ function manageNavbarLinks() {
 function manageEditPageSections() {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  if (!user) return; // No user logged in, skip
+  if (!user) return; 
 
   const inspectorSection = document.getElementById("ncrForm");
   const engineerSection = document.getElementById("engineeringForm");
 
-  // Check if the sections exist on the page
   if (!inspectorSection && !engineerSection) return;
 
-  // Engineer role: Make inspector section readonly
+ 
   if (user.role === "engineer") {
     if (inspectorSection) {
       const inspectorFields = inspectorSection.querySelectorAll("input, select, textarea");
@@ -215,7 +214,7 @@ function manageEditPageSections() {
     }
   }
 
-  // Purchasing role: Make both engineer and inspector sections readonly
+
   if (user.role === "purchasing") {
     if (inspectorSection) {
       const inspectorFields = inspectorSection.querySelectorAll("input, select, textarea");

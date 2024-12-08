@@ -1,6 +1,6 @@
 mybutton = document.getElementById("btn-back-to-top");
 
-// When the user scrolls down 20px from the top of the document, show the button
+
 window.onscroll = function () {
   scrollFunction();
 };
@@ -15,7 +15,7 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-// When the user clicks on the button, scroll to the top of the document
+
 mybutton.addEventListener("click", backToTop);
 
 function backToTop() {
@@ -24,7 +24,7 @@ function backToTop() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Get references to elements
+    
     const notificationCounter = document.getElementById('notification-counter');
     const emailCounter = document.getElementById('email-counter');
     const notificationList = document.getElementById('notificationList');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const engineeringForm = document.getElementById('engineeringForm');
     const clearStorageBtn = document.getElementById('clearStorageBtn');
 
-    // Initialize notification and email counters
+    
     if (notificationCounter) {
         const notificationCount = localStorage.getItem('notificationCount') || 0;
         notificationCounter.textContent = notificationCount;
@@ -42,13 +42,13 @@ document.addEventListener('DOMContentLoaded', function () {
         emailCounter.textContent = emailCount;
     }
 
-    // Initialize notification list
+    
     updateNotificationList();
 
-    // Event listener for NCR form submission
+    
     if (form) {
         form.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent page refresh
+            e.preventDefault(); 
 
             // Collect form data
             const ncrData = {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
 
-            // Add notification for NCR
+           
             const notification = {
                 ncr_no: ncrData.ncr_no,
                 source: ncrData.source,
@@ -91,10 +91,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Event listener for Engineering form submission
+    // Engineering form submission
     if (engineeringForm) {
         engineeringForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent page refresh
+            e.preventDefault(); 
 
             // Collect form data
             const engineeringData = {
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
             existingForms.push(engineeringData);
             localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
 
-            // Add notification for engineering action
+          
             const notification = {
                 ncr_no: document.getElementById('ncr_number').value, // NCR number
                 source: "engineering",
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Event listener for clearing local storage
+    //clearing local storage
     if (clearStorageBtn) {
         clearStorageBtn.addEventListener('click', function () {
             localStorage.clear();
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Helper functions
+  
     function addNotificationToList(notification) {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
@@ -198,14 +198,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.querySelector('#btnSave').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-
+    event.preventDefault();
     const ncrNumber = document.getElementById('ncr_no').value;
 
     // Check if NCR number is empty
     if (!ncrNumber) {
         alert('Please enter an NCR number before saving.');
-        return; // Stop execution if NCR number is empty
+        return; 
     }
 
     // If NCR number is filled, continue to save
@@ -225,7 +224,7 @@ document.querySelector('#btnSave').addEventListener('click', function(event) {
         ennotneeded: document.querySelector('input[name="ennotneeded"]:checked')?.value
     };
 
-    // Save to local storage (or proceed with other save actions)
+    
     localStorage.setItem('ncrFormData', JSON.stringify(formData));
     alert('Form data saved successfully!');
 });

@@ -20,7 +20,7 @@ function validateForm() {
         const errorElement = errorId ? document.getElementById(errorId) : null;
         const dateErrorElement = dateErrorId ? document.getElementById(dateErrorId) : null;
 
-        // Reset error states
+        
         field.style.border = "";
         if (errorElement) {
             errorElement.style.display = "none";
@@ -58,7 +58,7 @@ function validateForm() {
     }
 }
 
-// Add event listeners to clear validation dynamically
+
 function clearValidation(event) {
     const field = event.target;
     field.style.border = "";

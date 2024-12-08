@@ -15,7 +15,7 @@ function updateSearch() { // Help from https://www.w3schools.com/howto/howto_js_
         const tableSupplier = row.getElementsByTagName("td")[2]?.textContent.toLowerCase().trim();
         const tableStatus = row.getElementsByTagName("td")[3]?.textContent.trim().toLowerCase();
 
-        // Validate date parsing
+        
         const isValidDate = tableDate instanceof Date && !isNaN(tableDate);
 
         // Apply filters
@@ -25,7 +25,7 @@ function updateSearch() { // Help from https://www.w3schools.com/howto/howto_js_
                             (!ncrDateTo || (isValidDate && tableDate <= ncrDateTo));
         const matchesStatus = !ncrStatus || (tableStatus && tableStatus === ncrStatus);
 
-        // Show row if all filters match
+      
         row.style.display = matchesNumber && matchesSupplier && matchesDate && matchesStatus ? "" : "none";
     }
 }
