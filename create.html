@@ -43,30 +43,24 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown"
                                 id="notificationList">
                             </ul>
-
                         </li>
-
                         <li class="nav-item hh">
                             <a class="nav-link" href="login.html">
                                 <i class="fa-solid fa-user"></i>
                             </a>
                         </li>
-
                         <li class="nav-item hh" id="emailLink">
                             <a class="nav-link" href="email.html">
                                 <i class="fa-solid fa-envelope"></i>
                                 <span id="email-counter" class="badge bg-danger">0</span>
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="report.html">Report</a>
                         </li>
                         <button id="logoutButton">Logout</button>
 
                         <!-- <button id="clearStorageBtn">Clear storage</button> -->
-
-
                     </ul>
                 </div>
 
@@ -105,13 +99,7 @@
                             valid
                             date in the current year.</span>
                     </div>
-
-
                 </div>
-
-
-
-
                 <div class="row">
                     <!-- Identify Process Applicable -->
                     <div class="col-12 col-md-6 mb-3">
@@ -294,8 +282,6 @@
                 </div>
             </form>
 
-
-
             <div id="supplierModal" class="modal" style="display: none;">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -355,14 +341,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const today = new Date();
-            const formattedDate = today.toISOString().split('T')[0]; 
+            const formattedDate = today.toISOString().split('T')[0];
             document.getElementById("date").value = formattedDate;
         });
     </script>
 
 
     <script>
-        // Get modal elements
         const openModalBtn = document.getElementById("openModalBtn");
         const supplierModal = document.getElementById("supplierModal");
         const closeModalBtn = supplierModal.querySelector(".close");
@@ -370,18 +355,15 @@
         const supplierNameInput = document.getElementById("supplierName");
         const supplierDropdown = document.getElementById("supplier_name");
 
-        // Open the modal
         openModalBtn.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent default button action
+            event.preventDefault();
             supplierModal.style.display = "block";
         });
 
-        // Close the modal
         closeModalBtn.addEventListener("click", () => {
             supplierModal.style.display = "none";
         });
 
-        // Close the modal when clicking outside it
         window.addEventListener("click", (event) => {
             if (event.target === supplierModal) {
                 supplierModal.style.display = "none";
@@ -390,22 +372,20 @@
 
         // Handle the supplier form submission
         supplierForm.addEventListener("submit", (event) => {
-            event.preventDefault(); // Prevent form from submitting and refreshing the page
+            event.preventDefault(); e
 
             const newSupplierName = supplierNameInput.value.trim();
             if (newSupplierName) {
                 // Add the new supplier to the dropdown
                 const newOption = document.createElement("option");
-                newOption.value = newSupplierName.toLowerCase().replace(/ /g, "_"); // Generate a unique value
+                newOption.value = newSupplierName.toLowerCase().replace(/ /g, "_");
                 newOption.textContent = newSupplierName;
 
                 supplierDropdown.appendChild(newOption);
 
-                // Reset the input field and close the modal
                 supplierNameInput.value = "";
                 supplierModal.style.display = "none";
 
-                // Optional: Alert to confirm the supplier was added
                 alert("New supplier added successfully!");
             } else {
                 alert("Please enter a supplier name.");

@@ -39,10 +39,11 @@
                                 <i class="fa fa-bell" aria-hidden="true"></i>
                                 <span id="notification-counter" class="badge bg-danger">3</span>
                             </a>
-                            
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" id="notificationList">
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown"
+                                id="notificationList">
                             </ul>
-                            
+
                         </li>
 
                         <li class="nav-item hh">
@@ -52,7 +53,7 @@
                         </li>
 
                         <li class="nav-item hh" id="emailLink">
-                            <a class="nav-link" href="email.html" >
+                            <a class="nav-link" href="email.html">
                                 <i class="fa-solid fa-envelope"></i>
                                 <span id="email-counter" class="badge bg-danger">0</span>
                             </a>
@@ -150,7 +151,7 @@
     <script>
         function renderTable() {
             const ncrTableBody = document.querySelector('#ncrTable tbody');
-            ncrTableBody.innerHTML = ''; // Clear existing rows
+            ncrTableBody.innerHTML = '';
 
             // Retrieve NCR data from localStorage
             const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
@@ -165,7 +166,8 @@
             <td>${ncr.date}</td>
             <td>${ncr.supplier_name}</td>
             <td>${ncr.status}</td>
-            <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}"><i class="fas fa-edit"></i> Edit</button> <button class="vbtn" name="btnDetails" id="${ncr.ncr_no}"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button></td>
+            <td><button class="vbtn" name="btnEdit" id="${ncr.ncr_no}"><i class="fas fa-edit"></i> Edit</button>
+             <button class="vbtn" name="btnDetails" id="${ncr.ncr_no}"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button></td>
         `; // onclick="location.href='edit.html'"
                 ncrTableBody.appendChild(row);
             });

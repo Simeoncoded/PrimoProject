@@ -1,0 +1,85 @@
+.lForm {
+    background-color: #1A3851;
+    width: 40%;
+    height: auto; 
+    top: 50%;
+    margin: 0 auto;
+    margin-top: 6em;
+    padding: 30px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; 
+}
+
+.lForm h1 {
+    font-size: 2.5em; 
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px; 
+}
+
+.input-field {
+    width: 100%; 
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+.submit-btn:hover {
+        background-color: #45a049;
+}
+.pp{
+        margin: 20px;
+    }
+#message {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 1.3rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .lForm {
+        width: 80%;
+        margin-top: 7em; 
+        padding: 20px; 
+    }
+    .lForm h1 {
+        font-size: 2.4em; 
+    }
+}
+
+@media (max-width: 576px) {
+    .lForm {
+        width: 90%; 
+        padding: 15px;
+    }
+
+    .lForm h1 {
+        font-size: 1.6em; 
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+}
