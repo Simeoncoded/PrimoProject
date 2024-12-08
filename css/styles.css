@@ -363,4 +363,25 @@ select {
 .bby:hover{
     color: #fff;
 }
+.accordion-item {
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #fff; 
+
+  }
+  .accordion-button {
+    background-color: #1A3851;
+    color: #fff;
+    
+  }
+.accordion-button.collapsed {
+    background-color: #1A3851; 
+    color: #fff; 
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: #1A3851; 
+    color: #fff; 
+  }
+  
+  
   

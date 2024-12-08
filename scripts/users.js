@@ -96,7 +96,6 @@ function manageAccordions() {
     return;
   }
 
-  // Get accordion elements
   const inspectorAccordion = document.getElementById("inspectorAccordion");
   const engineerAccordion = document.getElementById("engineeringAccordion");
   const purchasingAccordion = document.getElementById("purchasingAccordion");
@@ -109,23 +108,67 @@ function manageAccordions() {
   // Determine which accordions to show based on role
   switch (user.role) {
     case "inspector":
-      if (inspectorAccordion) inspectorAccordion.style.display = "block";
+      // Only show and open inspector accordion
+      if (inspectorAccordion) {
+        inspectorAccordion.style.display = "block";
+        const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
+        if (inspectorCollapse) {
+          inspectorCollapse.classList.add('show'); // Open inspector accordion by default
+        }
+      }
       break;
+
     case "engineer":
-      if (inspectorAccordion) inspectorAccordion.style.display = "block";
-      if (engineerAccordion) engineerAccordion.style.display = "block";
+      // Show inspector and engineer sections, but close the inspector one
+      if (inspectorAccordion) {
+        inspectorAccordion.style.display = "block";
+        const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
+        if (inspectorCollapse) {
+          inspectorCollapse.classList.remove('show'); // Ensure inspector accordion is closed
+        }
+      }
+      if (engineerAccordion) {
+        engineerAccordion.style.display = "block";
+        const engineerCollapse = engineerAccordion.querySelector('.accordion-collapse');
+        if (engineerCollapse) {
+          engineerCollapse.classList.add('show'); // Open engineer accordion by default
+        }
+      }
       break;
+
     case "purchasing":
     case "admin":
-      if (inspectorAccordion) inspectorAccordion.style.display = "block";
-      if (engineerAccordion) engineerAccordion.style.display = "block";
-      if (purchasingAccordion) purchasingAccordion.style.display = "block";
+      // Show inspector, engineer, and purchasing sections, but keep inspector and engineer closed
+      if (inspectorAccordion) {
+        inspectorAccordion.style.display = "block";
+        const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
+        if (inspectorCollapse) {
+          inspectorCollapse.classList.remove('show'); // Ensure inspector accordion is closed
+        }
+      }
+      if (engineerAccordion) {
+        engineerAccordion.style.display = "block";
+        const engineerCollapse = engineerAccordion.querySelector('.accordion-collapse');
+        if (engineerCollapse) {
+          engineerCollapse.classList.remove('show'); // Ensure engineer accordion is closed
+        }
+      }
+      if (purchasingAccordion) {
+        purchasingAccordion.style.display = "block";
+        const purchasingCollapse = purchasingAccordion.querySelector('.accordion-collapse');
+        if (purchasingCollapse) {
+          purchasingCollapse.classList.add('show'); // Open purchasing accordion by default
+        }
+      }
       break;
+
     default:
       alert("Unauthorized access.");
       window.location.href = "login.html";
   }
 }
+
+
 
 // Function to manage navbar links based on user role
 function manageNavbarLinks() {
