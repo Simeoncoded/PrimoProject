@@ -1,8 +1,13 @@
+// Get the submit button
 let btnPurchaseSubmit = document.getElementById("btnPurchaseSubmit");
 
-function validatePurchaseForm() {
-    let isValid = true;
+function validatePurchaseForm(event) {
+    // Prevent the default form submission
+    event.preventDefault();
 
+    let isValid = true; // Flag to track form validity
+
+    // Get input fields
     const ncrNo = document.getElementById("ncr_noPurchase");
     const opDate = document.getElementById("OPdatePurchase");
     const carRaisedYes = document.getElementById("carraised_yesPurchase");
@@ -21,7 +26,6 @@ function validatePurchaseForm() {
     const followRequiredError = document.getElementById("followrequiredErrorPurchase");
     const followupError = document.getElementById("followupErrorPurchase");
     const followdateError = document.getElementById("followdateErrorPurchase");
-    const followUpdateError = document.getElementById("followUpdateErrorPurchase");
     const operationsManagerError = document.getElementById("operationsmanagerErrorPurchase");
 
     const errorFields = [
@@ -32,25 +36,21 @@ function validatePurchaseForm() {
         followRequiredError,
         followupError,
         followdateError,
-        followUpdateError,
-        operationsManagerError
+        operationsManagerError,
     ];
 
     const fields = [
         ncrNo,
         opDate,
-        carRaisedYes,
-        carRaisedNo,
         carNumber,
-        followRequiredYes,
-        followRequiredNo,
         followType,
         followDate,
-        operationsManager
+        operationsManager,
     ];
 
-    errorFields.forEach(error => (error.style.display = "none"));
-    fields.forEach(field => {
+    // Clear previous error styles and messages
+    errorFields.forEach((error) => (error.style.display = "none"));
+    fields.forEach((field) => {
         if (field) {
             field.style.border = "1px solid #ced4da";
         }
@@ -58,61 +58,117 @@ function validatePurchaseForm() {
 
     const currentYear = new Date().getFullYear();
 
-    // validation stuff
+    // Validate NCR Number
     if (!ncrNo.value.trim()) {
         ncrNo.style.border = "2px solid red";
         ncrNoError.style.display = "inline";
         isValid = false;
     }
 
+    // Validate OP Date
     if (!opDate.value) {
         opDate.style.border = "2px solid red";
         dateOPError.style.display = "inline";
         isValid = false;
     } else if (new Date(opDate.value).getFullYear() !== currentYear) {
         opDate.style.border = "2px solid red";
-        dateOPError.style.display = "inline";
         dateOPError.textContent = "Please select a valid date in the current year.";
+        dateOPError.style.display = "inline";
         isValid = false;
     }
 
+    // Validate Car Raised
     if (!carRaisedYes.checked && !carRaisedNo.checked) {
         carRaisedError.style.display = "inline";
         isValid = false;
     }
 
+    // Validate Car Number
     if (!carNumber.value.trim() || carNumber.value <= 0) {
         carNumber.style.border = "2px solid red";
         carNoError.style.display = "inline";
         isValid = false;
     }
 
+    // Validate Follow-Up Requirement
     if (!followRequiredYes.checked && !followRequiredNo.checked) {
         followRequiredError.style.display = "inline";
         isValid = false;
     }
 
+    // Validate Follow-Up Type
     if (!followType.value.trim()) {
         followType.style.border = "2px solid red";
         followupError.style.display = "inline";
         isValid = false;
     }
 
+    // Validate Follow-Up Date
     if (!followDate.value) {
         followDate.style.border = "2px solid red";
         followdateError.style.display = "inline";
         isValid = false;
     }
 
+    // Validate Operations Manager Name
     if (!operationsManager.value.trim()) {
         operationsManager.style.border = "2px solid red";
         operationsManagerError.style.display = "inline";
         isValid = false;
     }
 
+    // If all validations pass, submit the form
     if (isValid) {
         document.getElementById("purchasesectionform").submit();
     }
 }
 
+// Attach event listener to submit button
 btnPurchaseSubmit.addEventListener("click", validatePurchaseForm);
+
+// Helper function to remove validation messages and styles
+function resetValidation(event) {
+    const field = event.target;
+
+    // Find the associated error message by matching ID
+    const errorField = document.getElementById(field.id + "ErrorPurchase");
+    if (errorField) {
+        errorField.style.display = "none"; // Hide the error message
+    }
+    field.style.border = "1px solid #ced4da"; // Reset the border style
+}
+
+// Attach event listeners to fields to reset validation on interaction
+const inputFields = [
+    document.getElementById("ncr_noPurchase"),
+    document.getElementById("OPdatePurchase"),
+    document.getElementById("carnumberPurchase"),
+    document.getElementById("followtypePurchase"),
+    document.getElementById("followdatePurchase"),
+    document.getElementById("operationsmanagernamePurchase"),
+];
+
+inputFields.forEach((field) => {
+    if (field) {
+        field.addEventListener("input", resetValidation);
+    }
+});
+
+// Attach event listeners to radio buttons
+const radioButtons = [
+    document.getElementById("carraised_yesPurchase"),
+    document.getElementById("carraised_noPurchase"),
+    document.getElementById("followrequired_yesPurchase"),
+    document.getElementById("followrequired_noPurchase"),
+];
+
+radioButtons.forEach((radio) => {
+    if (radio) {
+        radio.addEventListener("change", () => {
+            const errorField = document.getElementById(radio.name + "ErrorPurchase");
+            if (errorField) {
+                errorField.style.display = "none"; // Hide the error message
+            }
+        });
+    }
+});
