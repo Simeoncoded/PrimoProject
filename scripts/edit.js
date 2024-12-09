@@ -33,17 +33,17 @@ window.addEventListener("load", function () {
     const conformInputs = document.querySelectorAll('input[name="nonconforming"]'); // Radio buttons
     const engInputs = document.querySelectorAll('input[name="ennotneeded"]'); // Radio buttons
 
-    // Engineer field elements
-    const engReview = document.getElementById("review_engineering") // Select Statement
-    const engNotifyCustomer = document.querySelectorAll('input[name="customer_notification"]'); // Radio buttons
-    const engDisposition = document.getElementById("disposition")
-    const engUpdateDrawing = document.querySelectorAll('input[name="drawing_update"]'); // Radio buttons
-    const engOrgVersion = document.getElementById("original_revision")
-    const engUpdVersion = document.getElementById("updated_revision")
-    const engName = document.getElementById("engineer_name")
-    const engRevisionDate = document.getElementById("revision_date")
-    const engDetails = document.getElementById("engineering")
-    const engDate = document.getElementById("engineering_date")
+    // // Engineer field elements
+    // const engReview = document.getElementById("review_engineering") // Select Statement
+    // const engNotifyCustomer = document.querySelectorAll('input[name="customer_notification"]'); // Radio buttons
+    // const engDisposition = document.getElementById("disposition")
+    // const engUpdateDrawing = document.querySelectorAll('input[name="drawing_update"]'); // Radio buttons
+    // const engOrgVersion = document.getElementById("original_revision")
+    // const engUpdVersion = document.getElementById("updated_revision")
+    // const engName = document.getElementById("engineer_name")
+    // const engRevisionDate = document.getElementById("revision_date")
+    // const engDetails = document.getElementById("engineering")
+    // const engDate = document.getElementById("engineering_date")
 
     // Prefill form fields with data from thisNcr
     ncrInput.value = thisNcr.ncr_no;
@@ -61,16 +61,16 @@ window.addEventListener("load", function () {
     defectiveInput.value = thisNcr.quantity_defective || "";
     repInput.value = thisNcr.quality_rep_name || "";
     
-        // Engineer field
-        engReview.value = thisNcr.eng.Review || "";
-        engDisposition.value = thisNcr.eng.Disposition || "";
-        engUpdateDrawing.value  = thisNcr.eng.UpdateDrawing || "";
-        engOrgVersion.value  = thisNcr.eng.OrgVersion || "";
-        engUpdVersion.value = thisNcr.eng.UpdVersion || "";
-        engName.value  = thisNcr.eng.Name || "";
-        engRevisionDate.value  = thisNcr.eng.RevisionDate || "";
-        engDetails.value = thisNcr.eng.Details || "";
-        engDate.value = thisNcr.eng.Date || "";
+        // // Engineer field
+        // engReview.value = thisNcr.eng.Review || "";
+        // engDisposition.value = thisNcr.eng.Disposition || "";
+        // engUpdateDrawing.value  = thisNcr.eng.UpdateDrawing || "";
+        // engOrgVersion.value  = thisNcr.eng.OrgVersion || "";
+        // engUpdVersion.value = thisNcr.eng.UpdVersion || "";
+        // engName.value  = thisNcr.eng.Name || "";
+        // engRevisionDate.value  = thisNcr.eng.RevisionDate || "";
+        // engDetails.value = thisNcr.eng.Details || "";
+        // engDate.value = thisNcr.eng.Date || "";
         
     if (thisNcr.process) {
         processInputs.forEach((radio) => {

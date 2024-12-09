@@ -41,10 +41,11 @@
                                 <i class="fa fa-bell" aria-hidden="true"></i>
                                 <span id="notification-counter" class="badge bg-danger">3</span>
                             </a>
-                            
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" id="notificationList">
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown"
+                                id="notificationList">
                             </ul>
-                            
+
                         </li>
 
                         <li class="nav-item hh">
@@ -54,7 +55,7 @@
                         </li>
 
                         <li class="nav-item hh" id="emailLink">
-                            <a class="nav-link" href="email.html" >
+                            <a class="nav-link" href="email.html">
                                 <i class="fa-solid fa-envelope"></i>
                                 <span id="email-counter" class="badge bg-danger">0</span>
                             </a>
@@ -132,7 +133,8 @@
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="supplier_name" class="form-label">Supplier Name</label>
 
-                                <select disabled class="form-control" id="supplier_name" name="supplier_name" aria-required="true">
+                                <select disabled class="form-control" id="supplier_name" name="supplier_name"
+                                    aria-required="true">
                                 </select>
                             </div>
 
@@ -243,13 +245,13 @@
                 <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        <form id="engineeringForm">
+                        <form id="">
 
                             <div class="row">
                                 <!-- Review by CF Engineering -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="review_engineering" class="form-label">Review by CF Engineering*</label>
-                                    <input type="number" class="form-control" id="review_engineering"
+                                    <input type="text" class="form-control" id="review_engineering"
                                         name="review_engineering" placeholder="Engineering Review" readonly>
                                     <span id="review_engineeringError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
@@ -313,7 +315,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="engineer_name" class="form-label">Name of Engineer*</label>
                                     <input type="text" class="form-control" id="engineer_name" name="engineer_name"
-                                        placeholder="Engineer's Name" readonly>
+                                          value="tyson" readonly>
                                     <span id="engineer_nameError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Engineer Name is required.
@@ -356,7 +358,7 @@
                                 </div>
                             </div>
 
-                          
+
                         </form>
                     </div>
                 </div>
@@ -371,7 +373,7 @@
                 <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        <form id="ncrForm">
+                        <form id="ncrPurForm">
 
                             <div class="row ">
                                 <!-- NCR No. -->
@@ -469,7 +471,7 @@
 
 
                             </div>
-                          
+
                         </form>
                     </div>
                 </div>
@@ -487,121 +489,74 @@
         <p>&copy; 2024 . All rights reserved.</p>
     </footer>
 
+    <script>
+     document.addEventListener("DOMContentLoaded", function () {
+    function getRandomItem(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function getRandomNumber(length) {
+        return Math.floor(Math.random() * Math.pow(10, length))
+            .toString()
+            .padStart(length, "0");
+    }
+
+    function getRandomEngineeringDetails() {
+        const details = [
+            "Structural analysis completed",
+            "Load bearing test conducted",
+            "Material quality verified",
+            "Design optimization in progress",
+            "Component fatigue assessment",
+        ];
+        return getRandomItem(details);
+    }
+
+    const reviewOptions = ["Use as is", "Repair", "Rework", "Scrap"];
+    const customerNotificationOptions = ["1", "0"]; // Use numeric strings for "number" fields
+    const engineerNames = ["Claire", "Johnson"];
+    const today = new Date();
+    const currentMonth = today.toISOString().slice(0, 7);
+
+    try {
+        document.getElementById("review_engineering").value = getRandomItem(reviewOptions);
+        console.log("Review Engineering:", document.getElementById("review_engineering").value);
+
+        document.getElementById("customer_notification").value = getRandomItem(customerNotificationOptions);
+        console.log("Customer Notification:", document.getElementById("customer_notification").value);
+
+        document.getElementById("disposition").value = "Disposition details of product";
+        console.log("Disposition:", document.getElementById("disposition").value);
+
+        document.getElementById("original_revision").value = getRandomNumber(4);
+        console.log("Original Revision:", document.getElementById("original_revision").value);
+
+        document.getElementById("updated_revision").value = getRandomNumber(4);
+        console.log("Updated Revision:", document.getElementById("updated_revision").value);
+
+        document.getElementById("engineer_name").value = getRandomItem(engineerNames);
+        console.log("Engineer Name:", document.getElementById("engineer_name").value);
+
+        document.getElementById("revision_date").value = `${currentMonth}-${String(today.getDate()).padStart(2, "0")}`;
+        console.log("Revision Date:", document.getElementById("revision_date").value);
+
+        document.getElementById("engineering").value = getRandomEngineeringDetails();
+        console.log("Engineering Details:", document.getElementById("engineering").value);
+
+        document.getElementById("engineering_date").value = today.toISOString().slice(0, 10);
+        console.log("Engineering Date:", document.getElementById("engineering_date").value);
+
+        console.log("Form populated successfully!");
+    } catch (error) {
+        console.error("Error populating the form:", error);
+    }
+});
+
+    </script>
+
+
     <script src="scripts/script.js"></script>
     <script src="scripts/edit.js"></script>
-
-<!-- 
-
-window.addEventListener("load", function () {
-    // Get the selected NCR number from localStorage
-    const ncrnum = localStorage.getItem('selectedNcr');
-    const ncrs = JSON.parse(localStorage.getItem('ncrs')); // Parse stored NCRs
-    let thisNcr = null;
-
-    // Find the selected NCR object
-    ncrs.forEach((ncr) => {
-        if (ncr.ncr_no === ncrnum) {
-            thisNcr = ncr;
-        }
-    });
-
-    // If the NCR isn't found, log an error and stop execution
-    if (!thisNcr) {
-        console.error("NCR not found");
-        return;
-    }
-
-    // Form field elements
-    const ncrInput = document.getElementById("ncr_no");
-    const dateInput = document.getElementById("date");
-    const supplierInput = document.getElementById("supplier_name");
-    const prodInput = document.getElementById("po_prod_no");
-    const salesInput = document.getElementById("sales_order_no");
-    const itemInput = document.getElementById("item_description");
-    const defectInput = document.getElementById("defect_description");
-    const receivedInput = document.getElementById("quantity_received");
-    const defectiveInput = document.getElementById("quantity_defective");
-    const repInput = document.getElementById("quality_rep_name");
-    const conformInputs = document.querySelectorAll('input[name="nonconforming"]'); // Radio buttons
-    const engInputs = document.querySelectorAll('input[name="ennotneeded"]'); // Radio buttons
-
-    // Prefill form fields with data from thisNcr
-    ncrInput.value = thisNcr.ncr_no || ""; // Default to empty if not present
-    ncrInput.setAttribute("disabled", true); // Disable editing
-
-    dateInput.value = thisNcr.date || new Date().toISOString().substring(0, 10); // Default to current date
-    dateInput.setAttribute("disabled", true); // Disable editing
-
-    supplierInput.value = thisNcr.supplier_name || "";
-    prodInput.value = thisNcr.po_prod_no || "";
-    salesInput.value = thisNcr.sales_order_no || "";
-    itemInput.value = thisNcr.item_description || "";
-    defectInput.value = thisNcr.defect_description || "";
-    receivedInput.value = thisNcr.quantity_received || "";
-    defectiveInput.value = thisNcr.quantity_defective || "";
-    repInput.value = thisNcr.quality_rep_name || "";
-
-    // Handle radio button inputs (e.g., conformInputs and engInputs)
-    if (thisNcr.nonconforming) {
-        conformInputs.forEach((radio) => {
-            if (radio.value === thisNcr.nonconforming) {
-                radio.checked = true;
-            }
-        });
-    }
-
-    if (thisNcr.ennotneeded) {
-        engInputs.forEach((radio) => {
-            if (radio.value === thisNcr.ennotneeded) {
-                radio.checked = true;
-            }
-        });
-    }
-
-    // Save button logic
-    const saveButton = document.getElementById("btnSubmit");
-    saveButton.addEventListener("click", function (e) {
-        e.preventDefault(); // Prevent form submission
-
-        // Update the current NCR object with the new values
-        thisNcr.supplier_name = supplierInput.value;
-        thisNcr.po_prod_no = prodInput.value;
-        thisNcr.sales_order_no = salesInput.value;
-        thisNcr.item_description = itemInput.value;
-        thisNcr.defect_description = defectInput.value;
-        thisNcr.quantity_received = receivedInput.value;
-        thisNcr.quantity_defective = defectiveInput.value;
-        thisNcr.quality_rep_name = repInput.value;
-
-        // Get the selected value from the nonconforming radio buttons
-        conformInputs.forEach((radio) => {
-            if (radio.checked) {
-                thisNcr.nonconforming = radio.value;
-            }
-        });
-
-        // Get the selected value from the ennotneeded radio buttons
-        engInputs.forEach((radio) => {
-            if (radio.checked) {
-                thisNcr.ennotneeded = radio.value;
-            }
-        });
-
-        // Save the updated ncrs array back to localStorage
-        localStorage.setItem('ncrs', JSON.stringify(ncrs));
-
-        // Show a success message or redirect the user
-        alert("NCR updated successfully!");
-
-    
-        window.location.href = "ncrlog.html";
-    });
-}); -->
-
-
-
-<script src="scripts/supplier.js"></script>
-
     <script src="scripts/users.js"></script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

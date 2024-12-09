@@ -120,6 +120,10 @@ function validatePurchaseForm(event) {
    
     if (isValid) {
         document.getElementById("purchasesectionform").submit();
+        alert('Purchase form submitted and NCR closed successfully.');
+    
+            
+        window.location.href = 'ncrlog.html';
     }
 }
 

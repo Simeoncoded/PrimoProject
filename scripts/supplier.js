@@ -9,3 +9,5 @@
         row.text = supplier
         document.getElementById("supplier_name").appendChild(row);
     })
+
+    
