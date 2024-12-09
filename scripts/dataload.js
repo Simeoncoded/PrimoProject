@@ -17,12 +17,12 @@ ncrs = [
             sales_order_no: "433",
             supplier_name: "Green Goods Ltd.",
         // },
-        // engineer:{
+        eng:{
 
-        // },
-        // purchasing:{
+        },
+        pur:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-002",
@@ -41,12 +41,12 @@ ncrs = [
             sales_order_no: "2321",
             supplier_name: "Blue Ocean Trading",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-003",
@@ -65,12 +65,12 @@ ncrs = [
             sales_order_no: "433",
             supplier_name: "Green Goods Ltd.",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-004",
@@ -89,12 +89,12 @@ ncrs = [
             sales_order_no: "2421",
             supplier_name: "Green Goods Ltd.",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-005",
@@ -113,12 +113,12 @@ ncrs = [
             sales_order_no: "572",
             supplier_name: "Green Goods Ltd.",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-006",
@@ -137,12 +137,12 @@ ncrs = [
             sales_order_no: "433",
             supplier_name: "Green Goods Ltd.",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-007",
@@ -161,12 +161,12 @@ ncrs = [
             sales_order_no: "24525",
             supplier_name: "Luxury Goods International",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-008",
@@ -185,12 +185,12 @@ ncrs = [
             sales_order_no: "2871",
             supplier_name: "Green Goods Ltd.",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-009",
@@ -209,12 +209,12 @@ ncrs = [
             sales_order_no: "1241",
             supplier_name: "Luxury Goods International",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     },
     {
         ncr_no: "2024-010",
@@ -233,12 +233,12 @@ ncrs = [
             sales_order_no: "1341",
             supplier_name: "Green Goods Ltd.",
         // },
-        // engineer:{
+        engineer:{
 
-        // },
-        // purchasing:{
+        },
+        purchasing:{
 
-        // }
+        }
     }
 ]
 

@@ -197,37 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.querySelector('#btnSave').addEventListener('click', function(event) {
-    event.preventDefault();
-    const ncrNumber = document.getElementById('ncr_no').value;
-
-    // Check if NCR number is empty
-    if (!ncrNumber) {
-        alert('Please enter an NCR number before saving.');
-        return; 
-    }
-
-    // If NCR number is filled, continue to save
-    const formData = {
-        ncr_no: ncrNumber,
-        date: document.getElementById('date').value,
-        process: document.querySelector('input[name="process"]:checked')?.value,
-        supplier_name: document.getElementById('supplier_name').value,
-        po_prod_no: document.getElementById('po_prod_no').value,
-        sales_order_no: document.getElementById('sales_order_no').value,
-        item_description: document.getElementById('item_description').value,
-        defect_description: document.getElementById('defect_description').value,
-        quantity_received: document.getElementById('quantity_received').value,
-        quantity_defective: document.getElementById('quantity_defective').value,
-        quality_rep_name: document.getElementById('quality_rep_name').value,
-        nonconforming: document.querySelector('input[name="nonconforming"]:checked')?.value,
-        ennotneeded: document.querySelector('input[name="ennotneeded"]:checked')?.value
-    };
-
-    
-    localStorage.setItem('ncrFormData', JSON.stringify(formData));
-    alert('Form data saved successfully!');
-});
 
 
 

@@ -119,6 +119,7 @@ function validatePurchaseForm(event) {
 
     // If all validations pass, submit the form
     if (isValid) {
+        
         document.getElementById("purchasesectionform").submit();
     }
 }
