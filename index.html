@@ -186,16 +186,16 @@
     <script>
         function renderTable() {
             const ncrTableBody = document.querySelector('#ncrTable tbody');
-            ncrTableBody.innerHTML = ''; // Clear existing rows
+            ncrTableBody.innerHTML = ''; 
 
-            // Retrieve NCR data from localStorage
+           
             const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
 
-            // Sort NCRs by date (if applicable) and take the 5 most recent
+           
             const recentNcrs = ncrs
-                .sort((a, b) => new Date(b.date) - new Date(a.date)) // Sort by date descending
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .filter(ncr => ncr.status != 'closed')
-                .slice(0, 5); // Get the first 5 entries
+                .slice(0, 5); 
 
             // Populate table rows
             recentNcrs.forEach(ncr => {

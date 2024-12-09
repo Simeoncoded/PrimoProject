@@ -278,7 +278,7 @@
                 </div>
                 <div>
                     <button type="submit" class="btnSub" id="btnSubmit">Submit</button>
-                    <button type="submit" class="btnSub" id="btnSave">Save</button>
+                    <button type="submit" class="btnSub" id="btnSave" onclick="sv()">Save</button>
                 </div>
             </form>
 
@@ -312,6 +312,12 @@
 
     <script src="scripts/supplier.js"></script>
 
+    <script>
+        function sv() {
+            alert("ncr saved succesfully");
+            window.location.href= "ncrlog.html";
+        }
+    </script>
     <script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

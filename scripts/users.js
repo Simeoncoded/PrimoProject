@@ -169,6 +169,91 @@ function manageAccordions() {
 }
 
 
+function manageAccordions() {
+  const currentPage = window.location.pathname.split("/").pop();
+
+
+  if (currentPage === "login.html") return;
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user) {
+    alert("Please log in to access this page.");
+    window.location.href = "login.html";
+    return;
+  }
+
+  const inspectorAccordion = document.getElementById("detIn");
+  const engineerAccordion = document.getElementById("engineeringAccordionDetails");
+  const purchasingAccordion = document.getElementById("purchasingAccordionDetails");
+
+
+  if (inspectorAccordion) inspectorAccordion.style.display = "none";
+  if (engineerAccordion) engineerAccordion.style.display = "none";
+  if (purchasingAccordion) purchasingAccordion.style.display = "none";
+
+
+  switch (user.role) {
+    case "inspector":
+   
+      if (inspectorAccordion) {
+        inspectorAccordion.style.display = "block";
+        const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
+        if (inspectorCollapse) {
+          inspectorCollapse.classList.add('show'); 
+        }
+      }
+      break;
+
+    case "engineer":
+
+      if (inspectorAccordion) {
+        inspectorAccordion.style.display = "block";
+        const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
+        if (inspectorCollapse) {
+          inspectorCollapse.classList.remove('show'); 
+        }
+      }
+      if (engineerAccordion) {
+        engineerAccordion.style.display = "block";
+        const engineerCollapse = engineerAccordion.querySelector('.accordion-collapse');
+        if (engineerCollapse) {
+          engineerCollapse.classList.add('show'); 
+        }
+      }
+      break;
+
+    case "purchasing":
+    case "admin":
+     
+      if (inspectorAccordion) {
+        inspectorAccordion.style.display = "block";
+        const inspectorCollapse = inspectorAccordion.querySelector('.accordion-collapse');
+        if (inspectorCollapse) {
+          inspectorCollapse.classList.remove('show'); 
+        }
+      }
+      if (engineerAccordion) {
+        engineerAccordion.style.display = "block";
+        const engineerCollapse = engineerAccordion.querySelector('.accordion-collapse');
+        if (engineerCollapse) {
+          engineerCollapse.classList.remove('show'); 
+        }
+      }
+      if (purchasingAccordion) {
+        purchasingAccordion.style.display = "block";
+        const purchasingCollapse = purchasingAccordion.querySelector('.accordion-collapse');
+        if (purchasingCollapse) {
+          purchasingCollapse.classList.add('show'); 
+        }
+      }
+      break;
+
+    default:
+      alert("Unauthorized access.");
+      window.location.href = "login.html";
+  }
+}
 
 
 function manageNavbarLinks() {
