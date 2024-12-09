@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     updateNotificationList();
 
-    
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault(); 
