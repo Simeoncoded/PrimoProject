@@ -6,7 +6,6 @@ window.addEventListener("load", function () {
 
     // Find the selected NCR object
     ncrs.forEach((ncr) => {
-        console.log(ncr.ncr_no + " " + ncrnum)
         if (ncr.ncr_no == ncrnum) {
             thisNcr = ncr;
         }
@@ -32,14 +31,26 @@ window.addEventListener("load", function () {
     const conformInputs = document.querySelectorAll('input[name="nonconforming"]'); // Radio buttons
     const engInputs = document.querySelectorAll('input[name="ennotneeded"]'); // Radio buttons
 
+    // Engineer field elements
+    const engReview = document.getElementById("review_engineering") // Select Statement
+    const engNotifyCustomer = document.querySelectorAll('input[name="customer_notification"]'); // Radio buttons
+    const engDisposition = document.getElementById("disposition")
+    const engUpdateDrawing = document.querySelectorAll('input[name="drawing_update"]'); // Radio buttons
+    const engOrgVersion = document.getElementById("original_revision")
+    const engUpdVersion = document.getElementById("updated_revision")
+    const engName = document.getElementById("engineer_name")
+    const engRevisionDate = document.getElementById("revision_date")
+    const engDetails = document.getElementById("engineering")
+    const engDate = document.getElementById("engineering_date")
+
     // Prefill form fields with data from thisNcr
     ncrInput.value = thisNcr.ncr_no; 
     ncrInput.setAttribute("disabled", true); 
 
-    dateInput.value = thisNcr.quality.date; // Default to current date
+    dateInput.value = thisNcr.date; // Default to current date
     dateInput.setAttribute("disabled", true); 
 
-    supplierInput.value = thisNcr.quality.supplier_name || "";
+    supplierInput.value = thisNcr.supplier_name || "";
     prodInput.value = thisNcr.po_prod_no || "";
     salesInput.value = thisNcr.sales_order_no || "";
     itemInput.value = thisNcr.item_description || "";
@@ -48,6 +59,17 @@ window.addEventListener("load", function () {
     defectiveInput.value = thisNcr.quantity_defective || "";
     repInput.value = thisNcr.quality_rep_name || "";
 
+    // Engineer field
+    engReview = thisNcr.eng.Review || "";
+    engNotifyCustomer = thisNcr.eng.NotifyCustomer || "";
+    engDisposition = thisNcr.eng.Disposition || "";
+    engUpdateDrawing  = thisNcr.eng.UpdateDrawing || "";
+    engOrgVersion  = thisNcr.eng.OrgVersion || "";
+    engUpdVersion = thisNcr.eng.UpdVersion || "";
+    engName  = thisNcr.eng.Name || "";
+    engRevisionDate  = thisNcr.eng.RevisionDate || "";
+    engDetails = thisNcr.eng.Details || "";
+    engDate = thisNcr.eng.Date || "";
     
     if (thisNcr.nonconforming) {
         conformInputs.forEach((radio) => {
@@ -65,6 +87,18 @@ window.addEventListener("load", function () {
         });
     }
 
+    engNotifyCustomer.forEach((radio) => {
+        if (radio.value === thisNcr.eng.NotifyCustomer) {
+            radio.checked = true;
+        }
+    });
+
+    engUpdateDrawing.forEach((radio) => {
+        if (radio.value === thisNcr.eng.UpdateDrawing) {
+            radio.checked = true;
+        }
+    });
+
     // Save button logic
     const saveButton = document.getElementById("btnSubmit");
     saveButton.addEventListener("click", function (e) {
@@ -80,7 +114,6 @@ window.addEventListener("load", function () {
         thisNcr.quantity_defective = defectiveInput.value;
         thisNcr.quality_rep_name = repInput.value;
 
-       
         conformInputs.forEach((radio) => {
             if (radio.checked) {
                 thisNcr.nonconforming = radio.value;
@@ -94,6 +127,7 @@ window.addEventListener("load", function () {
             }
         });
 
+
         // Save the updated ncrs array back to localStorage
         localStorage.setItem('ncrs', JSON.stringify(ncrs));
 
@@ -103,4 +137,39 @@ window.addEventListener("load", function () {
     
         window.location.href = "ncrlog.html";
     });
+    
+    const saveEngButton = document.getElementById("btnSubmit");
+    saveEngButton.addEventListener("click", function (e) {
+        e.preventDefault(); 
+        
+        // Engineer field
+        thisNcr.eng.Review = engReview.value;
+        thisNcr.eng.Disposition = engDisposition.value;
+        thisNcr.eng.OrgVersion = engOrgVersion.value;
+        thisNcr.eng.UpdVersion = engUpdVersion.value;
+        thisNcr.eng.Name = engName.value;
+        thisNcr.eng.RevisionDate = engRevisionDate.value;
+        thisNcr.eng.Details = engDetails.value;
+        thisNcr.eng.Date = engDate.value;
+       
+        engNotifyCustomer.forEach((radio) => {
+            if (radio.checked) {
+                thisNcr.eng.NotifyCustomer = radio.value;
+            }
+        });
+
+        engUpdateDrawing.forEach((radio) => {
+            if (radio.checked) {
+                thisNcr.eng.UpdateDrawing = radio.value;
+            }
+        });
+
+        localStorage.setItem('ncrs', JSON.stringify(ncrs));
+
+       
+        alert("NCR updated successfully!");
+
+    
+        window.location.href = "ncrlog.html";
+    })
 });

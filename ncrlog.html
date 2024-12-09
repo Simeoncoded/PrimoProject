@@ -95,14 +95,12 @@
 
 
                             <label for="ncrstatus">NCR Status:</label>
-                            <select name="ncrstatus" id="ncrstatus" onchange="updateSearch()">
+                            <select name="ncrstatus" id="ncrstatus" onchange="updateSearch()" onload="updateSearch()">
                                 <option value="">Select Status</option>
+                                <option value="Open">Open</option>
                                 <option value="Closed">Closed</option>
                                 <option value="Engineer">Engineer</option>
                                 <option value="Procurement">Procurement</option>
-                                <option value="Quality Inspector">Quality Inspector</option>
-                                <option value="Open">Open</option>
-                                <option value="Archived">Archived</option>
                             </select>
                         </div>
                         <div class="srcdiv">

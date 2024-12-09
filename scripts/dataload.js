@@ -39,7 +39,7 @@ ncrs = [
             quantity_defective: "100",
             quantity_received: "1000",
             sales_order_no: "2321",
-            supplier_name: "blue goods ltd",
+            supplier_name: "Blue Ocean Trading",
         // },
         // engineer:{
 
@@ -159,7 +159,7 @@ ncrs = [
             quantity_defective: "5",
             quantity_received: "20",
             sales_order_no: "24525",
-            supplier_name: "Green Goods Ltd.",
+            supplier_name: "Luxury Goods International",
         // },
         // engineer:{
 
@@ -207,7 +207,7 @@ ncrs = [
             quantity_defective: "20",
             quantity_received: "34",
             sales_order_no: "1241",
-            supplier_name: "Green Goods Ltd.",
+            supplier_name: "Luxury Goods International",
         // },
         // engineer:{
 
