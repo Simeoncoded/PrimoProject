@@ -53,8 +53,8 @@ function checkAccess(currentPage) {
 
   const allowedPages = rolePages[user.role];
   if (!allowedPages.includes(currentPage)) {
-    alert("Access Denied! Redirecting to login.");
-    window.location.href = "login.html";
+    alert("Access Denied! Redirecting to dashboard.");
+    window.location.href = "index.html";
   }
 }
 

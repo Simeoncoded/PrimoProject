@@ -1,6 +1,9 @@
 let btnPurchaseSubmit = document.getElementById("btnPurchaseSubmit");
 
-function validatePurchaseForm() {
+function validatePurchaseForm(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
     let isValid = true;
 
     const ncrNo = document.getElementById("ncr_noPurchase");
@@ -21,7 +24,6 @@ function validatePurchaseForm() {
     const followRequiredError = document.getElementById("followrequiredErrorPurchase");
     const followupError = document.getElementById("followupErrorPurchase");
     const followdateError = document.getElementById("followdateErrorPurchase");
-    const followUpdateError = document.getElementById("followUpdateErrorPurchase");
     const operationsManagerError = document.getElementById("operationsmanagerErrorPurchase");
 
     const errorFields = [
@@ -32,7 +34,6 @@ function validatePurchaseForm() {
         followRequiredError,
         followupError,
         followdateError,
-        followUpdateError,
         operationsManagerError
     ];
 
@@ -49,6 +50,7 @@ function validatePurchaseForm() {
         operationsManager
     ];
 
+
     errorFields.forEach(error => (error.style.display = "none"));
     fields.forEach(field => {
         if (field) {
@@ -58,29 +60,32 @@ function validatePurchaseForm() {
 
     const currentYear = new Date().getFullYear();
 
-    // validation stuff
+   
     if (!ncrNo.value.trim()) {
         ncrNo.style.border = "2px solid red";
         ncrNoError.style.display = "inline";
         isValid = false;
     }
 
+  
     if (!opDate.value) {
         opDate.style.border = "2px solid red";
         dateOPError.style.display = "inline";
         isValid = false;
     } else if (new Date(opDate.value).getFullYear() !== currentYear) {
         opDate.style.border = "2px solid red";
-        dateOPError.style.display = "inline";
         dateOPError.textContent = "Please select a valid date in the current year.";
+        dateOPError.style.display = "inline";
         isValid = false;
     }
+
 
     if (!carRaisedYes.checked && !carRaisedNo.checked) {
         carRaisedError.style.display = "inline";
         isValid = false;
     }
 
+   
     if (!carNumber.value.trim() || carNumber.value <= 0) {
         carNumber.style.border = "2px solid red";
         carNoError.style.display = "inline";
@@ -92,6 +97,7 @@ function validatePurchaseForm() {
         isValid = false;
     }
 
+  
     if (!followType.value.trim()) {
         followType.style.border = "2px solid red";
         followupError.style.display = "inline";
@@ -104,16 +110,64 @@ function validatePurchaseForm() {
         isValid = false;
     }
 
+
     if (!operationsManager.value.trim()) {
         operationsManager.style.border = "2px solid red";
         operationsManagerError.style.display = "inline";
         isValid = false;
     }
 
+   
     if (isValid) {
-        
         document.getElementById("purchasesectionform").submit();
     }
 }
 
+
 btnPurchaseSubmit.addEventListener("click", validatePurchaseForm);
+
+// Clear error on input for text fields
+function clearError(inputId, errorId) {
+    const inputField = document.getElementById(inputId);
+    const errorMessage = document.getElementById(errorId);
+
+    if (inputField) {
+        inputField.addEventListener("input", function () {
+            if (inputField.value.trim()) {
+                inputField.style.border = "1px solid #ced4da";
+                if (errorMessage) {
+                    errorMessage.style.display = "none";
+                }
+            }
+        });
+    }
+}
+
+
+function clearChkBxError(inputName, errorId) {
+    const radioGroup = document.getElementsByName(inputName);
+    const errorMessage = document.getElementById(errorId);
+
+    if (radioGroup.length) {
+        radioGroup.forEach((radio) => {
+            radio.addEventListener("change", function () {
+                if (document.querySelector(`input[name="${inputName}"]:checked`)) {
+                    if (errorMessage) {
+                        errorMessage.style.display = "none";
+                    }
+                }
+            });
+        });
+    }
+}
+
+
+clearError("ncr_noPurchase", "ncrNoErrorPurchase");
+clearError("OPdatePurchase", "dateOPErrorPurchase");
+clearError("carnumberPurchase", "carNoErrorPurchase");
+clearError("followtypePurchase", "followupErrorPurchase");
+clearError("followdatePurchase", "followdateErrorPurchase");
+clearError("operationsmanagernamePurchase", "operationsmanagerErrorPurchase");
+
+clearChkBxError("carraised", "carraisedErrorPurchase");
+clearChkBxError("followrequired", "followrequiredErrorPurchase");
