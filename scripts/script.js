@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     updateNotificationList();
-
+/*
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault(); 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'ncrlog.html';
         });
     }
-
+*/
     //clearing local storage
     if (clearStorageBtn) {
         clearStorageBtn.addEventListener('click', function () {
