@@ -337,8 +337,10 @@
 
                             <!-- Engineering Section -->
                             <div class="row">
+
                                 <!-- Review by CF Engineering -->
                                 <div class="col-12 col-md-6 mb-3">
+                                    
                                     <label for="review_engineering" class="form-label">Review by CF Engineering*
                                         <span class="tooltip-icon" data-bs-toggle="tooltip" data-bs-placement="top"
                                             title="This is where you select the engineering review disposition, such as 'Use as is', 'Repair', 'Rework', or 'Scrap'."><i
@@ -359,11 +361,13 @@
 
                                 <!-- Customer Notification -->
                                 <div class="col-12 col-md-6 mb-3">
-                                    <label for="customer_notificationEngineering" class="form-label">Does Customer Require
+                                    <label for="customer_notificationEngineering" class="form-label">Does Customer
+                                        Require
                                         Notification of
                                         NCR</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="customer_notification_yesEngineering"
+                                        <input class="form-check-input" type="radio"
+                                            id="customer_notification_yesEngineering"
                                             name="customer_notificationEngineering" value="yes"
                                             aria-describedby="customerNotificationDesc">
                                         <label class="form-check-label" for="customer_notification_yesEngineering">
@@ -385,7 +389,7 @@
                                             customer
                                             should
                                             not be notified about this NCR.</small>
-                                    </div>  
+                                    </div>
 
                                 </div>
 
@@ -393,62 +397,78 @@
                                 <!-- Disposition -->
                                 <div class="col-12  mb-3">
                                     <label for="dispositionEngineering" class="form-label">Disposition*</label>
-                                    <textarea class="form-control" id="dispositionEngineering" name="dispositionEngineering" rows="3"
+                                    <textarea class="form-control" id="dispositionEngineering"
+                                        name="dispositionEngineering" rows="3"
                                         placeholder="Provide disposition details"></textarea>
                                     <span id="dispositionErrorEngineering" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Disposition details is required</span>
                                 </div>
 
-                                
+
                                 <div class="row align-items-center">
                                     <!-- Drawing Update Requirement -->
                                     <div class="col-12 col-md-6 mb-3">
-                                        <label for="drawing_update" class="form-label">Does the Drawing Require Updating</label>
+                                        <label for="drawing_update" class="form-label">Does the Drawing Require
+                                            Updating</label>
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="drawing_update_yesEngineering" name="drawing_updateEngineering" value="yes" checked onchange="toggleRevisionFields()">
+                                                <input class="form-check-input" type="radio"
+                                                    id="drawing_update_yesEngineering" name="drawing_updateEngineering"
+                                                    value="yes" checked onchange="toggleRevisionFields()">
                                                 <label class="form-check-label" for="drawing_update_yes">Yes</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="drawing_update_noEngineering" name="drawing_updateEngineering" value="no" onchange="toggleRevisionFields()">
+                                                <input class="form-check-input" type="radio"
+                                                    id="drawing_update_noEngineering" name="drawing_updateEngineering"
+                                                    value="no" onchange="toggleRevisionFields()">
                                                 <label class="form-check-label" for="drawing_update_no">No</label>
                                             </div>
                                         </div>
                                     </div>
-                                
+
                                     <!-- Revision Fields Row -->
                                     <div class="col-12" id="revisionFields">
                                         <div class="row">
                                             <!-- Original Revision Number -->
                                             <div class="col-12 col-md-6 mb-3">
-                                                <label for="original_revision" class="form-label">Version Number*</label>
-                                                <input type="number" class="form-control" id="original_revisionEngineering" name="original_revisionEngineering" placeholder="Enter original version number">
-                                                <span id="original_revisionErrorEngineering" class="text-danger" style="display: none; font-size: 0.9em;">
+                                                <label for="original_revision" class="form-label">Version
+                                                    Number*</label>
+                                                <input type="number" class="form-control"
+                                                    id="original_revisionEngineering"
+                                                    name="original_revisionEngineering"
+                                                    placeholder="Enter original version number">
+                                                <span id="original_revisionErrorEngineering" class="text-danger"
+                                                    style="display: none; font-size: 0.9em;">
                                                     Version Number is required
                                                 </span>
                                             </div>
-                                
+
                                             <!-- Updated Revision Number -->
                                             <div class="col-12 col-md-6 mb-3">
-                                                <label for="updated_revisionEngineering" class="form-label">Updated Revision Number*</label>
-                                                <input type="number" class="form-control" id="updated_revisionEngineering" name="updated_revisionEngineering" placeholder="Enter updated revision number">
-                                                <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                                <label for="updated_revisionEngineering" class="form-label">Updated
+                                                    Revision Number*</label>
+                                                <input type="number" class="form-control"
+                                                    id="updated_revisionEngineering" name="updated_revisionEngineering"
+                                                    placeholder="Enter updated revision number">
+                                                <span id="updated_revisionError" class="text-danger"
+                                                    style="display: none; font-size: 0.9em;">
                                                     Updated Revision Number is required
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
+
+
 
 
                                 <!-- Engineer Name -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="engineer_nameEngineering" class="form-label">Name of Engineer*</label>
-                                    <input type="text" class="form-control" id="engineer_nameEngineering" name="engineer_nameEngineering"
-                                        required aria-required="true" placeholder="Enter Engineer's Name">
+                                    <input type="text" class="form-control" id="engineer_nameEngineering"
+                                        name="engineer_nameEngineering" required aria-required="true"
+                                        placeholder="Enter Engineer's Name">
                                     <span id="engineer_nameErrorEngineering" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Engineer Name is required</span>
@@ -457,7 +477,8 @@
                                 <!-- Revision Date -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="revision_date" class="form-label">Revision Date*</label>
-                                    <input type="date" class="form-control" id="revision_dateEngineering" name="revision_dateEngineering">
+                                    <input type="date" class="form-control" id="revision_dateEngineering"
+                                        name="revision_dateEngineering">
                                     <span id="revision_dateErrorEngineering" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Revision Date is required
@@ -521,17 +542,20 @@
                                  better to name it the same so that it lines up with the others -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="ncr_noPurchase" class="form-label">NCR No.*</label>
-                            <input type="text" class="form-control" id="ncr_noPurchase" name="ncr_noPurchase" aria-required="true"
-                                placeholder="Enter NCR Number">
-                            <span id="ncrNoErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">NCR No.
+                            <input type="text" class="form-control" id="ncr_noPurchase" name="ncr_noPurchase"
+                                aria-required="true" placeholder="Enter NCR Number">
+                            <span id="ncrNoErrorPurchase" class="text-danger"
+                                style="display: none; font-size: 0.9em;">NCR No.
                                 is required.</span>
                         </div>
 
                         <!-- OP Date -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="OPdatePurchase" class="form-label">OP Date*</label>
-                            <input type="date" class="form-control" id="OPdatePurchase" name="OPdatePurchase" aria-required="true">
-                            <span id="dateOPErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">OP Date
+                            <input type="date" class="form-control" id="OPdatePurchase" name="OPdatePurchase"
+                                aria-required="true">
+                            <span id="dateOPErrorPurchase" class="text-danger"
+                                style="display: none; font-size: 0.9em;">OP Date
                                 is required</span>
                         </div>
 
@@ -544,13 +568,13 @@
                             <fieldset>
                                 <legend class="form-label fw-bold">Was the Car Raised?*</legend>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="carraised_yesPurchase" name="carraisedPurchase"
-                                        value="Yes" aria-required="true">
+                                    <input class="form-check-input" type="radio" id="carraised_yesPurchase"
+                                        name="carraisedPurchase" value="Yes" aria-required="true">
                                     <label class="form-check-label" for="carraised_yesPurchase">Yes</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="fcarraised_noPurchase" name="carraisedPurchase"
-                                        value="No" aria-required="true">
+                                    <input class="form-check-input" type="radio" id="fcarraised_noPurchase"
+                                        name="carraisedPurchase" value="No" aria-required="true">
                                     <label class="form-check-label" for="carraised_noPurchase">No</label>
                                 </div>
                                 <span id="carraisedErrorPurchase" class="text-danger"
@@ -565,7 +589,8 @@
                             <label for="carnumberPurchase" class="form-label">Car Number:*</label>
                             <input type="number" class="form-control" id="carnumberPurchase" name="carnumberPurchase"
                                 aria-required="true" placeholder="Enter Car Number">
-                            <span id="carNoErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Car
+                            <span id="carNoErrorPurchase" class="text-danger"
+                                style="display: none; font-size: 0.9em;">Car
                                 No. is
                                 required.</span>
                         </div>
@@ -594,25 +619,20 @@
                         <div class="col-12 col-md-6 mb-3">
                             <label for="followtype" class="form-label">Follow Up Type?*</label>
 
-                            <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
-                            <span id="followupErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Please
+
+                            <span id="followupErrorPurchase" class="text-danger"
+                                style="display: none; font-size: 0.9em;">Please
                                 Pick a
-                                Supplier</span>
-                            <select class="form-control" id="followtypePurchase" name="followtypePurchase" aria-required="true">
+                                Follow up type</span>
+                            <select class="form-control" id="followtypePurchase" name="followtypePurchase"
+                                aria-required="true">
                                 <option value="">Select a type</option>
-                                <option value="acme_supplies">Acme Supplies</option>
-                                <option value="green_goods">Green Goods Ltd.</option>
-                                <option value="fast_track">Fast Track Supplies</option>
-                                <option value="prime_sources">Prime Sources Inc.</option>
-                                <option value="blue_ocean">Blue Ocean Trading</option>
-                                <option value="world_wide">World Wide Distributors</option>
-                                <option value="eco_trade">Eco Trade Partners</option>
-                                <option value="luxury_goods">Luxury Goods International</option>
-                                <option value="mega_supplies">Mega Supplies Co.</option>
-                                <option value="top_choice">Top Choice Suppliers</option>
+                                <option value="corrective_action">Corrective Action</option>
+                                <option value="preventive_action">Preventive action</option>
                             </select>
-                            <span id="followupErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Pick a
-                                Supplier</span>
+                            <span id="followupErrorPurchase" class="text-danger"
+                                style="display: none; font-size: 0.9em;">Pick a
+                                Follow up Type</span>
                         </div>
                     </div>
 
@@ -623,10 +643,12 @@
                             <label for="followdatePurchase" class="form-label">Follow Up Expected Date*</label>
                             <input type="date" class="form-control" id="followdatePurchase" name="followdatePurchase"
                                 aria-required="true">
-                            <span id="followdateErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Date
+                            <span id="followdateErrorPurchase" class="text-danger"
+                                style="display: none; font-size: 0.9em;">Date
                                 is
                                 required</span>
-                            <span id="followUpdateErrorPurchase" style="display: none; color: red; font-size: 0.9em;">Please
+                            <span id="followUpdateErrorPurchase"
+                                style="display: none; color: red; font-size: 0.9em;">Please
                                 select a valid
                                 date in the current year.</span>
                         </div>
@@ -671,19 +693,26 @@
     <script src="scripts/edit.js"></script>
     <script src="scripts/editpurchasevalidation.js"></script>
     <script src="scripts/editengineervalidations.js"></script>
+    <script>
 
+        document.getElementById("btnPurchaseSave").addEventListener("click", function () {
+            alert("Purchasing Form saved successfully!");
+            window.location.href = "ncrlog.html";
+        });
+
+    </script>
 
     <script>
         function toggleRevisionFields() {
-    const yesOption = document.getElementById("drawing_update_yes");
-    const revisionFields = document.getElementById("revisionFields");
-    
-    if (yesOption.checked) {
-        revisionFields.style.display = "block"; // Show fields when "Yes" is selected
-    } else {
-        revisionFields.style.display = "none"; // Hide fields when "No" is selected
-    }
-}
+            const yesOption = document.getElementById("drawing_update_yes");
+            const revisionFields = document.getElementById("revisionFields");
+
+            if (yesOption.checked) {
+                revisionFields.style.display = "block"; // Show fields when "Yes" is selected
+            } else {
+                revisionFields.style.display = "none"; // Hide fields when "No" is selected
+            }
+        }
 
     </script>
     <script>

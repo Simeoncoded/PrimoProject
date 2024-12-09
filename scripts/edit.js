@@ -176,7 +176,7 @@ window.addEventListener("load", function () {
         alert("NCR updated successfully!");
 
     
-       // window.location.href = "ncrlog.html";
+       window.location.href = "ncrlog.html";
     })
     
 document.querySelector('#btnSave').addEventListener('click', function(event) {

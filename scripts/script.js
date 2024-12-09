@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     updateNotificationList();
 
-    /*
+    
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault(); 
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           
             const notification = {
-                ncr_no: document.getElementById('ncr_number').value, // NCR number
+                ncr_no: document.getElementById('ncr_no').value, // NCR number
                 source: "engineering",
                 action: "Action Required - Purchasing"
             };
@@ -129,9 +129,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             alert("Engineering form submitted successfully!");
             engineeringForm.reset();
+            window.location.href = 'ncrlog.html';
         });
     }
-*/
+
     //clearing local storage
     if (clearStorageBtn) {
         clearStorageBtn.addEventListener('click', function () {
