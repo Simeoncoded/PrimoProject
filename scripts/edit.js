@@ -60,17 +60,22 @@ window.addEventListener("load", function () {
     repInput.value = thisNcr.quality_rep_name || "";
 
     // Engineer field
-    engReview = thisNcr.eng.Review || "";
-    engNotifyCustomer = thisNcr.eng.NotifyCustomer || "";
-    engDisposition = thisNcr.eng.Disposition || "";
-    engUpdateDrawing  = thisNcr.eng.UpdateDrawing || "";
-    engOrgVersion  = thisNcr.eng.OrgVersion || "";
-    engUpdVersion = thisNcr.eng.UpdVersion || "";
-    engName  = thisNcr.eng.Name || "";
-    engRevisionDate  = thisNcr.eng.RevisionDate || "";
-    engDetails = thisNcr.eng.Details || "";
-    engDate = thisNcr.eng.Date || "";
-    
+    if(thisNcr.eng == {}){
+    } else {
+            
+        engReview = thisNcr.eng.Review || "";
+        engNotifyCustomer = thisNcr.eng.NotifyCustomer || "";
+        engDisposition = thisNcr.eng.Disposition || "";
+        engUpdateDrawing  = thisNcr.eng.UpdateDrawing || "";
+        engOrgVersion  = thisNcr.eng.OrgVersion || "";
+        engUpdVersion = thisNcr.eng.UpdVersion || "";
+        engName  = thisNcr.eng.Name || "";
+        engRevisionDate  = thisNcr.eng.RevisionDate || "";
+        engDetails = thisNcr.eng.Details || "";
+        engDate = thisNcr.eng.Date || "";
+        
+    }
+
     if (thisNcr.nonconforming) {
         conformInputs.forEach((radio) => {
             if (radio.value === thisNcr.nonconforming) {
@@ -143,6 +148,7 @@ window.addEventListener("load", function () {
         e.preventDefault(); 
         
         // Engineer field
+        
         thisNcr.eng.Review = engReview.value;
         thisNcr.eng.Disposition = engDisposition.value;
         thisNcr.eng.OrgVersion = engOrgVersion.value;
@@ -170,6 +176,38 @@ window.addEventListener("load", function () {
         alert("NCR updated successfully!");
 
     
-        window.location.href = "ncrlog.html";
+       // window.location.href = "ncrlog.html";
     })
+    
+document.querySelector('#btnSave').addEventListener('click', function(event) {
+    event.preventDefault();
+    const ncrNumber = document.getElementById('ncr_no').value;
+
+    // Check if NCR number is empty
+    if (!ncrNumber) {
+        alert('Please enter an NCR number before saving.');
+        return; 
+    }
+
+    // If NCR number is filled, continue to save
+    const formData = {
+        ncr_no: ncrNumber,
+        date: document.getElementById('date').value,
+        process: document.querySelector('input[name="process"]:checked')?.value,
+        supplier_name: document.getElementById('supplier_name').value,
+        po_prod_no: document.getElementById('po_prod_no').value,
+        sales_order_no: document.getElementById('sales_order_no').value,
+        item_description: document.getElementById('item_description').value,
+        defect_description: document.getElementById('defect_description').value,
+        quantity_received: document.getElementById('quantity_received').value,
+        quantity_defective: document.getElementById('quantity_defective').value,
+        quality_rep_name: document.getElementById('quality_rep_name').value,
+        nonconforming: document.querySelector('input[name="nonconforming"]:checked')?.value,
+        ennotneeded: document.querySelector('input[name="ennotneeded"]:checked')?.value
+    };
+
+    
+    localStorage.setItem('ncrFormData', JSON.stringify(formData));
+    alert('Form data saved successfully!');
+});
 });

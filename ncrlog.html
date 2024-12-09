@@ -152,7 +152,7 @@
             ncrTableBody.innerHTML = '';
 
             // Retrieve NCR data from localStorage
-            const ncrs = JSON.parse(localStorage.getItem('ncrs')) || [];
+            const ncrs = JSON.parse(localStorage.getItem('ncrs')).sort((a, b) => new Date(b.date) - new Date(a.date)) || [];
             console.log(ncrs)
 
             // Populate table rows
