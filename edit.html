@@ -330,7 +330,7 @@
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="ncr_number" class="form-label">NCR No.</label>
                                     <input type="text" class="form-control" id="ncr_number" name="ncr_number" required
-                                        aria-required="true" placeholder="Enter NCR Number">
+                                        aria-required="true" placeholder="Enter NCR Number" readonly>
                                     <span id="ncrNoError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">NCR
                                         No. is
@@ -340,7 +340,7 @@
 
                                 <!-- Review by CF Engineering -->
                                 <div class="col-12 col-md-6 mb-3">
-                                    
+
                                     <label for="review_engineering" class="form-label">Review by CF Engineering*
                                         <span class="tooltip-icon" data-bs-toggle="tooltip" data-bs-placement="top"
                                             title="This is where you select the engineering review disposition, such as 'Use as is', 'Repair', 'Rework', or 'Scrap'."><i
@@ -699,6 +699,23 @@
         });
 
     </script>
+
+<script>
+   
+    const ncrNumberField = document.getElementById('ncr_number');
+    const ncrNoField = document.getElementById('ncr_no');
+
+
+    ncrNoField.addEventListener('input', function () {
+
+        ncrNumberField.value = ncrNoField.value;
+    });
+
+   
+    window.addEventListener('load', function() {
+        ncrNumberField.value = ncrNoField.value; 
+    });
+</script>
 
     <script>
         function toggleRevisionFields() {
