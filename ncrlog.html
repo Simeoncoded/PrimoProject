@@ -173,7 +173,7 @@
             } else if (ncr.status == 'closed'){
             row.innerHTML += `
             <td><button class="vbtn" name="btnDetails" id="${ncr.ncr_no}"><i class="fa fa-info-circle"></i> Details</button>
-            <button class="vbtn" name="btnPrint" id="${ncr.ncr_no}"><i class="fas fa-print"></i> Print</button></td>
+            <a href="details.html"><button class="vbtn" name="btnPrint" id="${ncr.ncr_no}"><i class="fas fa-download"></i> Print</button></a></td>
             `
             }
                 ncrTableBody.appendChild(row);

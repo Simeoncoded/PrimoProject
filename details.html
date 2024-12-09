@@ -12,6 +12,16 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<style>
+    .print{
+        background-color: #1A3851;
+        color: #fff;
+        border: none;
+        width: 100px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+</style>
 
 <body>
     <div class="content">
@@ -84,6 +94,8 @@
         <!-- Main Content -->
         <main class="container my-5" id="main-content" tabindex="-1">
             <h1 class="mb-4 text-center">View NCR Details</h1>
+            <button class="print" onclick="printDetails()">Print</button> 
+            
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne" id="inspectorAccordionDetails">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -472,6 +484,7 @@
             </div>
     </div>
 
+   
     </main>
     </div>
     <footer>
@@ -619,6 +632,7 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/edit.js"></script>
     <script src="scripts/users.js"></script>
+    <script src="scripts/details.js"></script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
