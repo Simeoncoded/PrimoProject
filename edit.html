@@ -359,14 +359,14 @@
 
                                 <!-- Customer Notification -->
                                 <div class="col-12 col-md-6 mb-3">
-                                    <label for="customer_notification" class="form-label">Does Customer Require
+                                    <label for="customer_notificationEngineering" class="form-label">Does Customer Require
                                         Notification of
                                         NCR</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="customer_notification_yes"
-                                            name="customer_notification" value="yes"
+                                        <input class="form-check-input" type="radio" id="customer_notification_yesEngineering"
+                                            name="customer_notificationEngineering" value="yes"
                                             aria-describedby="customerNotificationDesc">
-                                        <label class="form-check-label" for="customer_notification_yes">
+                                        <label class="form-check-label" for="customer_notification_yesEngineering">
                                             Yes
                                         </label>
                                         <small id="customerNotificationDesc" class="form-text text-muted">Check if the
@@ -392,10 +392,10 @@
 
                                 <!-- Disposition -->
                                 <div class="col-12  mb-3">
-                                    <label for="disposition" class="form-label">Disposition*</label>
-                                    <textarea class="form-control" id="disposition" name="disposition" rows="3"
+                                    <label for="dispositionEngineering" class="form-label">Disposition*</label>
+                                    <textarea class="form-control" id="dispositionEngineering" name="dispositionEngineering" rows="3"
                                         placeholder="Provide disposition details"></textarea>
-                                    <span id="dispositionError" class="text-danger"
+                                    <span id="dispositionErrorEngineering" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Disposition details is required</span>
                                 </div>
@@ -407,11 +407,11 @@
                                         <label for="drawing_update" class="form-label">Does the Drawing Require Updating</label>
                                         <div class="d-flex align-items-center gap-3">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="drawing_update_yes" name="drawing_update" value="yes" checked onchange="toggleRevisionFields()">
+                                                <input class="form-check-input" type="radio" id="drawing_update_yesEngineering" name="drawing_updateEngineering" value="yes" checked onchange="toggleRevisionFields()">
                                                 <label class="form-check-label" for="drawing_update_yes">Yes</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="drawing_update_no" name="drawing_update" value="no" onchange="toggleRevisionFields()">
+                                                <input class="form-check-input" type="radio" id="drawing_update_noEngineering" name="drawing_updateEngineering" value="no" onchange="toggleRevisionFields()">
                                                 <label class="form-check-label" for="drawing_update_no">No</label>
                                             </div>
                                         </div>
@@ -423,16 +423,16 @@
                                             <!-- Original Revision Number -->
                                             <div class="col-12 col-md-6 mb-3">
                                                 <label for="original_revision" class="form-label">Version Number*</label>
-                                                <input type="number" class="form-control" id="original_revision" name="original_revision" placeholder="Enter original version number">
-                                                <span id="original_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
+                                                <input type="number" class="form-control" id="original_revisionEngineering" name="original_revisionEngineering" placeholder="Enter original version number">
+                                                <span id="original_revisionErrorEngineering" class="text-danger" style="display: none; font-size: 0.9em;">
                                                     Version Number is required
                                                 </span>
                                             </div>
                                 
                                             <!-- Updated Revision Number -->
                                             <div class="col-12 col-md-6 mb-3">
-                                                <label for="updated_revision" class="form-label">Updated Revision Number*</label>
-                                                <input type="number" class="form-control" id="updated_revision" name="updated_revision" placeholder="Enter updated revision number">
+                                                <label for="updated_revisionEngineering" class="form-label">Updated Revision Number*</label>
+                                                <input type="number" class="form-control" id="updated_revisionEngineering" name="updated_revisionEngineering" placeholder="Enter updated revision number">
                                                 <span id="updated_revisionError" class="text-danger" style="display: none; font-size: 0.9em;">
                                                     Updated Revision Number is required
                                                 </span>
@@ -446,10 +446,10 @@
 
                                 <!-- Engineer Name -->
                                 <div class="col-12 col-md-6 mb-3">
-                                    <label for="engineer_name" class="form-label">Name of Engineer*</label>
-                                    <input type="text" class="form-control" id="engineer_name" name="engineer_name"
+                                    <label for="engineer_nameEngineering" class="form-label">Name of Engineer*</label>
+                                    <input type="text" class="form-control" id="engineer_nameEngineering" name="engineer_nameEngineering"
                                         required aria-required="true" placeholder="Enter Engineer's Name">
-                                    <span id="engineer_nameError" class="text-danger"
+                                    <span id="engineer_nameErrorEngineering" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Engineer Name is required</span>
                                 </div>
@@ -457,12 +457,12 @@
                                 <!-- Revision Date -->
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="revision_date" class="form-label">Revision Date*</label>
-                                    <input type="date" class="form-control" id="revision_date" name="revision_date">
-                                    <span id="revision_dateError" class="text-danger"
+                                    <input type="date" class="form-control" id="revision_dateEngineering" name="revision_dateEngineering">
+                                    <span id="revision_dateErrorEngineering" class="text-danger"
                                         style="display: none; font-size: 0.9em;">
                                         Revision Date is required
                                     </span>
-                                    <span id="revision_dateYearError"
+                                    <span id="revision_dateYearErrorEngineering"
                                         style="display: none; color: red; font-size: 0.9em;">
                                         Please select a valid date in the current year.
                                     </span>
@@ -495,7 +495,7 @@
 
                                 <div>
                                     <button type="submit" id="btnEngSubmit" class="btnSub">Submit</button>
-                                    <button type="submit" class="btnSub" id="btnSave">Save</button>
+                                    <button type="submit" class="btnSub" id="btnEngSave">Save</button>
                                 </div>
                         </form>
                     </div>
