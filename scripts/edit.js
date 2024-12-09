@@ -11,7 +11,8 @@ window.addEventListener("load", function () {
         }
     });
 
-    
+    console.log(ncrnum)
+
     if (!thisNcr) {
         console.error("NCR not found");
         return;
@@ -45,11 +46,11 @@ window.addEventListener("load", function () {
     const engDate = document.getElementById("engineering_date")
 
     // Prefill form fields with data from thisNcr
-    ncrInput.value = thisNcr.ncr_no; 
-    ncrInput.setAttribute("disabled", true); 
+    ncrInput.value = thisNcr.ncr_no;
+    ncrInput.setAttribute("disabled", true);
 
     dateInput.value = thisNcr.date; // Default to current date
-    dateInput.setAttribute("disabled", true); 
+    dateInput.setAttribute("disabled", true);
 
     supplierInput.value = thisNcr.supplier_name || "";
     prodInput.value = thisNcr.po_prod_no || "";
@@ -59,32 +60,25 @@ window.addEventListener("load", function () {
     receivedInput.value = thisNcr.quantity_received || "";
     defectiveInput.value = thisNcr.quantity_defective || "";
     repInput.value = thisNcr.quality_rep_name || "";
-/*
-    // Engineer field
-    if(thisNcr.eng == {}){
-    } else {
-            
-        engReview = thisNcr.eng.Review || "";
-        engNotifyCustomer = thisNcr.eng.NotifyCustomer || "";
-        engDisposition = thisNcr.eng.Disposition || "";
-        engUpdateDrawing  = thisNcr.eng.UpdateDrawing || "";
-        engOrgVersion  = thisNcr.eng.OrgVersion || "";
-        engUpdVersion = thisNcr.eng.UpdVersion || "";
-        engName  = thisNcr.eng.Name || "";
-        engRevisionDate  = thisNcr.eng.RevisionDate || "";
-        engDetails = thisNcr.eng.Details || "";
-        engDate = thisNcr.eng.Date || "";
+    
+        // Engineer field
+        engReview.value = thisNcr.eng.Review || "";
+        engDisposition.value = thisNcr.eng.Disposition || "";
+        engUpdateDrawing.value  = thisNcr.eng.UpdateDrawing || "";
+        engOrgVersion.value  = thisNcr.eng.OrgVersion || "";
+        engUpdVersion.value = thisNcr.eng.UpdVersion || "";
+        engName.value  = thisNcr.eng.Name || "";
+        engRevisionDate.value  = thisNcr.eng.RevisionDate || "";
+        engDetails.value = thisNcr.eng.Details || "";
+        engDate.value = thisNcr.eng.Date || "";
         
+    if (thisNcr.process) {
+        processInputs.forEach((radio) => {
+            if (radio.value === thisNcr.process) {
+                radio.checked = true;
+            }
+        });
     }
-*/
-
-if (thisNcr.process) {
-    processInputs.forEach((radio) => {
-        if (radio.value === thisNcr.process) {
-            radio.checked = true;
-        }
-    });
-}
 
     if (thisNcr.nonconforming) {
         conformInputs.forEach((radio) => {
@@ -101,130 +95,133 @@ if (thisNcr.process) {
             }
         });
     }
-/*
-    engNotifyCustomer.forEach((radio) => {
-        if (radio.value === thisNcr.eng.NotifyCustomer) {
-            radio.checked = true;
-        }
-    });
-
-    engUpdateDrawing.forEach((radio) => {
-        if (radio.value === thisNcr.eng.UpdateDrawing) {
-            radio.checked = true;
-        }
-    });
-*/
-    // Save button logic
-    const saveButton = document.getElementById("btnSubmit");
-    saveButton.addEventListener("click", function (e) {
-        e.preventDefault(); 
-
-        // Update the current NCR object with the new values
-        thisNcr.supplier_name = supplierInput.value;
-        thisNcr.po_prod_no = prodInput.value;
-        thisNcr.sales_order_no = salesInput.value;
-        thisNcr.item_description = itemInput.value;
-        thisNcr.defect_description = defectInput.value;
-        thisNcr.quantity_received = receivedInput.value;
-        thisNcr.quantity_defective = defectiveInput.value;
-        thisNcr.quality_rep_name = repInput.value;
-
-                
-        processInputs.forEach((radio) => {
-            if (radio.checked) {
-                thisNcr.processInputs = radio.value;
-            }
-        });
-
-        conformInputs.forEach((radio) => {
-            if (radio.checked) {
-                thisNcr.nonconforming = radio.value;
-            }
-        });
-
-      
-        engInputs.forEach((radio) => {
-            if (radio.checked) {
-                thisNcr.ennotneeded = radio.value;
-            }
-        });
-
-
-        // Save the updated ncrs array back to localStorage
-        localStorage.setItem('ncrs', JSON.stringify(ncrs));
-
-       
-        alert("NCR updated successfully!");
-
     
-        window.location.href = "ncrlog.html";
-    });
-    
-    const saveEngButton = document.getElementById("btnSubmit");
-    saveEngButton.addEventListener("click", function (e) {
-        e.preventDefault(); 
-        
-        // Engineer field
-        
-        thisNcr.eng.Review = engReview.value;
-        thisNcr.eng.Disposition = engDisposition.value;
-        thisNcr.eng.OrgVersion = engOrgVersion.value;
-        thisNcr.eng.UpdVersion = engUpdVersion.value;
-        thisNcr.eng.Name = engName.value;
-        thisNcr.eng.RevisionDate = engRevisionDate.value;
-        thisNcr.eng.Details = engDetails.value;
-        thisNcr.eng.Date = engDate.value;
-       
         engNotifyCustomer.forEach((radio) => {
-            if (radio.checked) {
-                thisNcr.eng.NotifyCustomer = radio.value;
+            if (radio.value === thisNcr.eng.NotifyCustomer) {
+                radio.checked = true;
             }
         });
-
+    
         engUpdateDrawing.forEach((radio) => {
-            if (radio.checked) {
-                thisNcr.eng.UpdateDrawing = radio.value;
+            if (radio.value === thisNcr.eng.UpdateDrawing) {
+                radio.checked = true;
             }
         });
+        
+    // Save button logic
+    if (this.document.href == "edit.html") {
 
-        localStorage.setItem('ncrs', JSON.stringify(ncrs));
+        const saveButton = document.getElementById("btnSubmit");
+        saveButton.addEventListener("click", function (e) {
+            e.preventDefault();
 
-       
-        alert("NCR updated successfully!");
+            // Update the current NCR object with the new values
+            thisNcr.supplier_name = supplierInput.value;
+            thisNcr.po_prod_no = prodInput.value;
+            thisNcr.sales_order_no = salesInput.value;
+            thisNcr.item_description = itemInput.value;
+            thisNcr.defect_description = defectInput.value;
+            thisNcr.quantity_received = receivedInput.value;
+            thisNcr.quantity_defective = defectiveInput.value;
+            thisNcr.quality_rep_name = repInput.value;
 
-    
-       window.location.href = "ncrlog.html";
-    })
-    
-document.querySelector('#btnSave').addEventListener('click', function(event) {
-    event.preventDefault();
-    const ncrNumber = document.getElementById('ncr_no').value;
 
-    // Check if NCR number is empty
-    if (!ncrNumber) {
-        alert('Please enter an NCR number before saving.');
-        return; 
+            processInputs.forEach((radio) => {
+                if (radio.checked) {
+                    thisNcr.processInputs = radio.value;
+                }
+            });
+
+            conformInputs.forEach((radio) => {
+                if (radio.checked) {
+                    thisNcr.nonconforming = radio.value;
+                }
+            });
+
+
+            engInputs.forEach((radio) => {
+                if (radio.checked) {
+                    thisNcr.ennotneeded = radio.value;
+                }
+            });
+
+
+            // Save the updated ncrs array back to localStorage
+            localStorage.setItem('ncrs', JSON.stringify(ncrs));
+
+
+            alert("NCR updated successfully!");
+
+
+            window.location.href = "ncrlog.html";
+        });
+
+        const saveEngButton = document.getElementById("btnSubmit");
+        saveEngButton.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Engineer field
+
+            thisNcr.eng.Review = engReview.value;
+            thisNcr.eng.Disposition = engDisposition.value;
+            thisNcr.eng.OrgVersion = engOrgVersion.value;
+            thisNcr.eng.UpdVersion = engUpdVersion.value;
+            thisNcr.eng.Name = engName.value;
+            thisNcr.eng.RevisionDate = engRevisionDate.value;
+            thisNcr.eng.Details = engDetails.value;
+            thisNcr.eng.Date = engDate.value;
+
+            engNotifyCustomer.forEach((radio) => {
+                if (radio.checked) {
+                    thisNcr.eng.NotifyCustomer = radio.value;
+                }
+            });
+
+            engUpdateDrawing.forEach((radio) => {
+                if (radio.checked) {
+                    thisNcr.eng.UpdateDrawing = radio.value;
+                }
+            });
+
+            localStorage.setItem('ncrs', JSON.stringify(ncrs));
+
+
+            alert("NCR updated successfully!");
+
+
+            window.location.href = "ncrlog.html";
+        })
+
+        document.querySelector('#btnSave').addEventListener('click', function (event) {
+            event.preventDefault();
+            const ncrNumber = document.getElementById('ncr_no').value;
+
+            // Check if NCR number is empty
+            if (!ncrNumber) {
+                alert('Please enter an NCR number before saving.');
+                return;
+            }
+
+            // If NCR number is filled, continue to save
+            const formData = {
+                ncr_no: ncrNumber,
+                date: document.getElementById('date').value,
+                process: document.querySelector('input[name="process"]:checked')?.value,
+                supplier_name: document.getElementById('supplier_name').value,
+                po_prod_no: document.getElementById('po_prod_no').value,
+                sales_order_no: document.getElementById('sales_order_no').value,
+                item_description: document.getElementById('item_description').value,
+                defect_description: document.getElementById('defect_description').value,
+                quantity_received: document.getElementById('quantity_received').value,
+                quantity_defective: document.getElementById('quantity_defective').value,
+                quality_rep_name: document.getElementById('quality_rep_name').value,
+                nonconforming: document.querySelector('input[name="nonconforming"]:checked')?.value,
+                ennotneeded: document.querySelector('input[name="ennotneeded"]:checked')?.value
+            };
+
+
+            localStorage.setItem('ncrFormData', JSON.stringify(formData));
+            alert('Form data saved successfully!');
+        });
     }
-
-    // If NCR number is filled, continue to save
-    const formData = {
-        ncr_no: ncrNumber,
-        date: document.getElementById('date').value,
-        process: document.querySelector('input[name="process"]:checked')?.value,
-        supplier_name: document.getElementById('supplier_name').value,
-        po_prod_no: document.getElementById('po_prod_no').value,
-        sales_order_no: document.getElementById('sales_order_no').value,
-        item_description: document.getElementById('item_description').value,
-        defect_description: document.getElementById('defect_description').value,
-        quantity_received: document.getElementById('quantity_received').value,
-        quantity_defective: document.getElementById('quantity_defective').value,
-        quality_rep_name: document.getElementById('quality_rep_name').value,
-        nonconforming: document.querySelector('input[name="nonconforming"]:checked')?.value,
-        ennotneeded: document.querySelector('input[name="ennotneeded"]:checked')?.value
-    };
-
-    
-    localStorage.setItem('ncrFormData', JSON.stringify(formData));
-    alert('Form data saved successfully!');
-});
 });

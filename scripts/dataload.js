@@ -18,7 +18,7 @@ ncrs = [
             supplier_name: "Green Goods Ltd.",
         // },
         eng:{
-
+            Disposition:""
         },
         pur:{
 
@@ -41,10 +41,10 @@ ncrs = [
             sales_order_no: "2321",
             supplier_name: "Blue Ocean Trading",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -65,10 +65,10 @@ ncrs = [
             sales_order_no: "433",
             supplier_name: "Green Goods Ltd.",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -89,10 +89,10 @@ ncrs = [
             sales_order_no: "2421",
             supplier_name: "Green Goods Ltd.",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -113,10 +113,10 @@ ncrs = [
             sales_order_no: "572",
             supplier_name: "Green Goods Ltd.",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -137,10 +137,10 @@ ncrs = [
             sales_order_no: "433",
             supplier_name: "Green Goods Ltd.",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -161,10 +161,10 @@ ncrs = [
             sales_order_no: "24525",
             supplier_name: "Luxury Goods International",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -185,10 +185,10 @@ ncrs = [
             sales_order_no: "2871",
             supplier_name: "Green Goods Ltd.",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -209,10 +209,10 @@ ncrs = [
             sales_order_no: "1241",
             supplier_name: "Luxury Goods International",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     },
@@ -233,10 +233,10 @@ ncrs = [
             sales_order_no: "1341",
             supplier_name: "Green Goods Ltd.",
         // },
-        engineer:{
+        eng:{
 
         },
-        purchasing:{
+        pur:{
 
         }
     }
