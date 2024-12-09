@@ -534,17 +534,17 @@
                         <!-- NRC number thinking about making it unique But might be 
                                  better to name it the same so that it lines up with the others -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="ncr_no" class="form-label">NCR No.*</label>
-                            <input type="text" class="form-control" id="ncr_no" name="ncr_no" aria-required="true"
+                            <label for="ncr_noPurchase" class="form-label">NCR No.*</label>
+                            <input type="text" class="form-control" id="ncr_noPurchase" name="ncr_noPurchase" aria-required="true"
                                 placeholder="Enter NCR Number">
-                            <span id="ncrNoError" class="text-danger" style="display: none; font-size: 0.9em;">NCR No.
+                            <span id="ncrNoErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">NCR No.
                                 is required.</span>
                         </div>
 
                         <!-- OP Date -->
                         <div class="col-12 col-md-6 mb-3">
                             <label for="date" class="form-label">OP Date*</label>
-                            <input type="date" class="form-control" id="date" name="date" aria-required="true">
+                            <input type="date" class="form-control" id="OPdate" name="date" aria-required="true">
                             <span id="dateOPError" class="text-danger" style="display: none; font-size: 0.9em;">OP Date
                                 is required</span>
                         </div>
@@ -658,7 +658,7 @@
 
                     </div>
                     <div>
-                        <button type="submit" class="btn bby btnSub" id="btnPurchaseSave">Submit</button>
+                        <button type="submit" class="btn bby btnSub" id="btnPurchaseSubmit">Submit</button>
 
                         <button type="submit" class="btn bby btnSub" id="btnPurchaseSave">Save</button>
                     </div>
