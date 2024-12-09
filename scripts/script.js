@@ -42,8 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     updateNotificationList();
+<<<<<<< HEAD
 
     // NCR Form Submission
+=======
+/*
+>>>>>>> e9b8281328405af0dc139306da0550ddd17109ab
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault(); 
@@ -129,8 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
             engineeringForm.reset();
             window.location.href = 'ncrlog.html'; 
     }
-
-    // Clearing local storage
+*/
+    //clearing local storage
     if (clearStorageBtn) {
         clearStorageBtn.addEventListener('click', function () {
             localStorage.clear();
