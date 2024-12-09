@@ -42,12 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     updateNotificationList();
-<<<<<<< HEAD
 
     // NCR Form Submission
-=======
-/*
->>>>>>> e9b8281328405af0dc139306da0550ddd17109ab
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault(); 
@@ -71,19 +67,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 source: "purchasing"
             };
 
-         
+            // Save NCR data to localStorage
             const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
             existingNCRs.push(ncrData);
             localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
 
-            
+            // Create notification for NCR submission
             const notification = {
                 ncr_no: ncrData.ncr_no,
                 source: ncrData.source,
                 action: "Action Required - Engineering"
             };
             addNotificationToList(notification);
-            saveNotificationToLocalStorage(notification); 
+            saveNotificationToLocalStorage(notification); // Save notification to local storage
 
             incrementNotificationCount();
             incrementEmailCount();
@@ -99,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
         engineeringForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-    
+            // Get the NCR number from the engineering form's ncr_number field
             const ncrNumber = document.getElementById('ncr_number').value;
 
-          
+            // Check if ncrNumber is empty or invalid
             if (!ncrNumber) {
                 alert("NCR number is missing! Please provide the NCR number.");
                 return;
@@ -117,24 +113,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 source: "engineering"
             };
 
-           
+            // Create notification for engineering form submission using the NCR number from the form
             const notification = {
-                ncr_no: ncrNumber, 
+                ncr_no: ncrNumber, // Use the NCR number from the form field
                 source: engineeringData.source,
                 action: "Action Required - Engineering Review"
             };
             addNotificationToList(notification);
-            saveNotificationToLocalStorage(notification);
+            saveNotificationToLocalStorage(notification); // Save notification to local storage
 
             incrementNotificationCount();
             incrementEmailCount();
 
             alert("Engineering form submitted successfully! Notifications and email have been sent.");
             engineeringForm.reset();
-            window.location.href = 'ncrlog.html'; 
+            window.location.href = 'ncrlog.html'; // Redirect to a relevant page
+        });
     }
-*/
-    //clearing local storage
+
+    // Clearing local storage
     if (clearStorageBtn) {
         clearStorageBtn.addEventListener('click', function () {
             localStorage.clear();
@@ -180,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function saveNotificationToLocalStorage(notification) {
         const existingNotifications = JSON.parse(localStorage.getItem('notifications')) || [];
         existingNotifications.push(notification);
-        localStorage.setItem('notifications', JSON.stringify(existingNotifications)); 
+        localStorage.setItem('notifications', JSON.stringify(existingNotifications)); // Save notifications to local storage
     }
 
     function incrementNotificationCount() {
@@ -201,4 +198,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
-
