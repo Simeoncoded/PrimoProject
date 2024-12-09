@@ -144,5 +144,5 @@ clearEngineeringError("engineering_date", "engineering_dateError");
 clearEngineeringChkBxError("customer_notificationEngineering", "customerNotificationDesc");
 clearEngineeringChkBxError("drawing_updateEngineering", "original_revisionErrorEngineering");
 
-// Add event listener to validate form
+
 btnEngSubmit.addEventListener("click", validateEngineeringForm);
