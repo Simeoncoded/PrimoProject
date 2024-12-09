@@ -134,12 +134,13 @@
                                             style="display: none; font-size: 0.9em;">Please
                                             select one of the checkboxes</span>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="supplier" name="process"
+
+                                            <input class="form-check-input" type="radio" id="supplier" name="process"
                                                 value="Supplier or Rec-Insp">
                                             <label class="form-check-label" for="supplier">Supplier or Rec-Insp</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="wip" name="process"
+                                            <input class="form-check-input" type="radio" id="wip" name="process"
                                                 value="WIP">
                                             <label class="form-check-label" for="wip">WIP (Production Order)</label>
                                         </div>
@@ -157,7 +158,7 @@
                                         Supplier</span>
                                     <select class="form-control" id="supplier_name" name="supplier_name"
                                         aria-required="true">
-                                        <option value="">Select a supplier</option>
+                                        <option disabled value="">Select a supplier</option>
                                     </select>
                                     <span id="supplierError" class="text-danger"
                                         style="display: none; font-size: 0.9em;">Pick a
@@ -294,6 +295,7 @@
                                 </div>
                             </div>
                             <div>
+                                <button type="submit" class="btnSub" id="btnSubmit">Submit</button>
                                 <button type="submit" class="btn bby btnsub" id="btnSubmit">Save</button>
                             </div>
                         </form>
@@ -330,7 +332,7 @@
 
                                 <!-- Review by CF Engineering -->
                                 <div class="col-12 col-md-6 mb-3">
-                                    
+
                                     <label for="review_engineering" class="form-label">Review by CF Engineering*
                                         <span class="tooltip-icon" data-bs-toggle="tooltip" data-bs-placement="top"
                                             title="This is where you select the engineering review disposition, such as 'Use as is', 'Repair', 'Rework', or 'Scrap'."><i

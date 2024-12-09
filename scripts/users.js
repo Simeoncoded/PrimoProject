@@ -7,10 +7,10 @@ const users = [
 
 // Role-based access map
 const rolePages = {
-  admin: ["index.html", "ncrlog.html", "create.html", "report.html", "engineering.html", "createPurchasing.html", "email.html", "edit.html", "details.html"],
+  admin: ["index.html", "ncrlog.html", "create.html", "report.html", "engineering.html", "createPurchasing.html", "email.html", "edit.html", "details.html" ],
   inspector: ["index.html", "create.html", "ncrlog.html", "email.html", "edit.html", "details.html","report.html"],
-  engineer: ["index.html", "inspector.html", "engineering.html", "email.html", "edit.html", "details.html","ncrlog.html"],
-  purchasing: ["index.html", "ncrlog.html", "createPurchasing.html", "email.html", "edit.html", "details.html"],
+  engineer: ["index.html", "inspector.html", "engineering.html", "email.html", "edit.html", "details.html","ncrlog.html", "report.html"],
+  purchasing: ["index.html", "ncrlog.html", "createPurchasing.html", "email.html", "edit.html", "details.html", "report.html"],
 };
 
 // Login form submission

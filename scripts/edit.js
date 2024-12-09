@@ -28,6 +28,7 @@ window.addEventListener("load", function () {
     const receivedInput = document.getElementById("quantity_received");
     const defectiveInput = document.getElementById("quantity_defective");
     const repInput = document.getElementById("quality_rep_name");
+    const processInputs = document.querySelectorAll('input[name="process"]'); // Radio buttons
     const conformInputs = document.querySelectorAll('input[name="nonconforming"]'); // Radio buttons
     const engInputs = document.querySelectorAll('input[name="ennotneeded"]'); // Radio buttons
 
@@ -58,7 +59,7 @@ window.addEventListener("load", function () {
     receivedInput.value = thisNcr.quantity_received || "";
     defectiveInput.value = thisNcr.quantity_defective || "";
     repInput.value = thisNcr.quality_rep_name || "";
-
+/*
     // Engineer field
     if(thisNcr.eng == {}){
     } else {
@@ -75,6 +76,15 @@ window.addEventListener("load", function () {
         engDate = thisNcr.eng.Date || "";
         
     }
+*/
+
+if (thisNcr.process) {
+    processInputs.forEach((radio) => {
+        if (radio.value === thisNcr.process) {
+            radio.checked = true;
+        }
+    });
+}
 
     if (thisNcr.nonconforming) {
         conformInputs.forEach((radio) => {
@@ -91,7 +101,7 @@ window.addEventListener("load", function () {
             }
         });
     }
-
+/*
     engNotifyCustomer.forEach((radio) => {
         if (radio.value === thisNcr.eng.NotifyCustomer) {
             radio.checked = true;
@@ -103,7 +113,7 @@ window.addEventListener("load", function () {
             radio.checked = true;
         }
     });
-
+*/
     // Save button logic
     const saveButton = document.getElementById("btnSubmit");
     saveButton.addEventListener("click", function (e) {
@@ -118,6 +128,13 @@ window.addEventListener("load", function () {
         thisNcr.quantity_received = receivedInput.value;
         thisNcr.quantity_defective = defectiveInput.value;
         thisNcr.quality_rep_name = repInput.value;
+
+                
+        processInputs.forEach((radio) => {
+            if (radio.checked) {
+                thisNcr.processInputs = radio.value;
+            }
+        });
 
         conformInputs.forEach((radio) => {
             if (radio.checked) {

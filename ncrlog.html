@@ -193,6 +193,10 @@
                     ev.preventDefault();
                     localStorage.setItem('selectedNcr', id);
                     window.location.href = 'details.html';
+                } else if (target === 'btnPrint') {
+                    ev.preventDefault();
+                    localStorage.setItem('selectedNcr', id);
+                    downloadReport('pdf', this)
                 }
             });
         });
@@ -211,6 +215,7 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/dataload.js"></script>
     <script src="scripts/users.js"></script>
+    <script src="scripts/download.js"></script>
 </body>
 
 </html>

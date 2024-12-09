@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     updateNotificationList();
-/*
+    
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault(); 
@@ -65,7 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 nonconforming: document.querySelector('input[name="nonconforming"]:checked').value,
                 ennotneeded: document.querySelector('input[name="ennotneeded"]:checked').value,
                 status: "open",
-                source: "purchasing"
+                source: "purchasing",
+                eng: {},
+                pur: {}
             };
 
             // Save NCR data to localStorage
@@ -89,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'ncrlog.html';
         });
     }
-
+    
     // Engineering form submission
     if (engineeringForm) {
         engineeringForm.addEventListener('submit', function (e) {
@@ -99,21 +101,22 @@ document.addEventListener('DOMContentLoaded', function () {
             const engineeringData = {
                 review_engineering: document.getElementById('review_engineering').value,
                 customer_notification: document.querySelector('input[name="customer_notification"]:checked')?.value,
-                disposition: document.getElementById('disposition').value,
-                drawing_update: document.getElementById('drawing_update').checked,
-                original_revision: document.getElementById('original_revision').value,
-                updated_revision: document.getElementById('updated_revision').value,
-                engineer_name: document.getElementById('engineer_name').value,
-                revision_date: document.getElementById('revision_date').value,
+                disposition: document.querySelector('select[name=review_engineering]').value,
+                drawing_update: document.querySelector('input[name=drawing_updateEngineering]:checked').checked,
+                original_revision: document.getElementById('original_revisionEngineering').value,
+                updated_revision: document.getElementById('updated_revisionEngineering').value,
+                engineer_name: document.getElementById('engineer_nameEngineering').value,
+                revision_date: document.getElementById('revision_dateEngineering').value,
                 engineering: document.getElementById('engineering').value,
                 engineering_date: document.getElementById('engineering_date').value,
                 source: "engineering"
             };
 
             // Save engineering form data
-            const existingForms = JSON.parse(localStorage.getItem('engineeringForms')) || [];
-            existingForms.push(engineeringData);
-            localStorage.setItem('engineeringForms', JSON.stringify(existingForms));
+            const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
+            existingNCRs.push(ncrData);
+            localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
+
 
           
             const notification = {
@@ -127,11 +130,11 @@ document.addEventListener('DOMContentLoaded', function () {
             incrementEmailCount();
 
             alert("Engineering form submitted successfully!");
-            engineeringForm.reset();
-            window.location.href = 'ncrlog.html';
+            // engineeringForm.reset();
+            // window.location.href = 'ncrlog.html';
         });
     }
-*/
+
     //clearing local storage
     if (clearStorageBtn) {
         clearStorageBtn.addEventListener('click', function () {
