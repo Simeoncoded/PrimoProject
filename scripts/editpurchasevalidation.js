@@ -111,6 +111,7 @@ function validatePurchaseForm() {
     }
 
     if (isValid) {
+        
         document.getElementById("purchasesectionform").submit();
     }
 }
