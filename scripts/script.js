@@ -97,10 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
         engineeringForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Get the NCR number from the engineering form's ncr_number field
+           
             const ncrNumber = document.getElementById('ncr_number').value;
 
-            // Check if ncrNumber is empty or invalid
+           
             if (!ncrNumber) {
                 alert("NCR number is missing! Please provide the NCR number.");
                 return;
@@ -121,17 +121,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 source: "engineering"
             };
 
-            // Save engineering form data
-            const existingNCRs = JSON.parse(localStorage.getItem('ncrs')) || [];
-            existingNCRs.push(ncrData);
-            localStorage.setItem('ncrs', JSON.stringify(existingNCRs));
-
-
-          
+            
             const notification = {
-                ncr_no: ncrNumber, // Use the NCR number from the form field
+                ncr_no: ncrNumber, 
                 source: engineeringData.source,
-                action: "Action Required - Engineering Review"
+                action: "Action Required - Purchasing"
             };
             addNotificationToList(notification);
             saveNotificationToLocalStorage(notification); // Save notification to local storage
@@ -139,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function () {
             incrementNotificationCount();
             incrementEmailCount();
 
-            alert("Engineering form submitted successfully! Notifications and email have been sent.");
+            alert("Engineering form submitted successfully! Notifications and email have been sent to purchasing section.");
             engineeringForm.reset();
-            window.location.href = 'ncrlog.html'; // Redirect to a relevant page
+            window.location.href = 'ncrlog.html'; 
         });
     }
 
