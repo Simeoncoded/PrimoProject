@@ -543,9 +543,9 @@
 
                         <!-- OP Date -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="date" class="form-label">OP Date*</label>
-                            <input type="date" class="form-control" id="OPdate" name="date" aria-required="true">
-                            <span id="dateOPError" class="text-danger" style="display: none; font-size: 0.9em;">OP Date
+                            <label for="OPdatePurchase" class="form-label">OP Date*</label>
+                            <input type="OPdatePurchase" class="form-control" id="OPdatePurchase" name="OPdatePurchase" aria-required="true">
+                            <span id="dateOPErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">OP Date
                                 is required</span>
                         </div>
 
@@ -558,16 +558,16 @@
                             <fieldset>
                                 <legend class="form-label fw-bold">Was the Car Raised?*</legend>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="carraised_yes" name="carraised"
+                                    <input class="form-check-input" type="radio" id="carraised_yesPurchase" name="carraisedPurchase"
                                         value="Yes" aria-required="true">
-                                    <label class="form-check-label" for="carraised_yes">Yes</label>
+                                    <label class="form-check-label" for="carraised_yesPurchase">Yes</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="fcarraised_no" name="carraised"
+                                    <input class="form-check-input" type="radio" id="fcarraised_noPurchase" name="carraisedPurchase"
                                         value="No" aria-required="true">
-                                    <label class="form-check-label" for="carraised_no">No</label>
+                                    <label class="form-check-label" for="carraised_noPurchase">No</label>
                                 </div>
-                                <span id="carrai sedError" class="text-danger"
+                                <span id="carraisedErrorPurchase" class="text-danger"
                                     style="display: none; font-size: 0.9em;">Please
                                     select wether or not Follow up is required.</span>
                             </fieldset>
@@ -576,10 +576,10 @@
 
                         <!-- Supplier Name -->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="carnumber" class="form-label">Car Number:*</label>
-                            <input type="number" class="form-control" id="carnumber" name="carnumber"
+                            <label for="carnumberPurchase" class="form-label">Car Number:*</label>
+                            <input type="number" class="form-control" id="carnumberPurchase" name="carnumberPurchase"
                                 aria-required="true" placeholder="Enter Car Number">
-                            <span id="carNoError" class="text-danger" style="display: none; font-size: 0.9em;">Car
+                            <span id="carNoErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Car
                                 No. is
                                 required.</span>
                         </div>
@@ -590,16 +590,16 @@
                             <fieldset>
                                 <legend class="form-label fw-bold">Is a Follow Up Required?*</legend>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="followrequired_yes"
-                                        name="followrequired" value="Yes" aria-required="true">
-                                    <label class="form-check-label" for="followrequired_yes">Yes</label>
+                                    <input class="form-check-input" type="radio" id="followrequired_yesPurchase"
+                                        name="followrequiredPurchase" value="Yes" aria-required="true">
+                                    <label class="form-check-label" for="followrequired_yesPurchase">Yes</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="followrequired_no"
-                                        name="followrequired" value="No" aria-required="true">
-                                    <label class="form-check-label" for="followrequired_no">No</label>
+                                    <input class="form-check-input" type="radio" id="followrequired_noPurchase"
+                                        name="followrequiredPurchase" value="No" aria-required="true">
+                                    <label class="form-check-label" for="followrequired_noPurchase">No</label>
                                 </div>
-                                <span id="followrequiredError" class="text-danger"
+                                <span id="followrequiredErrorPurchase" class="text-danger"
                                     style="display: none; font-size: 0.9em;">Please
                                     select wether or not Follow up is required.</span>
                             </fieldset>
@@ -609,10 +609,10 @@
                             <label for="followtype" class="form-label">Follow Up Type?*</label>
 
                             <button id="openModalBtn" class="btn btn-primary">Add Follow Up Type</button>
-                            <span id="followupError" class="text-danger" style="display: none; font-size: 0.9em;">Please
+                            <span id="followupErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Please
                                 Pick a
                                 Supplier</span>
-                            <select class="form-control" id="followtype" name="followtype" aria-required="true">
+                            <select class="form-control" id="followtypePurchase" name="followtypePurchase" aria-required="true">
                                 <option value="">Select a type</option>
                                 <option value="acme_supplies">Acme Supplies</option>
                                 <option value="green_goods">Green Goods Ltd.</option>
@@ -625,7 +625,7 @@
                                 <option value="mega_supplies">Mega Supplies Co.</option>
                                 <option value="top_choice">Top Choice Suppliers</option>
                             </select>
-                            <span id="followupError" class="text-danger" style="display: none; font-size: 0.9em;">Pick a
+                            <span id="followupErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Pick a
                                 Supplier</span>
                         </div>
                     </div>
@@ -634,23 +634,23 @@
                     <div class="row">
                         <!-- Follow up Expected Date-->
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="followdate" class="form-label">Follow Up Expected Date*</label>
-                            <input type="date" class="form-control" id="followdate" name="followdate"
+                            <label for="followdatePurchase" class="form-label">Follow Up Expected Date*</label>
+                            <input type="date" class="form-control" id="followdatePurchase" name="followdatePurchase"
                                 aria-required="true">
-                            <span id="followdateError" class="text-danger" style="display: none; font-size: 0.9em;">Date
+                            <span id="followdateErrorPurchase" class="text-danger" style="display: none; font-size: 0.9em;">Date
                                 is
                                 required</span>
-                            <span id="followUpdateError" style="display: none; color: red; font-size: 0.9em;">Please
+                            <span id="followUpdateErrorPurchase" style="display: none; color: red; font-size: 0.9em;">Please
                                 select a valid
                                 date in the current year.</span>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="operationsmanager" class="form-label">Operations Manager
+                            <label for="operationsmanagerPurchase" class="form-label">Operations Manager
                                 Name*</label>
-                            <input type="text" class="form-control" id="operationsmanagername"
+                            <input type="text" class="form-control" id="operationsmanagernamePurchase"
                                 name="operationsmanagername" aria-required="true"
                                 placeholder="Enter Operations Manager's Name">
-                            <span id="operationsmanagerError" class="text-danger"
+                            <span id="operationsmanagerErrorPurchase" class="text-danger"
                                 style="display: none; font-size: 0.9em;">Operations manager name is
                                 required</span>
                         </div>

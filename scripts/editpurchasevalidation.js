@@ -3,31 +3,29 @@ let btnPurchaseSubmit = document.getElementById("btnPurchaseSubmit");
 function validatePurchaseForm() {
     let isValid = true;
 
-    // Input Fields
-    const ncrNo = document.getElementById("ncr_noPurchase"); 
-    const opDate = document.getElementById("date");
-    const carRaisedYes = document.getElementById("carraised_yes");
-    const carRaisedNo = document.getElementById("fcarraised_no");
-    const carNumber = document.getElementById("carnumber");
-    const followRequiredYes = document.getElementById("followrequired_yes");
-    const followRequiredNo = document.getElementById("followrequired_no");
-    const followType = document.getElementById("followtype");
-    const followDate = document.getElementById("followdate");
-    const operationsManager = document.getElementById("operationsmanagername");
+    const ncrNo = document.getElementById("ncr_noPurchase");
+    const opDate = document.getElementById("OPdatePurchase");
+    const carRaisedYes = document.getElementById("carraised_yesPurchase");
+    const carRaisedNo = document.getElementById("fcarraised_noPurchase");
+    const carNumber = document.getElementById("carnumberPurchase");
+    const followRequiredYes = document.getElementById("followrequired_yesPurchase");
+    const followRequiredNo = document.getElementById("followrequired_noPurchase");
+    const followType = document.getElementById("followtypePurchase");
+    const followDate = document.getElementById("followdatePurchase");
+    const operationsManager = document.getElementById("operationsmanagernamePurchase");
 
-    // Error Messages
     const ncrNoError = document.getElementById("ncrNoErrorPurchase");
-    const dateOPError = document.getElementById("dateOPError");
-    const carRaisedError = document.getElementById("carraisedError");
-    const carNoError = document.getElementById("carNoError");
-    const followRequiredError = document.getElementById("followrequiredError");
-    const followupError = document.getElementById("followupError");
-    const followdateError = document.getElementById("followdateError");
-    const followUpdateError = document.getElementById("followUpdateError");
-    const operationsManagerError = document.getElementById("operationsmanagerError");
+    const dateOPError = document.getElementById("dateOPErrorPurchase");
+    const carRaisedError = document.getElementById("carraisedErrorPurchase");
+    const carNoError = document.getElementById("carNoErrorPurchase");
+    const followRequiredError = document.getElementById("followrequiredErrorPurchase");
+    const followupError = document.getElementById("followupErrorPurchase");
+    const followdateError = document.getElementById("followdateErrorPurchase");
+    const followUpdateError = document.getElementById("followUpdateErrorPurchase");
+    const operationsManagerError = document.getElementById("operationsmanagerErrorPurchase");
 
-    // Arrays for resetting styles and errors
     const errorFields = [
+        ncrNoError,
         dateOPError,
         carRaisedError,
         carNoError,
@@ -39,6 +37,7 @@ function validatePurchaseForm() {
     ];
 
     const fields = [
+        ncrNo,
         opDate,
         carRaisedYes,
         carRaisedNo,
@@ -50,7 +49,6 @@ function validatePurchaseForm() {
         operationsManager
     ];
 
-    // Reset styles and error messages
     errorFields.forEach(error => (error.style.display = "none"));
     fields.forEach(field => {
         if (field) {
@@ -60,12 +58,13 @@ function validatePurchaseForm() {
 
     const currentYear = new Date().getFullYear();
 
-    // validation stuff 
+    // validation stuff
     if (!ncrNo.value.trim()) {
         ncrNo.style.border = "2px solid red";
         ncrNoError.style.display = "inline";
         isValid = false;
     }
+
     if (!opDate.value) {
         opDate.style.border = "2px solid red";
         dateOPError.style.display = "inline";
@@ -78,8 +77,6 @@ function validatePurchaseForm() {
     }
 
     if (!carRaisedYes.checked && !carRaisedNo.checked) {
-        carRaisedYes.parentNode.style.border = "2px solid red";
-        carRaisedNo.parentNode.style.border = "2px solid red";
         carRaisedError.style.display = "inline";
         isValid = false;
     }
@@ -91,8 +88,6 @@ function validatePurchaseForm() {
     }
 
     if (!followRequiredYes.checked && !followRequiredNo.checked) {
-        followRequiredYes.parentNode.style.border = "2px solid red";
-        followRequiredNo.parentNode.style.border = "2px solid red";
         followRequiredError.style.display = "inline";
         isValid = false;
     }
@@ -119,4 +114,5 @@ function validatePurchaseForm() {
         document.getElementById("purchasesectionform").submit();
     }
 }
+
 btnPurchaseSubmit.addEventListener("click", validatePurchaseForm);
